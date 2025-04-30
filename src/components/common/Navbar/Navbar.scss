@@ -1,133 +1,190 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 1rem 0;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
+  width: 100%;
+  z-index: $z-index-fixed;
+  padding: $spacing-md 0;
+  background-color: transparent;
+  @include transition(background-color, padding, box-shadow);
 
-  &.scrolled {
-    padding: 0.5rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  &--scrolled {
+    background-color: rgba($color-primary-light, 0.95);
+    padding: $spacing-sm 0;
+    box-shadow: $shadow-sm;
+    backdrop-filter: blur(10px);
   }
 
-  .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &__container {
+    @include flex(row, space-between, center);
   }
 
-  .logo {
-    font-size: 1.5rem;
+  &__logo {
+    font-family: $font-secondary;
+    font-size: $font-size-xl;
     font-weight: 700;
-    color: #2563eb;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-  }
+    color: $color-secondary;
+    @include transition(color);
 
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-
-    .nav-link {
-      text-decoration: none;
-      color: #1f2937;
-      font-weight: 500;
-      padding: 0.5rem;
-      transition: all 0.3s ease;
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background: #2563eb;
-        transition: width 0.3s ease;
-      }
-
-      &:hover::after,
-      &.active::after {
-        width: 100%;
-      }
-
-      &.active {
-        color: #2563eb;
-      }
+    &:hover {
+      color: $color-accent;
     }
   }
 
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
+  &__toggle {
+    display: block;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    width: 28px;
+    height: 22px;
+    position: relative;
+    z-index: 10;
 
-    span {
-      display: block;
-      width: 25px;
-      height: 2px;
-      background: #1f2937;
-      transition: all 0.3s ease;
+    @include respond-to(lg) {
+      display: none;
     }
 
-    &.active {
-      span:first-child {
-        transform: translateY(8px) rotate(45deg);
+    &-icon {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $color-secondary;
+      position: relative;
+      transition: background-color 0.3s;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $color-secondary;
+        transition: transform 0.3s;
       }
-      span:nth-child(2) {
-        opacity: 0;
+
+      &::before {
+        top: -8px;
       }
-      span:last-child {
-        transform: translateY(-8px) rotate(-45deg);
+
+      &::after {
+        bottom: -8px;
+      }
+    }
+
+    .navbar__menu--open + & {
+      .navbar__toggle-icon {
+        background-color: transparent;
+
+        &::before {
+          transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        &::after {
+          transform: rotate(-45deg) translate(5px, -6px);
+        }
       }
     }
   }
 
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
-    }
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: $shadow-lg;
+    padding: $spacing-3xl $spacing-lg;
+    @include flex(column, flex-start, flex-start);
+    @include transition(right);
+    z-index: 5;
 
-    .nav-links {
-      position: absolute;
-      top: 100%;
-      left: 0;
+    &--open {
       right: 0;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 1rem;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      transform: translateY(-100%);
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
+    }
 
-      &.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
+    @include respond-to(lg) {
+      position: static;
+      width: auto;
+      max-width: none;
+      height: auto;
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+      @include flex(row, flex-end, center);
+    }
+  }
 
-      .nav-link {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem;
+  &__item {
+    width: 100%;
+    margin-bottom: $spacing-md;
+
+    @include respond-to(lg) {
+      width: auto;
+      margin-bottom: 0;
+      margin-left: $spacing-lg;
+    }
+
+    &--button {
+      margin-top: $spacing-lg;
+
+      @include respond-to(lg) {
+        margin-top: 0;
+        margin-left: $spacing-xl;
       }
     }
+  }
+
+  &__link {
+    display: block;
+    font-weight: 500;
+    color: $color-secondary;
+    position: relative;
+    padding: $spacing-xs 0;
+    cursor: pointer;
+    @include transition(color);
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-accent;
+      @include transition(width);
+    }
+
+    &:hover {
+      color: $color-accent;
+
+      &::after {
+        width: 2rem;
+      }
+    }
+
+    @include respond-to(lg) {
+      display: inline-block;
+    }
+  }
+
+  &__cta {
+    @include flex(row, center, center);
+    gap: $spacing-sm;
+    width: 100%;
+
+    @include respond-to(lg) {
+      width: auto;
+    }
+  }
+
+  &__icon {
+    margin-right: $spacing-xs;
   }
 }

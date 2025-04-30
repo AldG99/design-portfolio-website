@@ -1,0 +1,87 @@
+// Reset moderno
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Eliminar márgenes predeterminados
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+// Establecer altura base
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+// Mejorar texto para todos los navegadores
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// Facilitar trabajo con imágenes
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// Heredar fuentes para inputs y botones
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// Evitar desbordamiento de texto
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+// Estilo de lista predeterminado
+ul,
+ol {
+  list-style: none;
+}
+
+// Eliminar decoración de enlaces
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Root stacking context
+#root,
+#__next {
+  isolation: isolate;
+}

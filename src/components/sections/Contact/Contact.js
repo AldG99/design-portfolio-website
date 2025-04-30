@@ -5,5 +5,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-// Página de contacto con formulario y mapa.

@@ -1,0 +1,113 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.btn {
+  @include button-base;
+  @include flex(row, center, center);
+  gap: $spacing-sm;
+  font-family: $font-primary;
+  font-weight: 500;
+
+  // Variantes
+  &--primary {
+    background-color: $color-accent;
+    color: white;
+
+    &:hover {
+      background-color: $color-accent-dark;
+    }
+
+    &:disabled {
+      background-color: rgba($color-accent, 0.6);
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    color: white;
+
+    &:hover {
+      background-color: $color-secondary-dark;
+    }
+
+    &:disabled {
+      background-color: rgba($color-secondary, 0.6);
+      cursor: not-allowed;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid $color-accent;
+    color: $color-accent;
+
+    &:hover {
+      background-color: rgba($color-accent, 0.05);
+    }
+
+    &:disabled {
+      border-color: rgba($color-accent, 0.6);
+      color: rgba($color-accent, 0.6);
+      cursor: not-allowed;
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    color: $color-accent;
+    padding: $spacing-xs $spacing-sm;
+
+    &:hover {
+      background-color: rgba($color-accent, 0.05);
+    }
+
+    &:disabled {
+      color: rgba($color-accent, 0.6);
+      cursor: not-allowed;
+    }
+  }
+
+  // Tamaños
+  &--sm {
+    padding: $spacing-xs $spacing-md;
+    font-size: $font-size-sm;
+    border-radius: $border-radius-sm;
+  }
+
+  &--md {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-md;
+    border-radius: $border-radius-md;
+  }
+
+  &--lg {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-lg;
+    border-radius: $border-radius-md;
+  }
+
+  // Opciones adicionales
+  &--full-width {
+    width: 100%;
+  }
+
+  // Elementos del botón
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--left {
+      margin-right: $spacing-xs;
+    }
+
+    &--right {
+      margin-left: $spacing-xs;
+    }
+  }
+
+  &__text {
+    line-height: 1;
+  }
+}

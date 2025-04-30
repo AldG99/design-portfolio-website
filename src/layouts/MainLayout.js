@@ -1,16 +1,20 @@
-import { Navbar } from '../components/common/Navbar/Navbar';
-import { Footer } from '../components/common/Footer/Footer';
+import React, { useEffect } from 'react';
+import Navbar from '../components/common/Navbar/Navbar';
+import Footer from '../components/common/Footer/Footer';
 
 const MainLayout = ({ children }) => {
+  // Control del scroll al navegar
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="main-layout">
+    <div className="app">
       <Navbar />
-      <main className="main-content">{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   );
 };
 
 export default MainLayout;
-
-// Layout principal que incluye navbar, footer y estructura común.

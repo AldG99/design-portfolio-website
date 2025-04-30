@@ -5,5 +5,3 @@ const About = () => {
 };
 
 export default About;
-
-// Breve biografía y descripción profesional.

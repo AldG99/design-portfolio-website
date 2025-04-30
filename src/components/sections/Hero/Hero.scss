@@ -1,0 +1,221 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.hero {
+  min-height: 100vh;
+  padding: 7rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    @include flex(column, center, center);
+    min-height: calc(100vh - 9rem);
+    position: relative;
+
+    @include respond-to(lg) {
+      @include flex(row, space-between, center);
+    }
+  }
+
+  &__content {
+    max-width: 600px;
+    margin-bottom: $spacing-2xl;
+    text-align: center;
+
+    @include respond-to(lg) {
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $spacing-xl;
+
+    &-greeting {
+      font-size: $font-size-lg;
+      color: $color-secondary-light;
+      font-weight: 400;
+      font-family: $font-primary;
+      margin-bottom: $spacing-xs;
+    }
+
+    &-name {
+      font-size: $font-size-3xl;
+      color: $color-secondary;
+      font-weight: 700;
+      margin-bottom: $spacing-xs;
+
+      @include respond-to(md) {
+        font-size: $font-size-4xl;
+      }
+    }
+
+    &-profession {
+      font-size: $font-size-xl;
+      font-weight: 600;
+      color: $color-accent;
+
+      @include respond-to(md) {
+        font-size: $font-size-2xl;
+      }
+    }
+  }
+
+  &__subtitle {
+    color: $color-secondary-light;
+    font-size: $font-size-md;
+    margin-bottom: $spacing-xl;
+    max-width: 500px;
+
+    @include respond-to(lg) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__buttons {
+    @include flex(row, center, center);
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+
+    @include respond-to(lg) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__social {
+    @include flex(row, center, center);
+    gap: $spacing-lg;
+
+    @include respond-to(lg) {
+      justify-content: flex-start;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-secondary;
+      @include transition(color, transform);
+
+      &:hover {
+        color: $color-accent;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    margin-top: $spacing-xl;
+
+    @include respond-to(lg) {
+      margin-top: 0;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 280px;
+    height: 280px;
+
+    @include respond-to(md) {
+      width: 350px;
+      height: 350px;
+    }
+
+    @include respond-to(lg) {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  &__blob {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $color-accent;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: blob-animation 8s ease-in-out infinite;
+
+    @keyframes blob-animation {
+      0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+      50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+      }
+      100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+    }
+  }
+
+  &__profile-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    z-index: 1;
+    padding: 20px;
+  }
+
+  &__scroll-down {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include respond-to(lg) {
+      bottom: 3rem;
+    }
+  }
+
+  &__scroll-link {
+    @include flex(column, center, center);
+    gap: $spacing-sm;
+    cursor: pointer;
+    @include transition(transform);
+
+    &:hover {
+      transform: translateY(5px);
+
+      .hero__scroll-icon {
+        animation-play-state: running;
+      }
+    }
+  }
+
+  &__scroll-text {
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $color-secondary-light;
+  }
+
+  &__scroll-icon {
+    color: $color-accent;
+    animation: bounce 2s infinite;
+    animation-play-state: paused;
+
+    @keyframes bounce {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(10px);
+      }
+      60% {
+        transform: translateY(5px);
+      }
+    }
+  }
+}

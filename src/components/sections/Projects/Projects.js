@@ -5,5 +5,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-// Información de proyectos del portfolio.

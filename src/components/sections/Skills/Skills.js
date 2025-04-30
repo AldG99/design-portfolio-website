@@ -5,5 +5,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-// Visualización interactiva de habilidades técnicas.
