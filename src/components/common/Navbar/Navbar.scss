@@ -16,6 +16,10 @@
     padding: $spacing-sm 0;
     box-shadow: $shadow-sm;
     backdrop-filter: blur(10px);
+
+    [data-theme='dark'] & {
+      background-color: rgba($color-primary-dark, 0.95);
+    }
   }
 
   &__container {
@@ -98,7 +102,7 @@
     width: 80%;
     max-width: 320px;
     height: 100vh;
-    background-color: white;
+    background-color: var(--color-background);
     box-shadow: $shadow-lg;
     padding: $spacing-3xl $spacing-lg;
     @include flex(column, flex-start, flex-start);
@@ -186,5 +190,24 @@
 
   &__icon {
     margin-right: $spacing-xs;
+  }
+}
+
+// Ajustes para tema oscuro
+[data-theme='dark'] {
+  .navbar {
+    &--scrolled {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    &__toggle-icon,
+    &__toggle-icon::before,
+    &__toggle-icon::after {
+      background-color: $color-secondary;
+    }
+
+    &__menu {
+      border-left: 1px solid rgba(255, 255, 255, 0.05);
+    }
   }
 }

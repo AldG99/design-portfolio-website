@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import profileImage from '../../../assets/images/profile/profile.jpg';
 import useScrollReveal from '../../../hooks/useScrollReveal';
 import Button from '../../common/Button/Button';
 import './Hero.scss';
@@ -129,8 +130,8 @@ const Hero = () => {
           <div className="hero__image">
             <div className="hero__blob"></div>
             <img
-              src="/api/placeholder/500/500"
-              alt="Foto de perfil"
+              src={profileImage}
+              alt="Mi foto de perfil"
               className="hero__profile-img"
             />
           </div>

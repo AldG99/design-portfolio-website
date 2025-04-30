@@ -1,0 +1,224 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.about {
+  padding: $spacing-3xl 0;
+  background-color: $color-primary-light;
+  transition: background-color $transition-normal;
+
+  &__title {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+    transition: color $transition-normal;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-2xl;
+
+    @include respond-to(lg) {
+      grid-template-columns: 1fr 1.5fr;
+      gap: $spacing-3xl;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+
+    @include respond-to(lg) {
+      margin: 0;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-lg;
+    transition: box-shadow $transition-normal;
+
+    [data-theme='dark'] & {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 60px;
+      height: 60px;
+      border-top: 8px solid $color-accent;
+      border-left: 8px solid $color-accent;
+      z-index: 2;
+      transition: border-color $transition-normal;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 60px;
+      height: 60px;
+      border-bottom: 8px solid $color-accent;
+      border-right: 8px solid $color-accent;
+      z-index: 2;
+      transition: border-color $transition-normal;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1);
+    }
+
+    [data-theme='dark'] & {
+      filter: brightness(0.9);
+    }
+  }
+
+  &__image-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to top,
+      rgba($color-secondary-dark, 0.4),
+      transparent
+    );
+    transition: background $transition-normal;
+
+    [data-theme='dark'] & {
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.2)
+      );
+    }
+  }
+
+  &__experience {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    background-color: $color-accent;
+    color: white;
+    padding: $spacing-md $spacing-lg;
+    border-radius: $border-radius-md;
+    text-align: center;
+    box-shadow: $shadow-md;
+    z-index: 3;
+    transition: background-color $transition-normal,
+      box-shadow $transition-normal;
+
+    [data-theme='dark'] & {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &-number {
+      display: block;
+      font-size: $font-size-2xl;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    &-text {
+      display: block;
+      font-size: $font-size-sm;
+      font-weight: 500;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
+  &__text {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__description {
+    margin-bottom: $spacing-lg;
+    color: $color-secondary;
+    font-size: $font-size-md;
+    line-height: 1.7;
+    transition: color $transition-normal;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: $spacing-lg;
+    margin-top: $spacing-lg;
+  }
+
+  &__stat {
+    text-align: center;
+    padding: $spacing-lg;
+    background-color: var(--color-background);
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-sm;
+    @include transition(transform, box-shadow, background-color);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-md;
+    }
+
+    [data-theme='dark'] & {
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    &-number {
+      font-size: $font-size-2xl;
+      font-weight: 700;
+      color: $color-accent;
+      margin-bottom: $spacing-xs;
+      transition: color $transition-normal;
+    }
+
+    &-text {
+      font-size: $font-size-sm;
+      color: $color-secondary;
+      font-weight: 500;
+      transition: color $transition-normal;
+    }
+  }
+}
+
+// Ajustes específicos para tema oscuro
+[data-theme='dark'] {
+  .about {
+    &__image-wrapper {
+      &::before,
+      &::after {
+        opacity: 0.8;
+      }
+    }
+
+    &__experience {
+      background-color: $color-accent-dark;
+    }
+  }
+}

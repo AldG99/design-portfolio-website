@@ -1,0 +1,73 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: $color-accent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: $shadow-md;
+  z-index: $z-index-fixed;
+  border: none;
+  outline: none;
+  transition: all $transition-normal;
+
+  &:hover {
+    background-color: $color-accent-dark;
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.5);
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+    transition: transform $transition-normal;
+  }
+
+  &:hover svg {
+    transform: rotate(15deg);
+  }
+
+  // Ajustes para diferentes tamaños de pantalla
+  @include respond-to(lg) {
+    width: 56px;
+    height: 56px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    width: 44px;
+    height: 44px;
+    bottom: 16px;
+    right: 16px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// Ajustes para modo oscuro
+[data-theme='dark'] .theme-toggle {
+  background-color: $color-accent-light;
+
+  &:hover {
+    background-color: $color-accent;
+  }
+}

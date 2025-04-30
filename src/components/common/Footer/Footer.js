@@ -11,7 +11,9 @@ const Footer = () => {
           <div className="footer__info">
             <h3 className="footer__logo">Portfolio</h3>
             <p className="footer__description">
-              Un portafolio profesional desarrollado con React.
+              Un portafolio profesional desarrollado con React y SCSS, enfocado
+              en mostrar mis habilidades y proyectos de una manera moderna y
+              minimalista.
             </p>
             <div className="footer__social">
               <a
@@ -159,8 +161,12 @@ const Footer = () => {
             © {currentYear} Portfolio. Todos los derechos reservados.
           </p>
           <div className="footer__bottom-links">
-            <a href="#">Política de privacidad</a>
-            <a href="#">Términos de servicio</a>
+            <a href="/privacy-policy" className="footer__bottom-link">
+              Política de privacidad
+            </a>
+            <a href="/terms-of-service" className="footer__bottom-link">
+              Términos de servicio
+            </a>
           </div>
         </div>
       </div>

@@ -1,0 +1,132 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.skills {
+  padding: $spacing-3xl 0;
+  background-color: $color-primary;
+
+  &__title {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-2xl;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__category {
+    background-color: white;
+    border-radius: $border-radius-lg;
+    padding: $spacing-xl;
+    box-shadow: $shadow-sm;
+    @include transition(transform, box-shadow);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-lg;
+    }
+
+    &-header {
+      @include flex(row, flex-start, center);
+      margin-bottom: $spacing-lg;
+      gap: $spacing-md;
+    }
+
+    &-icon {
+      @include flex(row, center, center);
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      background-color: rgba($color-accent, 0.1);
+      color: $color-accent;
+    }
+
+    &-title {
+      font-size: $font-size-xl;
+      font-weight: 600;
+      color: $color-secondary;
+      margin: 0;
+    }
+  }
+
+  &__skill {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-header {
+      @include flex(row, space-between, center);
+      margin-bottom: $spacing-xs;
+    }
+
+    &-name {
+      font-size: $font-size-md;
+      font-weight: 500;
+      color: $color-secondary;
+      margin: 0;
+    }
+
+    &-percentage {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      color: $color-secondary-light;
+    }
+
+    &-bar {
+      width: 100%;
+      height: 8px;
+      background-color: rgba($color-secondary, 0.1);
+      border-radius: $border-radius-full;
+      overflow: hidden;
+    }
+
+    &-progress {
+      height: 100%;
+      background-color: $color-accent;
+      border-radius: $border-radius-full;
+      position: relative;
+      width: 0;
+      transition: width 1.5s ease;
+
+      // Animación de carga
+      animation: progress-animation 1.5s ease forwards;
+      transform-origin: left;
+
+      @keyframes progress-animation {
+        from {
+          width: 0;
+        }
+        to {
+          width: var(--level);
+        }
+      }
+
+      // Decoración para barras de más de 90%
+      &[data-level='90'],
+      &[data-level='95'],
+      &[data-level='100'] {
+        background: linear-gradient(90deg, $color-accent, $color-accent-light);
+
+        &::after {
+          content: '🔥';
+          position: absolute;
+          right: 0;
+          top: -16px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

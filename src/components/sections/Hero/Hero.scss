@@ -6,6 +6,7 @@
   padding: 7rem 0 2rem;
   position: relative;
   overflow: hidden;
+  transition: background-color $transition-normal;
 
   &__container {
     @include flex(column, center, center);
@@ -39,6 +40,7 @@
       font-weight: 400;
       font-family: $font-primary;
       margin-bottom: $spacing-xs;
+      transition: color $transition-normal;
     }
 
     &-name {
@@ -46,6 +48,7 @@
       color: $color-secondary;
       font-weight: 700;
       margin-bottom: $spacing-xs;
+      transition: color $transition-normal;
 
       @include respond-to(md) {
         font-size: $font-size-4xl;
@@ -56,6 +59,7 @@
       font-size: $font-size-xl;
       font-weight: 600;
       color: $color-accent;
+      transition: color $transition-normal;
 
       @include respond-to(md) {
         font-size: $font-size-2xl;
@@ -68,6 +72,7 @@
     font-size: $font-size-md;
     margin-bottom: $spacing-xl;
     max-width: 500px;
+    transition: color $transition-normal;
 
     @include respond-to(lg) {
       margin-left: 0;
@@ -140,6 +145,10 @@
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     animation: blob-animation 8s ease-in-out infinite;
 
+    [data-theme='dark'] & {
+      opacity: 0.8;
+    }
+
     @keyframes blob-animation {
       0% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -163,6 +172,10 @@
     border-radius: 30px;
     z-index: 1;
     padding: 20px;
+
+    [data-theme='dark'] & {
+      filter: brightness(0.9);
+    }
   }
 
   &__scroll-down {
@@ -195,12 +208,14 @@
     font-size: $font-size-sm;
     font-weight: 500;
     color: $color-secondary-light;
+    transition: color $transition-normal;
   }
 
   &__scroll-icon {
     color: $color-accent;
     animation: bounce 2s infinite;
     animation-play-state: paused;
+    transition: color $transition-normal;
 
     @keyframes bounce {
       0%,
@@ -216,6 +231,16 @@
       60% {
         transform: translateY(5px);
       }
+    }
+  }
+}
+
+// Ajustes específicos para tema oscuro
+[data-theme='dark'] {
+  .hero {
+    &__blob {
+      filter: brightness(0.85);
+      mix-blend-mode: normal;
     }
   }
 }
