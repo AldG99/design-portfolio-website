@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import useReducedMotion from './useReducedMotion';
 
 /**
  * Hook personalizado para animar elementos cuando entran en el viewport
@@ -22,10 +23,18 @@ const useScrollReveal = (options = {}) => {
   } = options;
 
   const ref = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
+
+    // Si el usuario prefiere animaciones reducidas, no animar
+    if (prefersReducedMotion) {
+      element.style.opacity = '1';
+      element.style.transform = 'translate(0)';
+      return;
+    }
 
     // Configuración inicial
     let translateFrom = '';
@@ -82,7 +91,15 @@ const useScrollReveal = (options = {}) => {
         observer.unobserve(element);
       }
     };
-  }, [direction, duration, delay, distance, threshold, once]);
+  }, [
+    direction,
+    duration,
+    delay,
+    distance,
+    threshold,
+    once,
+    prefersReducedMotion,
+  ]);
 
   return ref;
 };
