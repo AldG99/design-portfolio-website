@@ -1,76 +1,34 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout';
-import Home from './pages/Home';
-import ProjectDetail from './pages/ProjectDetail';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './pages/Home/Home';
+import Projects from './pages/Projects/Projects';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+import ProjectDetail from './components/ProjectDetail/ProjectDetail';
 import './App.scss';
 
-/**
- * Componente principal de la aplicación
- * Configura las rutas y estructura básica de la aplicación
- */
-function App() {
+const App = () => {
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <MainLayout>
-            <Home />
-          </MainLayout>
-        }
-      />
-      <Route
-        path="/project/:id"
-        element={
-          <MainLayout>
-            <ProjectDetail />
-          </MainLayout>
-        }
-      />
-      <Route
-        path="/privacy-policy"
-        element={
-          <MainLayout>
-            <div className="container" style={{ padding: '100px 0' }}>
-              <h1>Política de Privacidad</h1>
-              <p>
-                Esta página de política de privacidad está pendiente de
-                creación.
-              </p>
-            </div>
-          </MainLayout>
-        }
-      />
-      <Route
-        path="/terms-of-service"
-        element={
-          <MainLayout>
-            <div className="container" style={{ padding: '100px 0' }}>
-              <h1>Términos de Servicio</h1>
-              <p>
-                Esta página de términos de servicio está pendiente de creación.
-              </p>
-            </div>
-          </MainLayout>
-        }
-      />
-      <Route
-        path="*"
-        element={
-          <MainLayout>
-            <div
-              className="container"
-              style={{ padding: '100px 0', textAlign: 'center' }}
-            >
-              <h1>404 - Página no encontrada</h1>
-              <p>La página que buscas no existe.</p>
-            </div>
-          </MainLayout>
-        }
-      />
-    </Routes>
+    <Router>
+      <div className="app">
+        <Header />
+
+        <div className="app__content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+
+        <Footer />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
