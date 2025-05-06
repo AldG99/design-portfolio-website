@@ -1,1 +1,213 @@
-// Archivo ProjectDetail.scss
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.project-detail {
+  padding: $spacing-xxl 0;
+  margin-top: 80px; // Para compensar el header fixed
+
+  &--loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+  }
+
+  &__loader {
+    font-size: $font-size-lg;
+    color: $accent-color;
+  }
+
+  &__back {
+    @include button(
+      $secondary-color,
+      $text-color,
+      darken($secondary-color, 10%)
+    );
+    margin-bottom: $spacing-lg;
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      margin-right: $spacing-xs;
+      font-size: 0.9em;
+    }
+  }
+
+  &__header {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__meta {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__date {
+    font-size: $font-size-md;
+    color: lighten($text-color, 30%);
+    margin-bottom: $spacing-sm;
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-size: $font-size-hero;
+    color: $text-color;
+  }
+
+  &__gallery {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__main-image {
+    margin-bottom: $spacing-md;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-lg;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__thumbnails {
+    @include flex(row, flex-start, center, wrap);
+    gap: $spacing-sm;
+  }
+
+  &__thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.7;
+    box-shadow: $shadow-sm;
+    @include transition;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &--active {
+      opacity: 1;
+      transform: scale(1.1);
+      box-shadow: $shadow-md;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xl;
+
+    @include md {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  &__col {
+    &--wide {
+      @include md {
+        grid-column: 2;
+      }
+    }
+  }
+
+  &__main-title {
+    font-family: $font-secondary;
+    font-size: $font-size-xxl;
+    margin-bottom: $spacing-lg;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: $accent-color;
+      margin: $spacing-sm auto 0;
+    }
+  }
+
+  &__section-title {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+    color: darken($text-color, 10%);
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    line-height: 1.8;
+    margin-bottom: $spacing-md;
+  }
+
+  &__tools {
+    @include flex(row, flex-start, center, wrap);
+    margin-bottom: $spacing-md;
+  }
+
+  &__tool {
+    font-size: $font-size-sm;
+    background-color: $secondary-color;
+    color: darken($text-color, 10%);
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    margin-right: $spacing-sm;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+
+    svg {
+      margin-left: $spacing-xs;
+      font-size: 0.9em;
+    }
+  }
+
+  &__case-study {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__section {
+    margin-bottom: $spacing-lg;
+
+    p {
+      line-height: 1.8;
+    }
+  }
+
+  &__impact-learning {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    background-color: lighten($secondary-color, 5%);
+    padding: $spacing-lg;
+    border-radius: $border-radius-lg;
+    margin-bottom: $spacing-xl;
+
+    @include md {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__impact,
+  &__learning {
+    p {
+      line-height: 1.8;
+    }
+  }
+}
