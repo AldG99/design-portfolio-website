@@ -1,1 +1,166 @@
-// Archivo Header.scss
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba($primary-color, 0.95);
+  padding: $spacing-md 0;
+  z-index: 1000;
+  @include transition;
+
+  &--scrolled {
+    box-shadow: $shadow-md;
+    padding: $spacing-sm 0;
+  }
+
+  &__content {
+    @include flex(row, space-between, center);
+  }
+
+  &__logo {
+    @include flex(row, flex-start, center);
+    @include transition;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &-image {
+      height: 60px;
+      width: auto;
+
+      .header--scrolled & {
+        height: 60px;
+      }
+    }
+  }
+
+  &__menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: relative;
+    z-index: 1001;
+
+    @include md {
+      display: none;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $text-color;
+      position: absolute;
+      left: 0;
+      @include transition;
+
+      &:first-child {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 10px;
+      }
+
+      &:last-child {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__nav--open ~ .header__menu-toggle {
+    span {
+      &:first-child {
+        transform: rotate(45deg);
+        top: 10px;
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+        bottom: 10px;
+      }
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: $primary-color;
+    padding: $spacing-xl $spacing-lg;
+    @include transition($duration: $transition-slow);
+    box-shadow: $shadow-lg;
+    z-index: 1000;
+
+    @include md {
+      position: static;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    &--open {
+      right: 0;
+    }
+  }
+
+  &__menu {
+    list-style: none;
+    margin-top: $spacing-xxl;
+
+    @include md {
+      @include flex(row, flex-end, center);
+      margin-top: 0;
+    }
+  }
+
+  &__menu-item {
+    margin-bottom: $spacing-md;
+    text-align: center;
+
+    @include md {
+      margin-left: $spacing-sm;
+      margin-bottom: 0;
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+
+  &__menu-link {
+    color: $text-color;
+    font-size: $font-size-lg;
+    font-weight: 500;
+    position: relative;
+    @include transition;
+    padding: $spacing-xs $spacing-sm;
+    display: block;
+
+    @include md {
+      font-size: $font-size-md;
+      padding: $spacing-xs $spacing-xs;
+      display: inline-block;
+    }
+
+    &:hover,
+    &.active {
+      color: $accent-color;
+    }
+  }
+}
