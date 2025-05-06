@@ -1,1 +1,43 @@
-// Archivo Footer.scss
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.footer {
+  background-color: $primary-color;
+  border-top: 1px solid $secondary-color;
+  padding: $spacing-xl 0;
+
+  &__content {
+    @include flex(column, center, center);
+    text-align: center;
+  }
+
+  &__social {
+    @include flex(row, center, center);
+    margin-bottom: $spacing-md;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: $secondary-color;
+    color: $text-color;
+    border-radius: 50%;
+    margin: 0 $spacing-sm;
+    font-size: $font-size-lg;
+    @include transition;
+
+    &:hover {
+      background-color: $accent-color;
+      color: white;
+      transform: translateY(-3px);
+    }
+  }
+
+  &__copyright {
+    color: lighten($text-color, 30%);
+    font-size: $font-size-sm;
+  }
+}
