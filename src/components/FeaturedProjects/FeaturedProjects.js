@@ -58,7 +58,7 @@ const FeaturedProjects = () => {
 
         <div className="featured-projects__more">
           <Link to="/projects" className="btn">
-            Más proyectos
+            Más proyectos 💁‍♂️
           </Link>
         </div>
       </div>

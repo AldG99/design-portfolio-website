@@ -1,1 +1,192 @@
-// Archivo About.scss
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.about {
+  padding: $spacing-xxl 0;
+  margin-top: 80px; // Para compensar el header fixed
+
+  &__header {
+    margin-bottom: $spacing-xl;
+
+    @include md {
+      padding-left: 0; // Elimina cualquier padding izquierdo
+    }
+
+    .section-title {
+      font-size: $font-size-hero;
+      font-weight: 700;
+      text-align: left; // Asegura la alineación a la izquierda
+      max-width: 1000px; // Mismo ancho que el contenido
+      margin: 0 auto; // Centrado horizontal del contenedor
+
+      @include md {
+        padding-left: 0; // Asegura que no haya padding adicional
+      }
+    }
+  }
+
+  &__content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__profile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xl;
+
+    @include md {
+      grid-template-columns: 3fr 2fr; // Ajustado para más espacio al texto
+    }
+  }
+
+  &__bio {
+    order: 2; // En móvil, la bio va después de la imagen
+
+    @include md {
+      order: 1; // En escritorio, la bio va antes que la imagen
+    }
+  }
+
+  &__bio-text {
+    font-size: $font-size-lg;
+    line-height: 1.8;
+    margin-bottom: $spacing-md;
+    color: $text-color;
+  }
+
+  &__image {
+    order: 1; // En móvil, la imagen va primero
+
+    @include md {
+      order: 2; // En escritorio, la imagen va después de la bio
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      // Sin bordes ni sombras, como solicitado
+    }
+  }
+
+  &__quote {
+    margin: $spacing-xl 0;
+
+    blockquote {
+      font-family: 'Times New Roman', Times, serif; // Tipografía Times Roman
+      font-size: $font-size-lg;
+      font-style: italic;
+      padding: $spacing-lg;
+      border-left: 4px solid $accent-color;
+      background-color: lighten($secondary-color, 5%);
+
+      cite {
+        display: block;
+        text-align: right;
+        font-weight: 700;
+        margin-top: $spacing-sm;
+      }
+    }
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xl;
+
+    @include md {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__experience,
+  &__education {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__section-title {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    position: relative;
+    padding-left: $spacing-md;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: $accent-color;
+      border-radius: 50%;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__list-item {
+    margin-bottom: $spacing-md;
+    padding-left: $spacing-md;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 5px;
+      height: 5px;
+      background-color: $secondary-color;
+      border-radius: 50%;
+    }
+  }
+
+  &__company,
+  &__institution {
+    display: block;
+    font-weight: 700;
+  }
+
+  &__position,
+  &__degree {
+    display: block;
+    color: lighten($text-color, 15%);
+  }
+
+  &__period {
+    display: block;
+    font-size: $font-size-sm;
+    color: lighten($text-color, 30%);
+    margin-top: $spacing-xs;
+  }
+
+  &__download {
+    grid-column: 1 / -1; // Ocupa todo el ancho
+    margin-top: $spacing-md;
+
+    @include md {
+      grid-column: auto; // En escritorio puede ocupar una sola columna
+    }
+  }
+
+  &__download-btn {
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      margin-right: $spacing-sm;
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    margin-top: $spacing-xl;
+  }
+}
