@@ -18,16 +18,150 @@
     margin-bottom: $spacing-xl;
 
     @include sm {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(
+        2,
+        1fr
+      ); // Siempre 2 columnas desde tamaño sm
+      gap: $spacing-lg;
+    }
+  }
+
+  &__item {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    padding-bottom: $spacing-md; // Espacio para la línea divisoria
+  }
+
+  &__divider {
+    width: 100%;
+    height: 2px; // Aumentado de 1px a 2px para mayor visibilidad
+    background-color: $accent-color; // Usando el color de acento en lugar del color secundario
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.7; // Añadido para que no sea demasiado intenso pero sí visible
+  }
+
+  &__image-link {
+    display: block;
+    overflow: hidden;
+    margin-bottom: $spacing-md;
+  }
+
+  &__image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; // Proporción 4:3
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include transition;
+
+      &:hover {
+        transform: scale(1.05); // Efecto de zoom al pasar el mouse
+      }
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__date {
+    font-size: $font-size-sm;
+    color: lighten($text-color, 30%);
+    margin-bottom: $spacing-xs;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    color: $text-color;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__description {
+    font-size: $font-size-md;
+    line-height: 1.7;
+    color: lighten($text-color, 15%);
+    margin-bottom: $spacing-md;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    margin-top: auto; // Para que esté siempre abajo
+  }
+
+  &__tool {
+    font-size: $font-size-sm;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    background-color: $secondary-color;
+    color: darken($text-color, 10%);
+    margin-bottom: $spacing-xs;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace; // Tipografía de consola
+    letter-spacing: -0.5px; // Ajustar el espaciado entre letras para tipografía monospace
+
+    // Colores específicos para cada herramienta
+    &--figma {
+      background-color: #ffc0a9; /* Versión pastel más densa del naranja de Figma */
+      color: #333333;
     }
 
-    @include lg {
-      grid-template-columns: repeat(3, 1fr);
+    &--scss {
+      background-color: #dda0c2; /* Versión pastel más densa del rosa de SCSS */
+      color: #333333;
+    }
 
-      // Asegura que las tarjetas tengan la misma altura
-      .project-card {
-        height: 100%;
-      }
+    &--react {
+      background-color: #a8dcec; /* Versión pastel más densa del azul de React */
+      color: #333333;
+    }
+
+    &--react-native,
+    &--react-native-expo {
+      background-color: #9ccfe3; /* Variación pastel más densa del azul de React Native */
+      color: #333333;
+    }
+
+    &--expo {
+      background-color: #bababd; /* Versión pastel más densa del azul oscuro de Expo */
+      color: #333333;
+    }
+
+    &--firebase {
+      background-color: #ffe0a3; /* Versión pastel más densa del amarillo de Firebase */
+      color: #333333;
+    }
+
+    &--unity {
+      background-color: #d6d6d8; /* Versión pastel del color gris de Unity */
+      color: #333333;
+    }
+
+    &--blender {
+      background-color: #f8c297; /* Versión pastel del color naranja de Blender */
+      color: #333333;
     }
   }
 
@@ -36,9 +170,9 @@
     margin-top: $spacing-lg;
 
     .btn {
-      display: block;
-      width: 100%;
-      padding: $spacing-md;
+      display: inline-block;
+      width: auto; // Cambiado de 100% a auto para que no ocupe todo el ancho
+      padding: $spacing-md $spacing-xl; // Más padding horizontal
       font-size: $font-size-lg;
       background-color: $accent-color;
       color: white;

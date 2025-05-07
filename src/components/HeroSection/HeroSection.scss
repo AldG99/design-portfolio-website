@@ -7,9 +7,12 @@
 
   &__content {
     @include flex(column, center, center);
-
     @include md {
-      @include flex(row, space-between, center);
+      @include flex(
+        row,
+        space-between,
+        flex-start
+      ); // Cambio de center a flex-start para alinear al inicio
     }
   }
 
@@ -17,7 +20,6 @@
     width: 100%;
     margin-bottom: $spacing-xl;
     text-align: center;
-
     @include md {
       width: 50%;
       margin-bottom: 0;
@@ -29,9 +31,9 @@
   &__name {
     font-family: $font-secondary;
     font-size: $font-size-hero;
-    font-weight: 700;
+    font-weight: 500;
     color: $text-color;
-    margin-bottom: $spacing-sm;
+    margin-bottom: $spacing-xs; // Reducido de $spacing-sm a $spacing-xs para que esté más pegado
   }
 
   &__profession {
@@ -44,7 +46,6 @@
   &__tools {
     @include flex(row, center, center, wrap);
     margin-bottom: $spacing-md;
-
     @include md {
       justify-content: flex-start;
     }
@@ -58,6 +59,8 @@
     margin-bottom: $spacing-sm;
     background-color: $secondary-color;
     color: darken($text-color, 10%);
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    letter-spacing: -0.5px;
 
     // Colores específicos para cada herramienta
     &--figma {
@@ -84,6 +87,14 @@
       background-color: #ffe0a3; /* Versión pastel más densa del amarillo de Firebase */
       color: #333333;
     }
+    &--unity {
+      background-color: #d6d6d8; /* Versión pastel del color gris de Unity */
+      color: #333333;
+    }
+    &--blender {
+      background-color: #f8c297; /* Versión pastel del color naranja de Blender */
+      color: #333333;
+    }
   }
 
   &__bio {
@@ -96,7 +107,6 @@
     font-weight: 700;
     color: $accent-color;
     @include transition;
-
     &:hover {
       text-decoration: none;
       color: $text-color;
@@ -106,7 +116,6 @@
   &__social {
     @include flex(row, center, center);
     margin-bottom: $spacing-lg;
-
     @include md {
       justify-content: flex-start;
     }
@@ -124,7 +133,6 @@
     margin-right: $spacing-md;
     font-size: $font-size-md;
     @include transition;
-
     &:hover {
       background-color: $accent-color;
       color: white;
@@ -138,7 +146,6 @@
     background-color: $secondary-color;
     margin: $spacing-xl 0 0;
     position: relative;
-
     &::after {
       content: '';
       position: absolute;
@@ -155,17 +162,45 @@
     width: 100%;
     max-width: 380px; // Reducido ligeramente de 400px
     margin: 0 auto;
-
+    margin-top: 20px; // Añadido para ajustar la posición vertical
+    position: relative; // Necesario para posicionar la figura geométrica
     @include md {
       width: 42%; // Reducido de 45%
       margin: 0;
       margin-right: 3%; // Añadido margen a la derecha
+      margin-top: 10px; // Añadido para ajustar al nivel del nombre
+    }
+
+    // Figura geométrica de fondo
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $accent-color;
+      opacity: 0.2;
+      clip-path: polygon(
+        0% 15%,
+        15% 0%,
+        85% 0%,
+        100% 15%,
+        100% 85%,
+        85% 100%,
+        15% 100%,
+        0% 85%
+      );
+      z-index: -1;
+      top: -20px;
+      left: -20px;
+      transform: rotate(-8deg);
     }
 
     img {
       width: 100%;
       height: auto;
       box-shadow: $shadow-lg;
+      position: relative; // Para que esté por encima de la figura
+      z-index: 1;
     }
   }
 }

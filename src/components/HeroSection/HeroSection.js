@@ -12,7 +12,6 @@ const HeroSection = () => {
   // Función para asignar una clase de color según la herramienta
   const getToolClass = tool => {
     const toolLower = tool.toLowerCase();
-
     if (toolLower.includes('figma')) return 'hero-section__tool--figma';
     if (toolLower.includes('scss')) return 'hero-section__tool--scss';
     if (toolLower.includes('react native'))
@@ -20,12 +19,21 @@ const HeroSection = () => {
     if (toolLower.includes('react')) return 'hero-section__tool--react';
     if (toolLower.includes('expo')) return 'hero-section__tool--expo';
     if (toolLower.includes('firebase')) return 'hero-section__tool--firebase';
-
+    if (toolLower.includes('unity')) return 'hero-section__tool--unity';
+    if (toolLower.includes('blender')) return 'hero-section__tool--blender';
     return ''; // Clase por defecto
   };
 
   // Lista de herramientas
-  const tools = ['Figma', 'SCSS', 'React', 'React Native Expo', 'Firebase'];
+  const tools = [
+    'Figma',
+    'SCSS',
+    'React',
+    'React Native Expo',
+    'Firebase',
+    'Unity',
+    'Blender',
+  ];
 
   return (
     <section className="hero-section">
@@ -36,7 +44,6 @@ const HeroSection = () => {
             <h2 className="hero-section__profession">
               Diseñador UX/UI & Desarrollador
             </h2>
-
             <p className="hero-section__tools">
               {tools.map((tool, index) => (
                 <span
@@ -47,7 +54,6 @@ const HeroSection = () => {
                 </span>
               ))}
             </p>
-
             <p className="hero-section__bio">
               Mi objetivo es crear interfaces que sean fáciles de usar y
               visualmente atractivas, explorando constantemente nuevas técnicas
@@ -60,7 +66,6 @@ const HeroSection = () => {
                 Acerca de mí 📖 👉
               </Link>
             </p>
-
             <div className="hero-section__social">
               <a
                 href="https://www.linkedin.com/in/ad-g099/"
@@ -91,12 +96,10 @@ const HeroSection = () => {
               </a>
             </div>
           </div>
-
           <div className="hero-section__image">
             <img src="/assets/images/profile.jpg" alt="Foto de perfil" />
           </div>
         </div>
-
         <div className="hero-section__divider"></div>
       </div>
     </section>
