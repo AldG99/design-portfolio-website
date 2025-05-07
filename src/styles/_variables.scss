@@ -1,1 +1,47 @@
-// Archivo _variables.scss
+// Colores (Regla 60-30-10)
+$primary-color: #f6f6f6; // 60% - Fondo principal
+$secondary-color: #e0e0e0; // 30% - Elementos secundarios
+$accent-color: #4a6de5; // 10% - Acentos y llamadas a la acción
+$text-color: #292a2c; // Color de texto principal
+
+// Tipografías
+$font-primary: 'Open Sans', 'Roboto', sans-serif;
+$font-secondary: 'Rockwell', serif;
+
+// Tamaños de fuente
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.125rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+$font-size-xxl: 2rem; // 32px
+$font-size-hero: 3rem; // 48px
+
+// Espaciados
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 3rem; // 48px
+$spacing-xxl: 3.5rem; // 96px
+
+// Breakpoints
+$breakpoint-sm: 576px; // Móviles
+$breakpoint-md: 768px; // Tablets
+$breakpoint-lg: 992px; // Escritorios pequeños
+$breakpoint-xl: 1200px; // Escritorios grandes
+
+// Transiciones
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Sombras
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+// Bordes
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
