@@ -50,10 +50,14 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="container">
         <div className="header__content">
-          <Link to="/" className="header__logo">
+          <Link
+            to="/"
+            className="header__logo"
+            onClick={() => handleNavClick('/')}
+          >
             <img
               src="assets/logo/logo.png"
-              alt="Portafolio Logo"
+              alt="Logo"
               className="header__logo-image"
             />
           </Link>
@@ -61,22 +65,14 @@ const Header = () => {
             className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}
           >
             <ul className="header__menu">
+              {/* Eliminado "Portafolio" ya que el logo cumple esta función */}
               <li className="header__menu-item">
                 <Link
-                  to="/"
-                  className={`header__menu-link ${isActive('/')}`}
-                  onClick={() => handleNavClick('/')}
+                  to="/trabajo"
+                  className={`header__menu-link ${isActive('/trabajo')}`}
+                  onClick={() => handleNavClick('/trabajo')}
                 >
-                  Portafolio
-                </Link>
-              </li>
-              <li className="header__menu-item">
-                <Link
-                  to="/projects"
-                  className={`header__menu-link ${isActive('/projects')}`}
-                  onClick={() => handleNavClick('/projects')}
-                >
-                  Proyectos
+                  Trabajo
                 </Link>
               </li>
               <li className="header__menu-item">
