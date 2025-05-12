@@ -138,6 +138,11 @@ const project4 = {
     'La dificultad para acceder rápidamente a funciones clave en INVENTA-ANALYT llevó a la creación de un mapa del sitio eficiente. El objetivo fue tomar decisiones estratégicas sobre la arquitectura de la información para mejorar la navegación y facilitar el uso de la app.',
   sitemapImage: '/assets/images/projects/project4/sitemap.png',
 
+  // User Flow
+  userFlows: {
+    userFlowImage: '/assets/images/projects/project4/userflow.png',
+  },
+
   paperWireframes:
     'Diseñé wireframes en papel para cada pantalla de la aplicación de inventarios, considerando la usabilidad y navegación.',
   paperWireframesImage: [
@@ -187,8 +192,6 @@ const project4 = {
         quotes: [
           '"La pantalla de ventas es clara, pero me perdí buscando productos por categoría" - Participante 2',
         ],
-        improvement:
-          'Implementar búsqueda global con filtrado opcional posterior para evitar la navegación por categorías durante la venta',
       },
       {
         area: 'Análisis',
@@ -208,7 +211,6 @@ const project4 = {
       },
     ],
 
-    // Refinando el diseño
     // Maquetas
     refiningDesign: [
       {
