@@ -65,7 +65,6 @@ const Header = () => {
             className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}
           >
             <ul className="header__menu">
-              {/* Eliminado "Portafolio" ya que el logo cumple esta función */}
               <li className="header__menu-item">
                 <Link
                   to="/trabajo"
