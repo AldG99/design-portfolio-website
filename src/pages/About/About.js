@@ -29,7 +29,10 @@ const About = () => {
             </div>
 
             <div className="about__image">
-              <img src="/assets/images/profile.jpg" alt="Foto de perfil" />
+              <img
+                src="/assets/images/profile/profile2.jpg"
+                alt="Foto de perfil"
+              />
             </div>
           </div>
 

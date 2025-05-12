@@ -97,7 +97,10 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="hero-section__image">
-            <img src="/assets/images/profile.jpg" alt="Foto de perfil" />
+            <img
+              src="/assets/images/profile/profile1.jpg"
+              alt="Foto de perfil"
+            />
           </div>
         </div>
         <div className="hero-section__divider"></div>

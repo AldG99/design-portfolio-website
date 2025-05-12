@@ -1,1 +1,189 @@
-// Archivo Projects.scss
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.projects-page {
+  padding: $spacing-xxl 0;
+  margin-top: 80px; // Para compensar el header fixed
+
+  &__header {
+    margin-bottom: $spacing-xl;
+    max-width: 50%;
+
+    @include sm {
+      max-width: 60%;
+    }
+
+    @include md {
+      max-width: 80%;
+    }
+
+    .section-title {
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    color: lighten($text-color, 15%);
+    line-height: 1.7;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid $secondary-color;
+
+  @include md {
+    grid-template-columns: 350px 1fr;
+    gap: $spacing-xl;
+  }
+
+  &__thumbnail-link {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; // Aspecto 4:3
+    position: relative;
+    overflow: hidden;
+
+    @include md {
+      height: 100%;
+      padding-bottom: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include transition;
+
+      @include md {
+        position: static;
+        height: 100%;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__date {
+    font-size: $font-size-sm;
+    color: lighten($text-color, 30%);
+    margin-bottom: $spacing-xs;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $text-color;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__description {
+    font-size: $font-size-md;
+    line-height: 1.7;
+    color: lighten($text-color, 15%);
+    margin-bottom: $spacing-md;
+  }
+
+  &__tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-md;
+  }
+
+  &__tool {
+    font-size: $font-size-sm;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    background-color: $secondary-color;
+    color: darken($text-color, 10%);
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    letter-spacing: -0.5px;
+
+    // Colores específicos para cada herramienta
+    &--figma {
+      background-color: #ffc0a9; /* Versión pastel más densa del naranja de Figma */
+      color: #333333;
+    }
+
+    &--scss {
+      background-color: #dda0c2; /* Versión pastel más densa del rosa de SCSS */
+      color: #333333;
+    }
+
+    &--react {
+      background-color: #a8dcec; /* Versión pastel más densa del azul de React */
+      color: #333333;
+    }
+
+    &--react-native,
+    &--react-native-expo {
+      background-color: #9ccfe3; /* Variación pastel más densa del azul de React Native */
+      color: #333333;
+    }
+
+    &--expo {
+      background-color: #bababd; /* Versión pastel más densa del azul oscuro de Expo */
+      color: #333333;
+    }
+
+    &--firebase {
+      background-color: #ffe0a3; /* Versión pastel más densa del amarillo de Firebase */
+      color: #333333;
+    }
+
+    &--unity {
+      background-color: #d6d6d8; /* Versión pastel del color gris de Unity */
+      color: #333333;
+    }
+
+    &--blender {
+      background-color: #f8c297; /* Versión pastel del color naranja de Blender */
+      color: #333333;
+    }
+  }
+
+  &__button {
+    margin-top: auto;
+    padding: $spacing-sm $spacing-lg;
+    background-color: $accent-color;
+    color: white;
+    border-radius: $border-radius-md;
+    font-weight: 600;
+    display: inline-flex;
+    align-self: flex-start;
+    text-align: center;
+    @include transition;
+
+    &:hover {
+      background-color: darken($accent-color, 15%);
+      transform: translateY(-2px);
+    }
+  }
+}

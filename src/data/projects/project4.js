@@ -42,20 +42,24 @@ const project4 = {
         'Guadalupe Lumbreras tiene una dulcería y necesita gestionar inventario y ventas desde su teléfono porque siempre está atendiendo clientes.',
       problemStatementImage:
         '/assets/images/projects/project4/persona/persona1.png',
-
-      // Mapa de Recorrido del Usuario
-      userJourneyMapPersona: 'Guadalupe Lumbreras',
-      userJourneyMap:
-        'Gestionar fácilmente su dulcería desde el teléfono mientras atiende a sus clientes.',
-      userJourneyMapImage: '/assets/images/projects/project4/map/map1.jpg',
     },
     {
       problemStatement:
         'Araceli tiene una ferretería familiar y necesita gestionar un inventario extenso y diverso con más de 200 productos diferentes.',
       problemStatementImage:
         '/assets/images/projects/project4/persona/persona2.png',
+    },
+  ],
 
-      // Mapa de Recorrido del Usuario
+  // Mapa de Recorrido
+  userJourneyMap: [
+    {
+      userJourneyMapPersona: 'Guadalupe Lumbreras',
+      userJourneyMap:
+        'Gestionar fácilmente su dulcería desde el teléfono mientras atiende a sus clientes.',
+      userJourneyMapImage: '/assets/images/projects/project4/map/map1.jpg',
+    },
+    {
       userJourneyMapPersona: 'Araceli Mendoza',
       userJourneyMap:
         'Mostrar cómo Alicia gestiona su ferretería, desde localizar productos hasta analizar ventas y controlar inventario.',
@@ -132,10 +136,17 @@ const project4 = {
   // Inicio del diseño
   sitemap:
     'La dificultad para acceder rápidamente a funciones clave en INVENTA-ANALYT llevó a la creación de un mapa del sitio eficiente. El objetivo fue tomar decisiones estratégicas sobre la arquitectura de la información para mejorar la navegación y facilitar el uso de la app.',
-  sitemapImage: '/assets/images/projects/project4/sitemap.jpg',
+  sitemapImage: '/assets/images/projects/project4/sitemap.png',
+
   paperWireframes:
-    'Diseñé wireframes en papel para cada pantalla de la aplicación de inventarios, considerando la usabilidad y navegación. En la versión refinada, incluí un menú desplegable para mejorar el acceso a las distintas secciones.',
-  paperWireframesImage: '/assets/images/projects/project4/paper.png',
+    'Diseñé wireframes en papel para cada pantalla de la aplicación de inventarios, considerando la usabilidad y navegación.',
+  paperWireframesImage: [
+    '/assets/images/projects/project4/paper/paper1.jpg',
+    '/assets/images/projects/project4/paper/paper2.jpg',
+  ],
+  wireframes:
+    'En la versión refinada, incluí un menú desplegable para mejorar el acceso a las distintas secciones.',
+  wireframesImage: '/assets/images/projects/project4/paper/paper.png',
 
   // Variaciones de tamaño de pantalla en wireframes en papel
   sizeVariations:
@@ -221,6 +232,7 @@ const project4 = {
 
     // Tamaño de pantalla original
     screenSizeImage: '/assets/images/projects/project4/screen.png',
+
     // Maquetas: Variaciones de tamaño de pantalla
     screenSizeVariations:
       'Durante el desarrollo se priorizó un diseño responsivo adaptable a distintos tamaños de pantalla. Se usaron unidades proporcionales para asegurar una experiencia fluida en todos los dispositivos. Se optimizaron elementos clave como navegación, visualización de productos y entrada de datos según el tamaño del dispositivo. Esta adaptabilidad fue clave, ya que el 65% de los usuarios alternaban entre dispositivos según la tarea.',

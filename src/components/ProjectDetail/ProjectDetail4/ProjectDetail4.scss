@@ -1,0 +1,930 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.project-detail {
+  padding: $spacing-xxl 0;
+  margin-top: 80px; // Para compensar el header fixed
+
+  // Hero Section
+  &__hero {
+    margin-bottom: $spacing-xxl;
+  }
+
+  .hero-image {
+    margin-bottom: $spacing-xl;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    // Nueva clase para imagen a ancho completo
+    &--full-width {
+      margin-left: -16px;
+      margin-right: -16px;
+      width: calc(100% + 32px);
+
+      @include md {
+        margin-left: -32px;
+        margin-right: -32px;
+        width: calc(100% + 64px);
+      }
+
+      @include lg {
+        margin-left: -48px;
+        margin-right: -48px;
+        width: calc(100% + 96px);
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-xl;
+    color: lighten($text-color, 15%);
+    margin-bottom: $spacing-lg;
+    line-height: 1.4;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-sm; // Reducir el margen inferior para acercar el tools
+
+    @include md {
+      flex-direction: row;
+      align-items: center;
+      gap: $spacing-xl;
+    }
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: center;
+
+    .meta-value {
+      color: $text-color;
+      font-size: $font-size-md;
+      font-weight: 600; // Añadiendo peso al texto de la fecha
+    }
+  }
+
+  &__tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    margin-top: $spacing-sm;
+    margin-bottom: $spacing-lg;
+
+    .tool-tag {
+      font-size: $font-size-sm;
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $border-radius-sm;
+      background-color: $secondary-color;
+      color: darken($text-color, 10%);
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      letter-spacing: -0.5px;
+
+      // Colores específicos para cada herramienta
+      &--figma {
+        background-color: #ffc0a9; /* Versión pastel más densa del naranja de Figma */
+        color: #333333;
+      }
+
+      &--scss {
+        background-color: #dda0c2; /* Versión pastel más densa del rosa de SCSS */
+        color: #333333;
+      }
+
+      &--react {
+        background-color: #a8dcec; /* Versión pastel más densa del azul de React */
+        color: #333333;
+      }
+
+      &--react-native,
+      &--react-native-expo {
+        background-color: #9ccfe3; /* Variación pastel más densa del azul de React Native */
+        color: #333333;
+      }
+
+      &--expo {
+        background-color: #bababd; /* Versión pastel más densa del azul oscuro de Expo */
+        color: #333333;
+      }
+
+      &--firebase {
+        background-color: #ffe0a3; /* Versión pastel más densa del amarillo de Firebase */
+        color: #333333;
+      }
+    }
+  }
+
+  // Sections generales
+  .section-subtitle {
+    font-size: $font-size-xxl;
+    font-weight: 700;
+    margin-bottom: $spacing-lg;
+    margin-top: $spacing-xxl;
+    color: $text-color;
+    border-bottom: 2px solid $secondary-color;
+    padding-bottom: $spacing-md;
+  }
+
+  .subsection-title {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+    color: $text-color;
+    margin-top: $spacing-lg;
+  }
+
+  // Project Overview
+  &__overview {
+    .overview-text {
+      font-size: $font-size-lg;
+      line-height: 1.7;
+      margin-bottom: $spacing-lg;
+      color: $text-color;
+    }
+  }
+
+  // Nuevo contenedor de problema-objetivo para layout horizontal
+  &__problem-goal-container {
+    display: grid;
+    grid-template-columns: 1fr; // Una columna en móvil
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xxl;
+
+    @include md {
+      grid-template-columns: 1fr 1fr; // Dos columnas en tablet y desktop
+    }
+  }
+
+  // Problem, Goal, Role sections
+  &__problem,
+  &__goal,
+  &__role {
+    .problem-text,
+    .goal-text,
+    .role-text {
+      font-size: $font-size-lg;
+      line-height: 1.7;
+      color: $text-color;
+      padding: $spacing-lg;
+      background-color: lighten($secondary-color, 8%);
+      border-radius: $border-radius-md;
+      border-left: 4px solid $accent-color;
+    }
+  }
+
+  // Responsibilities
+  &__responsibilities {
+    .responsibilities-list {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .responsibility-item {
+      padding-left: $spacing-lg;
+      margin-bottom: $spacing-md;
+      position: relative;
+      font-size: $font-size-md;
+      line-height: 1.6;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: $spacing-sm;
+        color: $accent-color;
+        font-weight: 700;
+      }
+    }
+  }
+
+  // User Understanding
+  &__understanding {
+    .understanding-text {
+      font-size: $font-size-md;
+      line-height: 1.7;
+      margin-bottom: $spacing-lg;
+    }
+
+    .understanding-image {
+      margin: $spacing-xl 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    // Modificado: ahora es una lista ordenada
+    .key-issues-list {
+      list-style-type: decimal;
+      margin-left: $spacing-xl;
+      padding-left: $spacing-md;
+    }
+
+    .key-issue-item {
+      padding: $spacing-md;
+      margin-bottom: $spacing-md;
+      background-color: lighten($secondary-color, 8%);
+      border-radius: $border-radius-md;
+      border-left: 4px solid #4a6de5;
+      font-size: $font-size-md;
+      line-height: 1.6;
+    }
+  }
+
+  // User Personas - MODIFICADO para layout horizontal
+  &__personas {
+    margin-bottom: $spacing-xxl;
+
+    .personas-horizontal-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+
+      @include md {
+        grid-template-columns: repeat(
+          2,
+          1fr
+        ); // 2 columnas en pantallas medianas y grandes
+      }
+
+      .persona-card {
+        border: 1px solid $secondary-color;
+        border-radius: $border-radius-lg;
+        overflow: hidden;
+        height: 100%; // Para que ambas tarjetas tengan la misma altura
+      }
+
+      .persona-statement {
+        padding: $spacing-lg;
+        background-color: lighten($secondary-color, 12%);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .persona-problem {
+        font-size: $font-size-md;
+        line-height: 1.6;
+        margin-bottom: $spacing-md;
+      }
+
+      .persona-image {
+        margin-top: auto; // Empuja la imagen hacia abajo
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+
+  // User Journey Maps - MODIFICADO para mostrar verticalmente
+  &__journey-maps {
+    margin-bottom: $spacing-xxl;
+
+    .journey-maps-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xl;
+
+      .journey-card {
+        padding: $spacing-lg;
+        border: 1px solid $secondary-color;
+        border-radius: $border-radius-lg;
+        background-color: white;
+
+        .journey-title {
+          font-size: $font-size-lg;
+          font-weight: 600;
+          margin-bottom: $spacing-sm;
+          color: $accent-color;
+        }
+
+        .journey-description {
+          font-size: $font-size-md;
+          line-height: 1.6;
+          margin-bottom: $spacing-md;
+        }
+
+        .journey-image {
+          margin-top: $spacing-md;
+
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  // Competitive Analysis
+  &__competition {
+    .competitors-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+
+      @include md {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .competitor-card {
+      border: 1px solid $secondary-color;
+      border-radius: $border-radius-lg;
+      padding: $spacing-lg;
+      background-color: white;
+    }
+
+    .competitor-name {
+      font-size: $font-size-lg;
+      font-weight: 700;
+      margin-bottom: $spacing-sm;
+      color: $accent-color;
+    }
+
+    .competitor-description {
+      font-size: $font-size-md;
+      line-height: 1.6;
+      margin-bottom: $spacing-md;
+      color: lighten($text-color, 10%);
+    }
+
+    .competitor-details {
+      margin: $spacing-lg 0;
+    }
+
+    .competitor-section {
+      margin-bottom: $spacing-md;
+    }
+
+    .competitor-section-title {
+      font-size: $font-size-md;
+      font-weight: 600;
+      margin-bottom: $spacing-sm;
+      color: $text-color;
+    }
+
+    .competitor-list {
+      list-style: none;
+      margin-left: 0;
+      font-size: $font-size-sm;
+
+      li {
+        padding-left: $spacing-sm;
+        margin-bottom: $spacing-xs;
+        position: relative;
+
+        &::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          color: $accent-color;
+        }
+      }
+
+      &.strengths li::before {
+        color: #52c41a;
+      }
+
+      &.weaknesses li::before {
+        color: #ff4d4f;
+      }
+    }
+
+    .competitor-audience {
+      margin: $spacing-md 0;
+      padding: $spacing-sm;
+      background-color: lighten($secondary-color, 8%);
+      border-radius: $border-radius-sm;
+
+      p {
+        font-size: $font-size-sm;
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+    }
+
+    .competitor-images {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+      margin-top: $spacing-md;
+
+      @include sm {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius-sm;
+        border: 1px solid $secondary-color; // Solo las imágenes de competencia mantienen el borde
+      }
+    }
+  }
+
+  // Design Process
+  &__design {
+    .design-section {
+      margin-bottom: $spacing-xxl;
+    }
+
+    .design-text {
+      font-size: $font-size-md;
+      line-height: 1.7;
+      margin-bottom: $spacing-lg;
+    }
+
+    .design-image,
+    .design-images {
+      margin-top: $spacing-lg;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    .design-images {
+      display: block; // Cambiar de grid a block para mostrar imágenes completas
+
+      img {
+        margin-bottom: $spacing-md;
+      }
+    }
+
+    .prototype-link {
+      margin-top: $spacing-lg;
+      text-align: center;
+    }
+  }
+
+  // Usability Study
+  &__usability {
+    .usability-info {
+      background-color: lighten($secondary-color, 8%);
+      padding: $spacing-lg;
+      border-radius: $border-radius-md;
+      margin-bottom: $spacing-xl;
+    }
+
+    .usability-details {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+
+      @include md {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+
+      .detail-label {
+        font-weight: 700;
+        color: $accent-color;
+      }
+
+      .detail-value {
+        color: $text-color;
+      }
+    }
+
+    .findings-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+
+    .finding-item {
+      border: 1px solid $secondary-color;
+      border-radius: $border-radius-md;
+      padding: $spacing-lg;
+      background-color: white;
+    }
+
+    .finding-area {
+      font-size: $font-size-lg;
+      font-weight: 700;
+      color: $accent-color;
+      margin-bottom: $spacing-sm;
+    }
+
+    .finding-description {
+      font-size: $font-size-md;
+      line-height: 1.6;
+      margin-bottom: $spacing-md;
+    }
+
+    .finding-quotes {
+      margin: $spacing-md 0;
+    }
+
+    .user-quote {
+      font-style: italic;
+      font-size: $font-size-md;
+      line-height: 1.6;
+      border-left: 4px solid $accent-color;
+      padding-left: $spacing-md;
+      margin-bottom: $spacing-sm;
+      color: lighten($text-color, 10%);
+    }
+
+    .finding-improvement {
+      margin-top: $spacing-md;
+      padding: $spacing-sm;
+      background-color: lighten($accent-color, 45%);
+      border-radius: $border-radius-sm;
+
+      .improvement-label {
+        font-weight: 700;
+        color: $accent-color;
+      }
+
+      .improvement-text {
+        margin-top: $spacing-xs;
+        font-size: $font-size-sm;
+        line-height: 1.6;
+      }
+    }
+
+    .mockups-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-xxl;
+    }
+
+    .mockup-item {
+      border: 1px solid $secondary-color;
+      border-radius: $border-radius-lg;
+      overflow: hidden;
+    }
+
+    .mockup-description {
+      font-size: $font-size-md;
+      line-height: 1.7;
+      margin-bottom: $spacing-lg;
+      padding: $spacing-lg;
+      background-color: lighten($secondary-color, 10%);
+    }
+
+    .mockup-image {
+      margin-bottom: $spacing-lg;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    .design-decisions {
+      padding: $spacing-lg;
+    }
+
+    .decisions-title {
+      font-size: $font-size-lg;
+      font-weight: 600;
+      margin-bottom: $spacing-sm;
+      color: $accent-color;
+    }
+
+    .decisions-list {
+      list-style: none;
+      margin-left: 0;
+
+      li {
+        padding-left: $spacing-md;
+        margin-bottom: $spacing-sm;
+        position: relative;
+        font-size: $font-size-md;
+        line-height: 1.6;
+
+        &::before {
+          content: '→';
+          position: absolute;
+          left: 0;
+          color: $accent-color;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .screen-variations {
+      margin-top: $spacing-xl;
+    }
+
+    .screen-image {
+      margin-bottom: $spacing-lg;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    .screen-description {
+      font-size: $font-size-md;
+      line-height: 1.7;
+      margin-bottom: $spacing-lg;
+    }
+
+    .screen-variations-images {
+      display: block; // Cambiar de grid a block para mostrar imágenes completas
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: $spacing-md;
+      }
+    }
+
+    .strategy-description {
+      font-size: $font-size-md;
+      line-height: 1.7;
+      margin-bottom: $spacing-md;
+    }
+
+    .strategy-decisions {
+      list-style: none;
+      margin-left: 0;
+
+      .strategy-item {
+        padding-left: $spacing-lg;
+        margin-bottom: $spacing-sm;
+        position: relative;
+        font-size: $font-size-md;
+        line-height: 1.6;
+
+        &::before {
+          content: '▸';
+          position: absolute;
+          left: $spacing-sm;
+          color: $accent-color;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .high-fidelity-section {
+      margin-top: $spacing-xl;
+    }
+
+    .high-fidelity-text {
+      font-size: $font-size-md;
+      line-height: 1.7;
+      margin-bottom: $spacing-md;
+    }
+
+    .high-fidelity-image {
+      margin: $spacing-xl 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    .prototype-links {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
+      margin-top: $spacing-lg;
+
+      @include sm {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .btn {
+        @include sm {
+          flex: 0 0 auto;
+        }
+      }
+    }
+
+    .visual-choices {
+      margin-top: $spacing-xl;
+      background-color: lighten($secondary-color, 8%);
+      padding: $spacing-lg;
+      border-radius: $border-radius-md;
+    }
+
+    .color-palette {
+      .palette-title {
+        font-size: $font-size-lg;
+        font-weight: 600;
+        margin-bottom: $spacing-md;
+        color: $text-color;
+      }
+
+      .palette-list {
+        list-style: none;
+        margin-left: 0;
+        margin-bottom: $spacing-md;
+
+        .palette-item {
+          margin-bottom: $spacing-sm;
+          font-size: $font-size-md;
+          display: flex;
+          align-items: center;
+
+          .palette-percent {
+            font-weight: 700;
+            color: $accent-color;
+            margin-right: $spacing-sm;
+            min-width: 40px;
+          }
+
+          .palette-color {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background-color: white;
+            padding: $spacing-xs $spacing-sm;
+            border-radius: $border-radius-sm;
+            border: 1px solid $secondary-color;
+            display: flex;
+            align-items: center;
+
+            .color-sample {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border-radius: 4px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+
+      .palette-reasoning {
+        font-size: $font-size-md;
+        line-height: 1.7;
+        font-style: italic;
+        color: lighten($text-color, 10%);
+      }
+    }
+
+    // Modificado: ahora es una lista ordenada
+    .accessibility-list {
+      list-style-type: decimal;
+      margin-left: $spacing-xl;
+      padding-left: $spacing-md;
+
+      .accessibility-item {
+        padding: $spacing-md;
+        margin-bottom: $spacing-md;
+        background-color: lighten($accent-color, 48%);
+        border-radius: $border-radius-md;
+        font-size: $font-size-md;
+        line-height: 1.7;
+        border-left: 4px solid $accent-color;
+      }
+    }
+  }
+
+  // Results and Conclusions
+  &__results {
+    .results-section {
+      margin-bottom: $spacing-xl;
+    }
+
+    .conclusion-text,
+    .impact-text,
+    .learnings-text,
+    .final-text {
+      font-size: $font-size-md;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+      margin-top: $spacing-lg;
+
+      @include md {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .lessons-section {
+      background-color: lighten($secondary-color, 10%);
+      padding: $spacing-lg;
+      border-radius: $border-radius-md;
+    }
+
+    .lessons-title {
+      font-size: $font-size-lg;
+      font-weight: 600;
+      margin-bottom: $spacing-md;
+      color: $accent-color;
+      border-bottom: 2px solid $accent-color;
+      padding-bottom: $spacing-sm;
+    }
+
+    .lessons-list {
+      list-style: none;
+      margin-left: 0;
+
+      .lesson-item {
+        padding-left: $spacing-md;
+        margin-bottom: $spacing-sm;
+        position: relative;
+        font-size: $font-size-md;
+        line-height: 1.6;
+
+        &::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: #52c41a;
+          font-weight: 700;
+        }
+      }
+    }
+
+    // Modificado: ahora es una lista ordenada
+    .next-steps-list {
+      list-style-type: decimal;
+      margin-left: $spacing-xl;
+      padding-left: $spacing-md;
+
+      .next-step-item {
+        padding: $spacing-md;
+        margin-bottom: $spacing-md;
+        border: 1px dashed $accent-color;
+        border-radius: $border-radius-md;
+        font-size: $font-size-md;
+        line-height: 1.6;
+        background-color: lighten($accent-color, 50%);
+      }
+    }
+
+    .final-text {
+      padding: $spacing-lg;
+      background-color: lighten($accent-color, 48%);
+      border-radius: $border-radius-md;
+      border: 1px solid lighten($accent-color, 30%);
+      font-style: italic;
+    }
+  }
+
+  // Navigation
+  &__navigation {
+    margin-top: $spacing-xxl;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    align-items: flex-start;
+
+    @include sm {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+// Responsive adjustments
+@include sm {
+  .project-detail {
+    &__meta {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@include md {
+  .project-detail {
+    &__competitors .competitors-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@include lg {
+  .project-detail {
+    &__competitors .competitors-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

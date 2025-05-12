@@ -45,7 +45,10 @@ const Footer = () => {
           </div>
 
           <div className="footer__copyright">
-            <p>&copy; {currentYear} | Todos los derechos reservados</p>
+            <p>
+              &copy; {currentYear} | Todos los derechos reservados a Alfredo
+              García.
+            </p>
           </div>
         </div>
       </div>
