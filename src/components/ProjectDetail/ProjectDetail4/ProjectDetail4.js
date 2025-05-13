@@ -56,7 +56,6 @@ const ProjectDetail4 = () => {
           {/* Enlaces a repositorios */}
           {project4.repositories && (
             <div className="project-detail__links">
-              <h3 className="subsection-title">Enlaces al código</h3>
               <div className="project-detail__repository-links">
                 {project4.repositories.mobile && (
                   <a
@@ -91,8 +90,6 @@ const ProjectDetail4 = () => {
 
         {/* 1. DEFINICIÓN DEL PROYECTO */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">1. Definición del Proyecto</h2>
-
           {/* Problem and Goal - ahora en layout horizontal */}
           <div className="project-detail__problem-goal-container">
             <div className="project-detail__problem">
@@ -127,9 +124,7 @@ const ProjectDetail4 = () => {
 
         {/* 2. INVESTIGACIÓN Y DESCUBRIMIENTO */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">
-            2. Investigación y Descubrimiento
-          </h2>
+          <h2 className="section-subtitle">Investigación y Ideación</h2>
 
           <div className="project-detail__understanding">
             <p className="understanding-text">{project4.research.summary}</p>
@@ -153,18 +148,14 @@ const ProjectDetail4 = () => {
 
         {/* 3. USUARIOS */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">3. Usuarios</h2>
+          <h2 className="section-subtitle">Personas</h2>
 
           {/* User Personas */}
           <div className="project-detail__personas">
-            <h3 className="subsection-title">Perfiles de usuario</h3>
             <div className="personas-horizontal-grid">
               {project4.userProfiles.map((profile, index) => (
                 <div key={index} className="persona-card">
                   <div className="persona-statement">
-                    <h4 className="subsection-title">
-                      Declaración de problema
-                    </h4>
                     <p className="persona-problem">
                       {profile.problemStatement}
                     </p>
@@ -206,7 +197,7 @@ const ProjectDetail4 = () => {
 
         {/* 4. ANÁLISIS COMPETITIVO */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">4. Análisis Competitivo</h2>
+          <h2 className="section-subtitle">Análisis Competitivo</h2>
 
           <div className="project-detail__competition">
             <div className="competitors-grid">
@@ -259,15 +250,11 @@ const ProjectDetail4 = () => {
           </div>
         </section>
 
-        {/* 5. ARQUITECTURA DE INFORMACIÓN */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">5. Arquitectura de Información</h2>
+          <h2 className="section-subtitle">Inicio del diseño</h2>
 
           <div className="design-section">
             <h3 className="subsection-title">SITEMAP</h3>
-            <p className="design-text">
-              {project4.informationArchitecture.sitemap.description}
-            </p>
             <div className="design-image">
               <img
                 src={project4.informationArchitecture.sitemap.sitemapImage}
@@ -277,10 +264,7 @@ const ProjectDetail4 = () => {
           </div>
 
           <div className="design-section">
-            <h3 className="subsection-title">FLUJO DE USUARIO</h3>
-            <p className="design-text">
-              {project4.informationArchitecture.userFlow.description}
-            </p>
+            <h3 className="subsection-title">USUARIO FLOW</h3>
             <div className="design-image">
               <img
                 src={project4.informationArchitecture.userFlow.userFlowImage}
@@ -290,15 +274,9 @@ const ProjectDetail4 = () => {
           </div>
         </section>
 
-        {/* 6. DISEÑO DE WIREFRAMES */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">6. Diseño de Wireframes</h2>
-
           <div className="design-section">
             <h3 className="subsection-title">Wireframes en papel</h3>
-            <p className="design-text">
-              {project4.wireframing.paperWireframes.description}
-            </p>
             <div className="design-images">
               {project4.wireframing.paperWireframes.paperWireframesImage.map(
                 (image, index) => (
@@ -313,9 +291,6 @@ const ProjectDetail4 = () => {
           </div>
 
           <div className="design-section">
-            <p className="design-text">
-              {project4.wireframing.paperWireframes.refinedWireframes}
-            </p>
             <div className="design-image">
               <img
                 src={
@@ -328,9 +303,6 @@ const ProjectDetail4 = () => {
 
           <div className="design-section">
             <h3 className="subsection-title">Variaciones de dispositivo</h3>
-            <p className="design-text">
-              {project4.wireframing.digitalWireframes.deviceVariations}
-            </p>
             <div className="design-images">
               {project4.wireframing.digitalWireframes.deviceVariationsImage.map(
                 (image, index) => (
@@ -346,9 +318,6 @@ const ProjectDetail4 = () => {
 
           <div className="design-section">
             <h3 className="subsection-title">Wireframes digitales</h3>
-            <p className="design-text">
-              {project4.wireframing.digitalWireframes.description}
-            </p>
             <div className="design-image">
               <img
                 src={
@@ -361,9 +330,6 @@ const ProjectDetail4 = () => {
 
           <div className="design-section">
             <h3 className="subsection-title">Variaciones digitales</h3>
-            <p className="design-text">
-              {project4.wireframing.digitalWireframes.sizeVariations}
-            </p>
             <div className="design-images">
               {project4.wireframing.digitalWireframes.sizeVariationsImage.map(
                 (image, index) => (
@@ -380,8 +346,6 @@ const ProjectDetail4 = () => {
 
         {/* 7. PROTOTIPADO */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">7. Prototipado</h2>
-
           <div className="design-section">
             <h3 className="subsection-title">Prototipo de baja fidelidad</h3>
             <p className="design-text">
@@ -408,9 +372,9 @@ const ProjectDetail4 = () => {
 
         {/* 8. ESTUDIO DE USABILIDAD Y REFINAMIENTO */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">
-            8. Estudio de Usabilidad y Refinamiento
-          </h2>
+          <h3 className="subsection-title">
+            Estudio de Usabilidad: Parámetros
+          </h3>
 
           <div className="usability-info">
             <div className="usability-details">
@@ -464,7 +428,7 @@ const ProjectDetail4 = () => {
             ))}
           </div>
 
-          <h3 className="subsection-title">Refinando el diseño</h3>
+          <h2 className="section-subtitle">Refinando el diseño</h2>
           <div className="mockups-section">
             {project4.usabilityStudy.refiningDesign.map((mockup, index) => (
               <div key={index} className="mockup-item">
@@ -487,14 +451,11 @@ const ProjectDetail4 = () => {
 
         {/* 9. DISEÑO VISUAL Y CONSIDERACIONES */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">
-            9. Diseño Visual y Consideraciones
-          </h2>
+          <h2 className="section-subtitle">Diseño Visual y Consideraciones</h2>
 
           <h3 className="subsection-title">Paleta de colores</h3>
           <div className="visual-choices">
             <div className="color-palette">
-              <h4 className="palette-title">Paleta de colores</h4>
               <ul className="palette-list">
                 <li className="palette-item">
                   <span className="palette-percent">60%:</span>
@@ -557,8 +518,8 @@ const ProjectDetail4 = () => {
             </div>
           </div>
 
-          <h3 className="subsection-title">Diseño responsivo</h3>
           <div className="screen-variations">
+            <h3 className="subsection-title">Tamaño de pantalla original</h3>
             <p className="strategy-description">
               {project4.visualDesign.responsiveDesign.strategy}
             </p>
@@ -571,16 +532,20 @@ const ProjectDetail4 = () => {
                 )
               )}
             </ul>
-            <p className="screen-description">
-              {project4.visualDesign.responsiveDesign.screenExamples}
-            </p>
             <div className="screen-image">
               <img
                 src={project4.visualDesign.responsiveDesign.originalScreenSize}
                 alt="Tamaño original"
               />
             </div>
+
             <div className="screen-variations-images">
+              <h3 className="subsection-title">
+                Variaciones de tamaño de pantalla
+              </h3>
+              <p className="screen-description">
+                {project4.visualDesign.responsiveDesign.screenExamples}
+              </p>
               {project4.visualDesign.responsiveDesign.screenSizeVariationsImage.map(
                 (image, index) => (
                   <img
@@ -644,7 +609,7 @@ const ProjectDetail4 = () => {
 
         {/* 10. RESULTADOS Y REFLEXIÓN */}
         <section className="project-detail__section">
-          <h2 className="section-subtitle">10. Resultados y Reflexión</h2>
+          <h2 className="section-subtitle">Resultados y Reflexión</h2>
 
           <div className="results-section">
             <h3 className="subsection-title">Conclusiones</h3>

@@ -5,7 +5,7 @@ const project4 = {
   shortDescription:
     'Control de inventario con análisis y reportes automatizados',
 
-  // Información básica
+  // Información básica (Sección Hero)
   description:
     'INVENTA-ANALYT es una aplicación móvil y web para gestión de pequeños negocios que integra control de inventario, registro de ventas, consulta de transacciones y análisis avanzados. La plataforma destaca por su interfaz intuitiva que permite a los propietarios monitorear existencias en tiempo real y acceder al historial completo de operaciones.',
   thumbnail: '/assets/images/projects/project1/thumbnail.jpg',
@@ -151,13 +151,9 @@ const project4 = {
   // 5. ARQUITECTURA DE INFORMACIÓN
   informationArchitecture: {
     sitemap: {
-      description:
-        'La dificultad para acceder rápidamente a funciones clave en INVENTA-ANALYT llevó a la creación de un mapa del sitio eficiente. El objetivo fue tomar decisiones estratégicas sobre la arquitectura de la información para mejorar la navegación y facilitar el uso de la app.',
       sitemapImage: '/assets/images/projects/project4/sitemap.png',
     },
     userFlow: {
-      description:
-        'El flujo de usuario fue diseñado para optimizar las tareas más frecuentes y críticas, reduciendo al mínimo los pasos necesarios para completar operaciones diarias como registrar ventas y consultar inventario.',
       userFlowImage: '/assets/images/projects/project4/userflow.png',
     },
   },
@@ -165,35 +161,25 @@ const project4 = {
   // 6. DISEÑO DE WIREFRAMES
   wireframing: {
     paperWireframes: {
-      description:
-        'Diseñé wireframes en papel para cada pantalla de la aplicación de inventarios, considerando la usabilidad y navegación.',
       paperWireframesImage: [
         '/assets/images/projects/project4/paper/paper1.jpg',
         '/assets/images/projects/project4/paper/paper2.jpg',
       ],
-      refinedWireframes:
-        'En la versión refinada, incluí un menú desplegable para mejorar el acceso a las distintas secciones.',
       refinedWireframesImage:
         '/assets/images/projects/project4/paper/paper.png',
     },
     digitalWireframes: {
-      description:
-        'El uso de wireframes ha clarificado cómo el rediseño mejora la experiencia de usuario, destacando una organización estratégica de elementos para facilitar la navegación.',
       digitalWireframesImage: '/assets/images/projects/project4/wireframes.png',
-      sizeVariations:
-        'También desarrollé wireframes digitales para diferentes tamaños de pantalla, mostrando cómo la nueva aplicación se adaptaría y cómo funcionaría una vez completamente responsiva.',
       sizeVariationsImage: ['/assets/images/projects/project4/digital.png'],
 
       // Variaciones de tamaño adicionales
-      deviceVariations:
-        'Evaluar la aplicación de inventarios en distintos dispositivos para garantizar una experiencia responsiva, funcional y fácil de usar. Diseñar una interfaz clara y adaptable que mantenga la eficiencia y visibilidad de los datos en cualquier tamaño de pantalla.',
       deviceVariationsImage: [
         '/assets/images/projects/project4/variations.png',
       ],
     },
   },
 
-  // 7. PROTOTIPADO
+  // 7. PROTOTIPADO (Baja fidelidad)
   prototyping: {
     lowFidelity: {
       description:
@@ -202,6 +188,7 @@ const project4 = {
       prototypeUrl:
         'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=0%3A1&node-id=1-3735&p=f&viewport=464%2C442%2C0.08&t=aLixr3jttXbgePOx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A3735',
     },
+    // Alta fidelidad (movido a después de consideraciones de accesibilidad, siguiendo el orden del componente React)
     highFidelity: {
       description: [
         'El prototipo refleja un diseño iterativo basado en investigación y retroalimentación de los usuarios. Utiliza el color violeta por su profesionalismo y accesibilidad. Se diferencia de la mayoría de aplicaciones empresariales que usan azul o verde.',

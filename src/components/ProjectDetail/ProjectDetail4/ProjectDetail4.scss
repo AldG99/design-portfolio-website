@@ -146,7 +146,7 @@
   // Project Overview
   &__overview {
     .overview-text {
-      font-size: $font-size-lg;
+      font-size: $font-size-md;
       line-height: 1.7;
       margin-bottom: $spacing-lg;
       color: $text-color;
@@ -216,13 +216,9 @@
     .problem-text,
     .goal-text,
     .role-text {
-      font-size: $font-size-lg;
+      font-size: $font-size-md;
       line-height: 1.7;
       color: $text-color;
-      padding: $spacing-lg;
-      background-color: lighten($secondary-color, 8%);
-      border-radius: $border-radius-md;
-      border-left: 4px solid $accent-color;
     }
   }
 
@@ -271,16 +267,12 @@
     // Modificado: ahora es una lista ordenada
     .key-issues-list {
       list-style-type: decimal;
-      margin-left: $spacing-xl;
       padding-left: $spacing-md;
     }
 
     .key-issue-item {
-      padding: $spacing-md;
       margin-bottom: $spacing-md;
-      background-color: lighten($secondary-color, 8%);
       border-radius: $border-radius-md;
-      border-left: 4px solid #4a6de5;
       font-size: $font-size-md;
       line-height: 1.6;
     }
@@ -303,15 +295,11 @@
       }
 
       .persona-card {
-        border: 1px solid $secondary-color;
-        border-radius: $border-radius-lg;
         overflow: hidden;
         height: 100%; // Para que ambas tarjetas tengan la misma altura
       }
 
       .persona-statement {
-        padding: $spacing-lg;
-        background-color: lighten($secondary-color, 12%);
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -345,11 +333,6 @@
       gap: $spacing-xl;
 
       .journey-card {
-        padding: $spacing-lg;
-        border: 1px solid $secondary-color;
-        border-radius: $border-radius-lg;
-        background-color: white;
-
         .journey-title {
           font-size: $font-size-lg;
           font-weight: 600;
@@ -390,9 +373,7 @@
 
     .competitor-card {
       border: 1px solid $secondary-color;
-      border-radius: $border-radius-lg;
       padding: $spacing-lg;
-      background-color: white;
     }
 
     .competitor-name {
@@ -520,8 +501,6 @@
 
   // Usability Study
   .usability-info {
-    background-color: lighten($secondary-color, 8%);
-    padding: $spacing-lg;
     border-radius: $border-radius-md;
     margin-bottom: $spacing-xl;
   }
@@ -559,9 +538,7 @@
 
   .finding-item {
     border: 1px solid $secondary-color;
-    border-radius: $border-radius-md;
     padding: $spacing-lg;
-    background-color: white;
   }
 
   .finding-area {
@@ -585,7 +562,6 @@
     font-style: italic;
     font-size: $font-size-md;
     line-height: 1.6;
-    border-left: 4px solid $accent-color;
     padding-left: $spacing-md;
     margin-bottom: $spacing-sm;
     color: lighten($text-color, 10%);
@@ -616,31 +592,20 @@
   }
 
   .mockup-item {
-    border: 1px solid $secondary-color;
-    border-radius: $border-radius-lg;
     overflow: hidden;
   }
 
   .mockup-description {
     font-size: $font-size-md;
     line-height: 1.7;
-    margin-bottom: $spacing-lg;
-    padding: $spacing-lg;
-    background-color: lighten($secondary-color, 10%);
   }
 
   .mockup-image {
-    margin-bottom: $spacing-lg;
-
     img {
       width: 100%;
       height: auto;
       display: block;
     }
-  }
-
-  .design-decisions {
-    padding: $spacing-lg;
   }
 
   .decisions-title {
@@ -767,14 +732,6 @@
     }
   }
 
-  .visual-choices {
-    margin-top: $spacing-xl;
-    background-color: lighten($secondary-color, 8%);
-    padding: $spacing-lg;
-    border-radius: $border-radius-md;
-    margin-bottom: $spacing-xl;
-  }
-
   .color-palette {
     .palette-title {
       font-size: $font-size-lg;
@@ -784,12 +741,7 @@
     }
 
     .palette-list {
-      list-style: none;
-      margin-left: 0;
-      margin-bottom: $spacing-md;
-
       .palette-item {
-        margin-bottom: $spacing-sm;
         font-size: $font-size-md;
         display: flex;
         align-items: center;
@@ -797,16 +749,12 @@
         .palette-percent {
           font-weight: 700;
           color: $accent-color;
-          margin-right: $spacing-sm;
           min-width: 40px;
         }
 
         .palette-color {
           font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-          background-color: white;
           padding: $spacing-xs $spacing-sm;
-          border-radius: $border-radius-sm;
-          border: 1px solid $secondary-color;
           display: flex;
           align-items: center;
 
@@ -832,17 +780,12 @@
   // Modificado: ahora es una lista ordenada
   .accessibility-list {
     list-style-type: decimal;
-    margin-left: $spacing-xl;
     padding-left: $spacing-md;
 
     .accessibility-item {
-      padding: $spacing-md;
-      margin-bottom: $spacing-md;
-      background-color: lighten($accent-color, 48%);
-      border-radius: $border-radius-md;
+      padding: $spacing-xs;
       font-size: $font-size-md;
       line-height: 1.7;
-      border-left: 4px solid $accent-color;
     }
   }
 
@@ -872,9 +815,7 @@
   }
 
   .lessons-section {
-    background-color: lighten($secondary-color, 10%);
     padding: $spacing-lg;
-    border-radius: $border-radius-md;
   }
 
   .lessons-title {
@@ -882,7 +823,6 @@
     font-weight: 600;
     margin-bottom: $spacing-md;
     color: $accent-color;
-    border-bottom: 2px solid $accent-color;
     padding-bottom: $spacing-sm;
   }
 
@@ -910,25 +850,16 @@
   // Modificado: ahora es una lista ordenada
   .next-steps-list {
     list-style-type: decimal;
-    margin-left: $spacing-xl;
     padding-left: $spacing-md;
 
     .next-step-item {
-      padding: $spacing-md;
-      margin-bottom: $spacing-md;
-      border: 1px dashed $accent-color;
-      border-radius: $border-radius-md;
+      padding: $spacing-xs;
       font-size: $font-size-md;
       line-height: 1.6;
-      background-color: lighten($accent-color, 50%);
     }
   }
 
   .final-text {
-    padding: $spacing-lg;
-    background-color: lighten($accent-color, 48%);
-    border-radius: $border-radius-md;
-    border: 1px solid lighten($accent-color, 30%);
     font-style: italic;
   }
 
