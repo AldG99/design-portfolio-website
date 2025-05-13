@@ -15,7 +15,6 @@ const Header = () => {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -34,10 +33,8 @@ const Header = () => {
     return location.pathname === path ? 'active' : '';
   };
 
-  // Function to handle navigation and scroll to top
   const handleNavClick = path => {
     closeMenu();
-    // If we're already on the same page, scroll to top
     if (location.pathname === path) {
       window.scrollTo({
         top: 0,
@@ -81,15 +78,6 @@ const Header = () => {
                   onClick={() => handleNavClick('/about')}
                 >
                   Acerca de mí
-                </Link>
-              </li>
-              <li className="header__menu-item">
-                <Link
-                  to="/contact"
-                  className={`header__menu-link ${isActive('/contact')}`}
-                  onClick={() => handleNavClick('/contact')}
-                >
-                  Contacto
                 </Link>
               </li>
             </ul>

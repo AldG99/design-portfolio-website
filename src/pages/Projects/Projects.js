@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllProjects } from '../../data/projectsIndex';
+import { getAllProjects, getProjectSlug } from '../../data/projectsIndex';
 import './Projects.scss';
 
 const Projects = () => {
@@ -13,16 +13,25 @@ const Projects = () => {
     document.title = 'Portafolio | Trabajo';
     // Get all projects and sort by date (newest first)
     const allProjects = getAllProjects();
-    const sortedProjects = [...allProjects].sort(
+
+    // Asegúrate de que todos los proyectos tengan las propiedades necesarias
+    const processedProjects = allProjects.map(project => ({
+      ...project,
+      title: project.title || `Proyecto ${project.id}`,
+      shortDescription:
+        project.shortDescription || 'Sin descripción disponible',
+      date: project.date || 'Sin fecha',
+      tools: project.tools || [],
+      thumbnail: project.thumbnail || '/assets/images/placeholder.jpg',
+      dateRaw: project.dateRaw || new Date().toISOString(),
+    }));
+
+    const sortedProjects = [...processedProjects].sort(
       (a, b) => new Date(b.dateRaw) - new Date(a.dateRaw)
     );
+
     setProjects(sortedProjects);
   }, []);
-
-  // Función para generar slug a partir del título del proyecto
-  const getProjectSlug = title => {
-    return title.toLowerCase().replace(/\s+/g, '-');
-  };
 
   return (
     <main className="projects-page">
@@ -53,16 +62,23 @@ const Projects = () => {
                   {project.shortDescription}
                 </p>
                 <div className="project-item__tools">
-                  {project.tools.map((tool, index) => (
-                    <span
-                      key={index}
-                      className={`project-item__tool project-item__tool--${tool
-                        .toLowerCase()
-                        .replace(/\s+/g, '-')}`}
-                    >
-                      {tool}
+                  {/* Verificar que project.tools existe y es un array */}
+                  {Array.isArray(project.tools) && project.tools.length > 0 ? (
+                    project.tools.map((tool, index) => (
+                      <span
+                        key={index}
+                        className={`project-item__tool project-item__tool--${tool
+                          .toLowerCase()
+                          .replace(/\s+/g, '-')}`}
+                      >
+                        {tool}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="project-item__tool">
+                      Sin tecnologías especificadas
                     </span>
-                  ))}
+                  )}
                 </div>
                 <Link
                   to={`/${getProjectSlug(project.title)}`}

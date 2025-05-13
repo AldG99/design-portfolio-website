@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import './About.scss';
@@ -99,12 +98,6 @@ const About = () => {
                 <cite>— Susan Kare</cite>
               </blockquote>
             </div>
-          </div>
-
-          <div className="about__cta">
-            <Link to="/contact" className="btn btn--lg">
-              Contacto
-            </Link>
           </div>
         </div>
       </div>

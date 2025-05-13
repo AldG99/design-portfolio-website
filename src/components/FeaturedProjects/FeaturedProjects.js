@@ -1,16 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getFeaturedProjects } from '../../data/projectsIndex';
+import { getFeaturedProjects, getProjectSlug } from '../../data/projectsIndex';
 import './FeaturedProjects.scss';
 
 const FeaturedProjects = () => {
-  // Obtenemos 4 proyectos en lugar de 3
+  // Obtenemos los 4 proyectos más recientes
   const featuredProjects = getFeaturedProjects(4);
-
-  // Función para generar slug a partir del título del proyecto
-  const getProjectSlug = title => {
-    return title.toLowerCase().replace(/\s+/g, '-');
-  };
 
   return (
     <section className="featured-projects" id="proyectos">
@@ -20,7 +15,6 @@ const FeaturedProjects = () => {
           {featuredProjects.map(project => (
             <div key={project.id} className="featured-projects__item">
               <div className="featured-projects__content">
-                {/* Usar slug en lugar de ID */}
                 <Link
                   to={`/${getProjectSlug(project.title)}`}
                   className="featured-projects__image-link"
@@ -38,16 +32,24 @@ const FeaturedProjects = () => {
                     {project.shortDescription}
                   </p>
                   <div className="featured-projects__tools">
-                    {project.tools.map((tool, index) => (
-                      <span
-                        key={index}
-                        className={`featured-projects__tool featured-projects__tool--${tool
-                          .toLowerCase()
-                          .replace(/\s+/g, '-')}`}
-                      >
-                        {tool}
+                    {/* Verificar que project.tools existe y es un array */}
+                    {Array.isArray(project.tools) &&
+                    project.tools.length > 0 ? (
+                      project.tools.map((tool, index) => (
+                        <span
+                          key={index}
+                          className={`featured-projects__tool featured-projects__tool--${tool
+                            .toLowerCase()
+                            .replace(/\s+/g, '-')}`}
+                        >
+                          {tool}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="featured-projects__tool">
+                        Sin tecnologías especificadas
                       </span>
-                    ))}
+                    )}
                   </div>
                 </div>
                 {/* Línea divisoria en la parte inferior */}
@@ -57,7 +59,6 @@ const FeaturedProjects = () => {
           ))}
         </div>
         <div className="featured-projects__more">
-          {/* Cambiar a /trabajo en lugar de /projects */}
           <Link to="/trabajo" className="btn">
             Más proyectos 💁‍♂️
           </Link>

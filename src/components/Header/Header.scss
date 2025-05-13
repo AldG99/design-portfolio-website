@@ -6,10 +6,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba($primary-color, 0.95);
+  background-color: $primary-color;
   padding: $spacing-md 0;
   z-index: 1000;
   @include transition;
+
+  &--scrolled {
+    box-shadow: $shadow-md;
+    padding: $spacing-sm 0;
+  }
 
   &--scrolled {
     box-shadow: $shadow-md;
