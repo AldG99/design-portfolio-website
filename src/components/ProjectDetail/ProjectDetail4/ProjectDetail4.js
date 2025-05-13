@@ -52,6 +52,41 @@ const ProjectDetail4 = () => {
         <section className="project-detail__overview">
           <h2 className="section-subtitle">Resumen del proyecto</h2>
           <p className="overview-text">{project4.description}</p>
+
+          {/* Enlaces a repositorios */}
+          {project4.repositories && (
+            <div className="project-detail__links">
+              <h3 className="subsection-title">Enlaces al código</h3>
+              <div className="project-detail__repository-links">
+                {project4.repositories.mobile && (
+                  <a
+                    href={project4.repositories.mobile.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="repository-link"
+                  >
+                    <span className="repository-icon">
+                      {project4.repositories.mobile.icon}
+                    </span>
+                    {project4.repositories.mobile.label}
+                  </a>
+                )}
+                {project4.repositories.web && (
+                  <a
+                    href={project4.repositories.web.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="repository-link"
+                  >
+                    <span className="repository-icon">
+                      {project4.repositories.web.icon}
+                    </span>
+                    {project4.repositories.web.label}
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
         </section>
 
         {/* 1. DEFINICIÓN DEL PROYECTO */}
@@ -292,6 +327,24 @@ const ProjectDetail4 = () => {
           </div>
 
           <div className="design-section">
+            <h3 className="subsection-title">Variaciones de dispositivo</h3>
+            <p className="design-text">
+              {project4.wireframing.digitalWireframes.deviceVariations}
+            </p>
+            <div className="design-images">
+              {project4.wireframing.digitalWireframes.deviceVariationsImage.map(
+                (image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`Variación de dispositivo ${index + 1}`}
+                  />
+                )
+              )}
+            </div>
+          </div>
+
+          <div className="design-section">
             <h3 className="subsection-title">Wireframes digitales</h3>
             <p className="design-text">
               {project4.wireframing.digitalWireframes.description}
@@ -323,24 +376,6 @@ const ProjectDetail4 = () => {
               )}
             </div>
           </div>
-
-          <div className="design-section">
-            <h3 className="subsection-title">Variaciones de dispositivo</h3>
-            <p className="design-text">
-              {project4.wireframing.digitalWireframes.deviceVariations}
-            </p>
-            <div className="design-images">
-              {project4.wireframing.digitalWireframes.deviceVariationsImage.map(
-                (image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`Variación de dispositivo ${index + 1}`}
-                  />
-                )
-              )}
-            </div>
-          </div>
         </section>
 
         {/* 7. PROTOTIPADO */}
@@ -367,40 +402,6 @@ const ProjectDetail4 = () => {
               >
                 Ver prototipo interactivo
               </a>
-            </div>
-          </div>
-
-          <div className="design-section">
-            <h3 className="subsection-title">Prototipo de alta fidelidad</h3>
-            <div className="high-fidelity-section">
-              {project4.prototyping.highFidelity.description.map(
-                (text, index) => (
-                  <p key={index} className="high-fidelity-text">
-                    {text}
-                  </p>
-                )
-              )}
-              <div className="high-fidelity-image">
-                <img
-                  src={project4.prototyping.highFidelity.highFidelityImage}
-                  alt="Prototipo de alta fidelidad"
-                />
-              </div>
-              <div className="prototype-links">
-                {project4.prototyping.highFidelity.viewPrototypes.map(
-                  (url, index) => (
-                    <a
-                      key={index}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn--outline"
-                    >
-                      Ver prototipo {index + 1}
-                    </a>
-                  )
-                )}
-              </div>
             </div>
           </div>
         </section>
@@ -589,6 +590,43 @@ const ProjectDetail4 = () => {
                   />
                 )
               )}
+            </div>
+          </div>
+
+          <div className="design-section">
+            <h3 className="subsection-title">Prototipo de alta fidelidad</h3>
+            <div className="high-fidelity-section">
+              {project4.prototyping.highFidelity.description.map(
+                (text, index) => (
+                  <p key={index} className="high-fidelity-text">
+                    {text}
+                  </p>
+                )
+              )}
+              <div className="high-fidelity-image">
+                <img
+                  src={project4.prototyping.highFidelity.highFidelityImage}
+                  alt="Prototipo de alta fidelidad"
+                />
+              </div>
+              <div className="prototype-links">
+                <a
+                  href={project4.prototyping.highFidelity.viewPrototypes[0]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--outline"
+                >
+                  Ver prototipo web
+                </a>
+                <a
+                  href={project4.prototyping.highFidelity.viewPrototypes[1]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--outline"
+                >
+                  Ver prototipo móvil
+                </a>
+              </div>
             </div>
           </div>
 

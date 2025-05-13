@@ -60,7 +60,7 @@ const HeroSection = () => {
               y herramientas que me permitan innovar en cada proyecto.
             </p>
             <p className="hero-section__bio">
-              Me gusta resolver problemas y diseñar soluciones que dejen un
+              Me motiva resolver problemas y diseñar soluciones que dejen un
               impacto en la vida de las personas.{' '}
               <Link to="/about" className="hero-section__about-link">
                 Acerca de mí 📖 👉

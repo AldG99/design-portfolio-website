@@ -153,6 +153,50 @@
     }
   }
 
+  // Enlaces a repositorios - Versión minimalista
+  &__links {
+    margin-top: $spacing-lg;
+
+    .subsection-title {
+      margin-top: 0;
+      font-size: $font-size-lg; // Reducir ligeramente el tamaño del título
+    }
+  }
+
+  &__repository-links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    @include md {
+      flex-direction: row;
+      gap: $spacing-xl;
+    }
+
+    .repository-link {
+      display: inline-flex;
+      align-items: center;
+      padding: $spacing-sm $spacing-md;
+      background-color: transparent; // Fondo transparente
+      border-radius: $border-radius-sm;
+      color: $accent-color; // Color de acento para el texto
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid $accent-color; // Borde fino
+
+      &:hover {
+        background-color: $accent-color;
+        color: white;
+      }
+
+      .repository-icon {
+        font-size: $font-size-lg;
+        margin-right: $spacing-sm;
+      }
+    }
+  }
+
   // Nuevo contenedor de problema-objetivo para layout horizontal
   &__problem-goal-container {
     display: grid;

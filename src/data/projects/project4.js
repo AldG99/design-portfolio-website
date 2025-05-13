@@ -13,6 +13,20 @@ const project4 = {
   dateRaw: '2025-02-05',
   tools: ['Figma', 'SCSS', 'React', 'React Native Expo', 'Firebase'],
 
+  // Enlaces a repositorios
+  repositories: {
+    mobile: {
+      url: 'https://github.com/AldG99/inventory-control-app',
+      label: 'Versión móvil (React Native)',
+      icon: '📱',
+    },
+    web: {
+      url: 'https://github.com/AldG99/inventory-control-web-app',
+      label: 'Versión web (React)',
+      icon: '💻',
+    },
+  },
+
   // 1. DEFINICIÓN DEL PROYECTO
   problem:
     'Pequeños comerciantes usan métodos manuales o herramientas desconectadas para gestionar inventario y ventas, causando errores y pérdida de información, lo que limita su capacidad para optimizar operaciones y crecer.',
