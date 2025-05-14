@@ -59,18 +59,18 @@
 
 // Botón
 @mixin button(
-  $bg-color: $accent-color,
-  $text-color: white,
-  $hover-color: darken($accent-color, 10%)
+  $bg-color: transparent,
+  $text-color: $accent-color,
+  $hover-color: rgba($accent-color, 0.1)
 ) {
   display: inline-block;
   padding: $spacing-sm $spacing-lg;
   background-color: $bg-color;
   color: $text-color;
-  border: none;
-  border-radius: $border-radius-md;
+  border: 1px solid currentColor;
+  border-radius: $border-radius-sm;
   font-family: $font-primary;
-  font-weight: 400; // Peso normal para que sea legible
+  font-weight: 500;
   font-size: $font-size-md;
   cursor: pointer;
   text-decoration: none;

@@ -28,19 +28,25 @@
     }
   }
 
+  .hero-name-title-wrapper {
+    margin-bottom: $spacing-md;
+  }
+
   &__name {
     font-family: $font-secondary;
     font-size: $font-size-hero;
     font-weight: 500;
     color: $text-color;
-    margin-bottom: $spacing-xs; // Reducido de $spacing-sm a $spacing-xs para que esté más pegado
+    margin-bottom: $spacing-xs / 2; // Reducido significativamente para acercar el nombre a la profesión
+    line-height: 1.2; // Añadido para controlar mejor el espaciado vertical
   }
 
   &__profession {
     font-size: $font-size-xl;
     color: lighten($text-color, 15%);
-    margin-bottom: $spacing-md;
+    margin-bottom: 0; // Eliminado el margen inferior
     font-weight: 500;
+    line-height: 1.2; // Añadido para mantener consistencia con el nombre
   }
 
   &__tools {

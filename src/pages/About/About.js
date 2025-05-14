@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import './About.scss';
 
 const About = () => {
@@ -17,7 +15,9 @@ const About = () => {
         {/* El header ahora usa la misma estructura de contenedor que el contenido */}
         <div className="about__content">
           <header className="about__header">
-            <h1 className="section-title">Hola 👋</h1>
+            <div className="title-bio-wrapper">
+              <h1 className="section-title">Hola 👋</h1>
+            </div>
           </header>
 
           <div className="about__profile">
@@ -87,47 +87,14 @@ const About = () => {
           </div>
 
           <div className="about__details">
-            <div className="about__experience">
-              <h3 className="about__section-title">Experiencia Laboral</h3>
-              <ul className="about__list">
-                <li className="about__list-item">
-                  <span className="about__company">Empresa Actual</span>
-                  <span className="about__position">Diseñador UX/UI</span>
-                  <span className="about__period">2022 - Presente</span>
-                </li>
-                <li className="about__list-item">
-                  <span className="about__company">Empresa Anterior</span>
-                  <span className="about__position">Diseñador UX/UI</span>
-                  <span className="about__period">2019 - 2022</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="about__education">
-              <h3 className="about__section-title">Educación</h3>
-              <ul className="about__list">
-                <li className="about__list-item">
-                  <span className="about__institution">UNI</span>
-                  <span className="about__degree">Licenciatura en</span>
-                  <span className="about__period">2015 - 2019</span>
-                </li>
-                <li className="about__list-item">
-                  <span className="about__institution">Academia de Diseño</span>
-                  <span className="about__degree">
-                    Certificación en UX/UI Design
-                  </span>
-                  <span className="about__period">2018</span>
-                </li>
-              </ul>
-            </div>
-
             <div className="about__download">
               <a
                 href="/assets/resume/cv.pdf"
-                download
-                className="btn about__download-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn about__view-cv-btn"
               >
-                <FontAwesomeIcon icon={faDownload} /> Descargar CV
+                Ver CV completo
               </a>
             </div>
           </div>

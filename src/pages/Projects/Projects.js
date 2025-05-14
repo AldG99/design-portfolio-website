@@ -13,7 +13,6 @@ const Projects = () => {
     document.title = 'Portafolio | Trabajo';
     // Get all projects and sort by date (newest first)
     const allProjects = getAllProjects();
-
     // Asegúrate de que todos los proyectos tengan las propiedades necesarias
     const processedProjects = allProjects.map(project => ({
       ...project,
@@ -25,25 +24,15 @@ const Projects = () => {
       thumbnail: project.thumbnail || '/assets/images/placeholder.jpg',
       dateRaw: project.dateRaw || new Date().toISOString(),
     }));
-
     const sortedProjects = [...processedProjects].sort(
       (a, b) => new Date(b.dateRaw) - new Date(a.dateRaw)
     );
-
     setProjects(sortedProjects);
   }, []);
 
   return (
     <main className="projects-page">
       <div className="container">
-        <header className="projects-page__header">
-          <h1 className="section-title">Mi trabajo 🚀 🧩</h1>
-          <p className="projects-page__description">
-            Una colección de mis trabajos recientes en diseño UX/UI y
-            desarrollo. Cada proyecto representa un desafío único y una
-            oportunidad para crear soluciones centradas en el usuario.
-          </p>
-        </header>
         <div className="projects-page__list">
           {projects.map(project => (
             <div className="project-item" key={project.id}>

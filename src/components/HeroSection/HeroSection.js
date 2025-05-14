@@ -40,10 +40,12 @@ const HeroSection = () => {
       <div className="container">
         <div className="hero-section__content">
           <div className="hero-section__text">
-            <h1 className="hero-section__name">Alfredo García</h1>
-            <h2 className="hero-section__profession">
-              Diseñador UX/UI & Desarrollador
-            </h2>
+            <div className="hero-name-title-wrapper">
+              <h1 className="hero-section__name">Alfredo García</h1>
+              <h2 className="hero-section__profession">
+                Diseñador UX/UI & Desarrollador
+              </h2>
+            </div>
             <p className="hero-section__tools">
               {tools.map((tool, index) => (
                 <span

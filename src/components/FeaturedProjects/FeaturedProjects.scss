@@ -166,24 +166,23 @@
   }
 
   &__more {
-    text-align: center;
     margin-top: $spacing-lg;
+    width: 100%;
 
     .btn {
-      display: inline-block;
-      width: auto; // Cambiado de 100% a auto para que no ocupe todo el ancho
-      padding: $spacing-md $spacing-xl; // Más padding horizontal
-      font-size: $font-size-lg;
-      background-color: $accent-color;
-      color: white;
-      font-weight: 600; // Más grueso para mejor legibilidad
+      display: block;
+      width: 100%;
+      padding: $spacing-md $spacing-xl;
+      font-size: $font-size-md;
+      background-color: transparent;
+      color: $accent-color;
+      font-weight: 500;
+      border: 1px solid $accent-color;
+      text-align: center;
 
       &:hover {
-        background-color: darken(
-          $accent-color,
-          15%
-        ); // Oscurecer más para mayor contraste
-        color: white; // Mantener el texto en blanco
+        background-color: rgba($accent-color, 0.1);
+        color: darken($accent-color, 10%);
       }
     }
   }
