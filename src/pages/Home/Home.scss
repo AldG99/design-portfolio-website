@@ -2,5 +2,30 @@
 @import '../../styles/mixins';
 
 .home {
-  // Estilos específicos para la página de inicio si son necesarios
+  // El margen superior se reduce para compensar el header más pequeño
+  margin-top: 100px; // Reducido de 80px
+}
+
+// About.scss
+.about {
+  padding: $spacing-xxl 0;
+  margin-top: 60px; // Reducido de 80px
+}
+
+// Projects.scss
+.projects-page {
+  padding: $spacing-xxl 0;
+  margin-top: 60px; // Reducido de 80px
+}
+
+// ProjectDetail.scss
+.project-detail {
+  padding: $spacing-xxl 0;
+  margin-top: 60px; // Reducido de 80px
+}
+
+// HeroSection.scss
+.hero-section {
+  padding: $spacing-xxl 0;
+  margin-top: 60px; // Reducido de 80px
 }

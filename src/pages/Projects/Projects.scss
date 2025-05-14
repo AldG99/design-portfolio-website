@@ -1,6 +1,5 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
-
 .projects-page {
   padding: $spacing-xxl 0;
   margin-top: 80px; // Para compensar el header fixed
@@ -18,39 +17,32 @@
   gap: $spacing-md;
   padding-bottom: $spacing-lg;
   border-bottom: 1px solid $secondary-color;
+
   @include md {
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: $spacing-xl;
   }
 
   &__thumbnail-link {
     display: block;
     overflow: hidden;
-    height: 100%;
   }
 
   &__thumbnail {
     width: 100%;
-    height: 0;
-    padding-bottom: 75%; // Aspecto 4:3
     position: relative;
     overflow: hidden;
+
     @include md {
       height: 100%;
-      padding-bottom: 0;
     }
+
     img {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: block;
       @include transition;
-      @include md {
-        position: static;
-        height: 100%;
-      }
+
       &:hover {
         transform: scale(1.05);
       }

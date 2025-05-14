@@ -1,6 +1,5 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
-
 .project-card {
   @include card;
   height: 100%;
@@ -17,19 +16,14 @@
 
   &__thumbnail {
     width: 100%;
-    height: 0;
-    padding-bottom: 65%; // Proporción 16:9 aproximada
     position: relative;
     overflow: hidden;
     border-radius: $border-radius-lg $border-radius-lg 0 0;
 
     img {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: block;
       @include transition;
     }
   }
@@ -88,22 +82,27 @@
       background-color: #ffc0a9; /* Versión pastel más densa del naranja de Figma */
       color: #333333;
     }
+
     &--scss {
       background-color: #dda0c2; /* Versión pastel más densa del rosa de SCSS */
       color: #333333;
     }
+
     &--react {
       background-color: #a8dcec; /* Versión pastel más densa del azul de React */
       color: #333333;
     }
+
     &--react-native {
       background-color: #9ccfe3; /* Variación pastel más densa del azul de React Native */
       color: #333333;
     }
+
     &--expo {
       background-color: #bababd; /* Versión pastel más densa del azul oscuro de Expo */
       color: #333333;
     }
+
     &--firebase {
       background-color: #ffe0a3; /* Versión pastel más densa del amarillo de Firebase */
       color: #333333;
@@ -131,7 +130,13 @@
 
       .project-card__thumbnail {
         height: 100%;
-        padding-bottom: 0;
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+
         border-radius: $border-radius-lg 0 0 $border-radius-lg;
       }
 

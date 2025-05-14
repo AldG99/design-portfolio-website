@@ -8,7 +8,7 @@ const project4 = {
   // Información básica (Sección Hero)
   description:
     'INVENTA-ANALYT es una aplicación móvil y web para gestión de pequeños negocios que integra control de inventario, registro de ventas, consulta de transacciones y análisis avanzados. La plataforma destaca por su interfaz intuitiva que permite a los propietarios monitorear existencias en tiempo real y acceder al historial completo de operaciones.',
-  thumbnail: '/assets/images/projects/project1/thumbnail.jpg',
+  thumbnail: '/assets/images/projects/project4/thumbnail.png',
   date: 'Octubre 2024 - Febrero 2025',
   dateRaw: '2025-02-05',
   tools: ['Figma', 'SCSS', 'React', 'React Native Expo', 'Firebase'],

@@ -7,22 +7,18 @@
   left: 0;
   width: 100%;
   background-color: $primary-color;
-  padding: $spacing-md 0;
+  padding: $spacing-xs 0; // Reducido de $spacing-md a $spacing-xs
   z-index: 1000;
   @include transition;
 
   &--scrolled {
     box-shadow: $shadow-md;
-    padding: $spacing-sm 0;
-  }
-
-  &--scrolled {
-    box-shadow: $shadow-md;
-    padding: $spacing-sm 0;
+    padding: $spacing-xs 0; // Mantener el mismo padding cuando se hace scroll
   }
 
   &__content {
     @include flex(row, space-between, center);
+    height: 60px; // Altura explícita reducida
   }
 
   &__logo {
@@ -34,11 +30,11 @@
     }
 
     &-image {
-      height: 70px;
+      height: 50px; // Reducido de 70px a 50px
       width: auto;
 
       .header--scrolled & {
-        height: 70px;
+        height: 50px; // Mantener el mismo tamaño al hacer scroll
       }
     }
   }
@@ -49,8 +45,8 @@
     border: none;
     padding: 0;
     cursor: pointer;
-    width: 30px;
-    height: 22px;
+    width: 28px; // Ligeramente más pequeño
+    height: 20px; // Ligeramente más pequeño
     position: relative;
     z-index: 1001;
 
@@ -72,7 +68,7 @@
       }
 
       &:nth-child(2) {
-        top: 10px;
+        top: 9px; // Ajustado para mantener proporciones
       }
 
       &:last-child {
@@ -85,7 +81,7 @@
     span {
       &:first-child {
         transform: rotate(45deg);
-        top: 10px;
+        top: 9px;
       }
 
       &:nth-child(2) {
@@ -94,7 +90,7 @@
 
       &:last-child {
         transform: rotate(-45deg);
-        bottom: 10px;
+        bottom: 9px;
       }
     }
   }
@@ -150,7 +146,7 @@
 
   &__menu-link {
     color: $text-color;
-    font-size: $font-size-lg;
+    font-size: $font-size-md; // Reducido de $font-size-lg
     font-weight: 500;
     position: relative;
     @include transition;

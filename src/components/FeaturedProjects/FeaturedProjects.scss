@@ -1,12 +1,12 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
-
 .featured-projects {
   @include section;
   background-color: $primary-color;
   padding-top: 0; // Eliminamos completamente el padding superior
 
   .section-title {
+    font-family: $font-primary;
     margin-top: $spacing-sm; // Espacio mínimo arriba del título
     text-align: left; // Alineación a la izquierda
   }
@@ -56,18 +56,13 @@
 
   &__image {
     width: 100%;
-    height: 0;
-    padding-bottom: 75%; // Proporción 4:3
     position: relative;
     overflow: hidden;
 
     img {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: block;
       @include transition;
 
       &:hover {
