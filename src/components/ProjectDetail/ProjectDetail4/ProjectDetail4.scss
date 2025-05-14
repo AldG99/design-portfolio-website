@@ -1,13 +1,19 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
+// Variables para espaciado simétrico
+$heading-spacing: $spacing-lg;
+$content-spacing: $spacing-md;
+$section-spacing: $spacing-xxl;
+
 .project-detail {
   padding: $spacing-xxl 0;
   margin-top: 80px; // Para compensar el header fixed
+  font-family: $font-primary;
 
   // Hero Section
   &__hero {
-    margin-bottom: $spacing-xxl;
+    margin-bottom: $section-spacing;
   }
 
   .hero-image {
@@ -19,7 +25,6 @@
       display: block;
     }
 
-    // Nueva clase para imagen a ancho completo
     &--full-width {
       margin-left: -16px;
       margin-right: -16px;
@@ -42,15 +47,15 @@
   &__subtitle {
     font-size: $font-size-xl;
     color: lighten($text-color, 15%);
-    margin-bottom: $spacing-lg;
+    margin-bottom: $heading-spacing;
     line-height: 1.4;
   }
 
   &__meta {
     display: flex;
     flex-direction: column;
-    margin-top: $spacing-lg;
-    margin-bottom: $spacing-sm; // Reducir el margen inferior para acercar el tools
+    margin-top: $heading-spacing;
+    margin-bottom: $content-spacing;
 
     @include md {
       flex-direction: row;
@@ -66,7 +71,7 @@
     .meta-value {
       color: $text-color;
       font-size: $font-size-md;
-      font-weight: 600; // Añadiendo peso al texto de la fecha
+      font-weight: 600;
     }
   }
 
@@ -74,8 +79,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: $spacing-xs;
-    margin-top: $spacing-sm;
-    margin-bottom: $spacing-lg;
+    margin-top: $content-spacing;
+    margin-bottom: $heading-spacing;
 
     .tool-tag {
       font-size: $font-size-sm;
@@ -88,85 +93,110 @@
 
       // Colores específicos para cada herramienta
       &--figma {
-        background-color: #ffc0a9; /* Versión pastel más densa del naranja de Figma */
+        background-color: #ffc0a9;
         color: #333333;
       }
 
       &--scss {
-        background-color: #dda0c2; /* Versión pastel más densa del rosa de SCSS */
+        background-color: #dda0c2;
         color: #333333;
       }
 
       &--react {
-        background-color: #a8dcec; /* Versión pastel más densa del azul de React */
+        background-color: #a8dcec;
         color: #333333;
       }
 
       &--react-native,
       &--react-native-expo {
-        background-color: #9ccfe3; /* Variación pastel más densa del azul de React Native */
+        background-color: #9ccfe3;
         color: #333333;
       }
 
       &--expo {
-        background-color: #bababd; /* Versión pastel más densa del azul oscuro de Expo */
+        background-color: #bababd;
         color: #333333;
       }
 
       &--firebase {
-        background-color: #ffe0a3; /* Versión pastel más densa del amarillo de Firebase */
+        background-color: #ffe0a3;
         color: #333333;
       }
     }
   }
 
-  // Sections generales
+  // Secciones generales - Espaciado simétrico
   &__section {
-    margin-bottom: $spacing-xxl;
+    margin-bottom: $section-spacing;
+  }
+
+  // Estilos consistentes para todos los títulos
+  .section-title,
+  .section-subtitle,
+  .subsection-title {
+    font-weight: 700;
+    color: $text-color;
+    margin-top: $heading-spacing * 1.5;
+    margin-bottom: $heading-spacing;
+    line-height: 1.2;
+  }
+
+  .section-title {
+    font-size: $font-size-xxxl;
   }
 
   .section-subtitle {
-    font-size: $font-size-xxl;
-    font-weight: 700;
-    margin-bottom: $spacing-lg;
-    margin-top: $spacing-xxl;
-    color: $text-color;
+    // Modificación: Reducción del tamaño del h2
+    font-size: $font-size-xl; // Cambiado de xxl a xl
     border-bottom: 2px solid $secondary-color;
-    padding-bottom: $spacing-md;
+    padding-bottom: $content-spacing;
   }
 
   .subsection-title {
-    font-size: $font-size-xl;
+    // Modificación: Reducción del tamaño del h3
+    font-size: $font-size-lg; // Cambiado de xl a lg
     font-weight: 600;
-    margin-bottom: $spacing-md;
+  }
+
+  // Estilos consistentes para texto
+  p,
+  li,
+  .overview-text,
+  .problem-text,
+  .goal-text,
+  .role-text,
+  .understanding-text,
+  .strategy-description,
+  .high-fidelity-text,
+  .conclusion-text,
+  .impact-text,
+  .learnings-text,
+  .final-text {
+    font-size: $font-size-md;
+    line-height: 1.7;
+    margin-bottom: $content-spacing;
     color: $text-color;
-    margin-top: $spacing-lg;
   }
 
   // Project Overview
   &__overview {
-    .overview-text {
-      font-size: $font-size-md;
-      line-height: 1.7;
-      margin-bottom: $spacing-lg;
-      color: $text-color;
-    }
+    margin-bottom: $heading-spacing * 1.5;
   }
 
   // Enlaces a repositorios - Versión minimalista
   &__links {
-    margin-top: $spacing-lg;
+    margin-top: $heading-spacing;
 
     .subsection-title {
       margin-top: 0;
-      font-size: $font-size-lg; // Reducir ligeramente el tamaño del título
+      font-size: $font-size-lg;
     }
   }
 
   &__repository-links {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
+    gap: $content-spacing;
 
     @include md {
       flex-direction: row;
@@ -177,13 +207,13 @@
       display: inline-flex;
       align-items: center;
       padding: $spacing-sm $spacing-md;
-      background-color: transparent; // Fondo transparente
+      background-color: transparent;
       border-radius: $border-radius-sm;
-      color: $accent-color; // Color de acento para el texto
+      color: $accent-color;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.3s ease;
-      border: 1px solid $accent-color; // Borde fino
+      border: 1px solid $accent-color;
 
       &:hover {
         background-color: $accent-color;
@@ -197,44 +227,32 @@
     }
   }
 
-  // Nuevo contenedor de problema-objetivo para layout horizontal
+  // Layout problema-objetivo - Simétrico
   &__problem-goal-container {
     display: grid;
-    grid-template-columns: 1fr; // Una columna en móvil
-    gap: $spacing-xl;
-    margin-bottom: $spacing-lg;
+    grid-template-columns: 1fr;
+    gap: $heading-spacing;
+    margin-bottom: $heading-spacing;
 
     @include md {
-      grid-template-columns: 1fr 1fr; // Dos columnas en tablet y desktop
-    }
-  }
-
-  // Problem, Goal, Role sections
-  &__problem,
-  &__goal,
-  &__role {
-    .problem-text,
-    .goal-text,
-    .role-text {
-      font-size: $font-size-md;
-      line-height: 1.7;
-      color: $text-color;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
   // Responsibilities
   &__responsibilities {
+    margin-top: $heading-spacing;
+
     .responsibilities-list {
       list-style: none;
       margin-left: 0;
+      margin-bottom: $heading-spacing;
     }
 
     .responsibility-item {
       padding-left: $spacing-lg;
-      margin-bottom: $spacing-md;
+      margin-bottom: $content-spacing;
       position: relative;
-      font-size: $font-size-md;
-      line-height: 1.6;
 
       &::before {
         content: '•';
@@ -248,14 +266,8 @@
 
   // User Understanding
   &__understanding {
-    .understanding-text {
-      font-size: $font-size-md;
-      line-height: 1.7;
-      margin-bottom: $spacing-lg;
-    }
-
     .understanding-image {
-      margin: $spacing-xl 0;
+      margin: $heading-spacing 0;
 
       img {
         width: 100%;
@@ -264,39 +276,34 @@
       }
     }
 
-    // Modificado: ahora es una lista ordenada
     .key-issues-list {
       list-style-type: decimal;
       padding-left: $spacing-md;
+      margin-bottom: $heading-spacing;
     }
 
     .key-issue-item {
-      margin-bottom: $spacing-md;
+      margin-bottom: $content-spacing;
       border-radius: $border-radius-md;
-      font-size: $font-size-md;
-      line-height: 1.6;
     }
   }
 
-  // User Personas - MODIFICADO para layout horizontal
+  // User Personas - Layout horizontal y simétrico
   &__personas {
-    margin-bottom: $spacing-xl;
+    margin-bottom: $heading-spacing;
 
     .personas-horizontal-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: $spacing-xl;
+      gap: $heading-spacing;
 
       @include md {
-        grid-template-columns: repeat(
-          2,
-          1fr
-        ); // 2 columnas en pantallas medianas y grandes
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .persona-card {
         overflow: hidden;
-        height: 100%; // Para que ambas tarjetas tengan la misma altura
+        height: 100%;
       }
 
       .persona-statement {
@@ -306,13 +313,11 @@
       }
 
       .persona-problem {
-        font-size: $font-size-md;
-        line-height: 1.6;
-        margin-bottom: $spacing-md;
+        margin-bottom: $content-spacing;
       }
 
       .persona-image {
-        margin-top: auto; // Empuja la imagen hacia abajo
+        margin-top: auto;
 
         img {
           width: 100%;
@@ -323,31 +328,29 @@
     }
   }
 
-  // User Journey Maps - MODIFICADO para mostrar verticalmente
+  // User Journey Maps - Vertical con espaciado simétrico
   &__journey-maps {
-    margin-bottom: $spacing-xl;
+    margin-bottom: $heading-spacing;
 
     .journey-maps-vertical {
       display: flex;
       flex-direction: column;
-      gap: $spacing-xl;
+      gap: $heading-spacing;
 
       .journey-card {
         .journey-title {
           font-size: $font-size-lg;
           font-weight: 600;
-          margin-bottom: $spacing-sm;
+          margin-bottom: $content-spacing;
           color: $accent-color;
         }
 
         .journey-description {
-          font-size: $font-size-md;
-          line-height: 1.6;
-          margin-bottom: $spacing-md;
+          margin-bottom: $content-spacing;
         }
 
         .journey-image {
-          margin-top: $spacing-md;
+          margin-top: $content-spacing;
 
           img {
             width: 100%;
@@ -364,7 +367,7 @@
     .competitors-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: $spacing-xl;
+      gap: $heading-spacing;
 
       @include md {
         grid-template-columns: repeat(3, 1fr);
@@ -379,29 +382,27 @@
     .competitor-name {
       font-size: $font-size-lg;
       font-weight: 700;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $content-spacing;
       color: $accent-color;
     }
 
     .competitor-description {
-      font-size: $font-size-md;
-      line-height: 1.6;
-      margin-bottom: $spacing-md;
+      margin-bottom: $content-spacing;
       color: lighten($text-color, 10%);
     }
 
     .competitor-details {
-      margin: $spacing-lg 0;
+      margin: $heading-spacing 0;
     }
 
     .competitor-section {
-      margin-bottom: $spacing-md;
+      margin-bottom: $content-spacing;
     }
 
     .competitor-section-title {
       font-size: $font-size-md;
       font-weight: 600;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $content-spacing;
       color: $text-color;
     }
 
@@ -409,6 +410,7 @@
       list-style: none;
       margin-left: 0;
       font-size: $font-size-sm;
+      margin-bottom: $content-spacing;
 
       li {
         padding-left: $spacing-sm;
@@ -433,7 +435,7 @@
     }
 
     .competitor-audience {
-      margin: $spacing-md 0;
+      margin: $content-spacing 0;
       padding: $spacing-sm;
       background-color: lighten($secondary-color, 8%);
       border-radius: $border-radius-sm;
@@ -448,8 +450,8 @@
     .competitor-images {
       display: grid;
       grid-template-columns: 1fr;
-      gap: $spacing-md;
-      margin-top: $spacing-md;
+      gap: $content-spacing;
+      margin-top: $content-spacing;
 
       @include sm {
         grid-template-columns: repeat(2, 1fr);
@@ -459,25 +461,20 @@
         width: 100%;
         height: auto;
         border-radius: $border-radius-sm;
-        border: 1px solid $secondary-color; // Solo las imágenes de competencia mantienen el borde
+        border: 1px solid $secondary-color;
       }
     }
   }
 
-  // Design Process
+  // Design Process - Espaciado simétrico
   .design-section {
-    margin-bottom: $spacing-xl;
-  }
-
-  .design-text {
-    font-size: $font-size-md;
-    line-height: 1.7;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $heading-spacing;
   }
 
   .design-image,
   .design-images {
-    margin-top: $spacing-lg;
+    margin-top: $content-spacing;
+    margin-bottom: $heading-spacing;
 
     img {
       width: 100%;
@@ -487,28 +484,29 @@
   }
 
   .design-images {
-    display: block; // Cambiar de grid a block para mostrar imágenes completas
+    display: block;
 
     img {
-      margin-bottom: $spacing-md;
+      margin-bottom: $content-spacing;
     }
   }
 
   .prototype-link {
-    margin-top: $spacing-lg;
+    margin-top: $heading-spacing;
     text-align: center;
   }
 
-  // Usability Study
+  // Usability Study - Estructura elegante
   .usability-info {
     border-radius: $border-radius-md;
-    margin-bottom: $spacing-xl;
+    margin-bottom: $heading-spacing;
   }
 
   .usability-details {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-md;
+    gap: $content-spacing;
+    margin-bottom: $heading-spacing;
 
     @include md {
       grid-template-columns: repeat(2, 1fr);
@@ -533,42 +531,34 @@
   .findings-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-lg;
-  }
-
-  .finding-item {
-    border: 1px solid $secondary-color;
-    padding: $spacing-lg;
+    gap: $heading-spacing;
+    margin-bottom: $heading-spacing;
   }
 
   .finding-area {
     font-size: $font-size-lg;
     font-weight: 700;
     color: $accent-color;
-    margin-bottom: $spacing-sm;
+    margin-bottom: $content-spacing;
   }
 
   .finding-description {
-    font-size: $font-size-md;
-    line-height: 1.6;
-    margin-bottom: $spacing-md;
+    margin-bottom: $content-spacing;
   }
 
   .finding-quotes {
-    margin: $spacing-md 0;
+    margin: $content-spacing 0;
   }
 
   .user-quote {
     font-style: italic;
-    font-size: $font-size-md;
-    line-height: 1.6;
     padding-left: $spacing-md;
-    margin-bottom: $spacing-sm;
+    margin-bottom: $content-spacing;
     color: lighten($text-color, 10%);
   }
 
   .finding-improvement {
-    margin-top: $spacing-md;
+    margin-top: $content-spacing;
     padding: $spacing-sm;
     background-color: lighten($accent-color, 45%);
     border-radius: $border-radius-sm;
@@ -588,19 +578,17 @@
   .mockups-section {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-xxl;
+    gap: $heading-spacing;
+    margin-bottom: $heading-spacing;
   }
 
   .mockup-item {
     overflow: hidden;
   }
 
-  .mockup-description {
-    font-size: $font-size-md;
-    line-height: 1.7;
-  }
-
   .mockup-image {
+    margin: $content-spacing 0 $heading-spacing;
+
     img {
       width: 100%;
       height: auto;
@@ -611,20 +599,19 @@
   .decisions-title {
     font-size: $font-size-lg;
     font-weight: 600;
-    margin-bottom: $spacing-sm;
+    margin-bottom: $content-spacing;
     color: $accent-color;
   }
 
   .decisions-list {
     list-style: none;
     margin-left: 0;
+    margin-bottom: $heading-spacing;
 
     li {
       padding-left: $spacing-md;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $content-spacing;
       position: relative;
-      font-size: $font-size-md;
-      line-height: 1.6;
 
       &::before {
         content: '→';
@@ -636,12 +623,13 @@
     }
   }
 
+  // Screen variations
   .screen-variations {
-    margin-top: $spacing-xl;
+    margin-top: $heading-spacing;
   }
 
   .screen-image {
-    margin-bottom: $spacing-lg;
+    margin-bottom: $heading-spacing;
 
     img {
       width: 100%;
@@ -650,39 +638,26 @@
     }
   }
 
-  .screen-description {
-    font-size: $font-size-md;
-    line-height: 1.7;
-    margin-bottom: $spacing-lg;
-  }
-
   .screen-variations-images {
-    display: block; // Cambiar de grid a block para mostrar imágenes completas
+    display: block;
+    margin-bottom: $heading-spacing;
 
     img {
       width: 100%;
       height: auto;
-      margin-bottom: $spacing-md;
+      margin-bottom: $content-spacing;
     }
-  }
-
-  .strategy-description {
-    font-size: $font-size-md;
-    line-height: 1.7;
-    margin-bottom: $spacing-md;
   }
 
   .strategy-decisions {
     list-style: none;
     margin-left: 0;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $heading-spacing;
 
     .strategy-item {
       padding-left: $spacing-lg;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $content-spacing;
       position: relative;
-      font-size: $font-size-md;
-      line-height: 1.6;
 
       &::before {
         content: '▸';
@@ -694,18 +669,13 @@
     }
   }
 
+  // High fidelity prototype
   .high-fidelity-section {
-    margin-top: $spacing-xl;
-  }
-
-  .high-fidelity-text {
-    font-size: $font-size-md;
-    line-height: 1.7;
-    margin-bottom: $spacing-md;
+    margin-top: $heading-spacing;
   }
 
   .high-fidelity-image {
-    margin: $spacing-xl 0;
+    margin: $heading-spacing 0;
 
     img {
       width: 100%;
@@ -717,8 +687,8 @@
   .prototype-links {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
-    margin-top: $spacing-lg;
+    gap: $content-spacing;
+    margin-top: $heading-spacing;
 
     @include sm {
       flex-direction: row;
@@ -732,19 +702,17 @@
     }
   }
 
+  // Color palette
   .color-palette {
-    .palette-title {
-      font-size: $font-size-lg;
-      font-weight: 600;
-      margin-bottom: $spacing-md;
-      color: $text-color;
-    }
+    margin-bottom: $heading-spacing;
 
     .palette-list {
+      margin-bottom: $content-spacing;
+
       .palette-item {
-        font-size: $font-size-md;
         display: flex;
         align-items: center;
+        margin-bottom: $spacing-xs;
 
         .palette-percent {
           font-weight: 700;
@@ -770,44 +738,33 @@
     }
 
     .palette-reasoning {
-      font-size: $font-size-md;
-      line-height: 1.7;
       font-style: italic;
       color: lighten($text-color, 10%);
     }
   }
 
-  // Modificado: ahora es una lista ordenada
+  // Accessibility list
   .accessibility-list {
     list-style-type: decimal;
     padding-left: $spacing-md;
+    margin-bottom: $heading-spacing;
 
     .accessibility-item {
       padding: $spacing-xs;
-      font-size: $font-size-md;
-      line-height: 1.7;
+      margin-bottom: $content-spacing;
     }
   }
 
   // Results and Conclusions
   .results-section {
-    margin-bottom: $spacing-xl;
-  }
-
-  .conclusion-text,
-  .impact-text,
-  .learnings-text,
-  .final-text {
-    font-size: $font-size-md;
-    line-height: 1.7;
-    text-align: justify;
+    margin-bottom: $heading-spacing;
   }
 
   .lessons-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-lg;
-    margin-top: $spacing-lg;
+    gap: $heading-spacing;
+    margin: $heading-spacing 0;
 
     @include md {
       grid-template-columns: 1fr 1fr;
@@ -821,7 +778,7 @@
   .lessons-title {
     font-size: $font-size-lg;
     font-weight: 600;
-    margin-bottom: $spacing-md;
+    margin-bottom: $content-spacing;
     color: $accent-color;
     padding-bottom: $spacing-sm;
   }
@@ -832,10 +789,8 @@
 
     .lesson-item {
       padding-left: $spacing-md;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $content-spacing;
       position: relative;
-      font-size: $font-size-md;
-      line-height: 1.6;
 
       &::before {
         content: '✓';
@@ -847,15 +802,14 @@
     }
   }
 
-  // Modificado: ahora es una lista ordenada
   .next-steps-list {
     list-style-type: decimal;
     padding-left: $spacing-md;
+    margin-bottom: $heading-spacing;
 
     .next-step-item {
       padding: $spacing-xs;
-      font-size: $font-size-md;
-      line-height: 1.6;
+      margin-bottom: $content-spacing;
     }
   }
 
@@ -865,10 +819,10 @@
 
   // Navigation
   &__navigation {
-    margin-top: $spacing-xxl;
+    margin-top: $section-spacing;
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
+    gap: $content-spacing;
     align-items: flex-start;
 
     @include sm {

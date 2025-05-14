@@ -188,18 +188,6 @@ const project4 = {
       prototypeUrl:
         'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=0%3A1&node-id=1-3735&p=f&viewport=464%2C442%2C0.08&t=aLixr3jttXbgePOx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A3735',
     },
-    // Alta fidelidad (movido a después de consideraciones de accesibilidad, siguiendo el orden del componente React)
-    highFidelity: {
-      description: [
-        'El prototipo refleja un diseño iterativo basado en investigación y retroalimentación de los usuarios. Utiliza el color violeta por su profesionalismo y accesibilidad. Se diferencia de la mayoría de aplicaciones empresariales que usan azul o verde.',
-        'Resonó positivamente en las pruebas de usuario, donde los participantes lo asociaron con "herramienta moderna".',
-      ],
-      highFidelityImage: '/assets/images/projects/project4/high_fidelity.png',
-      viewPrototypes: [
-        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=9%3A3&node-id=9-255&p=f&viewport=-697%2C920%2C0.49&t=EjVEKXgOrGAS1ywH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=9%3A255',
-        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=9%3A2378&node-id=9-3538&p=f&viewport=178%2C70%2C0.17&t=jEaGwxBrqb8fsq27-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A3538',
-      ],
-    },
   },
 
   // 8. ESTUDIO DE USABILIDAD Y REFINAMIENTO
@@ -280,6 +268,18 @@ const project4 = {
         '/assets/images/projects/project4/size_variation.png',
       ],
       originalScreenSize: '/assets/images/projects/project4/screen.png',
+    },
+    // Prototipo de alta fidelidad (movido aquí desde prototyping)
+    highFidelity: {
+      description: [
+        'El prototipo refleja un diseño iterativo basado en investigación y retroalimentación de los usuarios. Utiliza el color violeta por su profesionalismo y accesibilidad. Se diferencia de la mayoría de aplicaciones empresariales que usan azul o verde.',
+        'Resonó positivamente en las pruebas de usuario, donde los participantes lo asociaron con "herramienta moderna".',
+      ],
+      highFidelityImage: '/assets/images/projects/project4/high_fidelity.png',
+      viewPrototypes: [
+        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=9%3A3&node-id=9-255&p=f&viewport=-697%2C920%2C0.49&t=EjVEKXgOrGAS1ywH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=9%3A255',
+        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=9%3A2378&node-id=9-3538&p=f&viewport=178%2C70%2C0.17&t=jEaGwxBrqb8fsq27-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A3538',
+      ],
     },
     accessibility: {
       considerations: [
