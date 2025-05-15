@@ -1,19 +1,36 @@
+// ARCHIVO MODIFICADO: src/components/FeaturedProjects/FeaturedProjects.js
+// Este archivo ha sido modificado para implementar la animación scroll reveal
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getFeaturedProjects, getProjectSlug } from '../../data/projectsIndex';
+// NUEVO: Importar el hook useScrollReveal
+import { useScrollReveal } from '../../context/ScrollRevealContext';
 import './FeaturedProjects.scss';
 
 const FeaturedProjects = () => {
+  // NUEVO: Usar el hook para obtener la referencia de animación
+  const { revealRef } = useScrollReveal();
+
   // Obtenemos los 4 proyectos más recientes
   const featuredProjects = getFeaturedProjects(4);
 
   return (
     <section className="featured-projects" id="proyectos">
       <div className="container">
-        <h2 className="section-title">Trabajo 🚀 🧩</h2>
+        {/* MODIFICADO: Añadir ref al título */}
+        <h2 className="section-title" ref={revealRef}>
+          Trabajo 🚀 🧩
+        </h2>
         <div className="featured-projects__grid">
-          {featuredProjects.map(project => (
-            <div key={project.id} className="featured-projects__item">
+          {featuredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className="featured-projects__item"
+              /* NUEVO: Añadir ref y delay para cada proyecto */
+              ref={revealRef}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
               <div className="featured-projects__content">
                 <Link
                   to={`/${getProjectSlug(project.title)}`}
@@ -64,7 +81,8 @@ const FeaturedProjects = () => {
             </div>
           ))}
         </div>
-        <div className="featured-projects__more">
+        {/* MODIFICADO: Añadir ref al botón "Más proyectos" */}
+        <div className="featured-projects__more" ref={revealRef}>
           <Link to="/trabajo" className="btn">
             Más proyectos 💁‍♂️
           </Link>

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useScrollReveal } from '../../../context/ScrollRevealContext';
 import project4 from '../../../data/projects/project4';
 import './ProjectDetail4.scss';
 
 const ProjectDetail4 = () => {
+  const { revealRef } = useScrollReveal();
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
@@ -41,8 +43,8 @@ const ProjectDetail4 = () => {
       <div className="container">
         {/* Hero Section */}
         <header className="project-detail__hero">
-          {/* Imagen principal al inicio - ahora a ancho completo */}
-          <div className="hero-image hero-image--full-width">
+          {/* Imagen principal al inicio - ahora a ancho completo y con animación */}
+          <div className="hero-image hero-image--full-width" ref={revealRef}>
             <img
               src={project4.thumbnail}
               alt={project4.title}

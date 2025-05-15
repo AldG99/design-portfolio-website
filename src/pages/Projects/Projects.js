@@ -1,9 +1,17 @@
+// ARCHIVO MODIFICADO: src/pages/Projects/Projects.js
+// Este archivo ha sido modificado para implementar la animación scroll reveal en la página de Trabajo
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllProjects, getProjectSlug } from '../../data/projectsIndex';
+// NUEVO: Importar el hook useScrollReveal
+import { useScrollReveal } from '../../context/ScrollRevealContext';
 import './Projects.scss';
 
 const Projects = () => {
+  // NUEVO: Usar el hook para obtener la referencia de animación
+  const { revealRef } = useScrollReveal();
+
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -33,9 +41,20 @@ const Projects = () => {
   return (
     <main className="projects-page">
       <div className="container">
+        {/* NUEVO: Añadir título con efecto de reveal */}
+        <h1 className="projects-page__title" ref={revealRef}>
+          Proyectos
+        </h1>
+
         <div className="projects-page__list">
-          {projects.map(project => (
-            <div className="project-item" key={project.id}>
+          {projects.map((project, index) => (
+            <div
+              className="project-item"
+              key={project.id}
+              /* NUEVO: Añadir ref y delay para cada proyecto */
+              ref={revealRef}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
               <Link
                 to={`/${getProjectSlug(project.title)}`}
                 className="project-item__thumbnail-link"

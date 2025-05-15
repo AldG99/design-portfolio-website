@@ -1,5 +1,10 @@
+// ARCHIVO MODIFICADO: src/components/FeaturedProjects/FeaturedProjects.scss
+// Este archivo ha sido modificado para importar los estilos de scroll reveal
+
 @import '../../styles/variables';
 @import '../../styles/mixins';
+// NUEVO: Importar los estilos de animación
+@import '../../styles/scroll-reveal.scss';
 
 .featured-projects {
   @include section;

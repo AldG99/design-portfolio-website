@@ -1,9 +1,22 @@
+// ARCHIVO MODIFICADO: src/pages/Projects/Projects.scss
+// Este archivo ha sido modificado para importar los estilos de scroll reveal y añadir un estilo para el título
+
 @import '../../styles/variables';
 @import '../../styles/mixins';
+// NUEVO: Importar los estilos de animación
+@import '../../styles/scroll-reveal.scss';
 
 .projects-page {
   padding: $spacing-xxl 0;
   margin-top: 80px; // Para compensar el header fixed
+
+  // NUEVO: Estilo para el título de la página
+  &__title {
+    font-family: $font-secondary;
+    font-size: $font-size-xxl;
+    margin-bottom: $spacing-xl;
+    color: $text-color;
+  }
 
   &__list {
     display: flex;

@@ -1,0 +1,26 @@
+// NUEVO ARCHIVO: src/styles/scroll-reveal.scss
+// Este archivo contiene los estilos para la animación de scroll reveal
+
+// Clase base para elementos con animación de reveal
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  will-change: opacity, transform;
+
+  // Clase que se añade cuando el elemento entra en el viewport
+  &--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Asegurarse de que las animaciones estén desactivadas si el usuario
+// prefiere reducir el movimiento (accesibilidad)
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
