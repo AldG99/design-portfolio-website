@@ -151,10 +151,10 @@ const project4 = {
   // 5. ARQUITECTURA DE INFORMACIÓN
   informationArchitecture: {
     sitemap: {
-      sitemapImage: '/assets/images/projects/project4/sitemap.png',
+      sitemapImage: '/assets/images/projects/project4/sitemap.svg',
     },
     userFlow: {
-      userFlowImage: '/assets/images/projects/project4/userflow.png',
+      userFlowImage: '/assets/images/projects/project4/userflow.svg',
     },
   },
 

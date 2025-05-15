@@ -20,13 +20,6 @@ const ProjectDetail4 = () => {
             <img src={project4.thumbnail} alt={project4.title} />
           </div>
 
-          <h1 className="section-title" style={{ marginBottom: '0.5rem' }}>
-            INVENTA-ANALYT
-          </h1>
-          <p className="project-detail__subtitle" style={{ marginTop: '0' }}>
-            Control de inventario con análisis y reportes automatizados
-          </p>
-
           {/* Fecha ahora debajo del título con el formato deseado */}
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">

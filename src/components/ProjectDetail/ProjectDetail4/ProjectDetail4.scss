@@ -8,7 +8,6 @@ $section-spacing: $spacing-xxl;
 
 .project-detail {
   padding: $spacing-xxl 0;
-  margin-top: 80px; // Para compensar el header fixed
   font-family: $font-primary;
 
   // Hero Section
@@ -42,13 +41,6 @@ $section-spacing: $spacing-xxl;
         width: calc(100% + 96px);
       }
     }
-  }
-
-  &__subtitle {
-    font-size: $font-size-xl;
-    color: lighten($text-color, 15%);
-    margin-bottom: $heading-spacing;
-    line-height: 1.4;
   }
 
   &__meta {
@@ -131,7 +123,6 @@ $section-spacing: $spacing-xxl;
   }
 
   // Estilos consistentes para todos los títulos
-  .section-title,
   .section-subtitle,
   .subsection-title {
     font-family: $font-primary;
@@ -207,11 +198,12 @@ $section-spacing: $spacing-xxl;
     .repository-link {
       display: inline-flex;
       align-items: center;
-      padding: $spacing-sm $spacing-md;
+      padding: $spacing-xs $spacing-md; // Ajustado para coincidir con "Ver prototipo interactivo"
       background-color: transparent;
-      border-radius: $border-radius-sm;
+      border-radius: 0;
       color: $accent-color;
-      font-weight: 600;
+      font-weight: 500; // Cambiado a 500 para coincidir con los otros botones
+      font-size: $font-size-sm; // Añadido para coincidir con el tamaño de fuente
       text-decoration: none;
       transition: all 0.3s ease;
       border: 1px solid $accent-color;
@@ -342,7 +334,6 @@ $section-spacing: $spacing-xxl;
         .journey-title {
           font-size: $font-size-lg;
           font-weight: 600;
-          margin-bottom: $content-spacing;
           color: $accent-color;
         }
 
@@ -484,11 +475,12 @@ $section-spacing: $spacing-xxl;
     }
   }
 
+  // Modificado: Eliminar el espacio entre las imágenes en WIREFRAMES EN PAPEL
   .design-images {
     display: block;
 
     img {
-      margin-bottom: $content-spacing;
+      margin-bottom: 0; // Eliminado el espacio entre imágenes
     }
   }
 
@@ -538,10 +530,11 @@ $section-spacing: $spacing-xxl;
     }
   }
 
+  // Modificado: Reducir el espacio entre elementos en PRINCIPALES HALLAZGOS
   .findings-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $heading-spacing;
+    gap: $spacing-md; // Reducido de $heading-spacing a $spacing-md
     margin-bottom: $heading-spacing;
   }
 
@@ -549,26 +542,26 @@ $section-spacing: $spacing-xxl;
     font-size: $font-size-lg;
     font-weight: 700;
     color: $accent-color;
-    margin-bottom: $content-spacing;
+    margin-bottom: $spacing-sm; // Reducido de $content-spacing a $spacing-sm
   }
 
   .finding-description {
-    margin-bottom: $content-spacing;
+    margin-bottom: $spacing-sm; // Reducido de $content-spacing a $spacing-sm
   }
 
   .finding-quotes {
-    margin: $content-spacing 0;
+    margin: $spacing-sm 0; // Reducido de $content-spacing a $spacing-sm
   }
 
   .user-quote {
     font-style: italic;
     padding-left: $spacing-md;
-    margin-bottom: $content-spacing;
+    margin-bottom: $spacing-sm; // Reducido de $content-spacing a $spacing-sm
     color: lighten($text-color, 10%);
   }
 
   .finding-improvement {
-    margin-top: $content-spacing;
+    margin-top: $spacing-sm; // Reducido de $content-spacing a $spacing-sm
     padding: $spacing-sm;
     background-color: lighten($accent-color, 45%);
     border-radius: $border-radius-sm;
@@ -695,6 +688,7 @@ $section-spacing: $spacing-xxl;
   }
 
   // MODIFICACIÓN: Botones "Ver prototipo web" y "Ver prototipo móvil" alineados a la izquierda
+  // y con el mismo estilo que "Ver prototipo interactivo"
   .prototype-links {
     display: flex;
     flex-direction: column;
@@ -708,15 +702,15 @@ $section-spacing: $spacing-xxl;
     }
 
     .btn {
-      padding: $spacing-xs $spacing-md; // Reducir el padding para hacerlo más pequeño
-      font-size: $font-size-sm; // Reducir el tamaño de fuente
-      font-weight: 500; // Menos peso visual
-      min-width: auto; // Permitir que el ancho se ajuste al contenido
+      padding: $spacing-xs $spacing-md; // Hacer los botones del mismo tamaño que "Ver prototipo interactivo"
+      font-size: $font-size-sm;
+      font-weight: 500;
+      min-width: auto;
 
       @include sm {
         flex: 0 0 auto;
       }
-      border-radius: $border-radius-sm; // Añadir un border-radius pequeño para elegancia
+      border-radius: 0; // Eliminar el border-radius
     }
   }
 
@@ -851,7 +845,7 @@ $section-spacing: $spacing-xxl;
   }
 }
 
-// MODIFICACIÓN: Estilo general para todos los botones btn con apariencia minimalista
+// MODIFICACIÓN: Estilo general para todos los botones sin border-radius
 .btn {
   display: inline-block;
   padding: $spacing-xs $spacing-md;
@@ -860,7 +854,7 @@ $section-spacing: $spacing-xxl;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: $border-radius-sm;
+  border-radius: 0; // Eliminado el border-radius
 
   &--outline {
     background-color: transparent;

@@ -10,7 +10,7 @@ const FeaturedProjects = () => {
   return (
     <section className="featured-projects" id="proyectos">
       <div className="container">
-        <h2 className="section-title">Proyectos 🚀 🧩</h2>
+        <h2 className="section-title">Trabajo 🚀 🧩</h2>
         <div className="featured-projects__grid">
           {featuredProjects.map(project => (
             <div key={project.id} className="featured-projects__item">
