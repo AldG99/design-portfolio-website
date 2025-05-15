@@ -9,7 +9,6 @@ import './Footer.scss';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
   return (
     <footer className="footer">
       <div className="container">
@@ -43,9 +42,8 @@ const Footer = () => {
               <FontAwesomeIcon icon={faXTwitter} />
             </a>
           </div>
-
           <div className="footer__copyright">
-            <p>
+            <p className="no-select">
               &copy; {currentYear} | Todos los derechos reservados a Alfredo
               García.
             </p>

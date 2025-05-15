@@ -20,7 +20,13 @@ const FeaturedProjects = () => {
                   className="featured-projects__image-link"
                 >
                   <div className="featured-projects__image">
-                    <img src={project.thumbnail} alt={project.title} />
+                    <img
+                      src={project.thumbnail}
+                      alt={project.title}
+                      draggable="false"
+                      className="no-save"
+                      onContextMenu={e => e.preventDefault()}
+                    />
                   </div>
                 </Link>
                 <div className="featured-projects__info">

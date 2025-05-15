@@ -15,6 +15,7 @@ const Header = () => {
         setIsScrolled(false);
       }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -55,20 +56,22 @@ const Header = () => {
             <img
               src="assets/logo/logo.png"
               alt="Logo"
-              className="header__logo-image"
+              className="header__logo-image no-save"
+              draggable="false"
+              onContextMenu={e => e.preventDefault()}
             />
           </Link>
           <nav
             className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}
           >
-            <ul className="header__menu">
+            <ul className="header__menu no-select">
               <li className="header__menu-item">
                 <Link
                   to="/trabajo"
                   className={`header__menu-link ${isActive('/trabajo')}`}
                   onClick={() => handleNavClick('/trabajo')}
                 >
-                  Trabajo
+                  <span className="header__menu-text">Trabajo</span>
                 </Link>
               </li>
               <li className="header__menu-item">
@@ -77,7 +80,7 @@ const Header = () => {
                   className={`header__menu-link ${isActive('/about')}`}
                   onClick={() => handleNavClick('/about')}
                 >
-                  Acerca de mí
+                  <span className="header__menu-text">Acerca de mí</span>
                 </Link>
               </li>
             </ul>

@@ -4,14 +4,17 @@
 .about {
   padding: $spacing-xxl 0;
   margin-top: 80px; // Para compensar el header fixed
+
   &__header {
     margin-bottom: $spacing-lg; // Reducido para acortar espacio global
     @include md {
       padding-left: 0; // Elimina cualquier padding izquierdo
     }
+
     .title-bio-wrapper {
       margin-bottom: $spacing-md; // Espacio después del wrapper completo
     }
+
     .section-title {
       font-family: $font-primary;
       font-size: $font-size-xxl;
@@ -28,10 +31,12 @@
       }
     }
   }
+
   &__content {
     max-width: 1000px;
     margin: 0 auto;
   }
+
   &__profile {
     display: grid;
     grid-template-columns: 1fr;
@@ -42,12 +47,14 @@
       align-items: start; // Para que la imagen se alinee arriba
     }
   }
+
   &__bio {
     order: 2; // En móvil, la bio va después de la imagen
     @include md {
       order: 1; // En escritorio, la bio va primero (izquierda)
     }
   }
+
   &__bio-text {
     font-size: $font-size-lg;
     line-height: 1.8;
@@ -58,6 +65,7 @@
       margin-top: 0;
     }
   }
+
   &__link {
     color: $accent-color;
     font-weight: 600;
@@ -67,20 +75,32 @@
       color: darken($accent-color, 10%);
     }
   }
+
   &__image {
     order: 1; // En móvil, la imagen va primero
     @include md {
       order: 2; // En escritorio, la imagen va después de la bio (derecha)
       align-self: flex-start; // Alinea la imagen en la parte superior
     }
+
     img {
       width: 85%; // Reducido a 85% para hacerla más pequeña
       height: auto;
       object-fit: cover;
       display: block;
       margin: 0; // Alineación a la izquierda en su contenedor
+
+      &.no-save {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version */
+      }
     }
   }
+
   &__image-caption {
     font-size: $font-size-xs;
     color: lighten($text-color, 20%);
@@ -90,17 +110,20 @@
     line-height: 1.3;
     padding: 0;
     width: 85%; // Mismo ancho que la imagen para alinear perfectamente
+
     p {
       margin-bottom: 2px;
       &:last-child {
         margin-bottom: 0;
       }
     }
+
     strong {
       font-weight: 700;
       font-style: normal;
     }
   }
+
   &__caption-link {
     color: $accent-color;
     text-decoration: none;
@@ -109,8 +132,10 @@
       color: darken($accent-color, 10%);
     }
   }
+
   &__quote {
     margin: $spacing-xl 0;
+
     blockquote {
       font-family: 'Times New Roman', Times, serif;
       font-size: $font-size-lg;
@@ -118,6 +143,7 @@
       padding: $spacing-lg;
       border-left: 4px solid $accent-color;
       background-color: lighten($secondary-color, 5%);
+
       cite {
         display: block;
         text-align: right;
@@ -126,16 +152,19 @@
       }
     }
   }
+
   &__details {
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-lg;
     margin-bottom: $spacing-xl;
   }
+
   &__download {
     text-align: left; // Alineación a la izquierda en lugar de al centro
     margin-top: $spacing-md;
   }
+
   &__view-cv-btn {
     display: inline-flex;
     align-items: center;
@@ -143,6 +172,7 @@
     width: auto; // Evita que el botón ocupe todo el ancho
     border-radius: 0; /* Eliminando el border-radius */
   }
+
   &__cta {
     text-align: center;
     margin-top: $spacing-xl;

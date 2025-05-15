@@ -24,6 +24,7 @@
   &__logo {
     @include flex(row, flex-start, center);
     @include transition;
+    cursor: pointer; // Asegura que el cursor indique que es clickeable
 
     &:hover {
       opacity: 0.9;
@@ -35,6 +36,15 @@
 
       .header--scrolled & {
         height: 50px; // Mantener el mismo tamaño al hacer scroll
+      }
+
+      &.no-save {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version */
       }
     }
   }
@@ -49,7 +59,6 @@
     height: 20px; // Ligeramente más pequeño
     position: relative;
     z-index: 1001;
-
     @include md {
       display: none;
     }
@@ -62,15 +71,12 @@
       position: absolute;
       left: 0;
       @include transition;
-
       &:first-child {
         top: 0;
       }
-
       &:nth-child(2) {
         top: 9px; // Ajustado para mantener proporciones
       }
-
       &:last-child {
         bottom: 0;
       }
@@ -83,11 +89,9 @@
         transform: rotate(45deg);
         top: 9px;
       }
-
       &:nth-child(2) {
         opacity: 0;
       }
-
       &:last-child {
         transform: rotate(-45deg);
         bottom: 9px;
@@ -107,7 +111,6 @@
     @include transition($duration: $transition-slow);
     box-shadow: $shadow-lg;
     z-index: 1000;
-
     @include md {
       position: static;
       width: auto;
@@ -116,7 +119,6 @@
       padding: 0;
       box-shadow: none;
     }
-
     &--open {
       right: 0;
     }
@@ -125,6 +127,13 @@
   &__menu {
     list-style: none;
     margin-top: $spacing-xxl;
+
+    &.no-select {
+      user-select: none;
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+    }
 
     @include md {
       @include flex(row, flex-end, center);
@@ -135,7 +144,6 @@
   &__menu-item {
     margin-bottom: $spacing-md;
     text-align: center;
-
     @include md {
       margin-left: $spacing-sm;
       margin-bottom: 0;
@@ -152,6 +160,7 @@
     @include transition;
     padding: $spacing-xs $spacing-sm;
     display: block;
+    cursor: pointer; // Asegura que el cursor indique que es clickeable
 
     @include md {
       font-size: $font-size-md;
@@ -163,5 +172,9 @@
     &.active {
       color: $accent-color;
     }
+  }
+
+  &__menu-text {
+    pointer-events: none; // Permite que los clics pasen a través del texto al enlace
   }
 }

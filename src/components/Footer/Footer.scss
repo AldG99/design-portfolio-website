@@ -39,5 +39,12 @@
   &__copyright {
     color: lighten($text-color, 30%);
     font-size: $font-size-sm;
+
+    .no-select {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
   }
 }

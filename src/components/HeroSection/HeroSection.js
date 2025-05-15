@@ -102,6 +102,9 @@ const HeroSection = () => {
             <img
               src="/assets/images/profile/profile1.jpg"
               alt="Foto de perfil"
+              draggable="false"
+              className="no-save"
+              onContextMenu={e => e.preventDefault()}
             />
           </div>
         </div>

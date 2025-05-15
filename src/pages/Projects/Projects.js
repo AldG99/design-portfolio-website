@@ -41,7 +41,13 @@ const Projects = () => {
                 className="project-item__thumbnail-link"
               >
                 <div className="project-item__thumbnail">
-                  <img src={project.thumbnail} alt={project.title} />
+                  <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    draggable="false"
+                    className="no-save"
+                    onContextMenu={e => e.preventDefault()}
+                  />
                 </div>
               </Link>
               <div className="project-item__content">

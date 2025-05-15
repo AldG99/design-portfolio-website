@@ -27,7 +27,13 @@ const ProjectCard = ({ project, isFeature = false }) => {
         className="project-card__link"
       >
         <div className="project-card__thumbnail">
-          <img src={project.thumbnail} alt={project.title} />
+          <img
+            src={project.thumbnail}
+            alt={project.title}
+            draggable="false"
+            className="no-save"
+            onContextMenu={e => e.preventDefault()}
+          />
         </div>
         <div className="project-card__content">
           <div className="project-card__date">{project.date}</div>

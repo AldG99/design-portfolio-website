@@ -66,6 +66,9 @@ const About = () => {
               <img
                 src="/assets/images/profile/profile2.jpg"
                 alt="Foto de perfil"
+                draggable="false"
+                className="no-save"
+                onContextMenu={e => e.preventDefault()}
               />
               <div className="about__image-caption">
                 <p>

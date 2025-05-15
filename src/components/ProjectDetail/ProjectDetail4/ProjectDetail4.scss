@@ -6,6 +6,14 @@ $heading-spacing: $spacing-lg;
 $content-spacing: $spacing-md;
 $section-spacing: $spacing-xxl;
 
+// Regla global para evitar que las imágenes se seleccionen (solo evita el resaltado azul)
+.project-detail img {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version */
+}
+
 .project-detail {
   padding: $spacing-xxl 0;
   font-family: $font-primary;
