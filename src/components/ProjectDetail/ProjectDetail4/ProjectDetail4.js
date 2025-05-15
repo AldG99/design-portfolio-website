@@ -1,14 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import project4 from '../../../data/projects/project4';
 import './ProjectDetail4.scss';
 
 const ProjectDetail4 = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
     // Set document title
     document.title = `Portafolio | ${project4.title}`;
   }, []);
+
+  // Función para abrir la imagen en tamaño completo
+  const openImageModal = imageUrl => {
+    setSelectedImage(imageUrl);
+    // Prevenir el scroll cuando el modal está abierto
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Función para cerrar la imagen en tamaño completo
+  const closeImageModal = () => {
+    setSelectedImage(null);
+    // Restaurar el scroll
+    document.body.style.overflow = 'auto';
+  };
+
+  // Función para identificar a Guadalupe y Araceli por sus descripciones
+  const isUserProfile = profileText => {
+    return (
+      profileText.includes('Guadalupe') ||
+      profileText.includes('dulcería') ||
+      profileText.includes('Araceli') ||
+      profileText.includes('ferretería')
+    );
+  };
 
   return (
     <main className="project-detail project-detail--inventa">
@@ -17,7 +43,13 @@ const ProjectDetail4 = () => {
         <header className="project-detail__hero">
           {/* Imagen principal al inicio - ahora a ancho completo */}
           <div className="hero-image hero-image--full-width">
-            <img src={project4.thumbnail} alt={project4.title} />
+            <img
+              src={project4.thumbnail}
+              alt={project4.title}
+              draggable="false"
+              className="no-save"
+              onContextMenu={e => e.preventDefault()}
+            />
           </div>
 
           {/* Fecha ahora debajo del título con el formato deseado */}
@@ -157,6 +189,16 @@ const ProjectDetail4 = () => {
                       <img
                         src={profile.problemStatementImage}
                         alt={`Persona ${index + 1}`}
+                        onClick={() =>
+                          isUserProfile(profile.problemStatement)
+                            ? openImageModal(profile.problemStatementImage)
+                            : null
+                        }
+                        className={
+                          isUserProfile(profile.problemStatement)
+                            ? 'clickable-image'
+                            : ''
+                        }
                       />
                     </div>
                   </div>
@@ -253,6 +295,12 @@ const ProjectDetail4 = () => {
               <img
                 src={project4.informationArchitecture.sitemap.sitemapImage}
                 alt="Mapa del sitio"
+                onClick={() =>
+                  openImageModal(
+                    project4.informationArchitecture.sitemap.sitemapImage
+                  )
+                }
+                className="clickable-image"
               />
             </div>
           </div>
@@ -263,6 +311,12 @@ const ProjectDetail4 = () => {
               <img
                 src={project4.informationArchitecture.userFlow.userFlowImage}
                 alt="Flujo de usuario"
+                onClick={() =>
+                  openImageModal(
+                    project4.informationArchitecture.userFlow.userFlowImage
+                  )
+                }
+                className="clickable-image"
               />
             </div>
           </div>
@@ -664,9 +718,19 @@ const ProjectDetail4 = () => {
             </p>
           </div>
         </section>
-
-        {/* Se han eliminado los botones de navegación */}
       </div>
+
+      {/* Modal para visualizar imágenes */}
+      {selectedImage && (
+        <div className="image-modal" onClick={closeImageModal}>
+          <div className="image-modal__content">
+            <span className="image-modal__close" onClick={closeImageModal}>
+              &times;
+            </span>
+            <img src={selectedImage} alt="Imagen ampliada" />
+          </div>
+        </div>
+      )}
     </main>
   );
 };
