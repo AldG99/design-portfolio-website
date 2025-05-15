@@ -1,4 +1,4 @@
-// Mixins para media queries
+/* Mixins para media queries */
 @mixin sm {
   @media (min-width: $breakpoint-sm) {
     @content;
@@ -23,7 +23,7 @@
   }
 }
 
-// Flexbox
+/* Flexbox */
 @mixin flex(
   $direction: row,
   $justify: flex-start,
@@ -37,14 +37,14 @@
   flex-wrap: $wrap;
 }
 
-// Grid
+/* Grid */
 @mixin grid($columns: 1fr, $gap: $spacing-md) {
   display: grid;
   grid-template-columns: $columns;
   gap: $gap;
 }
 
-// Container
+/* Container */
 @mixin container {
   width: 100%;
   max-width: 1200px;
@@ -52,12 +52,12 @@
   padding: 0 $spacing-md;
 }
 
-// Transición
+/* Transición */
 @mixin transition($property: all, $duration: $transition-normal) {
   transition: $property $duration;
 }
 
-// Botón
+/* Botón */
 @mixin button(
   $bg-color: transparent,
   $text-color: $accent-color,
@@ -68,7 +68,7 @@
   background-color: $bg-color;
   color: $text-color;
   border: 1px solid currentColor;
-  border-radius: $border-radius-sm;
+  border-radius: 0; /* Cambiado de $border-radius-sm a 0 */
   font-family: $font-primary;
   font-weight: 500;
   font-size: $font-size-md;
@@ -76,35 +76,33 @@
   text-decoration: none;
   text-align: center;
   @include transition;
-
   &:hover {
     background-color: $hover-color;
   }
 }
 
-// Sección
+/* Sección */
 @mixin section {
   padding: $spacing-xl 0;
 }
 
-// Título
+/* Título */
 @mixin section-title {
   font-family: $font-secondary;
   font-size: $font-size-xxl;
   font-weight: 700;
   color: $text-color;
   margin-bottom: $spacing-lg;
-  text-align: left; // Cambiado a alineación izquierda
+  text-align: left; /* Cambiado a alineación izquierda */
 }
 
-// Tarjeta
+/* Tarjeta */
 @mixin card {
   background-color: white;
   border-radius: $border-radius-lg;
   box-shadow: $shadow-md;
   overflow: hidden;
   @include transition;
-
   &:hover {
     box-shadow: $shadow-lg;
     transform: translateY(-4px);

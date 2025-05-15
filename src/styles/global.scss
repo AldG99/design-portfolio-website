@@ -30,7 +30,6 @@ a {
   color: $accent-color;
   text-decoration: none;
   @include transition;
-
   &:hover {
     color: darken($accent-color, 10%);
   }
@@ -85,11 +84,12 @@ button {
   font-weight: 700;
   color: $text-color;
   margin-bottom: $spacing-lg;
-  text-align: left; // Cambiado a alineación izquierda por defecto
+  text-align: left; /* Cambiado a alineación izquierda por defecto */
 }
 
 .btn {
   @include button;
+  border-radius: 0; /* Eliminando el border-radius de todos los botones */
 
   &--secondary {
     @include button(
@@ -98,10 +98,12 @@ button {
       $hover-color: rgba($text-color, 0.1)
     );
     border-color: $text-color;
+    border-radius: 0; /* Asegurando que también se aplique a esta variante */
   }
 
   &--outline {
     @include button;
+    border-radius: 0; /* Asegurando que también se aplique a esta variante */
 
     &:hover {
       background-color: rgba($accent-color, 0.1);
@@ -113,6 +115,7 @@ button {
     background-color: $accent-color;
     color: white;
     border: none;
+    border-radius: 0; /* Asegurando que también se aplique a esta variante */
 
     &:hover {
       background-color: darken($accent-color, 10%);

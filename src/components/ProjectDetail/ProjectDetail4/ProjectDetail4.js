@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import project4 from '../../../data/projects/project4';
 import './ProjectDetail4.scss';
 
@@ -21,16 +20,18 @@ const ProjectDetail4 = () => {
             <img src={project4.thumbnail} alt={project4.title} />
           </div>
 
-          <h1 className="section-title">{project4.title}</h1>
-          <p className="project-detail__subtitle">
-            {project4.shortDescription}
+          <h1 className="section-title" style={{ marginBottom: '0.5rem' }}>
+            INVENTA-ANALYT
+          </h1>
+          <p className="project-detail__subtitle" style={{ marginTop: '0' }}>
+            Control de inventario con análisis y reportes automatizados
           </p>
 
+          {/* Fecha ahora debajo del título con el formato deseado */}
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
-              <span className="meta-value">{project4.date}</span>
+              <span className="meta-value">Octubre 2024 - Febrero 2025</span>
             </div>
-            {/* Tools moved below date */}
           </div>
 
           {/* Tools ahora están fuera del meta container y debajo de la fecha */}
@@ -671,15 +672,7 @@ const ProjectDetail4 = () => {
           </div>
         </section>
 
-        {/* Back to projects */}
-        <section className="project-detail__navigation">
-          <Link to="/trabajo" className="btn btn--outline">
-            ← Volver a todos los proyectos
-          </Link>
-          <Link to="/" className="btn">
-            Ir al inicio
-          </Link>
-        </section>
+        {/* Se han eliminado los botones de navegación */}
       </div>
     </main>
   );
