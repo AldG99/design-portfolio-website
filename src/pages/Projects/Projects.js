@@ -41,11 +41,6 @@ const Projects = () => {
   return (
     <main className="projects-page">
       <div className="container">
-        {/* NUEVO: Añadir título con efecto de reveal */}
-        <h1 className="projects-page__title" ref={revealRef}>
-          Proyectos
-        </h1>
-
         <div className="projects-page__list">
           {projects.map((project, index) => (
             <div

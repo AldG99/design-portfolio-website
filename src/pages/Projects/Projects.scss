@@ -10,14 +10,6 @@
   padding: $spacing-xxl 0;
   margin-top: 80px; // Para compensar el header fixed
 
-  // NUEVO: Estilo para el título de la página
-  &__title {
-    font-family: $font-secondary;
-    font-size: $font-size-xxl;
-    margin-bottom: $spacing-xl;
-    color: $text-color;
-  }
-
   &__list {
     display: flex;
     flex-direction: column;
