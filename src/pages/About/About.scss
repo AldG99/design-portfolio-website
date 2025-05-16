@@ -4,31 +4,31 @@
 
 .about {
   padding: $spacing-xxl 0;
-  margin-top: 80px; // Para compensar el header fixed
+  margin-top: 80px;
 
   &__header {
-    margin-bottom: $spacing-lg; // Reducido para acortar espacio global
+    margin-bottom: $spacing-lg;
     @include md {
-      padding-left: 0; // Elimina cualquier padding izquierdo
+      padding-left: 0;
     }
 
     .title-bio-wrapper {
-      margin-bottom: $spacing-md; // Espacio después del wrapper completo
+      margin-bottom: $spacing-md;
     }
 
     .section-title {
       font-family: $font-primary;
       font-size: $font-size-xxl;
       font-weight: 700;
-      text-align: left; // Asegura la alineación a la izquierda
-      margin-bottom: $spacing-xs / 2; // Espacio muy reducido entre título y primer párrafo
-      line-height: 1.2; // Mejor control de espaciado vertical
-      max-width: 1000px; // Mismo ancho que el contenido
+      text-align: left;
+      margin-bottom: $spacing-xs / 2;
+      line-height: 1.2;
+      max-width: 1000px;
       margin-top: 0;
       margin-left: 0;
       margin-right: 0;
       @include md {
-        padding-left: 0; // Asegura que no haya padding adicional
+        padding-left: 0;
       }
     }
   }
@@ -44,15 +44,15 @@
     gap: $spacing-lg;
     margin-bottom: $spacing-xl;
     @include md {
-      grid-template-columns: 3fr 2fr; // Proporción 60% bio, 40% imagen
-      align-items: start; // Para que la imagen se alinee arriba
+      grid-template-columns: 3fr 2fr;
+      align-items: start;
     }
   }
 
   &__bio {
-    order: 2; // En móvil, la bio va después de la imagen
+    order: 2;
     @include md {
-      order: 1; // En escritorio, la bio va primero (izquierda)
+      order: 1;
     }
   }
 
@@ -61,7 +61,6 @@
     line-height: 1.8;
     margin-bottom: $spacing-md;
     color: $text-color;
-    // El primer párrafo dentro del wrapper no necesita margen superior
     .title-bio-wrapper & {
       margin-top: 0;
     }
@@ -78,26 +77,26 @@
   }
 
   &__image {
-    order: 1; // En móvil, la imagen va primero
+    order: 1;
     @include md {
-      order: 2; // En escritorio, la imagen va después de la bio (derecha)
-      align-self: flex-start; // Alinea la imagen en la parte superior
+      order: 2;
+      align-self: flex-start;
     }
 
     img {
-      width: 85%; // Reducido a 85% para hacerla más pequeña
+      width: 85%;
       height: auto;
       object-fit: cover;
       display: block;
-      margin: 0; // Alineación a la izquierda en su contenedor
+      margin: 0;
 
       &.no-save {
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
     }
   }
@@ -110,7 +109,7 @@
     font-style: normal;
     line-height: 1.3;
     padding: 0;
-    width: 85%; // Mismo ancho que la imagen para alinear perfectamente
+    width: 85%;
 
     p {
       margin-bottom: 2px;
@@ -162,7 +161,7 @@
   }
 
   &__download {
-    text-align: left; // Alineación a la izquierda en lugar de al centro
+    text-align: left;
     margin-top: $spacing-md;
   }
 
@@ -170,8 +169,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: auto; // Evita que el botón ocupe todo el ancho
-    border-radius: 0; /* Eliminando el border-radius */
+    width: auto;
+    border-radius: 0;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   &__cta {

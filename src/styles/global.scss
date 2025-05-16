@@ -84,12 +84,12 @@ button {
   font-weight: 700;
   color: $text-color;
   margin-bottom: $spacing-lg;
-  text-align: left; /* Cambiado a alineación izquierda por defecto */
+  text-align: left;
 }
 
 .btn {
   @include button;
-  border-radius: 0; /* Eliminando el border-radius de todos los botones */
+  border-radius: 0;
 
   &--secondary {
     @include button(
@@ -98,12 +98,12 @@ button {
       $hover-color: rgba($text-color, 0.1)
     );
     border-color: $text-color;
-    border-radius: 0; /* Asegurando que también se aplique a esta variante */
+    border-radius: 0;
   }
 
   &--outline {
     @include button;
-    border-radius: 0; /* Asegurando que también se aplique a esta variante */
+    border-radius: 0;
 
     &:hover {
       background-color: rgba($accent-color, 0.1);
@@ -115,7 +115,7 @@ button {
     background-color: $accent-color;
     color: white;
     border: none;
-    border-radius: 0; /* Asegurando que también se aplique a esta variante */
+    border-radius: 0;
 
     &:hover {
       background-color: darken($accent-color, 10%);

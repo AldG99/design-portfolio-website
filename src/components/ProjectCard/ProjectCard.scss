@@ -28,12 +28,12 @@
       @include transition;
 
       &.no-save {
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
     }
   }
@@ -69,8 +69,8 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    flex: 1; // Hace que esta sección se expanda para igualar alturas
-    font-weight: 300; // Letra más fina
+    flex: 1;
+    font-weight: 300;
   }
 
   &__tools {
@@ -86,39 +86,37 @@
     background-color: $secondary-color;
     color: darken($text-color, 10%);
 
-    // Colores específicos para cada herramienta
     &--figma {
-      background-color: #ffc0a9; /* Versión pastel más densa del naranja de Figma */
+      background-color: #ffc0a9;
       color: #333333;
     }
 
     &--scss {
-      background-color: #dda0c2; /* Versión pastel más densa del rosa de SCSS */
+      background-color: #dda0c2;
       color: #333333;
     }
 
     &--react {
-      background-color: #a8dcec; /* Versión pastel más densa del azul de React */
+      background-color: #a8dcec;
       color: #333333;
     }
 
     &--react-native {
-      background-color: #9ccfe3; /* Variación pastel más densa del azul de React Native */
+      background-color: #9ccfe3;
       color: #333333;
     }
 
     &--expo {
-      background-color: #bababd; /* Versión pastel más densa del azul oscuro de Expo */
+      background-color: #bababd;
       color: #333333;
     }
 
     &--firebase {
-      background-color: #ffe0a3; /* Versión pastel más densa del amarillo de Firebase */
+      background-color: #ffe0a3;
       color: #333333;
     }
   }
 
-  // Hover effects
   &:hover {
     transform: translateY(-8px);
 
@@ -131,7 +129,6 @@
     }
   }
 
-  // Feature project styling
   &--feature {
     @include lg {
       display: grid;

@@ -8,27 +8,20 @@ const ProjectDetail4 = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
-    // Set document title
     document.title = `Portafolio | ${project4.title}`;
   }, []);
 
-  // Función para abrir la imagen en tamaño completo
   const openImageModal = imageUrl => {
     setSelectedImage(imageUrl);
-    // Prevenir el scroll cuando el modal está abierto
     document.body.style.overflow = 'hidden';
   };
 
-  // Función para cerrar la imagen en tamaño completo
   const closeImageModal = () => {
     setSelectedImage(null);
-    // Restaurar el scroll
     document.body.style.overflow = 'auto';
   };
 
-  // Función para identificar a Guadalupe y Araceli por sus descripciones
   const isUserProfile = profileText => {
     return (
       profileText.includes('Guadalupe') ||
@@ -41,9 +34,7 @@ const ProjectDetail4 = () => {
   return (
     <main className="project-detail project-detail--inventa">
       <div className="container">
-        {/* Hero Section */}
         <header className="project-detail__hero">
-          {/* Imagen principal al inicio - ahora a ancho completo y con animación */}
           <div className="hero-image hero-image--full-width" ref={revealRef}>
             <img
               src={project4.thumbnail}
@@ -54,14 +45,12 @@ const ProjectDetail4 = () => {
             />
           </div>
 
-          {/* Fecha ahora debajo del título con el formato deseado */}
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
               <span className="meta-value">Octubre 2024 - Febrero 2025</span>
             </div>
           </div>
 
-          {/* Tools ahora están fuera del meta container y debajo de la fecha */}
           <div className="project-detail__tools">
             {project4.tools.map((tool, index) => (
               <span
@@ -76,12 +65,10 @@ const ProjectDetail4 = () => {
           </div>
         </header>
 
-        {/* Project Overview */}
         <section className="project-detail__overview">
           <h2 className="section-subtitle">RESUMEN DEL PROYECTO</h2>
           <p className="overview-text">{project4.description}</p>
 
-          {/* Enlaces a repositorios */}
           {project4.repositories && (
             <div className="project-detail__links">
               <div className="project-detail__repository-links">
@@ -116,9 +103,7 @@ const ProjectDetail4 = () => {
           )}
         </section>
 
-        {/* 1. DEFINICIÓN DEL PROYECTO */}
         <section className="project-detail__section">
-          {/* Problem and Goal - ahora en layout horizontal */}
           <div className="project-detail__problem-goal-container">
             <div className="project-detail__problem">
               <h3 className="subsection-title">PROBLEMA</h3>
@@ -131,13 +116,11 @@ const ProjectDetail4 = () => {
             </div>
           </div>
 
-          {/* Role */}
           <div className="project-detail__role">
             <h3 className="subsection-title">MI ROL</h3>
             <p className="role-text">{project4.role}</p>
           </div>
 
-          {/* Responsibilities */}
           <div className="project-detail__responsibilities">
             <h3 className="subsection-title">RESPONSABILIDADES</h3>
             <ul className="responsibilities-list">
@@ -150,7 +133,6 @@ const ProjectDetail4 = () => {
           </div>
         </section>
 
-        {/* 2. INVESTIGACIÓN Y DESCUBRIMIENTO */}
         <section className="project-detail__section">
           <h2 className="section-subtitle">INVESTIGACIÓN Y IDEACIÓN</h2>
 
@@ -174,11 +156,9 @@ const ProjectDetail4 = () => {
           </div>
         </section>
 
-        {/* 3. USUARIOS */}
         <section className="project-detail__section">
           <h2 className="section-subtitle">PERSONAS</h2>
 
-          {/* User Personas */}
           <div className="project-detail__personas">
             <div className="personas-horizontal-grid">
               {project4.userProfiles.map((profile, index) => (
@@ -209,7 +189,6 @@ const ProjectDetail4 = () => {
             </div>
           </div>
 
-          {/* User Journey Maps */}
           <div className="project-detail__journey-maps">
             <h3 className="subsection-title">MAPAS DE RECORRIDO DEL USUARIO</h3>
             <div className="journey-maps-vertical">
@@ -233,7 +212,6 @@ const ProjectDetail4 = () => {
           </div>
         </section>
 
-        {/* 4. ANÁLISIS COMPETITIVO */}
         <section className="project-detail__section">
           <h2 className="section-subtitle">ANÁLISIS COMPETITIVO</h2>
 
@@ -394,7 +372,6 @@ const ProjectDetail4 = () => {
           </div>
         </section>
 
-        {/* 7. PROTOTIPADO */}
         <section className="project-detail__section">
           <div className="design-section">
             <h3 className="subsection-title">PROTOTIPO DE BAJA FIDELIDAD</h3>
@@ -420,7 +397,6 @@ const ProjectDetail4 = () => {
           </div>
         </section>
 
-        {/* 8. ESTUDIO DE USABILIDAD Y REFINAMIENTO */}
         <section className="project-detail__section">
           <h3 className="subsection-title">
             ESTUDIO DE USABILIDAD: PARÁMETROS
@@ -499,7 +475,6 @@ const ProjectDetail4 = () => {
           </div>
         </section>
 
-        {/* 9. DISEÑO VISUAL Y CONSIDERACIONES */}
         <section className="project-detail__section">
           <h2 className="section-subtitle">DISEÑO VISUAL Y CONSIDERACIONES</h2>
 
@@ -657,7 +632,6 @@ const ProjectDetail4 = () => {
           </ol>
         </section>
 
-        {/* 10. RESULTADOS Y REFLEXIÓN */}
         <section className="project-detail__section">
           <h2 className="section-subtitle">RESULTADOS Y REFLEXIÓN</h2>
 
@@ -722,7 +696,6 @@ const ProjectDetail4 = () => {
         </section>
       </div>
 
-      {/* Modal para visualizar imágenes */}
       {selectedImage && (
         <div className="image-modal" onClick={closeImageModal}>
           <div className="image-modal__content">

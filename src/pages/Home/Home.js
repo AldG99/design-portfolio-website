@@ -5,9 +5,7 @@ import './Home.scss';
 
 const Home = () => {
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
-    // Set document title
     document.title = 'Portafolio | Inicio';
   }, []);
 

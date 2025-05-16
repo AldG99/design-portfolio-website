@@ -1,11 +1,9 @@
-// Proyecto 4: INVENTA-ANALYT - Control de inventario con análisis y reportes automatizados
 const project4 = {
   id: 4,
   title: 'INVENTA-ANALYT',
   shortDescription:
     'Control de inventario con análisis y reportes automatizados',
 
-  // Información básica (Sección Hero)
   description:
     'INVENTA-ANALYT es una aplicación móvil y web para gestión de pequeños negocios que integra control de inventario, registro de ventas, consulta de transacciones y análisis avanzados. La plataforma destaca por su interfaz intuitiva que permite a los propietarios monitorear existencias en tiempo real y acceder al historial completo de operaciones.',
   thumbnail: '/assets/images/projects/project4/thumbnail.png',
@@ -13,7 +11,6 @@ const project4 = {
   dateRaw: '2025-02-05',
   tools: ['Figma', 'SCSS', 'React', 'React Native Expo', 'Firebase'],
 
-  // Enlaces a repositorios
   repositories: {
     mobile: {
       url: 'https://github.com/AldG99/inventory-control-app',
@@ -27,7 +24,6 @@ const project4 = {
     },
   },
 
-  // 1. DEFINICIÓN DEL PROYECTO
   problem:
     'Pequeños comerciantes usan métodos manuales o herramientas desconectadas para gestionar inventario y ventas, causando errores y pérdida de información, lo que limita su capacidad para optimizar operaciones y crecer.',
   goal: 'Crear una app móvil intuitiva que digitalice completamente operaciones de inventario y ventas, integrando análisis predictivos y recomendaciones automatizadas para optimizar la gestión del negocio y facilitar la toma de decisiones estratégicas basadas en datos reales.',
@@ -40,7 +36,6 @@ const project4 = {
     'Desarrollar visualizaciones estadísticas para el módulo de reportes, transformar datos complejos en representaciones gráficas intuitivas.',
   ],
 
-  // 2. INVESTIGACIÓN Y DESCUBRIMIENTO
   research: {
     summary:
       'Realicé la investigación mediante una encuesta a cuatro propietarios de pequeños negocios para conocer mejor sus intereses y necesidades. Descubrí que los comerciantes priorizaron la rapidez en el registro de ventas por encima de las funciones de inventario. También surgió una necesidad inesperada: contar con predicciones sencillas sobre el reabastecimiento, sin requerir conocimientos estadísticos. Estos hallazgos reorientaron el desarrollo hacia una interfaz ágil para ventas y un sistema de análisis automatizado. La mayoría de las preguntas fueron cuantitativas, pero incluí algunas abiertas, ya que este fue nuestro principal punto de contacto con los usuarios.',
@@ -52,7 +47,6 @@ const project4 = {
     ],
   },
 
-  // 3. USUARIOS
   userProfiles: [
     {
       problemStatement:
@@ -82,7 +76,6 @@ const project4 = {
     },
   ],
 
-  // 4. ANÁLISIS COMPETITIVO
   competitors: [
     {
       name: 'StockTracker Lite',
@@ -148,7 +141,6 @@ const project4 = {
     },
   ],
 
-  // 5. ARQUITECTURA DE INFORMACIÓN
   informationArchitecture: {
     sitemap: {
       sitemapImage: '/assets/images/projects/project4/sitemap.svg',
@@ -158,7 +150,6 @@ const project4 = {
     },
   },
 
-  // 6. DISEÑO DE WIREFRAMES
   wireframing: {
     paperWireframes: {
       paperWireframesImage: [
@@ -172,14 +163,12 @@ const project4 = {
       digitalWireframesImage: '/assets/images/projects/project4/wireframes.png',
       sizeVariationsImage: ['/assets/images/projects/project4/digital.png'],
 
-      // Variaciones de tamaño adicionales
       deviceVariationsImage: [
         '/assets/images/projects/project4/variations.png',
       ],
     },
   },
 
-  // 7. PROTOTIPADO (Baja fidelidad)
   prototyping: {
     lowFidelity: {
       description:
@@ -190,7 +179,6 @@ const project4 = {
     },
   },
 
-  // 8. ESTUDIO DE USABILIDAD Y REFINAMIENTO
   usabilityStudy: {
     parameters: {
       type: 'Estudio de usabilidad sin moderación',
@@ -245,7 +233,6 @@ const project4 = {
     ],
   },
 
-  // 9. DISEÑO VISUAL Y CONSIDERACIONES
   visualDesign: {
     colorPalette: {
       60: '#F6F7F8 (Gris claro)',
@@ -269,7 +256,6 @@ const project4 = {
       ],
       originalScreenSize: '/assets/images/projects/project4/screen.png',
     },
-    // Prototipo de alta fidelidad (movido aquí desde prototyping)
     highFidelity: {
       description: [
         'El prototipo refleja un diseño iterativo basado en investigación y retroalimentación de los usuarios. Utiliza el color violeta por su profesionalismo y accesibilidad. Se diferencia de la mayoría de aplicaciones empresariales que usan azul o verde.',
@@ -290,7 +276,6 @@ const project4 = {
     },
   },
 
-  // 10. RESULTADOS Y REFLEXIÓN
   conclusion: {
     summary:
       'Los usuarios objetivo compartieron que la app resultó ser muy fácil de usar, destacando especialmente su diseño intuitivo que facilitaba la navegación y las interacciones. Gracias a su estructura clara y simple, pudieron gestionar, agregar y vender productos sin complicaciones. La organización de las funciones y la accesibilidad de las opciones clave les permitió realizar estas tareas de manera rápida y eficiente, incluso sin experiencia previa con la aplicación. Esto no solo mejoró su productividad, sino que también redujo la curva de aprendizaje, haciendo que se sintieran cómodos y seguros al utilizarla desde el primer momento.',

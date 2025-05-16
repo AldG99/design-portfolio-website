@@ -1,27 +1,18 @@
-// ARCHIVO MODIFICADO: src/pages/Projects/Projects.js
-// Este archivo ha sido modificado para implementar la animación scroll reveal en la página de Trabajo
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllProjects, getProjectSlug } from '../../data/projectsIndex';
-// NUEVO: Importar el hook useScrollReveal
 import { useScrollReveal } from '../../context/ScrollRevealContext';
 import './Projects.scss';
 
 const Projects = () => {
-  // NUEVO: Usar el hook para obtener la referencia de animación
   const { revealRef } = useScrollReveal();
 
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
-    // Set document title
     document.title = 'Portafolio | Trabajo';
-    // Get all projects and sort by date (newest first)
     const allProjects = getAllProjects();
-    // Asegúrate de que todos los proyectos tengan las propiedades necesarias
     const processedProjects = allProjects.map(project => ({
       ...project,
       title: project.title || `Proyecto ${project.id}`,
@@ -46,7 +37,6 @@ const Projects = () => {
             <div
               className="project-item"
               key={project.id}
-              /* NUEVO: Añadir ref y delay para cada proyecto */
               ref={revealRef}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
@@ -71,7 +61,6 @@ const Projects = () => {
                   {project.shortDescription}
                 </p>
                 <div className="project-item__tools">
-                  {/* Verificar que project.tools existe y es un array */}
                   {Array.isArray(project.tools) && project.tools.length > 0 ? (
                     project.tools.map((tool, index) => (
                       <span

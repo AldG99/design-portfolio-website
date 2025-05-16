@@ -1,6 +1,3 @@
-// NUEVO ARCHIVO: src/context/ScrollRevealContext.js
-// Este archivo gestiona la lógica de detección de scroll para las animaciones
-
 import React, { createContext, useContext } from 'react';
 
 const ScrollRevealContext = createContext({
@@ -22,8 +19,8 @@ export const ScrollRevealProvider = ({ children }) => {
           });
         },
         {
-          threshold: 0.1, // 10% del elemento visible para activar
-          rootMargin: '0px 0px -50px 0px', // Ajusta el margen para activar un poco antes
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px',
         }
       );
 

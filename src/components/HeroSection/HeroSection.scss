@@ -4,16 +4,12 @@
 
 .hero-section {
   padding: $spacing-xxl 0;
-  margin-top: 80px; // Para compensar el header fixed
+  margin-top: 80px;
 
   &__content {
     @include flex(column, center, center);
     @include md {
-      @include flex(
-        row,
-        space-between,
-        flex-start
-      ); // Cambio de center a flex-start para alinear al inicio
+      @include flex(row, space-between, flex-start);
     }
   }
 
@@ -38,16 +34,16 @@
     font-size: $font-size-hero;
     font-weight: 500;
     color: $text-color;
-    margin-bottom: $spacing-xs / 2; // Reducido significativamente para acercar el nombre a la profesión
-    line-height: 1.2; // Añadido para controlar mejor el espaciado vertical
+    margin-bottom: $spacing-xs / 2;
+    line-height: 1.2;
   }
 
   &__profession {
     font-size: $font-size-xl;
     color: lighten($text-color, 15%);
-    margin-bottom: 0; // Eliminado el margen inferior
+    margin-bottom: 0;
     font-weight: 500;
-    line-height: 1.2; // Añadido para mantener consistencia con el nombre
+    line-height: 1.2;
   }
 
   &__tools {
@@ -69,37 +65,36 @@
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     letter-spacing: -0.5px;
 
-    // Colores específicos para cada herramienta
     &--figma {
-      background-color: #ffc0a9; /* Versión pastel más densa del naranja de Figma */
+      background-color: #ffc0a9;
       color: #333333;
     }
     &--scss {
-      background-color: #dda0c2; /* Versión pastel más densa del rosa de SCSS */
+      background-color: #dda0c2;
       color: #333333;
     }
     &--react {
-      background-color: #a8dcec; /* Versión pastel más densa del azul de React */
+      background-color: #a8dcec;
       color: #333333;
     }
     &--react-native {
-      background-color: #9ccfe3; /* Variación pastel más densa del azul de React Native */
+      background-color: #9ccfe3;
       color: #333333;
     }
     &--expo {
-      background-color: #bababd; /* Versión pastel más densa del azul oscuro de Expo */
+      background-color: #bababd;
       color: #333333;
     }
     &--firebase {
-      background-color: #ffe0a3; /* Versión pastel más densa del amarillo de Firebase */
+      background-color: #ffe0a3;
       color: #333333;
     }
     &--unity {
-      background-color: #d6d6d8; /* Versión pastel del color gris de Unity */
+      background-color: #d6d6d8;
       color: #333333;
     }
     &--blender {
-      background-color: #f8c297; /* Versión pastel del color naranja de Blender */
+      background-color: #f8c297;
       color: #333333;
     }
   }
@@ -116,7 +111,7 @@
     @include transition;
     &:hover {
       text-decoration: none;
-      color: $text-color;
+      color: darken($accent-color, 10%);
     }
   }
 
@@ -167,18 +162,17 @@
 
   &__image {
     width: 100%;
-    max-width: 380px; // Reducido ligeramente de 400px
+    max-width: 380px;
     margin: 0 auto;
-    margin-top: 20px; // Añadido para ajustar la posición vertical
-    position: relative; // Necesario para posicionar la figura geométrica
+    margin-top: 20px;
+    position: relative;
     @include md {
-      width: 42%; // Reducido de 45%
+      width: 42%;
       margin: 0;
-      margin-right: 3%; // Añadido margen a la derecha
-      margin-top: 10px; // Añadido para ajustar al nivel del nombre
+      margin-right: 3%;
+      margin-top: 10px;
     }
 
-    // Figura geométrica de fondo
     &::before {
       content: '';
       position: absolute;
@@ -206,16 +200,16 @@
       width: 100%;
       height: auto;
       box-shadow: $shadow-lg;
-      position: relative; // Para que esté por encima de la figura
+      position: relative;
       z-index: 1;
 
       &.no-save {
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
     }
   }

@@ -9,7 +9,6 @@ import ProjectDetail5 from './ProjectDetail5/ProjectDetail5';
 const ProjectDetailSwitch = () => {
   const { projectSlug } = useParams();
 
-  // Determinar qué componente mostrar según el slug
   switch (projectSlug) {
     case 'proyecto-1':
       return <ProjectDetail1 />;
@@ -22,7 +21,6 @@ const ProjectDetailSwitch = () => {
     case 'proyecto-5':
       return <ProjectDetail5 />;
     default:
-      // Si no coincide con ninguno, redirigir a la página de proyectos
       return <Navigate to="/trabajo" replace />;
   }
 };

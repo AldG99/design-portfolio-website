@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 import './ProjectCard.scss';
 
 const ProjectCard = ({ project, isFeature = false }) => {
-  // Función para generar slug a partir del título del proyecto
   const getProjectSlug = title => {
     return title.toLowerCase().replace(/\s+/g, '-');
   };
 
-  // Función para asignar una clase de color según la herramienta
   const getToolClass = tool => {
     const toolLower = tool.toLowerCase();
     if (toolLower.includes('figma')) return 'project-card__tool--figma';
@@ -17,7 +15,7 @@ const ProjectCard = ({ project, isFeature = false }) => {
     if (toolLower.includes('native')) return 'project-card__tool--react-native';
     if (toolLower.includes('expo')) return 'project-card__tool--expo';
     if (toolLower.includes('firebase')) return 'project-card__tool--firebase';
-    return ''; // Clase por defecto
+    return '';
   };
 
   return (

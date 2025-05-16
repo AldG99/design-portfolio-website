@@ -12,7 +12,6 @@ import './HeroSection.scss';
 const HeroSection = () => {
   const { revealRef } = useScrollReveal();
 
-  // Función para asignar una clase de color según la herramienta
   const getToolClass = tool => {
     const toolLower = tool.toLowerCase();
     if (toolLower.includes('figma')) return 'hero-section__tool--figma';
@@ -24,10 +23,9 @@ const HeroSection = () => {
     if (toolLower.includes('firebase')) return 'hero-section__tool--firebase';
     if (toolLower.includes('unity')) return 'hero-section__tool--unity';
     if (toolLower.includes('blender')) return 'hero-section__tool--blender';
-    return ''; // Clase por defecto
+    return '';
   };
 
-  // Lista de herramientas
   const tools = [
     'Figma',
     'SCSS',

@@ -7,44 +7,44 @@
   left: 0;
   width: 100%;
   background-color: $primary-color;
-  padding: $spacing-xs 0; // Reducido de $spacing-md a $spacing-xs
+  padding: $spacing-xs 0;
   z-index: 1000;
   @include transition;
 
   &--scrolled {
     box-shadow: $shadow-md;
-    padding: $spacing-xs 0; // Mantener el mismo padding cuando se hace scroll
+    padding: $spacing-xs 0;
   }
 
   &__content {
     @include flex(row, space-between, center);
-    height: 60px; // Altura explícita reducida
+    height: 60px;
   }
 
   &__logo {
     @include flex(row, flex-start, center);
     @include transition;
-    cursor: pointer; // Asegura que el cursor indique que es clickeable
+    cursor: pointer;
 
     &:hover {
       opacity: 0.9;
     }
 
     &-image {
-      height: 50px; // Reducido de 70px a 50px
+      height: 50px;
       width: auto;
 
       .header--scrolled & {
-        height: 50px; // Mantener el mismo tamaño al hacer scroll
+        height: 50px;
       }
 
       &.no-save {
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
     }
   }
@@ -55,8 +55,8 @@
     border: none;
     padding: 0;
     cursor: pointer;
-    width: 28px; // Ligeramente más pequeño
-    height: 20px; // Ligeramente más pequeño
+    width: 28px;
+    height: 20px;
     position: relative;
     z-index: 1001;
     @include md {
@@ -75,7 +75,7 @@
         top: 0;
       }
       &:nth-child(2) {
-        top: 9px; // Ajustado para mantener proporciones
+        top: 9px;
       }
       &:last-child {
         bottom: 0;
@@ -130,9 +130,9 @@
 
     &.no-select {
       user-select: none;
-      -webkit-user-select: none; /* Safari */
-      -moz-user-select: none; /* Firefox */
-      -ms-user-select: none; /* IE10+/Edge */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
 
     @include md {
@@ -154,13 +154,13 @@
 
   &__menu-link {
     color: $text-color;
-    font-size: $font-size-md; // Reducido de $font-size-lg
+    font-size: $font-size-md;
     font-weight: 500;
     position: relative;
     @include transition;
     padding: $spacing-xs $spacing-sm;
     display: block;
-    cursor: pointer; // Asegura que el cursor indique que es clickeable
+    cursor: pointer;
 
     @include md {
       font-size: $font-size-md;
@@ -175,6 +175,6 @@
   }
 
   &__menu-text {
-    pointer-events: none; // Permite que los clics pasen a través del texto al enlace
+    pointer-events: none;
   }
 }

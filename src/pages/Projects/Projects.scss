@@ -1,14 +1,10 @@
-// ARCHIVO MODIFICADO: src/pages/Projects/Projects.scss
-// Este archivo ha sido modificado para importar los estilos de scroll reveal y añadir un estilo para el título
-
 @import '../../styles/variables';
 @import '../../styles/mixins';
-// NUEVO: Importar los estilos de animación
 @import '../../styles/scroll-reveal.scss';
 
 .projects-page {
   padding: $spacing-xxl 0;
-  margin-top: 80px; // Para compensar el header fixed
+  margin-top: 80px;
 
   &__list {
     display: flex;
@@ -54,12 +50,12 @@
       }
 
       &.no-save {
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
     }
   }
@@ -105,45 +101,44 @@
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     letter-spacing: -0.5px;
 
-    // Colores específicos para cada herramienta
     &--figma {
-      background-color: #ffc0a9; /* Versión pastel más densa del naranja de Figma */
+      background-color: #ffc0a9;
       color: #333333;
     }
 
     &--scss {
-      background-color: #dda0c2; /* Versión pastel más densa del rosa de SCSS */
+      background-color: #dda0c2;
       color: #333333;
     }
 
     &--react {
-      background-color: #a8dcec; /* Versión pastel más densa del azul de React */
+      background-color: #a8dcec;
       color: #333333;
     }
 
     &--react-native,
     &--react-native-expo {
-      background-color: #9ccfe3; /* Variación pastel más densa del azul de React Native */
+      background-color: #9ccfe3;
       color: #333333;
     }
 
     &--expo {
-      background-color: #bababd; /* Versión pastel más densa del azul oscuro de Expo */
+      background-color: #bababd;
       color: #333333;
     }
 
     &--firebase {
-      background-color: #ffe0a3; /* Versión pastel más densa del amarillo de Firebase */
+      background-color: #ffe0a3;
       color: #333333;
     }
 
     &--unity {
-      background-color: #d6d6d8; /* Versión pastel del color gris de Unity */
+      background-color: #d6d6d8;
       color: #333333;
     }
 
     &--blender {
-      background-color: #f8c297; /* Versión pastel del color naranja de Blender */
+      background-color: #f8c297;
       color: #333333;
     }
   }
@@ -154,12 +149,19 @@
     background-color: transparent;
     color: $accent-color;
     border: 1px solid $accent-color;
-    border-radius: 0; /* Eliminando el border-radius */
+    border-radius: 0;
     font-weight: 500;
     display: inline-flex;
     align-self: flex-start;
     text-align: center;
     @include transition;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     &:hover {
       background-color: rgba($accent-color, 0.1);

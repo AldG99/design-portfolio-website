@@ -1,24 +1,17 @@
-// ARCHIVO MODIFICADO: src/components/FeaturedProjects/FeaturedProjects.js
-// Este archivo ha sido modificado para implementar la animación scroll reveal
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getFeaturedProjects, getProjectSlug } from '../../data/projectsIndex';
-// NUEVO: Importar el hook useScrollReveal
 import { useScrollReveal } from '../../context/ScrollRevealContext';
 import './FeaturedProjects.scss';
 
 const FeaturedProjects = () => {
-  // NUEVO: Usar el hook para obtener la referencia de animación
   const { revealRef } = useScrollReveal();
 
-  // Obtenemos los 4 proyectos más recientes
   const featuredProjects = getFeaturedProjects(4);
 
   return (
     <section className="featured-projects" id="proyectos">
       <div className="container">
-        {/* MODIFICADO: Añadir ref al título */}
         <h2 className="section-title" ref={revealRef}>
           Trabajo 🚀 🧩
         </h2>
@@ -27,7 +20,6 @@ const FeaturedProjects = () => {
             <div
               key={project.id}
               className="featured-projects__item"
-              /* NUEVO: Añadir ref y delay para cada proyecto */
               ref={revealRef}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
@@ -55,7 +47,6 @@ const FeaturedProjects = () => {
                     {project.shortDescription}
                   </p>
                   <div className="featured-projects__tools">
-                    {/* Verificar que project.tools existe y es un array */}
                     {Array.isArray(project.tools) &&
                     project.tools.length > 0 ? (
                       project.tools.map((tool, index) => (
@@ -75,13 +66,11 @@ const FeaturedProjects = () => {
                     )}
                   </div>
                 </div>
-                {/* Línea divisoria en la parte inferior */}
                 <div className="featured-projects__divider"></div>
               </div>
             </div>
           ))}
         </div>
-        {/* MODIFICADO: Añadir ref al botón "Más proyectos" */}
         <div className="featured-projects__more" ref={revealRef}>
           <Link to="/trabajo" className="btn">
             Más proyectos 💁‍♂️

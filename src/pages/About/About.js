@@ -6,16 +6,13 @@ const About = () => {
   const { revealRef } = useScrollReveal();
 
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
-    // Set document title
     document.title = 'Portafolio | Acerca de mí';
   }, []);
 
   return (
     <main className="about">
       <div className="container">
-        {/* El header ahora usa la misma estructura de contenedor que el contenido */}
         <div className="about__content">
           <header className="about__header" ref={revealRef}>
             <div className="title-bio-wrapper">

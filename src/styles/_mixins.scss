@@ -68,7 +68,7 @@
   background-color: $bg-color;
   color: $text-color;
   border: 1px solid currentColor;
-  border-radius: 0; /* Cambiado de $border-radius-sm a 0 */
+  border-radius: 0;
   font-family: $font-primary;
   font-weight: 500;
   font-size: $font-size-md;
@@ -93,7 +93,7 @@
   font-weight: 700;
   color: $text-color;
   margin-bottom: $spacing-lg;
-  text-align: left; /* Cambiado a alineación izquierda */
+  text-align: left;
 }
 
 /* Tarjeta */
