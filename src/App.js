@@ -7,12 +7,14 @@ import Projects from './pages/Projects/Projects';
 import About from './pages/About/About';
 import ProjectDetailSwitch from './components/ProjectDetail/ProjectDetailSwitch';
 import { ScrollRevealProvider } from './context/ScrollRevealContext';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'; // Importamos el nuevo componente
 import './App.scss';
 
 const App = () => {
   return (
     <Router>
       <ScrollRevealProvider>
+        <ScrollToTop />
         <div className="app">
           <Header />
           <div className="app__content">
