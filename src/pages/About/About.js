@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
+import { useScrollReveal } from '../../context/ScrollRevealContext';
 import './About.scss';
 
 const About = () => {
+  const { revealRef } = useScrollReveal();
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
@@ -14,7 +17,7 @@ const About = () => {
       <div className="container">
         {/* El header ahora usa la misma estructura de contenedor que el contenido */}
         <div className="about__content">
-          <header className="about__header">
+          <header className="about__header" ref={revealRef}>
             <div className="title-bio-wrapper">
               <h1 className="section-title">Hola 👋</h1>
             </div>
@@ -22,24 +25,40 @@ const About = () => {
 
           <div className="about__profile">
             <div className="about__bio">
-              <p className="about__bio-text">
+              <p
+                className="about__bio-text"
+                ref={revealRef}
+                style={{ transitionDelay: '100ms' }}
+              >
                 Soy <strong>curioso</strong> y <strong>comprometido</strong> con{' '}
                 <strong>diseño</strong> y <strong>tecnología</strong>. Me
                 interesa entender cómo piensan las personas para crear{' '}
                 <strong>experiencias digitales funcionales</strong>.
               </p>
-              <p className="about__bio-text">
+              <p
+                className="about__bio-text"
+                ref={revealRef}
+                style={{ transitionDelay: '200ms' }}
+              >
                 Me considero <strong>detallista</strong> y busco mejorar cada
                 aspecto del producto, desde su <strong>estructura</strong> hasta
                 los pequeños <strong>elementos visuales</strong>.
               </p>
-              <p className="about__bio-text">
+              <p
+                className="about__bio-text"
+                ref={revealRef}
+                style={{ transitionDelay: '300ms' }}
+              >
                 Me gusta <strong>colaborar</strong> con otros profesionales,
                 compartir ideas y construir soluciones que combinan{' '}
                 <strong>funcionalidad</strong>, <strong>estética</strong> e
                 <strong> innovación</strong>.
               </p>
-              <p className="about__bio-text">
+              <p
+                className="about__bio-text"
+                ref={revealRef}
+                style={{ transitionDelay: '400ms' }}
+              >
                 Estudié en la{' '}
                 <a
                   href="https://www.cs.buap.mx/"
@@ -57,12 +76,20 @@ const About = () => {
                 <strong>experiencias significativas</strong> más allá de las
                 interfaces.
               </p>
-              <p className="about__bio-text">
+              <p
+                className="about__bio-text"
+                ref={revealRef}
+                style={{ transitionDelay: '500ms' }}
+              >
                 Gracias por tomarse el tiempo para visitar mi sitio.
               </p>
             </div>
 
-            <div className="about__image">
+            <div
+              className="about__image"
+              ref={revealRef}
+              style={{ transitionDelay: '600ms' }}
+            >
               <img
                 src="/assets/images/profile/profile2.jpg"
                 alt="Foto de perfil"
@@ -89,7 +116,11 @@ const About = () => {
             </div>
           </div>
 
-          <div className="about__details">
+          <div
+            className="about__details"
+            ref={revealRef}
+            style={{ transitionDelay: '700ms' }}
+          >
             <div className="about__download">
               <a
                 href="/assets/resume/cv.pdf"
@@ -102,14 +133,26 @@ const About = () => {
             </div>
           </div>
 
-          <div className="divider"></div>
+          <div
+            className="divider"
+            ref={revealRef}
+            style={{ transitionDelay: '800ms' }}
+          ></div>
 
           <div className="about__philosophy">
-            <h3 className="about__question">
+            <h3
+              className="about__question"
+              ref={revealRef}
+              style={{ transitionDelay: '900ms' }}
+            >
               ¿Qué significa el UX para ti? ¿Cómo se lo explicarías a personas
               que no son de la industria?
             </h3>
-            <p className="about__answer">
+            <p
+              className="about__answer"
+              ref={revealRef}
+              style={{ transitionDelay: '1000ms' }}
+            >
               Para mí, el UX es básicamente crear tecnología que funcione{' '}
               <strong>con las personas</strong>, no contra ellas. Es como cuando
               diseñas una silla: no solo debe verse bonita, sino que debe ser{' '}
@@ -120,7 +163,11 @@ const About = () => {
               real para hacer cosas que de verdad les sirvan y se sientan
               naturales al usarlas.
             </p>
-            <p className="about__answer">
+            <p
+              className="about__answer"
+              ref={revealRef}
+              style={{ transitionDelay: '1100ms' }}
+            >
               Si me preguntara mi abuela a qué me dedico, le diría: "
               <strong>
                 ¿Te has frustrado alguna vez con una app que no entiendes? Mi
@@ -135,7 +182,11 @@ const About = () => {
               que necesitan hacer, sin obstáculos ni confusiones.
             </p>
 
-            <div className="about__quote">
+            <div
+              className="about__quote"
+              ref={revealRef}
+              style={{ transitionDelay: '1200ms' }}
+            >
               <blockquote>
                 "One of the stated goals for the Macintosh project was that the
                 computer should be friendly and appeal to non-technical users."

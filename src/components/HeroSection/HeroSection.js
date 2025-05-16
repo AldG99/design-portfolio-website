@@ -6,9 +6,12 @@ import {
   faGithub,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import { useScrollReveal } from '../../context/ScrollRevealContext';
 import './HeroSection.scss';
 
 const HeroSection = () => {
+  const { revealRef } = useScrollReveal();
+
   // Función para asignar una clase de color según la herramienta
   const getToolClass = tool => {
     const toolLower = tool.toLowerCase();
@@ -39,7 +42,7 @@ const HeroSection = () => {
     <section className="hero-section">
       <div className="container">
         <div className="hero-section__content">
-          <div className="hero-section__text">
+          <div className="hero-section__text" ref={revealRef}>
             <div className="hero-name-title-wrapper">
               <h1 className="hero-section__name">Alfredo García</h1>
               <h2 className="hero-section__profession">
@@ -51,6 +54,8 @@ const HeroSection = () => {
                 <span
                   key={index}
                   className={`hero-section__tool ${getToolClass(tool)}`}
+                  ref={revealRef}
+                  style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   {tool}
                 </span>
@@ -68,7 +73,11 @@ const HeroSection = () => {
                 Acerca de mí 📖 👉
               </Link>
             </p>
-            <div className="hero-section__social">
+            <div
+              className="hero-section__social"
+              ref={revealRef}
+              style={{ transitionDelay: '400ms' }}
+            >
               <a
                 href="https://www.linkedin.com/in/ad-g099/"
                 target="_blank"
@@ -98,7 +107,11 @@ const HeroSection = () => {
               </a>
             </div>
           </div>
-          <div className="hero-section__image">
+          <div
+            className="hero-section__image"
+            ref={revealRef}
+            style={{ transitionDelay: '500ms' }}
+          >
             <img
               src="/assets/images/profile/profile1.jpg"
               alt="Foto de perfil"
@@ -108,7 +121,11 @@ const HeroSection = () => {
             />
           </div>
         </div>
-        <div className="hero-section__divider"></div>
+        <div
+          className="hero-section__divider"
+          ref={revealRef}
+          style={{ transitionDelay: '600ms' }}
+        ></div>
       </div>
     </section>
   );
