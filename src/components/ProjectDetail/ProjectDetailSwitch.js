@@ -10,15 +10,15 @@ const ProjectDetailSwitch = () => {
   const { projectSlug } = useParams();
 
   switch (projectSlug) {
-    case 'proyecto-1':
+    case 'mikky-jump':
       return <ProjectDetail1 />;
-    case 'proyecto-2':
+    case 'cell-ar':
       return <ProjectDetail2 />;
     case 'proyecto-3':
       return <ProjectDetail3 />;
     case 'inventa-analyt':
       return <ProjectDetail4 />;
-    case 'proyecto-5':
+    case 'medi-note':
       return <ProjectDetail5 />;
     default:
       return <Navigate to="/trabajo" replace />;

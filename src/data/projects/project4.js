@@ -7,7 +7,7 @@ const project4 = {
   description:
     'INVENTA-ANALYT es una aplicación móvil y web para gestión de pequeños negocios que integra control de inventario, registro de ventas, consulta de transacciones y análisis avanzados. La plataforma destaca por su interfaz intuitiva que permite a los propietarios monitorear existencias en tiempo real y acceder al historial completo de operaciones.',
   thumbnail: '/assets/images/projects/project4/thumbnail.png',
-  date: 'Octubre 2024 - Febrero 2025',
+  date: 'Febrero 2025',
   dateRaw: '2025-02-05',
   tools: ['Figma', 'SCSS', 'React', 'React Native Expo', 'Firebase'],
 
@@ -65,7 +65,7 @@ const project4 = {
     {
       userJourneyMapPersona: 'Guadalupe Lumbreras',
       userJourneyMap:
-        'Gestionar fácilmente su dulcería desde el teléfono mientras atiende a sus clientes.',
+        'Gestionar su dulcería desde el ordenador mientras atiende a sus clientes.',
       userJourneyMapImage: '/assets/images/projects/project4/map/map1.jpg',
     },
     {
