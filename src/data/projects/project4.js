@@ -47,35 +47,6 @@ const project4 = {
     ],
   },
 
-  userProfiles: [
-    {
-      problemStatement:
-        'Guadalupe Lumbreras tiene una dulcería y necesita gestionar inventario y ventas desde su teléfono porque siempre está atendiendo clientes.',
-      problemStatementImage:
-        '/assets/images/projects/project4/persona/persona1.png',
-    },
-    {
-      problemStatement:
-        'Araceli tiene una ferretería familiar y necesita gestionar un inventario extenso y diverso con más de 200 productos diferentes.',
-      problemStatementImage:
-        '/assets/images/projects/project4/persona/persona2.png',
-    },
-  ],
-  userJourneyMap: [
-    {
-      userJourneyMapPersona: 'Guadalupe Lumbreras',
-      userJourneyMap:
-        'Gestionar su dulcería desde el ordenador mientras atiende a sus clientes.',
-      userJourneyMapImage: '/assets/images/projects/project4/map/map1.jpg',
-    },
-    {
-      userJourneyMapPersona: 'Araceli Mendoza',
-      userJourneyMap:
-        'Mostrar cómo Alicia gestiona su ferretería, desde localizar productos hasta analizar ventas y controlar inventario.',
-      userJourneyMapImage: '/assets/images/projects/project4/map/map2.jpg',
-    },
-  ],
-
   competitors: [
     {
       name: 'StockTracker Lite',
@@ -138,6 +109,35 @@ const project4 = {
         '/assets/images/projects/project4/competitor/competitor5.png',
         '/assets/images/projects/project4/competitor/competitor6.png',
       ],
+    },
+  ],
+
+  userProfiles: [
+    {
+      problemStatement:
+        'Guadalupe Lumbreras tiene una dulcería y necesita gestionar inventario y ventas desde su teléfono porque siempre está atendiendo clientes.',
+      problemStatementImage:
+        '/assets/images/projects/project4/persona/persona1.png',
+    },
+    {
+      problemStatement:
+        'Araceli tiene una ferretería familiar y necesita gestionar un inventario extenso y diverso con más de 200 productos diferentes.',
+      problemStatementImage:
+        '/assets/images/projects/project4/persona/persona2.png',
+    },
+  ],
+  userJourneyMap: [
+    {
+      userJourneyMapPersona: 'Guadalupe Lumbreras',
+      userJourneyMap:
+        'Gestionar su dulcería desde el ordenador mientras atiende a sus clientes.',
+      userJourneyMapImage: '/assets/images/projects/project4/map/map1.jpg',
+    },
+    {
+      userJourneyMapPersona: 'Araceli Mendoza',
+      userJourneyMap:
+        'Mostrar cómo Alicia gestiona su ferretería, desde localizar productos hasta analizar ventas y controlar inventario.',
+      userJourneyMapImage: '/assets/images/projects/project4/map/map2.jpg',
     },
   ],
 

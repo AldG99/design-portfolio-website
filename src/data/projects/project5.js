@@ -46,6 +46,70 @@ const project5 = {
     ],
   },
 
+  competitors: [
+    {
+      name: 'Doctoralia',
+      description:
+        'Doctoralia es una plataforma digital disponible como app móvil y sitio web que conecta a pacientes con profesionales de la salud.',
+      strengths: [
+        'Permite buscar por especialidad, ubicación, nombre o servicios médicos',
+        'Buen rendimiento en dispositivos móviles, manteniendo consistencia visual y navegación intuitiva',
+        'Permite agendar citas directamente desde la app',
+      ],
+      weaknesses: [
+        'Visibilidad limitada sobre el estado de la cita o funciones complementarias como recordatorios integrados.',
+        'Sistema de alertas básico sin inteligencia contextual',
+        'No ofrece un sistema unificado de historias clínicas para seguimiento a largo plazo',
+        'No se integra con historiales médicos ni con otros sistemas clínicos profundos',
+      ],
+      targetAudience:
+        'Usuarios que necesitan encontrar y agendar citas médicas de forma rápida y sin complicaciones, principalmente en entornos urbanos. La plataforma es especialmente útil para personas con conocimientos digitales funcionales.',
+      competitiveImage: [
+        '/assets/images/projects/project5/competitor/competitor1.png',
+      ],
+    },
+    {
+      name: 'MedicApp',
+      description:
+        'MedicApp es una aplicación web y móvil diseñada específicamente para fisioterapeutas, que permite digitalizar la gestión clínica y mejorar el seguimiento terapéutico de los pacientes.',
+      strengths: [
+        'Facilita el monitoreo de la evolución del paciente entre sesiones sin necesidad de visitas presenciales',
+        'Disponible como aplicación móvil y también en versión web, lo que facilita el trabajo desde distintos dispositivos.',
+        'Automatización de tareas como agendamiento y creación de fichas',
+      ],
+      weaknesses: [
+        'Funcionalidades limitadas en reportes y análisis',
+        'Navegación básica, que en algunos casos puede resultar demasiado simplificada para usuarios que buscan más información o control.',
+        'Algunos fisioterapeutas pueden encontrar la plataforma compleja si no están familiarizados con herramientas digitales',
+      ],
+      targetAudience:
+        'Usuarios que valoran la inmediatez y simplicidad para acceder a consultas médicas, principalmente personas con necesidades urgentes o que prefieren soluciones digitales rápidas.',
+      competitiveImage: [
+        '/assets/images/projects/project5/competitor/competitor2.png',
+      ],
+    },
+    {
+      name: 'ClinicPoint',
+      description:
+        'ClinicPoint es una plataforma digital que permite a los usuarios acceder a servicios de salud privados sin necesidad de seguro médico, mediante un modelo de pago por uso.',
+      strengths: [
+        'Navegación jerárquica intuitiva, permitiendo filtrar servicios por especialidad y ubicación con facilidad',
+        'Adaptabilidad móvil eficiente, manteniendo coherencia visual y funcional en distintos dispositivos',
+        'Uso correcto del espacio visual, con una interfaz limpia que facilita la lectura y reduce la sobrecarga cognitiva.',
+      ],
+      weaknesses: [
+        'El seguimiento post-reserva no es completamente visible, lo que podría afectar la continuidad de la experiencia.',
+        'Algunos bloques de contenido dependen mucho del texto, y podrían mejorarse con recursos visuales complementarios.',
+        'Complejidad excesiva para usuarios básicos',
+      ],
+      targetAudience:
+        'Usuarios que buscan resolver necesidades médicas puntuales sin complicaciones administrativas, especialmente aquellos sin seguro médico o con coberturas parciales.',
+      competitiveImage: [
+        '/assets/images/projects/project5/competitor/competitor3.png',
+      ],
+    },
+  ],
+
   userProfiles: [
     {
       problemStatement:
@@ -85,23 +149,12 @@ const project5 = {
     ],
   },
 
-  competitors: [
-    {
-      name: '',
-      description: '',
-      strengths: [],
-      weaknesses: [],
-      targetAudience: '',
-      competitiveImage: [],
-    },
-  ],
-
   informationArchitecture: {
     sitemap: {
-      sitemapImage: '',
+      sitemapImage: '/assets/images/projects/project5/sitemap.svg',
     },
     userFlow: {
-      userFlowImage: '',
+      userFlowImage: '/assets/images/projects/project5/userflow.svg',
     },
   },
 

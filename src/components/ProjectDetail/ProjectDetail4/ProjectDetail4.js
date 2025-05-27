@@ -134,7 +134,7 @@ const ProjectDetail4 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INVESTIGACIÓN Y IDEACIÓN</h2>
+          <h2 className="section-subtitle">INVESTIGACIÓN</h2>
 
           <div className="project-detail__understanding">
             <p className="understanding-text">{project4.research.summary}</p>
@@ -153,6 +153,59 @@ const ProjectDetail4 = () => {
                 </li>
               ))}
             </ol>
+
+            <h3 className="subsection-title">ANÁLISIS COMPETITIVO</h3>
+            <div className="project-detail__competition">
+              <div className="competitors-grid">
+                {project4.competitors.map((competitor, index) => (
+                  <div key={index} className="competitor-card">
+                    <h3 className="competitor-name">{competitor.name}</h3>
+                    <p className="competitor-description">
+                      {competitor.description}
+                    </p>
+
+                    <div className="competitor-details">
+                      <div className="competitor-section">
+                        <h4 className="competitor-section-title">FORTALEZAS</h4>
+                        <ul className="competitor-list strengths">
+                          {competitor.strengths.map((strength, i) => (
+                            <li key={i}>{strength}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="competitor-section">
+                        <h4 className="competitor-section-title">
+                          DEBILIDADES
+                        </h4>
+                        <ul className="competitor-list weaknesses">
+                          {competitor.weaknesses.map((weakness, i) => (
+                            <li key={i}>{weakness}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="competitor-audience">
+                      <h4 className="competitor-section-title">
+                        AUDIENCIA OBJETIVO
+                      </h4>
+                      <p>{competitor.targetAudience}</p>
+                    </div>
+
+                    <div className="competitor-images">
+                      {competitor.competitiveImage.map((image, i) => (
+                        <img
+                          key={i}
+                          src={image}
+                          alt={`${competitor.name} captura ${i + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -205,60 +258,6 @@ const ProjectDetail4 = () => {
                       src={journey.userJourneyMapImage}
                       alt={`Mapa de recorrido de ${journey.userJourneyMapPersona}`}
                     />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="project-detail__section">
-          <h2 className="section-subtitle">ANÁLISIS COMPETITIVO</h2>
-
-          <div className="project-detail__competition">
-            <div className="competitors-grid">
-              {project4.competitors.map((competitor, index) => (
-                <div key={index} className="competitor-card">
-                  <h3 className="competitor-name">{competitor.name}</h3>
-                  <p className="competitor-description">
-                    {competitor.description}
-                  </p>
-
-                  <div className="competitor-details">
-                    <div className="competitor-section">
-                      <h4 className="competitor-section-title">FORTALEZAS</h4>
-                      <ul className="competitor-list strengths">
-                        {competitor.strengths.map((strength, i) => (
-                          <li key={i}>{strength}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="competitor-section">
-                      <h4 className="competitor-section-title">DEBILIDADES</h4>
-                      <ul className="competitor-list weaknesses">
-                        {competitor.weaknesses.map((weakness, i) => (
-                          <li key={i}>{weakness}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="competitor-audience">
-                    <h4 className="competitor-section-title">
-                      AUDIENCIA OBJETIVO
-                    </h4>
-                    <p>{competitor.targetAudience}</p>
-                  </div>
-
-                  <div className="competitor-images">
-                    {competitor.competitiveImage.map((image, i) => (
-                      <img
-                        key={i}
-                        src={image}
-                        alt={`${competitor.name} captura ${i + 1}`}
-                      />
-                    ))}
                   </div>
                 </div>
               ))}
