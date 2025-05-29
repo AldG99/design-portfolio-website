@@ -66,7 +66,6 @@ const project4 = {
         'Microempresas y emprendedores individuales con presupuesto limitado que necesitan una solución básica para control de inventario sin requerimientos analíticos complejos.',
       competitiveImage: [
         '/assets/images/projects/project4/competitor/competitor1.png',
-        '/assets/images/projects/project4/competitor/competitor2.png',
       ],
     },
     {
@@ -85,8 +84,7 @@ const project4 = {
       targetAudience:
         'Pequeños comercios minoristas y tiendas que priorizan la velocidad de procesamiento de ventas sobre la gestión de inventario y análisis de datos.',
       competitiveImage: [
-        '/assets/images/projects/project4/competitor/competitor3.png',
-        '/assets/images/projects/project4/competitor/competitor4.png',
+        '/assets/images/projects/project4/competitor/competitor2.png',
       ],
     },
     {
@@ -106,8 +104,7 @@ const project4 = {
       targetAudience:
         'Pequeños almacenes, talleres y negocios con enfoque en manufactura o distribución que necesitan principalmente controlar existencias y movimientos de materiales sin requerir análisis avanzados.',
       competitiveImage: [
-        '/assets/images/projects/project4/competitor/competitor5.png',
-        '/assets/images/projects/project4/competitor/competitor6.png',
+        '/assets/images/projects/project4/competitor/competitor3.png',
       ],
     },
   ],

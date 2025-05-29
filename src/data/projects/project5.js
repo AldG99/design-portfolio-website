@@ -173,23 +173,35 @@ const project5 = {
   prototyping: {
     lowFidelity: {
       description: '',
-      prototypeImage: '',
+      prototypeImage: '/assets/images/projects/project5/prototype.png',
       prototypeUrl: '',
     },
   },
 
   usabilityStudy: {
     parameters: {
-      type: '',
-      location: '',
-      participants: '',
-      time: '',
+      type: 'Estudio de usabilidad sin moderación',
+      location: 'Remoto',
+      participants: '12 practicantes de medicina',
+      time: '20-30 minutos por participante',
     },
     keyFindings: [
       {
-        area: '',
-        finding: '',
-        quotes: [],
+        area: 'Navegación General',
+        finding: 'La búsqueda desde la pantalla de inicio es efectiva',
+        quotes: [
+          'P08: "Me gusta que el botón de + esté siempre visible. No tengo que buscar dónde agregar algo nuevo."',
+          'P04: "Los iconos son claros. Inmediatamente sé dónde están mis pacientes y dónde puedo buscar."',
+        ],
+      },
+      {
+        area: 'Creación de Registros Médicos',
+        finding:
+          'Una parte significativa de los casos se perdió durante el paso de selección de pacientes.',
+        quotes: [
+          'P09: "Los tipos de registro están bien, pero ¿puedo crear mis propios tipos?',
+          'P10: "Me gusta poder revisar todo antes de guardar. Los datos médicos son muy importantes."',
+        ],
       },
     ],
     refiningDesign: [
@@ -217,22 +229,37 @@ const project5 = {
     },
     highFidelity: {
       description: [],
-      highFidelityImage: '',
+      highFidelityImage: '/assets/images/projects/project5/high_fidelity.png',
       viewPrototypes: [],
     },
     accessibility: {
-      considerations: [],
+      considerations: [
+        'Estructurar formularios médicos con agrupación visual clara, etiquetas consistentes, espaciado generoso y señales visuales para estados de error y éxito mediante colores, iconos y texto descriptivo.',
+        'Desarrollar un sistema de iconos coherente y accesible con iconografía universal, tamaños mínimos de 24x24px, etiquetas de texto, estilo visual uniforme y formas distintivas que no dependan solo del color.',
+      ],
     },
   },
 
   conclusion: {
-    summary: '',
-    impact: '',
-    learnings: '',
-    professionalLessons: [],
-    personalLessons: [],
-    nextSteps: [],
-    finalConsiderations: '',
+    summary:
+      'El diseño de MediNote logró crear una solución digital integral que aborda las necesidades reales de profesionales de la salud en el manejo de información de pacientes, registros médicos y alertas. A través de un proceso de diseño centrado en el usuario, se desarrolló una aplicación que equilibra funcionalidad médica crítica con usabilidad intuitiva.',
+    impact:
+      'MediNote contribuye a la reducción de la brecha digital entre hospitales de gran escala y la práctica médica independiente, ofreciendo una solución accesible y funcional para distintos niveles de infraestructura. Su enfoque adaptable y centrado en el usuario permite establecer un modelo de adopción replicable en otros países en desarrollo, donde los recursos tecnológicos y médicos son limitados. Además, al priorizar una experiencia de usuario clara y eficiente, MediNote establece un estándar de usabilidad que eleva las expectativas para futuras soluciones de salud digital.',
+    learnings:
+      'Diseñar para profesionales médicos exige un conocimiento profundo de los flujos de trabajo clínicos, la terminología especializada y los contextos particulares en los que se utiliza la tecnología en entornos de salud. Esto implica comprender cómo se toman decisiones bajo presión, cómo se prioriza la información crítica y cómo interactúan diferentes roles dentro del equipo médico. Una interfaz efectiva no solo debe ser funcional, sino también reducir la carga cognitiva, minimizar errores y adaptarse a situaciones variables, desde consultorios hasta unidades de emergencia.',
+    professionalLessons: [
+      'Patrones de interacción familiares reducen curva de aprendizaje significativamente',
+      'Interfaces que funcionan bajo presión en entornos médicos, especialmente en situaciones de emergencia, donde los profesionales no pueden detenerse a pensar en cómo usar una aplicación; esta debe ser completamente intuitiva.',
+    ],
+    personalLessons: [
+      'Los requisitos médicos cambian constantemente debido a regulaciones y emergencias como COVID-19, por lo que aprendí a diseñar sistemas flexibles y a manejar la incertidumbre como parte normal del trabajo.',
+    ],
+    nextSteps: [
+      'Explorar necesidades específicas por especialidad médica para adaptar funcionalidades y flujos según los contextos clínicos particulares',
+      'Desarrollar el módulo de facturación y gestión administrativa que permita registrar pagos, emitir facturas y optimizar procesos financieros',
+    ],
+    finalConsiderations:
+      'El desarrollo de MediNote representó un desafío significativo que combinó complejidad técnica, necesidades humanas críticas y un alto grado de responsabilidad social. No se trató solo de construir una herramienta funcional, sino de diseñar una solución capaz de integrarse con entornos clínicos reales, donde cada decisión puede impactar directamente en la salud y el bienestar de las personas.',
   },
 };
 

@@ -244,46 +244,56 @@ $section-spacing: $spacing-xxl;
       margin-top: 0;
       font-size: $font-size-lg;
     }
+
+    &--final {
+      margin-top: $heading-spacing * 1.5;
+      padding-top: $heading-spacing;
+      border-top: 2px solid $secondary-color;
+
+      .subsection-title {
+        color: $text-color;
+        margin-bottom: $heading-spacing;
+        text-align: left;
+      }
+    }
   }
 
-  &__repository-links {
-    display: flex;
-    flex-direction: column;
-    gap: $content-spacing;
+  .project-detail {
+    &__repository-links {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+      margin-top: $heading-spacing;
+      align-items: flex-start;
 
-    @include md {
-      flex-direction: row;
-      gap: $spacing-xl;
-    }
-
-    .repository-link {
-      display: inline-flex;
-      align-items: center;
-      padding: $spacing-xs $spacing-md;
-      background-color: transparent;
-      border-radius: 0;
-      color: $accent-color;
-      font-weight: 500;
-      font-size: $font-size-sm;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid $accent-color;
-
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-
-      &:hover {
-        background-color: $accent-color;
-        color: white;
+      @include sm {
+        flex-direction: row;
+        justify-content: flex-start;
       }
 
-      .repository-icon {
-        font-size: $font-size-lg;
-        margin-right: $spacing-sm;
+      .btn {
+        padding: $spacing-xs $spacing-md;
+        font-size: $font-size-sm;
+        font-weight: 500;
+        min-width: auto;
+        display: inline-flex;
+        align-items: center;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        @include sm {
+          flex: 0 0 auto;
+        }
+
+        .repository-icon {
+          font-size: $font-size-md;
+          margin-right: $spacing-xs;
+        }
       }
     }
   }
@@ -351,11 +361,57 @@ $section-spacing: $spacing-xxl;
 
     .personas-horizontal-grid {
       display: grid;
-      grid-template-columns: 1fr;
       gap: $heading-spacing;
 
-      @include md {
-        grid-template-columns: repeat(2, 1fr);
+      &[data-count='1'] {
+        grid-template-columns: 1fr;
+      }
+
+      &[data-count='2'] {
+        grid-template-columns: 1fr;
+
+        @include md {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      &[data-count='3'] {
+        grid-template-columns: 1fr;
+
+        @include md {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+            'first first'
+            'second third';
+        }
+
+        .persona-card:nth-child(1) {
+          @include md {
+            grid-area: first;
+          }
+        }
+
+        .persona-card:nth-child(2) {
+          @include md {
+            grid-area: second;
+          }
+        }
+
+        .persona-card:nth-child(3) {
+          @include md {
+            grid-area: third;
+          }
+        }
+      }
+
+      &[data-count='4'],
+      &[data-count='5'],
+      &[data-count='6'] {
+        grid-template-columns: 1fr;
+
+        @include md {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
 
       .persona-card {
@@ -417,105 +473,283 @@ $section-spacing: $spacing-xxl;
     }
   }
 
-  &__competition {
-    .competitors-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: $heading-spacing;
-
-      @include md {
-        grid-template-columns: repeat(3, 1fr);
+  .project-detail {
+    &__competition {
+      .competitive-table {
+        margin-bottom: $heading-spacing;
       }
-    }
 
-    .competitor-card {
-      border: 1px solid $secondary-color;
-      padding: $spacing-lg;
-    }
+      .competitive-row {
+        display: grid;
+        grid-template-columns: 180px repeat(3, 1fr);
+        gap: 0 $spacing-md;
+        margin-bottom: $spacing-sm;
 
-    .competitor-name {
-      font-size: $font-size-lg;
-      font-weight: 700;
-      margin-bottom: $content-spacing;
-      color: $accent-color;
-    }
+        @media (max-width: 768px) {
+          display: block;
+          margin-bottom: $spacing-xl;
 
-    .competitor-description {
-      margin-bottom: $content-spacing;
-      color: lighten($text-color, 10%);
-    }
+          &--names {
+            display: none;
+          }
 
-    .competitor-details {
-      margin: $heading-spacing 0;
-    }
+          &:not(&--names) {
+            .competitive-cell--label {
+              padding: $spacing-sm 0;
+              margin-bottom: $spacing-md;
+              border-bottom: 1px solid lighten($text-color, 80%);
 
-    .competitor-section {
-      margin-bottom: $content-spacing;
-    }
+              .row-label {
+                font-size: $font-size-md;
+                font-weight: 600;
+                color: $text-color;
+              }
+            }
 
-    .competitor-section-title {
-      font-size: $font-size-md;
-      font-weight: 600;
-      margin-bottom: $content-spacing;
-      color: $text-color;
-    }
+            .competitive-cell--name,
+            .competitive-cell--images,
+            .competitive-cell--content {
+              margin-bottom: $spacing-lg;
 
-    .competitor-list {
-      list-style: none;
-      margin-left: 0;
-      font-size: $font-size-sm;
-      margin-bottom: $content-spacing;
+              &::before {
+                content: attr(data-competitor);
+                display: block;
+                font-size: $font-size-sm;
+                font-weight: 600;
+                color: lighten($text-color, 20%);
+                margin-bottom: $spacing-sm;
+                padding-bottom: $spacing-xs;
+                border-bottom: 1px solid lighten($text-color, 85%);
+              }
+            }
+          }
+        }
 
-      li {
-        padding-left: $spacing-sm;
-        margin-bottom: $spacing-xs;
-        position: relative;
+        @media (min-width: 769px) and (max-width: 1024px) {
+          grid-template-columns: 140px repeat(3, 1fr);
+          gap: 0 $spacing-xs;
+        }
 
-        &::before {
-          content: '•';
-          position: absolute;
-          left: 0;
-          color: $accent-color;
+        @media (min-width: 1025px) {
+          grid-template-columns: 200px repeat(3, 1fr);
+          gap: 0 $spacing-md;
+        }
+
+        &--names {
+          .competitive-cell--name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: $spacing-md;
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+              padding: $spacing-sm;
+            }
+
+            .competitor-name {
+              font-size: $font-size-md;
+              font-weight: 600;
+              margin: 0;
+              color: $text-color;
+              text-align: center;
+
+              @media (min-width: 769px) and (max-width: 1024px) {
+                font-size: $font-size-sm;
+              }
+            }
+          }
+        }
+
+        &--overview {
+          .competitive-cell--images {
+            padding: $spacing-md $spacing-sm;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 200px;
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+              padding: $spacing-sm;
+              min-height: 150px;
+            }
+
+            .competitor-images {
+              display: block;
+              width: 100%;
+              max-width: 300px;
+              margin: 0;
+              padding: 0;
+
+              img {
+                width: 100%;
+                height: auto;
+                min-height: 150px;
+                margin: 0;
+                padding: 0;
+                display: block;
+                border: none;
+                border-radius: 0;
+                object-fit: contain;
+
+                @media (min-width: 769px) and (max-width: 1024px) {
+                  min-height: 120px;
+                }
+              }
+            }
+          }
+        }
+
+        &--description,
+        &--strengths,
+        &--weaknesses,
+        &--audience {
+          .competitive-cell--content {
+            padding: $spacing-sm;
+            vertical-align: top;
+            display: flex;
+            align-items: flex-start;
+            min-height: auto;
+
+            p,
+            li {
+              margin-bottom: 0;
+              font-size: $font-size-sm !important;
+              line-height: 1.6 !important;
+              color: $text-color;
+              width: 100%;
+
+              @media (min-width: 769px) and (max-width: 1024px) {
+                font-size: 11px !important;
+                line-height: 1.4 !important;
+              }
+            }
+          }
+        }
+
+        &--audience {
+          .competitive-cell--content {
+            padding: $spacing-sm $spacing-xs;
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+              padding: $spacing-xs;
+            }
+
+            p {
+              margin: 0 !important;
+              padding: 0 !important;
+              text-align: left;
+              word-wrap: break-word;
+              overflow-wrap: break-word;
+            }
+          }
         }
       }
 
-      &.strengths li::before {
-        color: #52c41a;
+      .competitive-cell {
+        &--label {
+          display: flex;
+          align-items: flex-start;
+          padding: $spacing-md;
+
+          @media (min-width: 769px) and (max-width: 1024px) {
+            padding: $spacing-sm;
+          }
+
+          .row-label {
+            font-size: $font-size-sm;
+            font-weight: 600;
+            margin: 0;
+            color: lighten($text-color, 20%);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+              font-size: 10px;
+              line-height: 1.2;
+            }
+          }
+        }
+
+        &--content {
+          background-color: transparent !important;
+          background: none !important;
+
+          .competitor-description {
+            margin-bottom: 0;
+            color: $text-color;
+            font-size: $font-size-sm !important;
+            line-height: 1.6 !important;
+            background-color: transparent !important;
+          }
+
+          .competitor-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: $font-size-sm !important;
+            background-color: transparent !important;
+
+            li {
+              margin-bottom: $spacing-xs;
+              line-height: 1.6 !important;
+              color: $text-color;
+              font-size: $font-size-sm !important;
+              background-color: transparent !important;
+
+              &::before {
+                content: '•';
+                margin-right: $spacing-xs;
+                color: lighten($text-color, 30%);
+              }
+            }
+
+            &.strengths li::before {
+              content: '•';
+              color: #52c41a;
+              font-weight: 600;
+            }
+
+            &.weaknesses li::before {
+              content: '•';
+              color: #ff4d4f;
+              font-weight: 600;
+            }
+          }
+
+          .competitor-audience {
+            background-color: transparent !important;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            p {
+              font-size: $font-size-sm !important;
+              line-height: 1.6 !important;
+              margin: 0 !important;
+              padding: 0 !important;
+              color: $text-color;
+              background-color: transparent !important;
+              text-align: left;
+              word-wrap: break-word;
+              overflow-wrap: break-word;
+            }
+          }
+        }
       }
-
-      &.weaknesses li::before {
-        color: #ff4d4f;
-      }
-    }
-
-    .competitor-audience {
-      margin: $content-spacing 0;
-      padding: $spacing-sm;
-      background-color: lighten($secondary-color, 8%);
-      border-radius: $border-radius-sm;
-
-      p {
-        font-size: $font-size-sm;
-        line-height: 1.6;
-        margin-bottom: 0;
-      }
-    }
-
-    .competitor-images {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: $content-spacing;
-      margin-top: $content-spacing;
 
       @include sm {
-        grid-template-columns: repeat(2, 1fr);
-      }
+        .competitive-table {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
 
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: $border-radius-sm;
-        border: 1px solid $secondary-color;
+        .competitive-row {
+          min-width: 600px;
+
+          @media (max-width: 768px) {
+            min-width: auto;
+          }
+        }
       }
     }
   }

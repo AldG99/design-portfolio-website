@@ -47,7 +47,7 @@ const ProjectDetail1 = () => {
 
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
-              <span className="meta-value">Julio 2022</span>
+              <span className="meta-value">Febrero 2025</span>
             </div>
           </div>
 
@@ -68,39 +68,6 @@ const ProjectDetail1 = () => {
         <section className="project-detail__overview">
           <h2 className="section-subtitle">RESUMEN DEL PROYECTO</h2>
           <p className="overview-text">{project1.description}</p>
-
-          {project1.repositories && (
-            <div className="project-detail__links">
-              <div className="project-detail__repository-links">
-                {project1.repositories.mobile && (
-                  <a
-                    href={project1.repositories.mobile.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="repository-link"
-                  >
-                    <span className="repository-icon">
-                      {project1.repositories.mobile.icon}
-                    </span>
-                    {project1.repositories.mobile.label}
-                  </a>
-                )}
-                {project1.repositories.web && (
-                  <a
-                    href={project1.repositories.web.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="repository-link"
-                  >
-                    <span className="repository-icon">
-                      {project1.repositories.web.icon}
-                    </span>
-                    {project1.repositories.web.label}
-                  </a>
-                )}
-              </div>
-            </div>
-          )}
         </section>
 
         <section className="project-detail__section">
@@ -134,7 +101,7 @@ const ProjectDetail1 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INVESTIGACIÓN Y IDEACIÓN</h2>
+          <h2 className="section-subtitle">INVESTIGACIÓN</h2>
 
           <div className="project-detail__understanding">
             <p className="understanding-text">{project1.research.summary}</p>
@@ -144,7 +111,6 @@ const ProjectDetail1 = () => {
                 alt="Investigación de usuario"
               />
             </div>
-
             <h3 className="subsection-title">PROBLEMAS CLAVE</h3>
             <ol className="key-issues-list">
               {project1.research.keyIssues.map((issue, index) => (
@@ -153,6 +119,117 @@ const ProjectDetail1 = () => {
                 </li>
               ))}
             </ol>
+            <h3 className="subsection-title">ANÁLISIS COMPETITIVO</h3>
+            <div className="project-detail__competition">
+              <div className="competitive-table">
+                <div className="competitive-row competitive-row--names">
+                  <div className="competitive-cell competitive-cell--empty"></div>
+                  {project1.competitors.map((competitor, index) => (
+                    <div
+                      key={index}
+                      className="competitive-cell competitive-cell--name"
+                    >
+                      <h3 className="competitor-name">{competitor.name}</h3>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="competitive-row competitive-row--overview">
+                  <div className="competitive-cell competitive-cell--label">
+                    <h4 className="row-label">OVERVIEW</h4>
+                  </div>
+                  {project1.competitors.map((competitor, index) => (
+                    <div
+                      key={index}
+                      className="competitive-cell competitive-cell--images"
+                      data-competitor={competitor.name}
+                    >
+                      <div className="competitor-images">
+                        {competitor.competitiveImage.map((image, i) => (
+                          <img
+                            key={i}
+                            src={image}
+                            alt={`${competitor.name} captura ${i + 1}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="competitive-row competitive-row--description">
+                  <div className="competitive-cell competitive-cell--label">
+                    <h4 className="row-label">DESCRIPCIÓN</h4>
+                  </div>
+                  {project1.competitors.map((competitor, index) => (
+                    <div
+                      key={index}
+                      className="competitive-cell competitive-cell--content"
+                      data-competitor={competitor.name}
+                    >
+                      <p className="competitor-description">
+                        {competitor.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="competitive-row competitive-row--strengths">
+                  <div className="competitive-cell competitive-cell--label">
+                    <h4 className="row-label">FORTALEZAS</h4>
+                  </div>
+                  {project1.competitors.map((competitor, index) => (
+                    <div
+                      key={index}
+                      className="competitive-cell competitive-cell--content"
+                      data-competitor={competitor.name}
+                    >
+                      <ul className="competitor-list strengths">
+                        {competitor.strengths.map((strength, i) => (
+                          <li key={i}>{strength}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="competitive-row competitive-row--weaknesses">
+                  <div className="competitive-cell competitive-cell--label">
+                    <h4 className="row-label">DEBILIDADES</h4>
+                  </div>
+                  {project1.competitors.map((competitor, index) => (
+                    <div
+                      key={index}
+                      className="competitive-cell competitive-cell--content"
+                      data-competitor={competitor.name}
+                    >
+                      <ul className="competitor-list weaknesses">
+                        {competitor.weaknesses.map((weakness, i) => (
+                          <li key={i}>{weakness}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="competitive-row competitive-row--audience">
+                  <div className="competitive-cell competitive-cell--label">
+                    <h4 className="row-label">AUDIENCIA OBJETIVO</h4>
+                  </div>
+                  {project1.competitors.map((competitor, index) => (
+                    <div
+                      key={index}
+                      className="competitive-cell competitive-cell--content"
+                      data-competitor={competitor.name}
+                    >
+                      <div className="competitor-audience">
+                        <p>{competitor.targetAudience}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -160,7 +237,10 @@ const ProjectDetail1 = () => {
           <h2 className="section-subtitle">PERSONAS</h2>
 
           <div className="project-detail__personas">
-            <div className="personas-horizontal-grid">
+            <div
+              className="personas-horizontal-grid"
+              data-count={project1.userProfiles.length}
+            >
               {project1.userProfiles.map((profile, index) => (
                 <div key={index} className="persona-card">
                   <div className="persona-statement">
@@ -205,60 +285,6 @@ const ProjectDetail1 = () => {
                       src={journey.userJourneyMapImage}
                       alt={`Mapa de recorrido de ${journey.userJourneyMapPersona}`}
                     />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="project-detail__section">
-          <h2 className="section-subtitle">ANÁLISIS COMPETITIVO</h2>
-
-          <div className="project-detail__competition">
-            <div className="competitors-grid">
-              {project1.competitors.map((competitor, index) => (
-                <div key={index} className="competitor-card">
-                  <h3 className="competitor-name">{competitor.name}</h3>
-                  <p className="competitor-description">
-                    {competitor.description}
-                  </p>
-
-                  <div className="competitor-details">
-                    <div className="competitor-section">
-                      <h4 className="competitor-section-title">FORTALEZAS</h4>
-                      <ul className="competitor-list strengths">
-                        {competitor.strengths.map((strength, i) => (
-                          <li key={i}>{strength}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="competitor-section">
-                      <h4 className="competitor-section-title">DEBILIDADES</h4>
-                      <ul className="competitor-list weaknesses">
-                        {competitor.weaknesses.map((weakness, i) => (
-                          <li key={i}>{weakness}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="competitor-audience">
-                    <h4 className="competitor-section-title">
-                      AUDIENCIA OBJETIVO
-                    </h4>
-                    <p>{competitor.targetAudience}</p>
-                  </div>
-
-                  <div className="competitor-images">
-                    {competitor.competitiveImage.map((image, i) => (
-                      <img
-                        key={i}
-                        src={image}
-                        alt={`${competitor.name} captura ${i + 1}`}
-                      />
-                    ))}
                   </div>
                 </div>
               ))}
@@ -693,6 +719,40 @@ const ProjectDetail1 = () => {
               {project1.conclusion.finalConsiderations}
             </p>
           </div>
+
+          {project1.repositories && (
+            <div className="project-detail__links project-detail__links--final">
+              <h3 className="subsection-title">REPOSITORIOS DEL PROYECTO</h3>
+              <div className="project-detail__repository-links">
+                {project1.repositories.mobile && (
+                  <a
+                    href={project1.repositories.mobile.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn--outline"
+                  >
+                    <span className="repository-icon">
+                      {project1.repositories.mobile.icon}
+                    </span>
+                    {project1.repositories.mobile.label}
+                  </a>
+                )}
+                {project1.repositories.web && (
+                  <a
+                    href={project1.repositories.web.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn--outline"
+                  >
+                    <span className="repository-icon">
+                      {project1.repositories.web.icon}
+                    </span>
+                    {project1.repositories.web.label}
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
         </section>
       </div>
 
