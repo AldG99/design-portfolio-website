@@ -331,7 +331,12 @@ const ProjectDetail3 = () => {
         <section className="project-detail__section">
           <div className="design-section">
             <h3 className="subsection-title">WIREFRAMES EN PAPEL</h3>
-            <div className="design-images">
+            <div
+              className="paper-wireframes-grid"
+              data-count={
+                project3.wireframing.paperWireframes.paperWireframesImage.length
+              }
+            >
               {project3.wireframing.paperWireframes.paperWireframesImage.map(
                 (image, index) => (
                   <img

@@ -24,10 +24,9 @@ const ProjectDetail5 = () => {
 
   const isUserProfile = profileText => {
     return (
-      profileText.includes('Guadalupe') ||
-      profileText.includes('dulcería') ||
-      profileText.includes('Araceli') ||
-      profileText.includes('ferretería')
+      profileText.includes('Carlos') ||
+      profileText.includes('médico') ||
+      profileText.includes('consultorio')
     );
   };
 
@@ -331,7 +330,12 @@ const ProjectDetail5 = () => {
         <section className="project-detail__section">
           <div className="design-section">
             <h3 className="subsection-title">WIREFRAMES EN PAPEL</h3>
-            <div className="design-images">
+            <div
+              className="paper-wireframes-grid"
+              data-count={
+                project5.wireframing.paperWireframes.paperWireframesImage.length
+              }
+            >
               {project5.wireframing.paperWireframes.paperWireframesImage.map(
                 (image, index) => (
                   <img

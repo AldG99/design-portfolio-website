@@ -76,6 +76,59 @@ $section-spacing: $spacing-xxl;
   }
 }
 
+.paper-wireframes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: $content-spacing;
+  margin-top: $content-spacing;
+  margin-bottom: $heading-spacing;
+
+  &[data-count='1'],
+  &[data-count='2'],
+  &[data-count='3'] {
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &[data-count='4'],
+  &[data-count='5'],
+  &[data-count='6'],
+  &[data-count='7'],
+  &[data-count='8'] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $content-spacing;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: none;
+    }
+  }
+
+  &[data-count='5'],
+  &[data-count='7'] {
+    img:last-child {
+      grid-column: 1 / -1;
+      max-width: 50%;
+      justify-self: center;
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
 .project-detail {
   padding: $spacing-xxl 0;
   font-family: $font-primary;
@@ -1138,60 +1191,6 @@ $section-spacing: $spacing-xxl;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-    }
-  }
-}
-
-.btn {
-  display: inline-block;
-  padding: $spacing-xs $spacing-md;
-  font-size: $font-size-sm;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 0;
-
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  &--outline {
-    background-color: transparent;
-    color: $accent-color;
-    border: 1px solid $accent-color;
-    font-weight: 500;
-
-    &:hover {
-      background-color: $accent-color;
-      color: white;
-    }
-  }
-}
-
-@include sm {
-  .project-detail {
-    &__meta {
-      grid-template-columns: 1fr;
-    }
-  }
-}
-
-@include md {
-  .project-detail {
-    &__competitors .competitors-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-}
-
-@include lg {
-  .project-detail {
-    &__competitors .competitors-grid {
-      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
