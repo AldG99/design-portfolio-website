@@ -266,9 +266,8 @@ const project4 = {
     },
     accessibility: {
       considerations: [
-        'Implementar un sistema de contraste de color que cumpla con el estándar WCAG AA en toda la aplicación, asegurando una relación mínima de 4.5:1 entre el texto y el fondo. Esto permite que las personas con baja visión puedan distinguir claramente la información en pantalla.',
-        'Desarrollar un orden de navegación lógico que permita a los usuarios completar todas las operaciones esenciales sin asistencia, desde añadir productos hasta registrar ventas.',
-        'Diseñar todas las áreas táctiles (botones, enlaces y otros elementos interactivos) con un tamaño mínimo de 44x44 puntos y un espaciado adecuado entre ellas, para facilitar una interacción precisa, especialmente para usuarios con limitaciones motoras.',
+        'Se desarrolló un orden de navegación lógico que permitió a los usuarios completar todas las operaciones esenciales, desde añadir productos hasta registrar ventas.',
+        'Se diseñaron todas las áreas táctiles (botones, enlaces y otros elementos interactivos) con un espaciado adecuado entre ellas, para facilitar una interacción precisa, especialmente para usuarios con limitaciones motoras.',
       ],
     },
   },

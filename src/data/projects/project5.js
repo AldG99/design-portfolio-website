@@ -166,20 +166,23 @@ const project5 = {
         '/assets/images/projects/project5/paper/paper3.png',
         '/assets/images/projects/project5/paper/paper4.png',
       ],
-      refinedWireframesImage: '',
     },
     digitalWireframes: {
-      digitalWireframesImage: '',
-      sizeVariationsImage: [],
-      deviceVariationsImage: [],
+      digitalWireframesImage: '/assets/images/projects/project5/wireframes.png',
+      sizeVariationsImage: ['/assets/images/projects/project5/digital.png'],
+      deviceVariationsImage: [
+        '/assets/images/projects/project5/variations.png',
+      ],
     },
   },
 
   prototyping: {
     lowFidelity: {
-      description: '',
+      description:
+        'El prototipo de baja fidelidad de MediNote se desarrolló mediante wireframes esquemáticos que establecieron la arquitectura de información y flujos de navegación fundamentales de la aplicación. Este prototipo inicial consistió en bocetos simples en papel y diagramas de flujo que definieron la estructura de las cinco pantallas principales: inicio, gestión de pacientes, registros médicos, alertas y perfil de usuario.',
       prototypeImage: '/assets/images/projects/project5/prototype.png',
-      prototypeUrl: '',
+      prototypeUrl:
+        'https://www.figma.com/proto/vTHlOgoKFqKtnHRFZnnrN2/MediNote?page-id=0%3A1&node-id=1-3&p=f&viewport=190%2C986%2C0.4&t=X9MKTny4oxrpNNca-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3',
     },
   },
 
@@ -200,71 +203,102 @@ const project5 = {
         ],
       },
       {
-        area: 'Creación de Registros Médicos',
+        area: 'Creación de Alertas',
         finding:
           'Una parte significativa de los casos se perdió durante el paso de selección de pacientes.',
         quotes: [
-          'P09: "Los tipos de registro están bien, pero ¿puedo crear mis propios tipos?',
+          'P09: "Las alertas están bien, pero ¿puedo crear mis propios tipos, como tareas?',
           'P10: "Me gusta poder revisar todo antes de guardar. Los datos médicos son muy importantes."',
         ],
       },
     ],
     refiningDesign: [
       {
-        mockups: '',
-        mockupsImage: '',
-        designDecisions: [],
+        mockups:
+          'Se implementó una mejora significativa en la lista de registros médicos mediante la ampliación del tamaño de la foto de perfil de los pacientes. Esta actualización incrementó las dimensiones de la imagen desde 20x20 píxeles a 36x36 píxeles, logrando una mejor visibilidad y consistencia visual dentro de la interfaz.',
+        mockupsImage: '/assets/images/projects/project5/mockups/mockups1.png',
+        designDecisions: [
+          'Se eligió el tamaño de 36x36 píxeles para mantener paridad con el icono de registros existente, creando una jerarquía visual coherente',
+          'El incremento del tamaño permite distinguir mejor los rasgos faciales y características distintivas de cada paciente',
+        ],
+      },
+      {
+        mockups:
+          'Se implementó una nueva funcionalidad en el sistema de recordatorios mediante la incorporación del tipo "Tareas", diseñado específicamente para permitir que los médicos gestionen sus recordatorios de tareas personales médicas de manera independiente y organizada. Esta adición crea una clara separación entre los recordatorios relacionados directamente con pacientes y aquellos de carácter profesional-personal del médico.',
+        mockupsImage: '/assets/images/projects/project5/mockups/mockups2.png',
+        designDecisions: [
+          'Se decidió crear una categoría completamente independiente para evitar confusión entre tareas del médico y recordatorios de pacientes',
+          'Se eligió el término "Tareas" por su simplicidad y comprensión inmediata en el contexto médico',
+          'Incorporación del nuevo tipo dentro de la estructura existente sin romper la lógica establecida',
+          'Mayor capacidad de personalizar la experiencia según las necesidades específicas del profesional médico',
+        ],
+      },
+      {
+        mockups:
+          'Se implementó una mejora en el sistema de comunicación con pacientes mediante la incorporación del correo electrónico como campo adicional en la información de contacto. Esta funcionalidad establece el email como una segunda opción de contacto cuando la comunicación telefónica directa no sea posible o efectiva, garantizando múltiples canales de comunicación.',
+        mockupsImage: '/assets/images/projects/project5/mockups/mockups3.png',
+        designDecisions: [
+          'Se estableció el teléfono como canal primario y el email como secundario, respetando la inmediatez y personalización de la comunicación telefónica',
+        ],
       },
     ],
   },
 
   visualDesign: {
-    colorPalette: {
-      60: '',
-      30: '',
-      10: '',
-      reasoning: '',
-    },
     responsiveDesign: {
-      strategy: '',
-      keyDecisions: [],
-      screenExamples: '',
-      screenSizeVariationsImage: [],
-      originalScreenSize: '',
+      strategy:
+        'La implementación de la estrategia "móvil-first" responde a un cambio fundamental en los patrones de uso de tecnología en el sector salud. Los profesionales médicos requieren acceso inmediato y flexible a la información de pacientes, independientemente de su ubicación física, ya sea en consultorios, hospitales, o durante visitas domiciliarias.',
+      keyDecisions: [
+        'Dominio del Tráfico Móvil - +75% del tráfico médico viene de móviles',
+        'Limitaciones de Performance y Recursos - Comenzar con restricciones móviles optimiza todo',
+        'Expectativas de Usuario Modernas - Nuevas generaciones de médicos esperan experiencias móvil-first',
+      ],
+      screenExamples:
+        'Se desarrolló variaciones de tamaño de pantalla que permite la adaptación dinámica de la interfaz médica entre dispositivos móviles y web. Esta funcionalidad garantiza una experiencia de usuario óptima en ambas plataformas, manteniendo la funcionalidad completa y la legibilidad tanto en smartphones como en navegadores de escritorio.',
+      screenSizeVariationsImage: [
+        '/assets/images/projects/project5/size_variation.png',
+      ],
+      originalScreenSize: '/assets/images/projects/project5/screen.png',
     },
     highFidelity: {
-      description: [],
+      description: [
+        'Este prototipo incorporó una paleta de colores cuidadosamente seleccionada con tonos azules médicos que transmiten confianza y profesionalismo, complementada con colores semánticos para alertas, estados de error y confirmaciones que facilitan la comprensión intuitiva de la información crítica. ',
+      ],
       highFidelityImage: '/assets/images/projects/project5/high_fidelity.png',
-      viewPrototypes: [],
+      viewPrototypes: [
+        'https://www.figma.com/proto/vTHlOgoKFqKtnHRFZnnrN2/MediNote?page-id=19%3A2699&node-id=19-3431&p=f&viewport=667%2C886%2C0.1&t=iDMX78zLAayf9Fwf-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=19%3A3431',
+        'https://www.figma.com/proto/vTHlOgoKFqKtnHRFZnnrN2/MediNote?page-id=1%3A1963&node-id=12-1531&p=f&viewport=879%2C2196%2C0.42&t=IUPperAV1dtilt13-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=12%3A1966',
+      ],
     },
     accessibility: {
       considerations: [
-        'Estructurar formularios médicos con agrupación visual clara, etiquetas consistentes, espaciado generoso y señales visuales para estados de error y éxito mediante colores, iconos y texto descriptivo.',
-        'Desarrollar un sistema de iconos coherente y accesible con iconografía universal, tamaños mínimos de 24x24px, etiquetas de texto, estilo visual uniforme y formas distintivas que no dependan solo del color.',
+        'Se estructuraron formularios médicos con una agrupación visual clara, etiquetas consistentes, espaciado generoso y señales visuales para los estados de error y éxito, utilizando colores, iconos y texto descriptivo.',
+        'Se desarrolló un sistema de iconos coherente y accesible con iconografía universal, etiquetas de texto, estilo visual uniforme y formas distintivas que no dependieran únicamente del color.',
       ],
     },
   },
 
   conclusion: {
     summary:
-      'El diseño de MediNote logró crear una solución digital integral que aborda las necesidades reales de profesionales de la salud en el manejo de información de pacientes, registros médicos y alertas. A través de un proceso de diseño centrado en el usuario, se desarrolló una aplicación que equilibra funcionalidad médica crítica con usabilidad intuitiva.',
+      'El desarrollo de MediNote demostró la viabilidad de crear una solución móvil integral para la gestión de registros médicos que satisface las necesidades reales de profesionales de la salud en consultorios y clínicas pequeñas. La aplicación logró consolidar exitosamente múltiples flujos de trabajo médico en una interfaz unificada e intuitiva, desde la gestión de pacientes hasta el seguimiento de tratamientos. Los prototipos validaron que la digitalización de procesos médicos tradicionales puede mejorar tanto la eficiencia operativa como la calidad del cuidado al paciente.',
     impact:
-      'MediNote contribuye a la reducción de la brecha digital entre hospitales de gran escala y la práctica médica independiente, ofreciendo una solución accesible y funcional para distintos niveles de infraestructura. Su enfoque adaptable y centrado en el usuario permite establecer un modelo de adopción replicable en otros países en desarrollo, donde los recursos tecnológicos y médicos son limitados. Además, al priorizar una experiencia de usuario clara y eficiente, MediNote establece un estándar de usabilidad que eleva las expectativas para futuras soluciones de salud digital.',
+      'La implementación del sistema de design tokens y componentes reutilizables estableció un nuevo estándar de consistencia visual en aplicaciones médicas móviles. El uso estratégico de color, tipografía y espaciado creó una identidad visual que transmite confianza y profesionalismo, elementos cruciales en el sector salud.',
     learnings:
       'Diseñar para profesionales médicos exige un conocimiento profundo de los flujos de trabajo clínicos, la terminología especializada y los contextos particulares en los que se utiliza la tecnología en entornos de salud. Esto implica comprender cómo se toman decisiones bajo presión, cómo se prioriza la información crítica y cómo interactúan diferentes roles dentro del equipo médico. Una interfaz efectiva no solo debe ser funcional, sino también reducir la carga cognitiva, minimizar errores y adaptarse a situaciones variables, desde consultorios hasta unidades de emergencia.',
     professionalLessons: [
-      'Patrones de interacción familiares reducen curva de aprendizaje significativamente',
+      'La importancia de los estados de error y feedback se magnificó en este contexto, donde una confusión en la interfaz puede tener consecuencias graves.',
       'Interfaces que funcionan bajo presión en entornos médicos, especialmente en situaciones de emergencia, donde los profesionales no pueden detenerse a pensar en cómo usar una aplicación; esta debe ser completamente intuitiva.',
     ],
     personalLessons: [
+      'La experiencia me hizo más consciente de la importancia de la accesibilidad universal en el diseño, considerando las diversas capacidades y contextos de uso de los profesionales médicos.',
       'Los requisitos médicos cambian constantemente debido a regulaciones y emergencias como COVID-19, por lo que aprendí a diseñar sistemas flexibles y a manejar la incertidumbre como parte normal del trabajo.',
     ],
     nextSteps: [
-      'Explorar necesidades específicas por especialidad médica para adaptar funcionalidades y flujos según los contextos clínicos particulares',
+      'Expandir el sistema de design tokens para incluir variaciones de alta densidad informacional, desarrollar componentes especializados para diferentes especialidades médicas, y crear temas personalizables que se adapten a preferencias individuales sin comprometer la consistencia del sistema.',
       'Desarrollar el módulo de facturación y gestión administrativa que permita registrar pagos, emitir facturas y optimizar procesos financieros',
     ],
     finalConsiderations:
-      'El desarrollo de MediNote representó un desafío significativo que combinó complejidad técnica, necesidades humanas críticas y un alto grado de responsabilidad social. No se trató solo de construir una herramienta funcional, sino de diseñar una solución capaz de integrarse con entornos clínicos reales, donde cada decisión puede impactar directamente en la salud y el bienestar de las personas.',
+      'El diseño de MediNote validó que la excelencia en experiencia de usuario en el sector salud no es un lujo, sino una necesidad crítica que impacta directamente la calidad del cuidado médico. Este proyecto demostró que cuando el diseño logra volverse transparente para el usuario médico, permite que toda su atención se concentre en el paciente, lo cual es el objetivo último de cualquier herramienta clínica. La experiencia subrayó la responsabilidad ética del diseñador UX/UI en contextos donde las decisiones de interfaz tienen implicaciones que van más allá de la satisfacción del usuario, extendiéndose al bienestar de los pacientes.',
   },
 };
 

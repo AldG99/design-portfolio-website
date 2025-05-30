@@ -111,7 +111,9 @@ const ProjectDetail4 = () => {
                 alt="Investigación de usuario"
               />
             </div>
-            <h3 className="subsection-title">PROBLEMAS CLAVE</h3>
+            <h3 className="subsection-title">
+              INVESTIGACIÓN DE USUARIOS: PUNTOS DÉBILES
+            </h3>
             <ol className="key-issues-list">
               {project4.research.keyIssues.map((issue, index) => (
                 <li key={index} className="key-issue-item">
@@ -361,7 +363,9 @@ const ProjectDetail4 = () => {
           </div>
 
           <div className="design-section">
-            <h3 className="subsection-title">VARIACIONES DE DISPOSITIVO</h3>
+            <h3 className="subsection-title">
+              WIREFRAME EN PAPEL - VARIACIONES DE TAMAÑO DE PANTALLA
+            </h3>
             <div className="design-images">
               {project4.wireframing.digitalWireframes.deviceVariationsImage.map(
                 (image, index) => (
