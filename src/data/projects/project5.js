@@ -2,12 +2,14 @@ const project5 = {
   id: 5,
   title: 'MediNote',
   shortDescription: 'Gestión de registros médicos',
+
   description:
     'MediNote es una aplicación móvil de gestión médica diseñada para doctores y enfermeras. Permite registrar pacientes con datos completos, crear distintos tipos de historiales clínicos, gestionar recordatorios y alertas por prioridad y fecha, y realizar búsquedas avanzadas. Cuenta con navegación intuitiva y acceso seguro para cada profesional. Está orientada a clínicas pequeñas y medianas, consultorios privados y médicos independientes que buscan digitalizar y optimizar su práctica médica.',
   thumbnail: '/assets/images/projects/project5/thumbnail.png',
   date: 'Mayo 2025',
   dateRaw: '2025-05-02',
   tools: ['Figma', 'SCSS', 'React', 'React Native Expo', 'Firebase'],
+
   repositories: {
     mobile: {
       url: 'https://github.com/AldG99/primary-care-clinic-app',
@@ -21,7 +23,6 @@ const project5 = {
     },
   },
 
-  // Propiedades faltantes sin valores
   problem:
     'En clínicas pequeñas y consultorios privados, la falta de herramientas digitales adecuadas dificulta la gestión eficiente de la información médica. Esto genera pérdida de datos, demoras en el acceso a historiales, ausencia de recordatorios automatizados y sobrecarga administrativa. Como resultado, se afecta la calidad de atención y se reduce la productividad del personal médico.',
   goal: 'Desarrollar una solución digital integral que permita a los profesionales de la salud gestionar de manera organizada y eficiente la información de sus pacientes, incluyendo historiales clínicos, registros médicos y recordatorios. Esta herramienta busca optimizar los procesos administrativos y clínicos, mejorar la atención al paciente y aumentar la productividad del personal, eliminando prácticas desactualizadas y poco efectivas.',
