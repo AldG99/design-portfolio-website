@@ -14,7 +14,7 @@ const ProjectDetailSwitch = () => {
       return <ProjectDetail1 />;
     case 'cell-ar':
       return <ProjectDetail2 />;
-    case 'proyecto-3':
+    case 'sport-campus':
       return <ProjectDetail3 />;
     case 'inventa-analyt':
       return <ProjectDetail4 />;
