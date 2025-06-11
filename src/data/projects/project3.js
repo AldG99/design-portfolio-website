@@ -25,7 +25,7 @@ const project3 = {
   },
 
   problem:
-    'Las universidades enfrentan desafíos significativos en la gestión de sus actividades deportivas estudiantiles, pues la organización de equipos, torneos y eventos se realiza de manera fragmentada y manual, utilizando métodos tradicionales como hojas de cálculo, comunicación por WhatsApp y tableros físicos. Esto genera desorganización por la información dispersa sobre equipos, jugadores y torneos; comunicación ineficiente que dificulta la coordinación entre estudiantes y entrenadores.',
+    'Las universidades enfrentan desafíos significativos en la gestión de sus actividades deportivas estudiantiles, pues la organización de equipos, torneos y eventos se realiza de manera fragmentada y manual, utilizando métodos tradicionales como hojas de cálculo y tableros físicos. Esto genera desorganización por la información dispersa sobre equipos, jugadores y torneos; comunicación ineficiente que dificulta la coordinación entre estudiantes y entrenadores.',
   goal: 'El objetivo es desarrollar una plataforma digital integral que centralice y optimice toda la gestión deportiva universitaria, proporcionando una gestión unificada de equipos, jugadores y torneos en una sola plataforma; seguimiento estadístico automatizado del rendimiento deportivo individual y grupal; comunicación eficiente entre todos los actores del ecosistema deportivo; documentación multimedia organizada de eventos y actividades deportivas; experiencia personalizada según el rol del usuario (estudiante o entrenador).',
   role: ' Se realizará investigación con estudiantes y entrenadores del ecosistema deportivo universitario para entender su comportamiento actual en la gestión de actividades deportivas, identificar puntos críticos y oportunidades de mejora. En el diseño de interfaz, se creará un sistema de diseño deportivo universitario con componentes reutilizables y prototipos de alta fidelidad responsivos para móviles. Para concluir, se desarrollarán prototipos interactivos para pruebas de usabilidad con usuarios reales, se iterarán los diseños según el feedback y métricas de uso, y se documentarán las especificaciones para el desarrollo.',
   responsibilities: [
@@ -38,14 +38,98 @@ const project3 = {
   research: {
     summary:
       'Para comprender las necesidades y comportamientos actuales en el ámbito deportivo universitario, se realizó una investigación cuantitativa mediante encuestas estructuradas dirigidas a estudiantes y entrenadores de instituciones de educación superior. El objetivo principal fue identificar los principales pain points en la gestión de actividades deportivas, evaluar el nivel de satisfacción con los métodos actuales de comunicación y organización, y validar la demanda potencial de una solución digital integral.',
-    researchImage: '',
-    keyIssues: [],
+    researchImage: '/assets/images/projects/project3/research.png',
+    keyIssues: [
+      'Una falta de información clara sobre los equipos disponibles, lo que dificulta conocer las opciones existentes',
+      'Se evidencia una notable falta de claridad y organización en la comunicación de los horarios',
+      'Dificultad significativa para seguir el desarrollo del torneo, ya que no se conocen los resultados de los demás partidos',
+      'La carencia para notificar cambios de último minuto y mantener la información organizada',
+    ],
   },
+
+  competitors: [
+    {
+      name: 'TeamSnap',
+      description:
+        'Plataforma líder en gestión de equipos deportivos que centraliza la comunicación, programación y organización de equipos. Permite a entrenadores, padres y jugadores mantenerse conectados y organizados a través de una interfaz intuitiva que maneja desde calendarios hasta mensajería grupal.',
+      strengths: [
+        'Sistema de comunicación robusto con mensajería grupal',
+        'Gestión eficiente de calendarios y eventos',
+        'Confirmación de asistencia automatizada',
+        'Amplia adopción en el mercado norteamericano',
+      ],
+      weaknesses: [
+        'Enfoque principalmente en deportes juveniles, no universitarios',
+        'Carece de análisis avanzado de rendimiento',
+        'Funcionalidades de galería muy básicas',
+      ],
+      targetAudience:
+        'Entrenadores de deportes juveniles (6-18 años), padres de familia involucrados en los deportes de sus hijos, ligas recreativas y semi-profesionales, así como equipos de escuelas secundarias.',
+      competitiveImage: [
+        '/assets/images/projects/project3/competitor/competitor1.png',
+      ],
+    },
+    {
+      name: 'SportsEngine',
+      description:
+        'Plataforma integral para organizaciones deportivas que ofrece gestión completa de ligas, torneos y equipos. Incluye creación de sitios web, registro de jugadores, programación de juegos y herramientas administrativas para organizaciones deportivas de gran escala.',
+      strengths: [
+        'Gestión completa de torneos y competencias',
+        'Sistema de registro y pagos integrado',
+        'Soporte para múltiples deportes simultáneamente',
+        'Reportes y analytics institucionales',
+      ],
+      weaknesses: [
+        'Interfaz compleja y con curva de aprendizaje alta',
+        'Más enfocado en administradores que en jugadores',
+        'Poco enfoque en experiencia del usuario final (estudiantes)',
+      ],
+      targetAudience:
+        'Coordinadores deportivos universitarios, administradores de ligas deportivas, organizaciones deportivas institucionales, escuelas preparatorias y universidades, y federaciones deportivas regionales.',
+      competitiveImage: [
+        '/assets/images/projects/project3/competitor/competitor2.png',
+      ],
+    },
+    {
+      name: 'GameChanger',
+      description:
+        'Aplicación especializada en seguimiento en vivo de partidos deportivos, principalmente béisbol y softball. Permite registrar estadísticas detalladas durante el juego, streaming en vivo y análisis post-partido con enfoque en captura precisa de datos deportivos.',
+      strengths: [
+        'Registro de estadísticas muy detallado y en tiempo real',
+        'Análisis estadístico avanzado individual',
+        'Interfaz optimizada para captura rápida durante juegos',
+      ],
+      weaknesses: [
+        'Carece de sistema de torneos',
+        'No incluye calendario o programación de eventos',
+        'Ausencia de funcionalidades administrativas',
+      ],
+      targetAudience:
+        'Entrenadores de béisbol y softball, scouts y reclutadores deportivos, padres que siguen el rendimiento de sus hijos, jugadores que buscan análisis detallado de su desempeño, y ligas de béisbol amateur y semi-profesional.',
+      competitiveImage: [
+        '/assets/images/projects/project3/competitor/competitor3.png',
+      ],
+    },
+  ],
 
   userProfiles: [
     {
-      problemStatement: '',
-      problemStatementImage: '',
+      problemStatement:
+        'Carlos Eduardo Ramírez Mendoza, entrenador de 34 años con 8 años de experiencia en la BUAP, busca herramientas digitales integradas para optimizar la gestión y comunicación con su equipo, ya que dedica demasiado tiempo a tareas administrativas, limitando su potencial deportivo.',
+      problemStatementImage:
+        '/assets/images/projects/project3/persona/persona1.png',
+    },
+    {
+      problemStatement:
+        'Andrea Sofía Hernández López, de 21 años y capitana de equipo, necesita acceso a sus estadísticas deportivas y mejor comunicación con su equipo para documentar su progreso y aspirar a nuevas oportunidades.',
+      problemStatementImage:
+        '/assets/images/projects/project3/persona/persona2.png',
+    },
+    {
+      problemStatement:
+        'Miguel Ángel Torres Castillo es un estudiante de 19 años que necesita una app deportiva intuitiva para mantenerse informado e integrarse al equipo, ya que la falta de comunicación organizada lo desconecta y limita su crecimiento deportivo-social.',
+      problemStatementImage:
+        '/assets/images/projects/project3/persona/persona3.png',
     },
   ],
 
@@ -57,16 +141,30 @@ const project3 = {
     },
   ],
 
-  competitors: [
-    {
-      name: '',
-      description: '',
-      strengths: [],
-      weaknesses: [],
-      targetAudience: '',
-      competitiveImage: [],
-    },
-  ],
+  improvementOpportunities: {
+    opportunities: [
+      {
+        title: 'Sistema de información',
+        description:
+          'Mejorar la integración de datos para que toda la información relevante',
+      },
+      {
+        title: 'Registro de estadísticas',
+        description:
+          'Implementar análisis avanzados y visualización dinámica de estadísticas',
+      },
+      {
+        title: 'Seguimiento',
+        description:
+          'Sistemas de seguimiento en tiempo real para monitorizar los torneos',
+      },
+      {
+        title: 'Accesibilidad y usabilidad',
+        description:
+          'Mejorar la interfaz y experiencia de usuario para que la plataforma sea intuitiva',
+      },
+    ],
+  },
 
   informationArchitecture: {
     sitemap: {

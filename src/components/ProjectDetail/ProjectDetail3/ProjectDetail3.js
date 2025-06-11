@@ -24,10 +24,12 @@ const ProjectDetail3 = () => {
 
   const isUserProfile = profileText => {
     return (
-      profileText.includes('Guadalupe') ||
-      profileText.includes('dulcería') ||
-      profileText.includes('Araceli') ||
-      profileText.includes('ferretería')
+      profileText.includes('Carlos') ||
+      profileText.includes('herramientas') ||
+      profileText.includes('Andrea') ||
+      profileText.includes('capitana') ||
+      profileText.includes('Miguel') ||
+      profileText.includes('estudiante')
     );
   };
 
@@ -111,7 +113,9 @@ const ProjectDetail3 = () => {
                 alt="Investigación de usuario"
               />
             </div>
-            <h3 className="subsection-title">PROBLEMAS CLAVE</h3>
+            <h3 className="subsection-title">
+              INVESTIGACIÓN DE USUARIOS: PUNTOS DÉBILES
+            </h3>
             <ol className="key-issues-list">
               {project3.research.keyIssues.map((issue, index) => (
                 <li key={index} className="key-issue-item">
@@ -288,6 +292,25 @@ const ProjectDetail3 = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="design-section">
+            <h3 className="subsection-title">OPORTUNIDADES DE MEJORA</h3>
+
+            <div className="project-detail__improvement-opportunities">
+              <div className="opportunities-grid">
+                {project3.improvementOpportunities.opportunities.map(
+                  (opportunity, index) => (
+                    <div key={index} className="opportunity-card">
+                      <h4 className="opportunity-title">{opportunity.title}</h4>
+                      <p className="opportunity-description">
+                        {opportunity.description}
+                      </p>
+                    </div>
+                  )
+                )}
+              </div>
             </div>
           </div>
         </section>
