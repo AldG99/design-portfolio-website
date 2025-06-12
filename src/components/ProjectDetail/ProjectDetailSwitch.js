@@ -14,11 +14,11 @@ const ProjectDetailSwitch = () => {
       return <ProjectDetail1 />;
     case 'cell-ar':
       return <ProjectDetail2 />;
-    case 'sport-campus':
-      return <ProjectDetail3 />;
     case 'inventa-analyt':
-      return <ProjectDetail4 />;
+      return <ProjectDetail3 />;
     case 'medi-note':
+      return <ProjectDetail4 />;
+    case 'sport-campus':
       return <ProjectDetail5 />;
     default:
       return <Navigate to="/trabajo" replace />;

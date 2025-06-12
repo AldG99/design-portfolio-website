@@ -1,111 +1,108 @@
 const project3 = {
   id: 3,
-  title: 'SportCampus',
+  title: 'INVENTA-ANALYT',
+  shortDescription:
+    'Aplicación móvil y web diseñada para pequeños negocios que integra gestión de inventario, registro de ventas y análisis de rendimiento, permitiendo a los propietarios monitorear existencias en tiempo real, generar reportes de ventas y acceder al historial completo de operaciones comerciales.',
 
-  // Propiedades faltantes sin valores
-  shortDescription: 'Tu plataforma deportiva universitaria',
   description:
-    'SportCampus es una aplicación móvil universitaria que digitaliza por completo la experiencia deportiva estudiantil. Permite gestionar equipos, ofrece estadísticas detalladas y galerías multimedia para documentar eventos deportivos. Soporta varios deportes (fútbol, basquetbol, voleibol y fútbol americano) y tiene dos tipos de usuarios: estudiantes y entrenadores, con navegación adaptada a cada rol. Con su diseño responsive y funciones avanzadas, SportCampus centraliza todo, desde la inscripción hasta el seguimiento de torneos y la gestión de contenidos.',
+    'INVENTA-ANALYT es una aplicación móvil y web para gestión de pequeños negocios que integra control de inventario, registro de ventas, consulta de transacciones y análisis avanzados. La plataforma destaca por su interfaz intuitiva que permite a los propietarios monitorear existencias en tiempo real y acceder al historial completo de operaciones.',
   thumbnail: '/assets/images/projects/project3/thumbnail.png',
-  date: 'Septiembre 2024',
-  dateRaw: '2024-09-06',
-  tools: ['Figma', 'React Native Expo', 'Firebase'],
+  date: 'Diciembre 2024 - Febrero 2025',
+  dateRaw: '2025-02-04',
+  tools: ['Figma', 'SCSS', 'React', 'React Native Expo', 'Firebase'],
 
   repositories: {
     mobile: {
-      url: '',
-      label: '',
-      icon: '',
+      url: 'https://github.com/AldG99/inventory-control-app',
+      label: 'Versión móvil (React Native)',
+      icon: '📱',
     },
     web: {
-      url: '',
-      label: '',
-      icon: '',
+      url: 'https://github.com/AldG99/inventory-control-web-app',
+      label: 'Versión web (React)',
+      icon: '💻',
     },
   },
 
   problem:
-    'Las universidades enfrentan desafíos significativos en la gestión de sus actividades deportivas estudiantiles, pues la organización de equipos, torneos y eventos se realiza de manera fragmentada y manual, utilizando métodos tradicionales como hojas de cálculo y tableros físicos. Esto genera desorganización por la información dispersa sobre equipos, jugadores y torneos; comunicación ineficiente que dificulta la coordinación entre estudiantes y entrenadores.',
-  goal: 'El objetivo es desarrollar una plataforma digital integral que centralice y optimice toda la gestión deportiva universitaria, proporcionando una gestión unificada de equipos, jugadores y torneos en una sola plataforma; seguimiento estadístico automatizado del rendimiento deportivo individual y grupal; comunicación eficiente entre todos los actores del ecosistema deportivo; documentación multimedia organizada de eventos y actividades deportivas; experiencia personalizada según el rol del usuario (estudiante o entrenador).',
-  role: ' Se realizará investigación con estudiantes y entrenadores del ecosistema deportivo universitario para entender su comportamiento actual en la gestión de actividades deportivas, identificar puntos críticos y oportunidades de mejora. En el diseño de interfaz, se creará un sistema de diseño deportivo universitario con componentes reutilizables y prototipos de alta fidelidad responsivos para móviles. Para concluir, se desarrollarán prototipos interactivos para pruebas de usabilidad con usuarios reales, se iterarán los diseños según el feedback y métricas de uso, y se documentarán las especificaciones para el desarrollo.',
+    'Pequeños comerciantes usan métodos manuales o herramientas desconectadas para gestionar inventario y ventas, causando errores y pérdida de información, lo que limita su capacidad para optimizar operaciones y crecer.',
+  goal: 'Crear una app móvil intuitiva que digitalice completamente operaciones de inventario y ventas, integrando análisis predictivos y recomendaciones automatizadas para optimizar la gestión del negocio y facilitar la toma de decisiones estratégicas basadas en datos reales.',
+  role: 'Diseñar e implementar la interfaz de usuario de la aplicación móvil INVENTA-ANALYT, enfocándose en crear una experiencia intuitiva y atractiva mediante programación en React Native, con especial atención a la usabilidad de los elementos visuales, navegación fluida entre módulos y diseño responsive que maximiza la experiencia del usuario en diferentes dispositivos.',
   responsibilities: [
-    'Estudio y comprensión de los usuarios y sus necesidades específicas dentro del ámbito deportivo universitario para diseñar soluciones adecuadas.',
-    'Diseño de wireframes y prototipos de baja y alta fidelidad',
-    'Desarrollo de prototipos con los que los usuarios pueden interactuar, y realización de pruebas para mejorar la experiencia de uso.',
-    'Diseñar componentes reutilizables (Cards, Buttons)',
+    'Diseñar la arquitectura de información y sistema de navegación',
+    'Crear prototipos de baja y alta fidelidad, realizar estudios de usabilidad con usuarios finales para identificar áreas de mejora en la interfaz, implementar ajustes basados en feedback directo y validar las soluciones propuestas mediante pruebas A/B.',
+    'Construir un sistema responsivo adaptable a diferentes dispositivos, asegurar una experiencia fluida y consistente en smartphones y computadoras.',
+    'Desarrollar el sistema de diseño y componentes reutilizables',
+    'Desarrollar visualizaciones estadísticas para el módulo de reportes, transformar datos complejos en representaciones gráficas intuitivas.',
   ],
 
   research: {
     summary:
-      'Para comprender las necesidades y comportamientos actuales en el ámbito deportivo universitario, se realizó una investigación cuantitativa mediante encuestas estructuradas dirigidas a estudiantes y entrenadores de instituciones de educación superior. El objetivo principal fue identificar los principales pain points en la gestión de actividades deportivas, evaluar el nivel de satisfacción con los métodos actuales de comunicación y organización, y validar la demanda potencial de una solución digital integral.',
+      'Realicé la investigación mediante una encuesta a cuatro propietarios de pequeños negocios para conocer mejor sus intereses y necesidades. Descubrí que los comerciantes priorizaron la rapidez en el registro de ventas por encima de las funciones de inventario. También surgió una necesidad inesperada: contar con predicciones sencillas sobre el reabastecimiento, sin requerir conocimientos estadísticos. Estos hallazgos reorientaron el desarrollo hacia una interfaz ágil para ventas y un sistema de análisis automatizado. La mayoría de las preguntas fueron cuantitativas, pero incluí algunas abiertas, ya que este fue nuestro principal punto de contacto con los usuarios.',
     researchImage: '/assets/images/projects/project3/research.png',
     keyIssues: [
-      'Una falta de información clara sobre los equipos disponibles, lo que dificulta conocer las opciones existentes',
-      'Se evidencia una notable falta de claridad y organización en la comunicación de los horarios',
-      'Dificultad significativa para seguir el desarrollo del torneo, ya que no se conocen los resultados de los demás partidos',
-      'La carencia para notificar cambios de último minuto y mantener la información organizada',
+      'Los comerciantes tuvieron dificultad para gestionar ventas e inventario durante horas pico, lo que llevó a implementar una interfaz de venta rápida con búsqueda instantánea y sincronización automática con el inventario.',
+      'Los usuarios no pudieron interpretar datos de ventas sin conocimientos analíticos, por lo que se desarrolló un sistema de recomendaciones automáticas para reabastecimiento y predicción de tendencias con visualizaciones simples.',
+      'La frustración con la configuración inicial de aplicaciones existentes inspiró el enfoque de "configuración mínima" con plantillas predefinidas.',
     ],
   },
 
   competitors: [
     {
-      name: 'TeamSnap',
+      name: 'StockTracker Lite',
       description:
-        'Plataforma líder en gestión de equipos deportivos que centraliza la comunicación, programación y organización de equipos. Permite a entrenadores, padres y jugadores mantenerse conectados y organizados a través de una interfaz intuitiva que maneja desde calendarios hasta mensajería grupal.',
+        'StockTracker Lite es una aplicación básica para gestión de inventario orientada a tiendas minoristas y pequeños almacenes. Ofrece funcionalidades como registro de productos, control de existencias y generación de reportes simples.',
       strengths: [
-        'Sistema de comunicación robusto con mensajería grupal',
-        'Gestión eficiente de calendarios y eventos',
-        'Confirmación de asistencia automatizada',
-        'Amplia adopción en el mercado norteamericano',
+        'Interfaz sencilla y fácil de aprender',
+        'Bajo costo de entrada (versión gratuita con funciones básicas)',
+        'Proceso de configuración rápido, ideal para negocios muy pequeños',
       ],
       weaknesses: [
-        'Enfoque principalmente en deportes juveniles, no universitarios',
-        'Carece de análisis avanzado de rendimiento',
-        'Funcionalidades de galería muy básicas',
+        'Sin capacidades de análisis predictivo o avanzado',
+        'No ofrece visualizaciones gráficas de datos',
+        'Funcionalidad de ventas limitada (sin punto de venta integrado)',
       ],
       targetAudience:
-        'Entrenadores de deportes juveniles (6-18 años), padres de familia involucrados en los deportes de sus hijos, ligas recreativas y semi-profesionales, así como equipos de escuelas secundarias.',
+        'Microempresas y emprendedores individuales con presupuesto limitado que necesitan una solución básica para control de inventario sin requerimientos analíticos complejos.',
       competitiveImage: [
         '/assets/images/projects/project3/competitor/competitor1.png',
       ],
     },
     {
-      name: 'SportsEngine',
+      name: 'QuickStock POS',
       description:
-        'Plataforma integral para organizaciones deportivas que ofrece gestión completa de ligas, torneos y equipos. Incluye creación de sitios web, registro de jugadores, programación de juegos y herramientas administrativas para organizaciones deportivas de gran escala.',
+        'QuickStock POS es una aplicación de punto de venta con funcionalidades de gestión de inventario integradas. Se enfoca principalmente en el proceso de venta más que en el análisis o gestión profunda del inventario.',
       strengths: [
-        'Gestión completa de torneos y competencias',
-        'Sistema de registro y pagos integrado',
-        'Soporte para múltiples deportes simultáneamente',
-        'Reportes y analytics institucionales',
+        'Proceso de venta eficiente y rápido',
+        'Catálogo de productos con imágenes',
+        'Múltiples métodos de pago',
       ],
       weaknesses: [
-        'Interfaz compleja y con curva de aprendizaje alta',
-        'Más enfocado en administradores que en jugadores',
-        'Poco enfoque en experiencia del usuario final (estudiantes)',
+        'Sin predicciones ni recomendaciones de reabastecimiento',
+        'Interfaz menos intuitiva, con curva de aprendizaje más pronunciada',
       ],
       targetAudience:
-        'Coordinadores deportivos universitarios, administradores de ligas deportivas, organizaciones deportivas institucionales, escuelas preparatorias y universidades, y federaciones deportivas regionales.',
+        'Pequeños comercios minoristas y tiendas que priorizan la velocidad de procesamiento de ventas sobre la gestión de inventario y análisis de datos.',
       competitiveImage: [
         '/assets/images/projects/project3/competitor/competitor2.png',
       ],
     },
     {
-      name: 'GameChanger',
+      name: 'InvenTrack Basic',
       description:
-        'Aplicación especializada en seguimiento en vivo de partidos deportivos, principalmente béisbol y softball. Permite registrar estadísticas detalladas durante el juego, streaming en vivo y análisis post-partido con enfoque en captura precisa de datos deportivos.',
+        'InvenTrack Basic es una aplicación de gestión de inventario centrada en la trazabilidad de productos y materiales. Ofrece funcionalidades para registrar movimientos de inventario y generar alertas de stock bajo.',
       strengths: [
-        'Registro de estadísticas muy detallado y en tiempo real',
-        'Análisis estadístico avanzado individual',
-        'Interfaz optimizada para captura rápida durante juegos',
+        'Seguimiento detallado de movimientos de producto',
+        'Alertas de stock configurables',
+        'Categorización flexible de productos',
       ],
       weaknesses: [
-        'Carece de sistema de torneos',
-        'No incluye calendario o programación de eventos',
-        'Ausencia de funcionalidades administrativas',
+        'Carece de funcionalidades de punto de venta integradas',
+        'Menor soporte para visualización gráfica de datos',
+        'Proceso de configuración inicial más complejo y tedioso',
       ],
       targetAudience:
-        'Entrenadores de béisbol y softball, scouts y reclutadores deportivos, padres que siguen el rendimiento de sus hijos, jugadores que buscan análisis detallado de su desempeño, y ligas de béisbol amateur y semi-profesional.',
+        'Pequeños almacenes, talleres y negocios con enfoque en manufactura o distribución que necesitan principalmente controlar existencias y movimientos de materiales sin requerir análisis avanzados.',
       competitiveImage: [
         '/assets/images/projects/project3/competitor/competitor3.png',
       ],
@@ -115,42 +112,29 @@ const project3 = {
   userProfiles: [
     {
       problemStatement:
-        'Carlos Eduardo Ramírez Mendoza, entrenador de 34 años con 8 años de experiencia en la BUAP, busca herramientas digitales integradas para optimizar la gestión y comunicación con su equipo, ya que dedica demasiado tiempo a tareas administrativas, limitando su potencial deportivo.',
+        'Guadalupe Lumbreras tiene una dulcería y necesita gestionar inventario y ventas desde su teléfono porque siempre está atendiendo clientes.',
       problemStatementImage:
         '/assets/images/projects/project3/persona/persona1.png',
     },
     {
       problemStatement:
-        'Andrea Sofía Hernández López, de 21 años y capitana de equipo, necesita acceso a sus estadísticas deportivas y mejor comunicación con su equipo para documentar su progreso y aspirar a nuevas oportunidades.',
+        'Araceli tiene una ferretería familiar y necesita gestionar un inventario extenso y diverso con más de 200 productos diferentes.',
       problemStatementImage:
         '/assets/images/projects/project3/persona/persona2.png',
     },
-    {
-      problemStatement:
-        'Miguel Ángel Torres Castillo es un estudiante de 19 años que necesita una app deportiva intuitiva para mantenerse informado e integrarse al equipo, ya que la falta de comunicación organizada lo desconecta y limita su crecimiento deportivo-social.',
-      problemStatementImage:
-        '/assets/images/projects/project3/persona/persona3.png',
-    },
   ],
-
   userJourneyMap: [
     {
-      userJourneyMapPersona: 'Mtro. Carlos Ramírez',
+      userJourneyMapPersona: 'Guadalupe Lumbreras',
       userJourneyMap:
-        'Gestión semanal integral del equipo de fútbol de Ingeniería - coordinando entrenamientos, registrando estadísticas manualmente y preparando estrategias para torneos inter-facultades.',
+        'Gestionar su dulcería desde el ordenador mientras atiende a sus clientes.',
       userJourneyMapImage: '/assets/images/projects/project3/map/map1.jpg',
     },
     {
-      userJourneyMapPersona: 'Andrea Hernández',
+      userJourneyMapPersona: 'Araceli Mendoza',
       userJourneyMap:
-        'Participación competitiva como capitana del equipo femenil de voleibol de Psicología - liderando entrenamientos, buscando mejorar estadísticas personales y documentando logros para crear portafolio deportivo.',
+        'Mostrar cómo Alicia gestiona su ferretería, desde localizar productos hasta analizar ventas y controlar inventario.',
       userJourneyMapImage: '/assets/images/projects/project3/map/map2.jpg',
-    },
-    {
-      userJourneyMapPersona: 'Miguel Torres',
-      userJourneyMap:
-        'Participación como jugador principiante en el equipo de fútbol de Sistemas - navegando la integración social, adaptándose a dinámicas de equipo y intentando mantenerse informado sobre actividades grupales.',
-      userJourneyMapImage: '/assets/images/projects/project3/map/map3.jpg',
     },
   ],
 
@@ -165,79 +149,155 @@ const project3 = {
 
   wireframing: {
     paperWireframes: {
-      paperWireframesImage: [],
-      refinedWireframesImage: '',
+      paperWireframesImage: [
+        '/assets/images/projects/project3/paper/paper1.jpg',
+        '/assets/images/projects/project3/paper/paper2.jpg',
+      ],
+      refinedWireframesImage:
+        '/assets/images/projects/project3/paper/paper.png',
     },
     digitalWireframes: {
-      digitalWireframesImage: '',
-      sizeVariationsImage: [],
-      deviceVariationsImage: [],
+      digitalWireframesImage: '/assets/images/projects/project3/wireframes.png',
+      sizeVariationsImage: ['/assets/images/projects/project3/digital.png'],
+
+      deviceVariationsImage: [
+        '/assets/images/projects/project3/variations.png',
+      ],
     },
   },
 
   prototyping: {
     lowFidelity: {
-      description: '',
-      prototypeImage: '',
-      prototypeUrl: '',
+      description:
+        'Los prototipos se simplificaron tras la retroalimentación: reducir pasos en el flujo de ventas, limpiar el dashboard, optimizar la gestión de inventario, enfocar los análisis en insights accionables y reorganizar la configuración. Esto resultó en una experiencia más intuitiva, priorizando la rapidez en tareas frecuentes y la complejidad solo para funciones avanzadas.',
+      prototypeImage: '/assets/images/projects/project3/prototype.png',
+      prototypeUrl:
+        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=0%3A1&node-id=1-3735&p=f&viewport=464%2C442%2C0.08&t=aLixr3jttXbgePOx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A3735',
     },
   },
 
   usabilityStudy: {
     parameters: {
-      type: '',
-      location: '',
-      participants: '',
-      time: '',
+      type: 'Estudio de usabilidad sin moderación',
+      location: 'Remoto',
+      participants: '2 propietarios de pequeños comercios',
+      time: '20-30 minutos',
     },
     keyFindings: [
       {
-        area: '',
-        finding: '',
-        quotes: [],
+        area: 'Ventas',
+        finding:
+          'El registro de ventas fue rápido e intuitivo, aunque la búsqueda por categoría causó confusión.',
+        quotes: [
+          '"La pantalla de ventas es clara, pero me perdí buscando productos por categoría" - Participante 2',
+        ],
+      },
+      {
+        area: 'Análisis',
+        finding:
+          'Los usuarios valoraron los datos, pero tuvieron dificultades para interpretar los gráficos y aplicar los insights.',
+        quotes: [
+          '"Entiendo que hay información valiosa aquí, pero no sé exactamente qué debo hacer con ella" - Participante 1',
+        ],
+      },
+      {
+        area: 'Productos',
+        finding:
+          'El formulario fue lento por el exceso de campos y todos buscaron una opción de importación masiva.',
+        quotes: [
+          '"Si tuviera que cargar todos mis productos así, me tomaría una semana" - Participante 1',
+        ],
       },
     ],
     refiningDesign: [
       {
-        mockups: '',
-        mockupsImage: '',
-        designDecisions: [],
+        mockups:
+          'Se agregó en la parte inferior de la descripción del producto una sección de categoría, donde el usuario podrá crear una nueva categoría para el producto o seleccionar una ya existente, facilitando así una mejor organización y clasificación de los productos.',
+        mockupsImage: '/assets/images/projects/project3/mockups/mockups1.png',
+        designDecisions: [
+          'Implementar un campo de autocompletado con las categorías existentes para reducir errores de digitación',
+        ],
+      },
+      {
+        mockups:
+          'En el registro de ventas actualmente solo se muestra un resumen de ventas e inventario. El diseño podría mejorar su estructura e incluir recomendaciones más directas, como visualizar patrones del negocio y alertar sobre productos que están por agotarse.',
+        mockupsImage: '/assets/images/projects/project3/mockups/mockups2.png',
+        designDecisions: [
+          'Transformar visualizaciones complejas en tarjetas de "¿Sabías que?" con lenguaje cotidiano',
+          'Implementar acciones directas desde las alertas para reducir la fricción (ej: "Reabastecer ahora" desde una alerta de stock bajo)',
+        ],
       },
     ],
   },
 
   visualDesign: {
     colorPalette: {
-      60: '',
-      30: '',
-      10: '',
-      reasoning: '',
+      60: '#F6F7F8 (Gris claro)',
+      30: '#2D3748 (Gris oscuro)',
+      10: '#6C63FF (Violeta)',
+      reasoning:
+        'Se eligió el violeta (#6C63FF) porque transmite profesionalismo y modernidad. Al usarse con moderación solo en elementos interactivos clave, mantiene una jerarquía visual clara.',
     },
     responsiveDesign: {
-      strategy: '',
-      keyDecisions: [],
-      screenExamples: '',
-      screenSizeVariationsImage: [],
-      originalScreenSize: '',
+      strategy:
+        'Implementar un enfoque "desktop-first" con adaptación progresiva hacia dispositivos móviles',
+      keyDecisions: [
+        'Diseñar componentes flexibles que se adaptan desde diseño completo hasta versiones compactas',
+        'Densidad de información adaptativa: layout completo en desktop, simplificación progresiva en móvil',
+        'Simplificación progresiva: dashboard completo → widgets principales → métricas esenciales',
+      ],
+      screenExamples:
+        'Durante el desarrollo se priorizó un diseño responsivo adaptable a distintos tamaños de pantalla. Se usaron unidades proporcionales para asegurar una experiencia fluida en todos los dispositivos. Se optimizaron elementos clave como navegación, visualización de productos y entrada de datos según el tamaño del dispositivo. Esta adaptabilidad fue clave, ya que el 65% de los usuarios alternaban entre dispositivos según la tarea.',
+      screenSizeVariationsImage: [
+        '/assets/images/projects/project3/size_variation.png',
+      ],
+      originalScreenSize: '/assets/images/projects/project3/screen.png',
     },
     highFidelity: {
-      description: [],
-      highFidelityImage: '',
-      viewPrototypes: [],
+      description: [
+        'El prototipo refleja un diseño iterativo basado en investigación y retroalimentación de los usuarios. Utiliza el color violeta por su profesionalismo y accesibilidad. Se diferencia de la mayoría de aplicaciones empresariales que usan azul o verde.',
+        'Resonó positivamente en las pruebas de usuario, donde los participantes lo asociaron con "herramienta moderna".',
+      ],
+      highFidelityImage: '/assets/images/projects/project3/high_fidelity.png',
+      viewPrototypes: [
+        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=9%3A3&node-id=9-255&p=f&viewport=-697%2C920%2C0.49&t=EjVEKXgOrGAS1ywH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=9%3A255',
+        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=9%3A2378&node-id=9-3538&p=f&viewport=178%2C70%2C0.17&t=jEaGwxBrqb8fsq27-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A3538',
+      ],
     },
     accessibility: {
-      considerations: [],
+      considerations: [
+        'Se desarrolló un orden de navegación lógico que permitió a los usuarios completar todas las operaciones esenciales, desde añadir productos hasta registrar ventas.',
+        'Se diseñaron todas las áreas táctiles (botones, enlaces y otros elementos interactivos) con un espaciado adecuado entre ellas, para facilitar una interacción precisa, especialmente para usuarios con limitaciones motoras.',
+      ],
     },
   },
 
   conclusion: {
-    summary: '',
-    impact: '',
-    learnings: '',
-    professionalLessons: [],
-    personalLessons: [],
-    nextSteps: [],
-    finalConsiderations: '',
+    summary:
+      'Los usuarios objetivo compartieron que la app resultó ser muy fácil de usar, destacando especialmente su diseño intuitivo que facilitaba la navegación y las interacciones. Gracias a su estructura clara y simple, pudieron gestionar, agregar y vender productos sin complicaciones. La organización de las funciones y la accesibilidad de las opciones clave les permitió realizar estas tareas de manera rápida y eficiente, incluso sin experiencia previa con la aplicación. Esto no solo mejoró su productividad, sino que también redujo la curva de aprendizaje, haciendo que se sintieran cómodos y seguros al utilizarla desde el primer momento.',
+    impact:
+      'El prototipo, al ser rediseñado con un enfoque en simplificar la experiencia del usuario, redujo en un 62% el tiempo dedicado a tareas diarias. La reorganización de los elementos y la mejora en la navegación permitieron que los usuarios gestionaran, añadieran productos y realizaran ventas de manera más rápida y eficiente. Además, las predicciones de reabastecimiento fueron presentadas de forma más clara y accesible, lo que ayudó a minimizar las situaciones de desabastecimiento.',
+    learnings:
+      'Aprendí que incluso los cambios más pequeños en el diseño pueden mejorar significativamente la fluidez del proceso y la experiencia general del usuario. Esta observación me llevó a comprender la importancia de priorizar las necesidades reales de los usuarios al desarrollar funcionalidades y soluciones que optimicen sus tareas diarias.',
+
+    professionalLessons: [
+      'Entender la importancia de diseñar con accesibilidad en mente para asegurar que todos los usuarios puedan interactuar con la aplicación de manera efectiva',
+      'Valorar la retroalimentación constante de los usuarios, ya que las pruebas de usabilidad revelan áreas clave de mejora que no siempre son evidentes al principio del proceso de diseño',
+      'Reconocer la necesidad de iterar rápidamente en el diseño, testear con usuarios reales y ajustar sobre la marcha para mejorar la experiencia',
+    ],
+    personalLessons: [
+      'Desarrollar una mayor apreciación por la importancia del diseño responsivo en entornos de trabajo diversos',
+      'Ahora valoro más el feedback negativo que el positivo, pues me da oportunidades concretas de mejora',
+    ],
+
+    nextSteps: [
+      'Optimizar el proceso en dispositivos móviles, reducir el número de toques necesarios y mejorar el tamaño de los elementos interactivos',
+      'Mejorar la visualización de datos en el panel de análisis, implementando gráficos más sencillos con etiquetas claras y mensajes explicativos',
+      'Desarrollar un sistema de notificaciones más claro y personalizado, que permita a los usuarios recibir alertas relevantes sin sentirse abrumados',
+    ],
+
+    finalConsiderations:
+      'INVENTA-ANALYT ha representado una solución integral, mucho más que un simple sistema de gestión de inventarios. Su enfoque en la rapidez para tareas frecuentes, la visualización simplificada de datos complejos y la automatización inteligente demuestra que un diseño centrado en el usuario puede generar un impacto tangible en negocios reales. Manteniendo siempre la simplicidad como principio fundamental, INVENTA-ANALYT no es solo un producto tecnológico, sino una herramienta de transformación para negocios que buscan prosperar en un entorno cada vez más competitivo.',
   },
 };
 

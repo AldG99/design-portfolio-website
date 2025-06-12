@@ -1,108 +1,111 @@
 const project4 = {
   id: 4,
-  title: 'INVENTA-ANALYT',
+  title: 'MediNote',
   shortDescription:
-    'Aplicación móvil y web diseñada para pequeños negocios que integra gestión de inventario, registro de ventas y análisis de rendimiento, permitiendo a los propietarios monitorear existencias en tiempo real, generar reportes de ventas y acceder al historial completo de operaciones comerciales.',
+    'Aplicación móvil y web integral diseñada para doctores y enfermeras que permite registrar pacientes, crear historiales clínicos digitales, gestionar recordatorios de citas y tratamientos por prioridad, y realizar búsquedas avanzadas en expedientes, optimizando la práctica médica en clínicas pequeñas y consultorios privados.',
 
   description:
-    'INVENTA-ANALYT es una aplicación móvil y web para gestión de pequeños negocios que integra control de inventario, registro de ventas, consulta de transacciones y análisis avanzados. La plataforma destaca por su interfaz intuitiva que permite a los propietarios monitorear existencias en tiempo real y acceder al historial completo de operaciones.',
+    'MediNote es una aplicación móvil de gestión médica diseñada para doctores y enfermeras. Permite registrar pacientes con datos completos, crear distintos tipos de historiales clínicos, gestionar recordatorios y alertas por prioridad y fecha, y realizar búsquedas avanzadas. Cuenta con navegación intuitiva y acceso seguro para cada profesional. Está orientada a clínicas pequeñas y medianas, consultorios privados y médicos independientes que buscan digitalizar y optimizar su práctica médica.',
   thumbnail: '/assets/images/projects/project4/thumbnail.png',
-  date: 'Febrero 2025',
-  dateRaw: '2025-02-05',
+  date: 'Febrero - Abril 2025',
+  dateRaw: '2025-04-11',
   tools: ['Figma', 'SCSS', 'React', 'React Native Expo', 'Firebase'],
 
   repositories: {
     mobile: {
-      url: 'https://github.com/AldG99/inventory-control-app',
+      url: 'https://github.com/AldG99/primary-care-clinic-app',
       label: 'Versión móvil (React Native)',
       icon: '📱',
     },
     web: {
-      url: 'https://github.com/AldG99/inventory-control-web-app',
+      url: 'https://github.com/AldG99/primary-care-clinic',
       label: 'Versión web (React)',
       icon: '💻',
     },
   },
 
   problem:
-    'Pequeños comerciantes usan métodos manuales o herramientas desconectadas para gestionar inventario y ventas, causando errores y pérdida de información, lo que limita su capacidad para optimizar operaciones y crecer.',
-  goal: 'Crear una app móvil intuitiva que digitalice completamente operaciones de inventario y ventas, integrando análisis predictivos y recomendaciones automatizadas para optimizar la gestión del negocio y facilitar la toma de decisiones estratégicas basadas en datos reales.',
-  role: 'Diseñar e implementar la interfaz de usuario de la aplicación móvil INVENTA-ANALYT, enfocándose en crear una experiencia intuitiva y atractiva mediante programación en React Native, con especial atención a la usabilidad de los elementos visuales, navegación fluida entre módulos y diseño responsive que maximiza la experiencia del usuario en diferentes dispositivos.',
+    'En clínicas pequeñas y consultorios privados, la falta de herramientas digitales adecuadas dificulta la gestión eficiente de la información médica. Esto genera pérdida de datos, demoras en el acceso a historiales, ausencia de recordatorios automatizados y sobrecarga administrativa. Como resultado, se afecta la calidad de atención y se reduce la productividad del personal médico.',
+  goal: 'Desarrollar una solución digital integral que permita a los profesionales de la salud gestionar de manera organizada y eficiente la información de sus pacientes, incluyendo historiales clínicos, registros médicos y recordatorios. Esta herramienta busca optimizar los procesos administrativos y clínicos, mejorar la atención al paciente y aumentar la productividad del personal, eliminando prácticas desactualizadas y poco efectivas.',
+  role: 'Responsable del diseño e implementación completa de MediNote desde la conceptualización hasta el despliegue. Mi función se centra en el desarrollo frontend móvil, el diseño de la experiencia de usuario, la implementación de sistemas de seguridad y la optimización del rendimiento, con el objetivo de crear una solución digital integral que transforme la gestión médica tradicional en un ecosistema moderno, eficiente y escalable, adaptado a las necesidades de los profesionales de la salud.',
   responsibilities: [
-    'Diseñar la arquitectura de información y sistema de navegación',
-    'Crear prototipos de baja y alta fidelidad, realizar estudios de usabilidad con usuarios finales para identificar áreas de mejora en la interfaz, implementar ajustes basados en feedback directo y validar las soluciones propuestas mediante pruebas A/B.',
-    'Construir un sistema responsivo adaptable a diferentes dispositivos, asegurar una experiencia fluida y consistente en smartphones y computadoras.',
-    'Desarrollar el sistema de diseño y componentes reutilizables',
-    'Desarrollar visualizaciones estadísticas para el módulo de reportes, transformar datos complejos en representaciones gráficas intuitivas.',
+    'Analizar necesidades y comportamientos de doctores y enfermeras para definir requisitos de diseño.',
+    'Estructurar y organizar contenido médico de manera lógica y accesible para profesionales de la salud',
+    'Crear bocetos, mockups interactivos y prototipos navegables para validar conceptos de diseño',
+    'Diseñar interfaces intuitivas adaptadas al flujo de trabajo médico con búsqueda y filtrado eficientes.',
+    'Realizar pruebas con usuarios reales para validar diseños y optimizar la experiencia basada en feedback médico',
   ],
 
   research: {
     summary:
-      'Realicé la investigación mediante una encuesta a cuatro propietarios de pequeños negocios para conocer mejor sus intereses y necesidades. Descubrí que los comerciantes priorizaron la rapidez en el registro de ventas por encima de las funciones de inventario. También surgió una necesidad inesperada: contar con predicciones sencillas sobre el reabastecimiento, sin requerir conocimientos estadísticos. Estos hallazgos reorientaron el desarrollo hacia una interfaz ágil para ventas y un sistema de análisis automatizado. La mayoría de las preguntas fueron cuantitativas, pero incluí algunas abiertas, ya que este fue nuestro principal punto de contacto con los usuarios.',
+      'La investigación utilizó metodología mixta con profesionales médicos de clínicas pequeñas y consultorios privados, identificando que el 30-40% del tiempo se invierte en búsqueda manual de expedientes físicos y el 60% reporta olvidos frecuentes de citas, con problemas principales de búsqueda ineficiente, falta de recordatorios sistematizados y riesgo de pérdida de información. Tras evaluar tres conceptos de diseño, se seleccionó un enfoque que equilibra funcionalidad y simplicidad, resultando en una arquitectura de seis módulos (Inicio, Pacientes, Registros, Búsqueda, Alertas, Perfil) con principios centrados en eficiencia clínica, acceso rápido y confiabilidad, validada mediante wireframes y feedback de 5 profesionales médicos con flujos críticos priorizados para consulta rápida, registro de pacientes y gestión diaria.',
     researchImage: '/assets/images/projects/project4/research.png',
     keyIssues: [
-      'Los comerciantes tuvieron dificultad para gestionar ventas e inventario durante horas pico, lo que llevó a implementar una interfaz de venta rápida con búsqueda instantánea y sincronización automática con el inventario.',
-      'Los usuarios no pudieron interpretar datos de ventas sin conocimientos analíticos, por lo que se desarrolló un sistema de recomendaciones automáticas para reabastecimiento y predicción de tendencias con visualizaciones simples.',
-      'La frustración con la configuración inicial de aplicaciones existentes inspiró el enfoque de "configuración mínima" con plantillas predefinidas.',
+      'Pérdida significativa de tiempo en búsqueda manual de información que podría dedicarse a atención médica',
+      'Información dispersa en múltiples formatos físicos sin conexión ni organización centralizada',
+      'Ausencia de sistema de recordatorios que garantice continuidad en tratamientos y citas',
+      'Imposibilidad de consultar información fuera del consultorio para emergencias o referencias',
     ],
   },
 
   competitors: [
     {
-      name: 'StockTracker Lite',
+      name: 'Doctoralia',
       description:
-        'StockTracker Lite es una aplicación básica para gestión de inventario orientada a tiendas minoristas y pequeños almacenes. Ofrece funcionalidades como registro de productos, control de existencias y generación de reportes simples.',
+        'Doctoralia es una plataforma digital disponible como app móvil y sitio web que conecta a pacientes con profesionales de la salud.',
       strengths: [
-        'Interfaz sencilla y fácil de aprender',
-        'Bajo costo de entrada (versión gratuita con funciones básicas)',
-        'Proceso de configuración rápido, ideal para negocios muy pequeños',
+        'Permite buscar por especialidad, ubicación, nombre o servicios médicos',
+        'Buen rendimiento en dispositivos móviles, manteniendo consistencia visual y navegación intuitiva',
+        'Permite agendar citas directamente desde la app',
       ],
       weaknesses: [
-        'Sin capacidades de análisis predictivo o avanzado',
-        'No ofrece visualizaciones gráficas de datos',
-        'Funcionalidad de ventas limitada (sin punto de venta integrado)',
+        'Visibilidad limitada sobre el estado de la cita o funciones complementarias como recordatorios integrados.',
+        'Sistema de alertas básico sin inteligencia contextual',
+        'No ofrece un sistema unificado de historias clínicas para seguimiento a largo plazo',
+        'No se integra con historiales médicos ni con otros sistemas clínicos profundos',
       ],
       targetAudience:
-        'Microempresas y emprendedores individuales con presupuesto limitado que necesitan una solución básica para control de inventario sin requerimientos analíticos complejos.',
+        'Usuarios que necesitan encontrar y agendar citas médicas de forma rápida y sin complicaciones, principalmente en entornos urbanos. La plataforma es especialmente útil para personas con conocimientos digitales funcionales.',
       competitiveImage: [
         '/assets/images/projects/project4/competitor/competitor1.png',
       ],
     },
     {
-      name: 'QuickStock POS',
+      name: 'MedicApp',
       description:
-        'QuickStock POS es una aplicación de punto de venta con funcionalidades de gestión de inventario integradas. Se enfoca principalmente en el proceso de venta más que en el análisis o gestión profunda del inventario.',
+        'MedicApp es una aplicación web y móvil diseñada específicamente para fisioterapeutas, que permite digitalizar la gestión clínica y mejorar el seguimiento terapéutico de los pacientes.',
       strengths: [
-        'Proceso de venta eficiente y rápido',
-        'Catálogo de productos con imágenes',
-        'Múltiples métodos de pago',
+        'Facilita el monitoreo de la evolución del paciente entre sesiones sin necesidad de visitas presenciales',
+        'Disponible como aplicación móvil y también en versión web, lo que facilita el trabajo desde distintos dispositivos.',
+        'Automatización de tareas como agendamiento y creación de fichas',
       ],
       weaknesses: [
-        'Sin predicciones ni recomendaciones de reabastecimiento',
-        'Interfaz menos intuitiva, con curva de aprendizaje más pronunciada',
+        'Funcionalidades limitadas en reportes y análisis',
+        'Navegación básica, que en algunos casos puede resultar demasiado simplificada para usuarios que buscan más información o control.',
+        'Algunos fisioterapeutas pueden encontrar la plataforma compleja si no están familiarizados con herramientas digitales',
       ],
       targetAudience:
-        'Pequeños comercios minoristas y tiendas que priorizan la velocidad de procesamiento de ventas sobre la gestión de inventario y análisis de datos.',
+        'Usuarios que valoran la inmediatez y simplicidad para acceder a consultas médicas, principalmente personas con necesidades urgentes o que prefieren soluciones digitales rápidas.',
       competitiveImage: [
         '/assets/images/projects/project4/competitor/competitor2.png',
       ],
     },
     {
-      name: 'InvenTrack Basic',
+      name: 'ClinicPoint',
       description:
-        'InvenTrack Basic es una aplicación de gestión de inventario centrada en la trazabilidad de productos y materiales. Ofrece funcionalidades para registrar movimientos de inventario y generar alertas de stock bajo.',
+        'ClinicPoint es una plataforma digital que permite a los usuarios acceder a servicios de salud privados sin necesidad de seguro médico, mediante un modelo de pago por uso.',
       strengths: [
-        'Seguimiento detallado de movimientos de producto',
-        'Alertas de stock configurables',
-        'Categorización flexible de productos',
+        'Navegación jerárquica intuitiva, permitiendo filtrar servicios por especialidad y ubicación con facilidad',
+        'Adaptabilidad móvil eficiente, manteniendo coherencia visual y funcional en distintos dispositivos',
+        'Uso correcto del espacio visual, con una interfaz limpia que facilita la lectura y reduce la sobrecarga cognitiva.',
       ],
       weaknesses: [
-        'Carece de funcionalidades de punto de venta integradas',
-        'Menor soporte para visualización gráfica de datos',
-        'Proceso de configuración inicial más complejo y tedioso',
+        'El seguimiento post-reserva no es completamente visible, lo que podría afectar la continuidad de la experiencia.',
+        'Algunos bloques de contenido dependen mucho del texto, y podrían mejorarse con recursos visuales complementarios.',
+        'Complejidad excesiva para usuarios básicos',
       ],
       targetAudience:
-        'Pequeños almacenes, talleres y negocios con enfoque en manufactura o distribución que necesitan principalmente controlar existencias y movimientos de materiales sin requerir análisis avanzados.',
+        'Usuarios que buscan resolver necesidades médicas puntuales sin complicaciones administrativas, especialmente aquellos sin seguro médico o con coberturas parciales.',
       competitiveImage: [
         '/assets/images/projects/project4/competitor/competitor3.png',
       ],
@@ -112,31 +115,41 @@ const project4 = {
   userProfiles: [
     {
       problemStatement:
-        'Guadalupe Lumbreras tiene una dulcería y necesita gestionar inventario y ventas desde su teléfono porque siempre está atendiendo clientes.',
+        'Dr. Carlos Mendoza es médico general con consultorio privado y necesita digitalizar expedientes médicos desde su teléfono porque pierde mucho tiempo buscando información en papel durante las consultas.',
       problemStatementImage:
         '/assets/images/projects/project4/persona/persona1.png',
     },
-    {
-      problemStatement:
-        'Araceli tiene una ferretería familiar y necesita gestionar un inventario extenso y diverso con más de 200 productos diferentes.',
-      problemStatementImage:
-        '/assets/images/projects/project4/persona/persona2.png',
-    },
   ],
+
   userJourneyMap: [
     {
-      userJourneyMapPersona: 'Guadalupe Lumbreras',
+      userJourneyMapPersona: 'Dr. Carlos Mendoza',
       userJourneyMap:
-        'Gestionar su dulcería desde el ordenador mientras atiende a sus clientes.',
+        'Mostrar cómo el Dr. Carlos administra su consultorio médico, desde agendar citas y atender pacientes hasta llevar el control de historiales clínicos y analizar estadísticas de salud.',
       userJourneyMapImage: '/assets/images/projects/project4/map/map1.jpg',
     },
-    {
-      userJourneyMapPersona: 'Araceli Mendoza',
-      userJourneyMap:
-        'Mostrar cómo Alicia gestiona su ferretería, desde localizar productos hasta analizar ventas y controlar inventario.',
-      userJourneyMapImage: '/assets/images/projects/project4/map/map2.jpg',
-    },
   ],
+
+  improvementOpportunities: {
+    opportunities: [
+      {
+        title: 'Acceso inmediato',
+        description: 'Eliminar búsqueda de expedientes físicos',
+      },
+      {
+        title: 'Información clara',
+        description: 'Historial digital organizado cronológicamente',
+      },
+      {
+        title: 'Recordatorios',
+        description: 'Sistema de alertas para seguimientos',
+      },
+      {
+        title: 'Reportes automáticos',
+        description: 'Generación de documentos médicos',
+      },
+    ],
+  },
 
   informationArchitecture: {
     sitemap: {
@@ -150,16 +163,15 @@ const project4 = {
   wireframing: {
     paperWireframes: {
       paperWireframesImage: [
-        '/assets/images/projects/project4/paper/paper1.jpg',
-        '/assets/images/projects/project4/paper/paper2.jpg',
+        '/assets/images/projects/project4/paper/paper1.png',
+        '/assets/images/projects/project4/paper/paper2.png',
+        '/assets/images/projects/project4/paper/paper3.png',
+        '/assets/images/projects/project4/paper/paper4.png',
       ],
-      refinedWireframesImage:
-        '/assets/images/projects/project4/paper/paper.png',
     },
     digitalWireframes: {
       digitalWireframesImage: '/assets/images/projects/project4/wireframes.png',
       sizeVariationsImage: ['/assets/images/projects/project4/digital.png'],
-
       deviceVariationsImage: [
         '/assets/images/projects/project4/variations.png',
       ],
@@ -169,10 +181,10 @@ const project4 = {
   prototyping: {
     lowFidelity: {
       description:
-        'Los prototipos se simplificaron tras la retroalimentación: reducir pasos en el flujo de ventas, limpiar el dashboard, optimizar la gestión de inventario, enfocar los análisis en insights accionables y reorganizar la configuración. Esto resultó en una experiencia más intuitiva, priorizando la rapidez en tareas frecuentes y la complejidad solo para funciones avanzadas.',
+        'El prototipo de baja fidelidad de MediNote se desarrolló mediante wireframes esquemáticos que establecieron la arquitectura de información y flujos de navegación fundamentales de la aplicación. Este prototipo inicial consistió en bocetos simples en papel y diagramas de flujo que definieron la estructura de las cinco pantallas principales: inicio, gestión de pacientes, registros médicos, alertas y perfil de usuario.',
       prototypeImage: '/assets/images/projects/project4/prototype.png',
       prototypeUrl:
-        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=0%3A1&node-id=1-3735&p=f&viewport=464%2C442%2C0.08&t=aLixr3jttXbgePOx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A3735',
+        'https://www.figma.com/proto/vTHlOgoKFqKtnHRFZnnrN2/MediNote?page-id=0%3A1&node-id=1-3&p=f&viewport=190%2C986%2C0.4&t=X9MKTny4oxrpNNca-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3',
     },
   },
 
@@ -180,74 +192,71 @@ const project4 = {
     parameters: {
       type: 'Estudio de usabilidad sin moderación',
       location: 'Remoto',
-      participants: '2 propietarios de pequeños comercios',
-      time: '20-30 minutos',
+      participants: '12 practicantes de medicina',
+      time: '20-30 minutos por participante',
     },
     keyFindings: [
       {
-        area: 'Ventas',
-        finding:
-          'El registro de ventas fue rápido e intuitivo, aunque la búsqueda por categoría causó confusión.',
+        area: 'Navegación General',
+        finding: 'La búsqueda desde la pantalla de inicio es efectiva',
         quotes: [
-          '"La pantalla de ventas es clara, pero me perdí buscando productos por categoría" - Participante 2',
+          'P08: "Me gusta que el botón de + esté siempre visible. No tengo que buscar dónde agregar algo nuevo."',
+          'P04: "Los iconos son claros. Inmediatamente sé dónde están mis pacientes y dónde puedo buscar."',
         ],
       },
       {
-        area: 'Análisis',
+        area: 'Creación de Alertas',
         finding:
-          'Los usuarios valoraron los datos, pero tuvieron dificultades para interpretar los gráficos y aplicar los insights.',
+          'Una parte significativa de los casos se perdió durante el paso de selección de pacientes.',
         quotes: [
-          '"Entiendo que hay información valiosa aquí, pero no sé exactamente qué debo hacer con ella" - Participante 1',
-        ],
-      },
-      {
-        area: 'Productos',
-        finding:
-          'El formulario fue lento por el exceso de campos y todos buscaron una opción de importación masiva.',
-        quotes: [
-          '"Si tuviera que cargar todos mis productos así, me tomaría una semana" - Participante 1',
+          'P09: "Las alertas están bien, pero ¿puedo crear mis propios tipos, como tareas?',
+          'P10: "Me gusta poder revisar todo antes de guardar. Los datos médicos son muy importantes."',
         ],
       },
     ],
     refiningDesign: [
       {
         mockups:
-          'Se agregó en la parte inferior de la descripción del producto una sección de categoría, donde el usuario podrá crear una nueva categoría para el producto o seleccionar una ya existente, facilitando así una mejor organización y clasificación de los productos.',
+          'Se implementó una mejora significativa en la lista de registros médicos mediante la ampliación del tamaño de la foto de perfil de los pacientes. Esta actualización incrementó las dimensiones de la imagen desde 20x20 píxeles a 36x36 píxeles, logrando una mejor visibilidad y consistencia visual dentro de la interfaz.',
         mockupsImage: '/assets/images/projects/project4/mockups/mockups1.png',
         designDecisions: [
-          'Implementar un campo de autocompletado con las categorías existentes para reducir errores de digitación',
+          'Se eligió el tamaño de 36x36 píxeles para mantener paridad con el icono de registros existente, creando una jerarquía visual coherente',
+          'El incremento del tamaño permite distinguir mejor los rasgos faciales y características distintivas de cada paciente',
         ],
       },
       {
         mockups:
-          'En el registro de ventas actualmente solo se muestra un resumen de ventas e inventario. El diseño podría mejorar su estructura e incluir recomendaciones más directas, como visualizar patrones del negocio y alertar sobre productos que están por agotarse.',
+          'Se implementó una nueva funcionalidad en el sistema de recordatorios mediante la incorporación del tipo "Tareas", diseñado específicamente para permitir que los médicos gestionen sus recordatorios de tareas personales médicas de manera independiente y organizada. Esta adición crea una clara separación entre los recordatorios relacionados directamente con pacientes y aquellos de carácter profesional-personal del médico.',
         mockupsImage: '/assets/images/projects/project4/mockups/mockups2.png',
         designDecisions: [
-          'Transformar visualizaciones complejas en tarjetas de "¿Sabías que?" con lenguaje cotidiano',
-          'Implementar acciones directas desde las alertas para reducir la fricción (ej: "Reabastecer ahora" desde una alerta de stock bajo)',
+          'Se decidió crear una categoría completamente independiente para evitar confusión entre tareas del médico y recordatorios de pacientes',
+          'Se eligió el término "Tareas" por su simplicidad y comprensión inmediata en el contexto médico',
+          'Incorporación del nuevo tipo dentro de la estructura existente sin romper la lógica establecida',
+          'Mayor capacidad de personalizar la experiencia según las necesidades específicas del profesional médico',
+        ],
+      },
+      {
+        mockups:
+          'Se implementó una mejora en el sistema de comunicación con pacientes mediante la incorporación del correo electrónico como campo adicional en la información de contacto. Esta funcionalidad establece el email como una segunda opción de contacto cuando la comunicación telefónica directa no sea posible o efectiva, garantizando múltiples canales de comunicación.',
+        mockupsImage: '/assets/images/projects/project4/mockups/mockups3.png',
+        designDecisions: [
+          'Se estableció el teléfono como canal primario y el email como secundario, respetando la inmediatez y personalización de la comunicación telefónica',
         ],
       },
     ],
   },
 
   visualDesign: {
-    colorPalette: {
-      60: '#F6F7F8 (Gris claro)',
-      30: '#2D3748 (Gris oscuro)',
-      10: '#6C63FF (Violeta)',
-      reasoning:
-        'Se eligió el violeta (#6C63FF) porque transmite profesionalismo y modernidad. Al usarse con moderación solo en elementos interactivos clave, mantiene una jerarquía visual clara.',
-    },
     responsiveDesign: {
       strategy:
-        'Implementar un enfoque "desktop-first" con adaptación progresiva hacia dispositivos móviles',
+        'La implementación de la estrategia "móvil-first" responde a un cambio fundamental en los patrones de uso de tecnología en el sector salud. Los profesionales médicos requieren acceso inmediato y flexible a la información de pacientes, independientemente de su ubicación física, ya sea en consultorios, hospitales, o durante visitas domiciliarias.',
       keyDecisions: [
-        'Diseñar componentes flexibles que se adaptan desde diseño completo hasta versiones compactas',
-        'Densidad de información adaptativa: layout completo en desktop, simplificación progresiva en móvil',
-        'Simplificación progresiva: dashboard completo → widgets principales → métricas esenciales',
+        'Dominio del Tráfico Móvil - +75% del tráfico médico viene de móviles',
+        'Limitaciones de Performance y Recursos - Comenzar con restricciones móviles optimiza todo',
+        'Expectativas de Usuario Modernas - Nuevas generaciones de médicos esperan experiencias móvil-first',
       ],
       screenExamples:
-        'Durante el desarrollo se priorizó un diseño responsivo adaptable a distintos tamaños de pantalla. Se usaron unidades proporcionales para asegurar una experiencia fluida en todos los dispositivos. Se optimizaron elementos clave como navegación, visualización de productos y entrada de datos según el tamaño del dispositivo. Esta adaptabilidad fue clave, ya que el 65% de los usuarios alternaban entre dispositivos según la tarea.',
+        'Se desarrolló variaciones de tamaño de pantalla que permite la adaptación dinámica de la interfaz médica entre dispositivos móviles y web. Esta funcionalidad garantiza una experiencia de usuario óptima en ambas plataformas, manteniendo la funcionalidad completa y la legibilidad tanto en smartphones como en navegadores de escritorio.',
       screenSizeVariationsImage: [
         '/assets/images/projects/project4/size_variation.png',
       ],
@@ -255,49 +264,43 @@ const project4 = {
     },
     highFidelity: {
       description: [
-        'El prototipo refleja un diseño iterativo basado en investigación y retroalimentación de los usuarios. Utiliza el color violeta por su profesionalismo y accesibilidad. Se diferencia de la mayoría de aplicaciones empresariales que usan azul o verde.',
-        'Resonó positivamente en las pruebas de usuario, donde los participantes lo asociaron con "herramienta moderna".',
+        'Este prototipo incorporó una paleta de colores cuidadosamente seleccionada con tonos azules médicos que transmiten confianza y profesionalismo, complementada con colores semánticos para alertas, estados de error y confirmaciones que facilitan la comprensión intuitiva de la información crítica. ',
       ],
       highFidelityImage: '/assets/images/projects/project4/high_fidelity.png',
       viewPrototypes: [
-        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=9%3A3&node-id=9-255&p=f&viewport=-697%2C920%2C0.49&t=EjVEKXgOrGAS1ywH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=9%3A255',
-        'https://www.figma.com/proto/RAdwsM7P1y7tdQhynTxtmT/INVENTA-ANALYT?page-id=9%3A2378&node-id=9-3538&p=f&viewport=178%2C70%2C0.17&t=jEaGwxBrqb8fsq27-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A3538',
+        'https://www.figma.com/proto/vTHlOgoKFqKtnHRFZnnrN2/MediNote?page-id=19%3A2699&node-id=19-3431&p=f&viewport=667%2C886%2C0.1&t=iDMX78zLAayf9Fwf-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=19%3A3431',
+        'https://www.figma.com/proto/vTHlOgoKFqKtnHRFZnnrN2/MediNote?page-id=1%3A1963&node-id=12-1531&p=f&viewport=879%2C2196%2C0.42&t=IUPperAV1dtilt13-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=12%3A1966',
       ],
     },
     accessibility: {
       considerations: [
-        'Se desarrolló un orden de navegación lógico que permitió a los usuarios completar todas las operaciones esenciales, desde añadir productos hasta registrar ventas.',
-        'Se diseñaron todas las áreas táctiles (botones, enlaces y otros elementos interactivos) con un espaciado adecuado entre ellas, para facilitar una interacción precisa, especialmente para usuarios con limitaciones motoras.',
+        'Se estructuraron formularios médicos con una agrupación visual clara, etiquetas consistentes, espaciado generoso y señales visuales para los estados de error y éxito, utilizando colores, iconos y texto descriptivo.',
+        'Se desarrolló un sistema de iconos coherente y accesible con iconografía universal, etiquetas de texto, estilo visual uniforme y formas distintivas que no dependieran únicamente del color.',
       ],
     },
   },
 
   conclusion: {
     summary:
-      'Los usuarios objetivo compartieron que la app resultó ser muy fácil de usar, destacando especialmente su diseño intuitivo que facilitaba la navegación y las interacciones. Gracias a su estructura clara y simple, pudieron gestionar, agregar y vender productos sin complicaciones. La organización de las funciones y la accesibilidad de las opciones clave les permitió realizar estas tareas de manera rápida y eficiente, incluso sin experiencia previa con la aplicación. Esto no solo mejoró su productividad, sino que también redujo la curva de aprendizaje, haciendo que se sintieran cómodos y seguros al utilizarla desde el primer momento.',
+      'El desarrollo de MediNote demostró la viabilidad de crear una solución móvil integral para la gestión de registros médicos que satisface las necesidades reales de profesionales de la salud en consultorios y clínicas pequeñas. La aplicación logró consolidar exitosamente múltiples flujos de trabajo médico en una interfaz unificada e intuitiva, desde la gestión de pacientes hasta el seguimiento de tratamientos. Los prototipos validaron que la digitalización de procesos médicos tradicionales puede mejorar tanto la eficiencia operativa como la calidad del cuidado al paciente.',
     impact:
-      'El prototipo, al ser rediseñado con un enfoque en simplificar la experiencia del usuario, redujo en un 62% el tiempo dedicado a tareas diarias. La reorganización de los elementos y la mejora en la navegación permitieron que los usuarios gestionaran, añadieran productos y realizaran ventas de manera más rápida y eficiente. Además, las predicciones de reabastecimiento fueron presentadas de forma más clara y accesible, lo que ayudó a minimizar las situaciones de desabastecimiento.',
+      'La implementación del sistema de design tokens y componentes reutilizables estableció un nuevo estándar de consistencia visual en aplicaciones médicas móviles. El uso estratégico de color, tipografía y espaciado creó una identidad visual que transmite confianza y profesionalismo, elementos cruciales en el sector salud.',
     learnings:
-      'Aprendí que incluso los cambios más pequeños en el diseño pueden mejorar significativamente la fluidez del proceso y la experiencia general del usuario. Esta observación me llevó a comprender la importancia de priorizar las necesidades reales de los usuarios al desarrollar funcionalidades y soluciones que optimicen sus tareas diarias.',
-
+      'Diseñar para profesionales médicos exige un conocimiento profundo de los flujos de trabajo clínicos, la terminología especializada y los contextos particulares en los que se utiliza la tecnología en entornos de salud. Esto implica comprender cómo se toman decisiones bajo presión, cómo se prioriza la información crítica y cómo interactúan diferentes roles dentro del equipo médico. Una interfaz efectiva no solo debe ser funcional, sino también reducir la carga cognitiva, minimizar errores y adaptarse a situaciones variables, desde consultorios hasta unidades de emergencia.',
     professionalLessons: [
-      'Entender la importancia de diseñar con accesibilidad en mente para asegurar que todos los usuarios puedan interactuar con la aplicación de manera efectiva',
-      'Valorar la retroalimentación constante de los usuarios, ya que las pruebas de usabilidad revelan áreas clave de mejora que no siempre son evidentes al principio del proceso de diseño',
-      'Reconocer la necesidad de iterar rápidamente en el diseño, testear con usuarios reales y ajustar sobre la marcha para mejorar la experiencia',
+      'La importancia de los estados de error y feedback se magnificó en este contexto, donde una confusión en la interfaz puede tener consecuencias graves.',
+      'Interfaces que funcionan bajo presión en entornos médicos, especialmente en situaciones de emergencia, donde los profesionales no pueden detenerse a pensar en cómo usar una aplicación; esta debe ser completamente intuitiva.',
     ],
     personalLessons: [
-      'Desarrollar una mayor apreciación por la importancia del diseño responsivo en entornos de trabajo diversos',
-      'Ahora valoro más el feedback negativo que el positivo, pues me da oportunidades concretas de mejora',
+      'La experiencia me hizo más consciente de la importancia de la accesibilidad universal en el diseño, considerando las diversas capacidades y contextos de uso de los profesionales médicos.',
+      'Los requisitos médicos cambian constantemente debido a regulaciones y emergencias como COVID-19, por lo que aprendí a diseñar sistemas flexibles y a manejar la incertidumbre como parte normal del trabajo.',
     ],
-
     nextSteps: [
-      'Optimizar el proceso en dispositivos móviles, reducir el número de toques necesarios y mejorar el tamaño de los elementos interactivos',
-      'Mejorar la visualización de datos en el panel de análisis, implementando gráficos más sencillos con etiquetas claras y mensajes explicativos',
-      'Desarrollar un sistema de notificaciones más claro y personalizado, que permita a los usuarios recibir alertas relevantes sin sentirse abrumados',
+      'Expandir el sistema de design tokens para incluir variaciones de alta densidad informacional, desarrollar componentes especializados para diferentes especialidades médicas, y crear temas personalizables que se adapten a preferencias individuales sin comprometer la consistencia del sistema.',
+      'Desarrollar el módulo de facturación y gestión administrativa que permita registrar pagos, emitir facturas y optimizar procesos financieros',
     ],
-
     finalConsiderations:
-      'INVENTA-ANALYT ha representado una solución integral, mucho más que un simple sistema de gestión de inventarios. Su enfoque en la rapidez para tareas frecuentes, la visualización simplificada de datos complejos y la automatización inteligente demuestra que un diseño centrado en el usuario puede generar un impacto tangible en negocios reales. Manteniendo siempre la simplicidad como principio fundamental, INVENTA-ANALYT no es solo un producto tecnológico, sino una herramienta de transformación para negocios que buscan prosperar en un entorno cada vez más competitivo.',
+      'El diseño de MediNote validó que la excelencia en experiencia de usuario en el sector salud no es un lujo, sino una necesidad crítica que impacta directamente la calidad del cuidado médico. Este proyecto demostró que cuando el diseño logra volverse transparente para el usuario médico, permite que toda su atención se concentre en el paciente, lo cual es el objetivo último de cualquier herramienta clínica. La experiencia subrayó la responsabilidad ética del diseñador UX/UI en contextos donde las decisiones de interfaz tienen implicaciones que van más allá de la satisfacción del usuario, extendiéndose al bienestar de los pacientes.',
   },
 };
 

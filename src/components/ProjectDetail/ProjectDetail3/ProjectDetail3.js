@@ -24,12 +24,10 @@ const ProjectDetail3 = () => {
 
   const isUserProfile = profileText => {
     return (
-      profileText.includes('Carlos') ||
-      profileText.includes('herramientas') ||
-      profileText.includes('Andrea') ||
-      profileText.includes('capitana') ||
-      profileText.includes('Miguel') ||
-      profileText.includes('estudiante')
+      profileText.includes('Guadalupe') ||
+      profileText.includes('dulcería') ||
+      profileText.includes('Araceli') ||
+      profileText.includes('ferretería')
     );
   };
 
@@ -365,7 +363,9 @@ const ProjectDetail3 = () => {
           </div>
 
           <div className="design-section">
-            <h3 className="subsection-title">VARIACIONES DE DISPOSITIVO</h3>
+            <h3 className="subsection-title">
+              WIREFRAME EN PAPEL - VARIACIONES DE TAMAÑO DE PANTALLA
+            </h3>
             <div className="design-images">
               {project3.wireframing.digitalWireframes.deviceVariationsImage.map(
                 (image, index) => (

@@ -24,10 +24,9 @@ const ProjectDetail4 = () => {
 
   const isUserProfile = profileText => {
     return (
-      profileText.includes('Guadalupe') ||
-      profileText.includes('dulcería') ||
-      profileText.includes('Araceli') ||
-      profileText.includes('ferretería')
+      profileText.includes('Carlos') ||
+      profileText.includes('médico') ||
+      profileText.includes('consultorio')
     );
   };
 
@@ -292,6 +291,25 @@ const ProjectDetail4 = () => {
               ))}
             </div>
           </div>
+
+          <div className="design-section">
+            <h3 className="subsection-title">OPORTUNIDADES DE MEJORA</h3>
+
+            <div className="project-detail__improvement-opportunities">
+              <div className="opportunities-grid">
+                {project4.improvementOpportunities.opportunities.map(
+                  (opportunity, index) => (
+                    <div key={index} className="opportunity-card">
+                      <h4 className="opportunity-title">{opportunity.title}</h4>
+                      <p className="opportunity-description">
+                        {opportunity.description}
+                      </p>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="project-detail__section">
@@ -348,17 +366,6 @@ const ProjectDetail4 = () => {
                   />
                 )
               )}
-            </div>
-          </div>
-
-          <div className="design-section">
-            <div className="design-image">
-              <img
-                src={
-                  project4.wireframing.paperWireframes.refinedWireframesImage
-                }
-                alt="Wireframes refinados"
-              />
             </div>
           </div>
 
@@ -512,71 +519,6 @@ const ProjectDetail4 = () => {
 
         <section className="project-detail__section">
           <h2 className="section-subtitle">DISEÑO VISUAL Y CONSIDERACIONES</h2>
-
-          <h3 className="subsection-title">PALETA DE COLORES</h3>
-          <div className="visual-choices">
-            <div className="color-palette">
-              <ul className="palette-list">
-                <li className="palette-item">
-                  <span className="palette-percent">60%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{
-                        backgroundColor: '#F6F7F8',
-                        display: 'inline-block',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '4px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                      }}
-                    ></span>
-                    {project4.visualDesign.colorPalette['60']}
-                  </span>
-                </li>
-                <li className="palette-item">
-                  <span className="palette-percent">30%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{
-                        backgroundColor: '#2D3748',
-                        display: 'inline-block',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '4px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                      }}
-                    ></span>
-                    {project4.visualDesign.colorPalette['30']}
-                  </span>
-                </li>
-                <li className="palette-item">
-                  <span className="palette-percent">10%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{
-                        backgroundColor: '#6C63FF',
-                        display: 'inline-block',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '4px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                      }}
-                    ></span>
-                    {project4.visualDesign.colorPalette['10']}
-                  </span>
-                </li>
-              </ul>
-              <p className="palette-reasoning">
-                {project4.visualDesign.colorPalette.reasoning}
-              </p>
-            </div>
-          </div>
 
           <div className="screen-variations">
             <h3 className="subsection-title">TAMAÑO DE PANTALLA ORIGINAL</h3>

@@ -36,9 +36,9 @@ export const getProjectBySlug = slug => {
 export const getProjectSlug = title => {
   if (title === 'Proyecto 1') return 'proyecto-1';
   if (title === 'Proyecto 2') return 'proyecto-2';
-  if (title === 'SportCampus') return 'sport-campus';
   if (title === 'INVENTA-ANALYT') return 'inventa-analyt';
   if (title === 'MediNote') return 'medi-note';
+  if (title === 'SportCampus') return 'sport-campus';
 
   return title.toLowerCase().replace(/\s+/g, '-');
 };
