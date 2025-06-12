@@ -294,25 +294,6 @@ const ProjectDetail3 = () => {
               ))}
             </div>
           </div>
-
-          <div className="design-section">
-            <h3 className="subsection-title">OPORTUNIDADES DE MEJORA</h3>
-
-            <div className="project-detail__improvement-opportunities">
-              <div className="opportunities-grid">
-                {project3.improvementOpportunities.opportunities.map(
-                  (opportunity, index) => (
-                    <div key={index} className="opportunity-card">
-                      <h4 className="opportunity-title">{opportunity.title}</h4>
-                      <p className="opportunity-description">
-                        {opportunity.description}
-                      </p>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
         </section>
 
         <section className="project-detail__section">
@@ -335,7 +316,7 @@ const ProjectDetail3 = () => {
           </div>
 
           <div className="design-section">
-            <h3 className="subsection-title">USUARIO FLOW</h3>
+            <h3 className="subsection-title">USER FLOW</h3>
             <div className="design-image">
               <img
                 src={project3.informationArchitecture.userFlow.userFlowImage}

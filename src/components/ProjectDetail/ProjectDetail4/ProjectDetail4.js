@@ -314,7 +314,7 @@ const ProjectDetail4 = () => {
           </div>
 
           <div className="design-section">
-            <h3 className="subsection-title">USUARIO FLOW</h3>
+            <h3 className="subsection-title">USER FLOW</h3>
             <div className="design-image">
               <img
                 src={project4.informationArchitecture.userFlow.userFlowImage}

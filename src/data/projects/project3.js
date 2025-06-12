@@ -135,43 +135,31 @@ const project3 = {
 
   userJourneyMap: [
     {
-      userJourneyMapPersona: '',
-      userJourneyMap: '',
-      userJourneyMapImage: '',
+      userJourneyMapPersona: 'Mtro. Carlos Ramírez',
+      userJourneyMap:
+        'Gestión semanal integral del equipo de fútbol de Ingeniería - coordinando entrenamientos, registrando estadísticas manualmente y preparando estrategias para torneos inter-facultades.',
+      userJourneyMapImage: '/assets/images/projects/project3/map/map1.jpg',
+    },
+    {
+      userJourneyMapPersona: 'Andrea Hernández',
+      userJourneyMap:
+        'Participación competitiva como capitana del equipo femenil de voleibol de Psicología - liderando entrenamientos, buscando mejorar estadísticas personales y documentando logros para crear portafolio deportivo.',
+      userJourneyMapImage: '/assets/images/projects/project3/map/map2.jpg',
+    },
+    {
+      userJourneyMapPersona: 'Miguel Torres',
+      userJourneyMap:
+        'Participación como jugador principiante en el equipo de fútbol de Sistemas - navegando la integración social, adaptándose a dinámicas de equipo y intentando mantenerse informado sobre actividades grupales.',
+      userJourneyMapImage: '/assets/images/projects/project3/map/map3.jpg',
     },
   ],
 
-  improvementOpportunities: {
-    opportunities: [
-      {
-        title: 'Sistema de información',
-        description:
-          'Mejorar la integración de datos para que toda la información relevante',
-      },
-      {
-        title: 'Registro de estadísticas',
-        description:
-          'Implementar análisis avanzados y visualización dinámica de estadísticas',
-      },
-      {
-        title: 'Seguimiento',
-        description:
-          'Sistemas de seguimiento en tiempo real para monitorizar los torneos',
-      },
-      {
-        title: 'Accesibilidad y usabilidad',
-        description:
-          'Mejorar la interfaz y experiencia de usuario para que la plataforma sea intuitiva',
-      },
-    ],
-  },
-
   informationArchitecture: {
     sitemap: {
-      sitemapImage: '',
+      sitemapImage: '/assets/images/projects/project3/sitemap.svg',
     },
     userFlow: {
-      userFlowImage: '',
+      userFlowImage: '/assets/images/projects/project3/userflow.svg',
     },
   },
 
