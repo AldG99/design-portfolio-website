@@ -171,6 +171,8 @@ const project5 = {
         '/assets/images/projects/project5/paper/paper2.png',
         '/assets/images/projects/project5/paper/paper3.png',
         '/assets/images/projects/project5/paper/paper4.png',
+        '/assets/images/projects/project5/paper/paper5.png',
+        '/assets/images/projects/project5/paper/paper6.png',
       ],
     },
     digitalWireframes: {
@@ -250,20 +252,30 @@ const project5 = {
 
   visualDesign: {
     colorPalette: {
-      60: '',
-      30: '',
-      10: '',
-      reasoning: '',
+      reasoning:
+        'La paleta de colores inicial presentaba problemas de contraste que afectaban la legibilidad, especialmente en dispositivos móviles bajo diferentes condiciones de iluminación. Se rediseñó completamente priorizando la accesibilidad y la identidad deportiva universitaria.',
+      evolutionImage: '/assets/images/projects/project5/color.png',
+      evolutionDescription:
+        'Colores con bajo contraste a una paleta deportiva accesible que cumple con estándares WCAG 2.1 AA.',
     },
     responsiveDesign: {
-      strategy: '',
-      keyDecisions: [],
-      screenExamples: '',
-      screenSizeVariationsImage: [],
-      originalScreenSize: '',
+      strategy:
+        'Diseñar SportCampus priorizando la estrategia "mobile-first" para responder a un cambio fundamental en los patrones de uso de tecnología en el deporte universitario. Permitir que estudiantes y entrenadores accedan de forma inmediata y flexible a información deportiva, independientemente de su ubicación física, ya sea en entrenamientos, partidos, aulas o durante eventos inter-facultades.',
+      keyDecisions: [
+        'Dominio del Tráfico Móvil - +89% del tráfico deportivo universitario viene de móviles',
+        'Contexto de Uso Dinámico - Usuarios acceden durante entrenamientos y eventos deportivos',
+      ],
+      screenExamples:
+        'Se creó un sistema de adaptación visual que transforma dinámicamente los componentes de la experiencia deportiva universitaria según el contexto de uso y dispositivo. Esta aproximación flexible permite que tanto estudiantes revisando estadísticas en sus teléfonos como coordinadores deportivos analizando datos en computadoras de escritorio mantengan acceso completo a funcionalidades críticas sin comprometer la usabilidad.',
+      screenSizeVariationsImage: [
+        '/assets/images/projects/project5/size_variation.png',
+      ],
+      originalScreenSize: '/assets/images/projects/project5/screen.png',
     },
     highFidelity: {
-      description: [],
+      description: [
+        'Este diseño integró un sistema visual unificado inspirado en la identidad deportiva de la universidad, utilizando una paleta de colores centrada en el azul institucional y complementada con gradientes dinámicos que transmiten movimiento y energía.',
+      ],
       highFidelityImage: '/assets/images/projects/project5/high_fidelity.png',
       viewPrototypes: [
         'https://www.figma.com/proto/EIoAaj7YwhbKmOFqTcRNuf/SportCampus?page-id=4%3A16&node-id=9-1849&p=f&viewport=479%2C417%2C0.06&t=mkFB5H99xp4xtpL4-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A1849',
@@ -271,7 +283,10 @@ const project5 = {
       ],
     },
     accessibility: {
-      considerations: [],
+      considerations: [
+        'Los componentes fueron diseñados con un enfoque modular que permite escalabilidad visual, incorporando cards adaptativas con elevación progresiva.',
+        'Combina símbolos deportivos universales con elementos propios del contexto universitario, garantizando un reconocimiento inmediato y una navegación intuitiva para todo tipo de usuarios dentro del ecosistema SportCampus.',
+      ],
     },
   },
 

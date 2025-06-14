@@ -504,6 +504,31 @@ const ProjectDetail5 = () => {
         <section className="project-detail__section">
           <h2 className="section-subtitle">DISEÑO VISUAL Y CONSIDERACIONES</h2>
 
+          <h3 className="subsection-title">CONTRASTE DE COLORES</h3>
+          <div className="color-palette-section">
+            <p className="color-palette-reasoning">
+              {project5.visualDesign.colorPalette.reasoning}
+            </p>
+
+            <div className="color-evolution">
+              <div className="color-evolution-image">
+                <img
+                  src={project5.visualDesign.colorPalette.evolutionImage}
+                  alt="Evolución de la paleta de colores"
+                  onClick={() =>
+                    openImageModal(
+                      project5.visualDesign.colorPalette.evolutionImage
+                    )
+                  }
+                  className="clickable-image"
+                />
+              </div>
+              <p className="color-evolution-description">
+                {project5.visualDesign.colorPalette.evolutionDescription}
+              </p>
+            </div>
+          </div>
+
           <div className="screen-variations">
             <h3 className="subsection-title">TAMAÑO DE PANTALLA ORIGINAL</h3>
             <p className="strategy-description">
@@ -543,7 +568,6 @@ const ProjectDetail5 = () => {
               )}
             </div>
           </div>
-
           <div className="design-section">
             <h3 className="subsection-title">PROTOTIPO DE ALTA FIDELIDAD</h3>
             <div className="high-fidelity-section">
@@ -580,7 +604,6 @@ const ProjectDetail5 = () => {
               </div>
             </div>
           </div>
-
           <h3 className="subsection-title">CONSIDERACIONES DE ACCESIBILIDAD</h3>
           <ol className="accessibility-list">
             {project5.visualDesign.accessibility.considerations.map(
