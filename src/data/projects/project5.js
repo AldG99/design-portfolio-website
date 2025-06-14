@@ -3,7 +3,8 @@ const project5 = {
   title: 'SportCampus',
 
   // Propiedades faltantes sin valores
-  shortDescription: 'Tu plataforma deportiva universitaria',
+  shortDescription:
+    'Diseñada una aplicación móvil que digitaliza completamente la experiencia deportiva universitaria, permitiendo gestionar equipos, visualizar estadísticas detalladas y documentar eventos deportivos con galerías multimedia, adaptándose a estudiantes y entrenadores para centralizar desde inscripciones hasta seguimiento de torneos.',
   description:
     'SportCampus es una aplicación móvil universitaria que digitaliza por completo la experiencia deportiva estudiantil. Permite gestionar equipos, ofrece estadísticas detalladas y galerías multimedia para documentar eventos deportivos. Soporta varios deportes (fútbol, basquetbol, voleibol y fútbol americano) y tiene dos tipos de usuarios: estudiantes y entrenadores, con navegación adaptada a cada rol. Con su diseño responsive y funciones avanzadas, SportCampus centraliza todo, desde la inscripción hasta el seguimiento de torneos y la gestión de contenidos.',
   thumbnail: '/assets/images/projects/project5/thumbnail.png',
@@ -13,9 +14,9 @@ const project5 = {
 
   repositories: {
     mobile: {
-      url: '',
-      label: '',
-      icon: '',
+      url: 'https://github.com/AldG99/team-sports-training-app',
+      label: 'Versión móvil (React Native)',
+      icon: '📱',
     },
     web: {
       url: '',
@@ -165,43 +166,84 @@ const project5 = {
 
   wireframing: {
     paperWireframes: {
-      paperWireframesImage: [],
-      refinedWireframesImage: '',
+      paperWireframesImage: [
+        '/assets/images/projects/project5/paper/paper1.png',
+        '/assets/images/projects/project5/paper/paper2.png',
+        '/assets/images/projects/project5/paper/paper3.png',
+        '/assets/images/projects/project5/paper/paper4.png',
+      ],
     },
     digitalWireframes: {
-      digitalWireframesImage: '',
-      sizeVariationsImage: [],
-      deviceVariationsImage: [],
+      digitalWireframesImage: '/assets/images/projects/project5/wireframes.png',
+      sizeVariationsImage: ['/assets/images/projects/project5/digital.png'],
+      deviceVariationsImage: [
+        '/assets/images/projects/project5/variations.png',
+      ],
     },
   },
 
   prototyping: {
     lowFidelity: {
-      description: '',
-      prototypeImage: '',
-      prototypeUrl: '',
+      description:
+        'Los wireframes de SportCampus son un prototipo de baja fidelidad detallado que define la estructura y experiencia de usuario de la plataforma. Incluyen flujos de navegación, componentes, comportamientos responsivos y aspectos funcionales clave. Sirven como base técnica para el desarrollo, reduciendo riesgos al validar decisiones importantes desde etapas tempranas.',
+      prototypeImage: '/assets/images/projects/project5/prototype.png',
+      prototypeUrl:
+        'https://www.figma.com/proto/EIoAaj7YwhbKmOFqTcRNuf/SportCampus?page-id=0%3A1&node-id=1-1697&p=f&viewport=479%2C390%2C0.1&t=GGsTDt2SaPL0ePCU-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A1697',
     },
   },
 
   usabilityStudy: {
     parameters: {
-      type: '',
-      location: '',
-      participants: '',
-      time: '',
+      type: 'Estudio de usabilidad sin moderación',
+      location: 'Remoto',
+      participants: '2 Entrenadores (25-45 años) y 8 Estudiantes (18-25 años)',
+      time: '15-20 minutos por participante',
     },
     keyFindings: [
       {
-        area: '',
-        finding: '',
-        quotes: [],
+        area: 'Navegación General',
+        finding:
+          'La navegación por pestañas es intuitiva para la mayoría de usuarios',
+        quotes: [
+          'E01: "La navegación me gusta, pero cuando tengo que administrar más de 2 equipos se vuelve confusa. Ocupa demasiado espacio en pantalla y tengo que hacer mucho desplazamiento para ver todos mis equipos."',
+          'E02: "Me encanta que pueda ver todos mis equipos desde la pantalla principal. Todo está donde lo esperaba."',
+        ],
+      },
+      {
+        area: 'Visualización de Estadísticas',
+        finding:
+          'Los gráficos son atractivos pero algunos usuarios necesitan más contexto',
+        quotes: [
+          'P04: "Ver mi progreso en gráficos me motiva mucho. Puedo ver claramente cómo he mejorado en remates."',
+        ],
+      },
+      {
+        area: 'Visualización de Torneos',
+        finding:
+          'La visualización es muy valorada por todos los tipos de usuario, pero falta información específica',
+        quotes: [
+          'P01: "Me gusta poder ver cuándo juega mi equipo y contra quién. La información está muy organizada."',
+          'P06: "Puedo ver los detalles del torneo, pero ¿cómo voy a saber cuánto va a durar el torneo completo? Necesito planificar los entrenamientos y no veo las fechas de inicio y fin claramente."',
+        ],
       },
     ],
     refiningDesign: [
       {
-        mockups: '',
-        mockupsImage: '',
-        designDecisions: [],
+        mockups:
+          'En el módulo del entrenador, los botones para cambiar el equipo actualmente se organizan de forma vertical. El diseño podría optimizar mejor el espacio disponible en pantalla y mejorar la experiencia del usuario al reorganizar estos elementos de manera más eficiente.',
+        mockupsImage: '/assets/images/projects/project5/mockups/mockups1.png',
+        designDecisions: [
+          'Reorganizar los botones de cambio de equipo de vertical a horizontal para maximizar el aprovechamiento del espacio en pantalla',
+          'Implementar un diseño más compacto que permita una navegación más fluida entre las opciones del entrenador',
+        ],
+      },
+      {
+        mockups:
+          'En la sección de detalles del torneo actualmente falta información temporal clara sobre la duración del evento. El diseño podría mejorar la transparencia y planificación al mostrar de manera prominente las fechas programadas por los administradores.',
+        mockupsImage: '/assets/images/projects/project5/mockups/mockups2.png',
+        designDecisions: [
+          'Agregar un campo visible con las fechas de duración del torneo que los administradores han programado',
+        ],
       },
     ],
   },
@@ -222,8 +264,11 @@ const project5 = {
     },
     highFidelity: {
       description: [],
-      highFidelityImage: '',
-      viewPrototypes: [],
+      highFidelityImage: '/assets/images/projects/project5/high_fidelity.png',
+      viewPrototypes: [
+        'https://www.figma.com/proto/EIoAaj7YwhbKmOFqTcRNuf/SportCampus?page-id=4%3A16&node-id=9-1849&p=f&viewport=479%2C417%2C0.06&t=mkFB5H99xp4xtpL4-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A1849',
+        'https://www.figma.com/proto/EIoAaj7YwhbKmOFqTcRNuf/SportCampus?page-id=1%3A3847&node-id=1-7598&p=f&viewport=479%2C395%2C0.1&t=Hqg0cXGAsEdSlbCG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A7598',
+      ],
     },
     accessibility: {
       considerations: [],

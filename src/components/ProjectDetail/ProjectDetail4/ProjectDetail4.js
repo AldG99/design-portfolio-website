@@ -673,7 +673,7 @@ const ProjectDetail4 = () => {
 
           {project4.repositories && (
             <div className="project-detail__links project-detail__links--final">
-              <h3 className="subsection-title">REPOSITORIOS DEL PROYECTO</h3>
+              <h3 className="subsection-title">REPOSITORIO DEL PROYECTO</h3>
               <div className="project-detail__repository-links">
                 {project4.repositories.mobile && (
                   <a

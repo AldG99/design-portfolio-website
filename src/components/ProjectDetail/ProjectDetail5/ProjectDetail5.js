@@ -354,18 +354,9 @@ const ProjectDetail5 = () => {
           </div>
 
           <div className="design-section">
-            <div className="design-image">
-              <img
-                src={
-                  project5.wireframing.paperWireframes.refinedWireframesImage
-                }
-                alt="Wireframes refinados"
-              />
-            </div>
-          </div>
-
-          <div className="design-section">
-            <h3 className="subsection-title">VARIACIONES DE DISPOSITIVO</h3>
+            <h3 className="subsection-title">
+              WIREFRAME EN PAPEL - VARIACIONES DE TAMAÑO DE PANTALLA
+            </h3>
             <div className="design-images">
               {project5.wireframing.digitalWireframes.deviceVariationsImage.map(
                 (image, index) => (
@@ -512,71 +503,6 @@ const ProjectDetail5 = () => {
 
         <section className="project-detail__section">
           <h2 className="section-subtitle">DISEÑO VISUAL Y CONSIDERACIONES</h2>
-
-          <h3 className="subsection-title">PALETA DE COLORES</h3>
-          <div className="visual-choices">
-            <div className="color-palette">
-              <ul className="palette-list">
-                <li className="palette-item">
-                  <span className="palette-percent">60%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{
-                        backgroundColor: '#F6F7F8',
-                        display: 'inline-block',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '4px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                      }}
-                    ></span>
-                    {project5.visualDesign.colorPalette['60']}
-                  </span>
-                </li>
-                <li className="palette-item">
-                  <span className="palette-percent">30%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{
-                        backgroundColor: '#2D3748',
-                        display: 'inline-block',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '4px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                      }}
-                    ></span>
-                    {project5.visualDesign.colorPalette['30']}
-                  </span>
-                </li>
-                <li className="palette-item">
-                  <span className="palette-percent">10%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{
-                        backgroundColor: '#6C63FF',
-                        display: 'inline-block',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '4px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                      }}
-                    ></span>
-                    {project5.visualDesign.colorPalette['10']}
-                  </span>
-                </li>
-              </ul>
-              <p className="palette-reasoning">
-                {project5.visualDesign.colorPalette.reasoning}
-              </p>
-            </div>
-          </div>
 
           <div className="screen-variations">
             <h3 className="subsection-title">TAMAÑO DE PANTALLA ORIGINAL</h3>
@@ -731,7 +657,7 @@ const ProjectDetail5 = () => {
 
           {project5.repositories && (
             <div className="project-detail__links project-detail__links--final">
-              <h3 className="subsection-title">REPOSITORIOS DEL PROYECTO</h3>
+              <h3 className="subsection-title">REPOSITORIO DEL PROYECTO</h3>
               <div className="project-detail__repository-links">
                 {project5.repositories.mobile && (
                   <a
