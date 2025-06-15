@@ -49,7 +49,7 @@ const ProjectDetail5 = () => {
 
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
-              <span className="meta-value">Febrero 2025</span>
+              <span className="meta-value">Abril - Junio 2025</span>
             </div>
           </div>
 

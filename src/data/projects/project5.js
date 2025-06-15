@@ -291,13 +291,27 @@ const project5 = {
   },
 
   conclusion: {
-    summary: '',
-    impact: '',
-    learnings: '',
-    professionalLessons: [],
-    personalLessons: [],
-    nextSteps: [],
-    finalConsiderations: '',
+    summary:
+      'SportCampus validó con éxito mi hipótesis de diseño principal, confirmando una alta demanda por una plataforma deportiva universitaria integrada. Comprobé que los principales obstáculos en el ecosistema deportivo eran la comunicación fragmentada y la falta de datos. Mi enfoque mobile-first fue efectivo, ya que la mayoría de los usuarios completaron los flujos críticos sin asistencia, y la diferenciación por roles satisfizo las necesidades específicas de entrenadores, estudiantes activos y casuales. A pesar de la complejidad inicial para usuarios principiantes, logré crear una experiencia unificada que centraliza comunicación, estadísticas y torneos, sentando las bases para la transformación digital del deporte universitario.',
+    impact:
+      'SportCampus es una plataforma digital que facilita la gestión y participación en deportes universitarios, enfrentando las dudas de estudiantes y entrenadores. Ofrece una interfaz simple y funciones especializadas para mejorar la organización y el seguimiento deportivo, transformando la experiencia deportiva en la universidad y fomentando una mayor participación.',
+    learnings:
+      'Como diseñador UX en una plataforma deportiva universitaria, aprendí que es fundamental entender las necesidades emocionales y sociales de los usuarios, quienes buscan tanto competencia como sentido de pertenencia. La simplicidad en el diseño es clave para facilitar el acceso rápido a la información en contextos activos, y la accesibilidad debe contemplar la diversidad de habilidades y edades para mejorar la experiencia de todos.',
+    professionalLessons: [
+      'La importancia de los estados de comunicación y feedback se magnificó en este contexto deportivo, donde una confusión en horarios de entrenamientos o información de torneos puede resultar en pérdida de oportunidades competitivas y frustración estudiantil significativa.',
+      'Interfaces que funcionan bajo presión en entornos deportivos, especialmente durante competencias y entrenamientos intensivos, donde entrenadores y atletas no pueden detenerse a descifrar cómo usar una aplicación; esta debe ser completamente intuitiva y accesible con una sola mano.',
+    ],
+    personalLessons: [
+      'Trabajar con la vulnerabilidad inherente al deporte - donde el rendimiento físico puede impactar directamente la confianza personal - me enseñó la responsabilidad ética de crear experiencias que empoderen en lugar de intimidar, especialmente para estudiantes que están explorando nuevas actividades deportivas.',
+      'Los calendarios deportivos universitarios cambian constantemente debido a condiciones climáticas, disponibilidad de instalaciones y eventos académicos, por lo que aprendí a diseñar sistemas flexibles que comuniquen cambios efectivamente y a manejar la incertidumbre como parte natural del ecosistema deportivo estudiantil.',
+    ],
+    nextSteps: [
+      'Optimización de jerarquía visual en notificaciones aumentando contraste, tamaño de badges y mejorando micro-interacciones para mayor visibilidad.',
+      'Iteración de componentes estadísticos incorporando data visualization más intuitiva con tooltips contextuales y comparaciones visuales claras.',
+      'Optimización de navegación para multi-equipos creando patrones de UI que manejen eficientemente múltiples contextos deportivos.',
+    ],
+    finalConsiderations:
+      'SportCampus no es solo una herramienta tecnológica, sino una propuesta de transformación que reconoce el deporte universitario como parte esencial del desarrollo estudiantil. El proyecto reafirmó que el diseño UX/UI va más allá de lo visual, al centrarse en entender necesidades humanas reales y crear soluciones empáticas. A través de investigación rigurosa, pruebas con usuarios y mejoras continuas, se logró una experiencia que no solo organiza y comunica mejor, sino que impulsa la participación estudiantil y fortalece las comunidades deportivas. Este caso refleja mi evolución como diseñador y mi compromiso con crear tecnología significativa, adaptada al contexto y orientada a generar impacto positivo en la vida de las personas.',
   },
 };
 

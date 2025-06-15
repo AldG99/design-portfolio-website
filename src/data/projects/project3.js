@@ -291,9 +291,9 @@ const project3 = {
     ],
 
     nextSteps: [
-      'Optimizar el proceso en dispositivos móviles, reducir el número de toques necesarios y mejorar el tamaño de los elementos interactivos',
-      'Mejorar la visualización de datos en el panel de análisis, implementando gráficos más sencillos con etiquetas claras y mensajes explicativos',
-      'Desarrollar un sistema de notificaciones más claro y personalizado, que permita a los usuarios recibir alertas relevantes sin sentirse abrumados',
+      'Optimizar el proceso en dispositivos móviles, reducir el número de toques necesarios y mejorar el tamaño de los elementos interactivos.',
+      'Mejorar la visualización de datos en el panel de análisis, implementando gráficos más sencillos con etiquetas claras y mensajes explicativos.',
+      'Desarrollar un sistema de notificaciones más claro y personalizado, que permita a los usuarios recibir alertas relevantes sin sentirse abrumados.',
     ],
 
     finalConsiderations:

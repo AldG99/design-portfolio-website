@@ -297,7 +297,7 @@ const project4 = {
     ],
     nextSteps: [
       'Expandir el sistema de design tokens para incluir variaciones de alta densidad informacional, desarrollar componentes especializados para diferentes especialidades médicas, y crear temas personalizables que se adapten a preferencias individuales sin comprometer la consistencia del sistema.',
-      'Desarrollar el módulo de facturación y gestión administrativa que permita registrar pagos, emitir facturas y optimizar procesos financieros',
+      'Desarrollar el módulo de facturación y gestión administrativa que permita registrar pagos, emitir facturas y optimizar procesos financieros.',
     ],
     finalConsiderations:
       'El diseño de MediNote validó que la excelencia en experiencia de usuario en el sector salud no es un lujo, sino una necesidad crítica que impacta directamente la calidad del cuidado médico. Este proyecto demostró que cuando el diseño logra volverse transparente para el usuario médico, permite que toda su atención se concentre en el paciente, lo cual es el objetivo último de cualquier herramienta clínica. La experiencia subrayó la responsabilidad ética del diseñador UX/UI en contextos donde las decisiones de interfaz tienen implicaciones que van más allá de la satisfacción del usuario, extendiéndose al bienestar de los pacientes.',
