@@ -2,84 +2,70 @@
 @use '../../../styles/scroll-reveal.scss' as *;
 @use 'sass:color';
 
-// Base styles
 .project-detail {
   font-family: $font-primary;
   overflow-x: hidden;
-  padding: $spacing-lg;
+  padding: $spacing-md;
 
   @media (min-width: $breakpoint-md) {
-    padding: $spacing-xl;
+    padding: $spacing-lg;
   }
 
   @media (min-width: $breakpoint-lg) {
-    padding: $spacing-xxl;
+    padding: $spacing-xl;
   }
 
   img {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
     max-width: 100%;
     height: auto;
     display: block;
+    user-select: none;
   }
 
-  // Typography system - Solo títulos minimalistas
-  %heading-base {
-    font-family: $font-primary;
-    color: $text-color;
-    line-height: 1.2;
-    margin-top: $spacing-lg;
-    margin-bottom: $spacing-md;
-
-    @media (min-width: $breakpoint-md) {
-      margin-top: calc(#{$spacing-lg} * 1.5);
-      margin-bottom: $spacing-lg;
-    }
-  }
-
-  .section-subtitle {
-    @extend %heading-base;
-    font-size: $font-size-lg;
+  // Typography
+  .project-title {
+    font-size: $font-size-xl;
     font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    border-bottom: 2px solid $secondary-color;
-    padding-bottom: $spacing-sm;
+    color: $text-color;
+    margin: 0;
+    margin-bottom: $spacing-xs;
 
     @media (min-width: $breakpoint-md) {
-      font-size: $font-size-xl;
-      padding-bottom: $spacing-md;
-      letter-spacing: 0.18em;
-    }
-
-    @media (min-width: $breakpoint-lg) {
       font-size: $font-size-xxl;
-      letter-spacing: 0.2em;
+      margin-bottom: $spacing-sm;
     }
   }
 
   .subsection-title {
-    @extend %heading-base;
     font-size: $font-size-md;
-    font-weight: 300;
+    font-weight: 400;
+    color: $text-color;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
+    margin: $spacing-lg 0 $spacing-md 0;
 
     @media (min-width: $breakpoint-md) {
       font-size: $font-size-lg;
-      letter-spacing: 0.1em;
-    }
-
-    @media (min-width: $breakpoint-lg) {
-      font-size: $font-size-xl;
-      letter-spacing: 0.12em;
     }
   }
 
-  %text-base {
+  .subsection-title-with-border {
+    font-size: $font-size-md;
+    font-weight: 400;
+    color: $text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid $secondary-color;
+    padding-bottom: $spacing-sm;
+    margin: $spacing-lg 0 $spacing-md 0;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  p,
+  li {
     font-size: $font-size-sm;
     line-height: 1.6;
     color: $text-color;
@@ -87,29 +73,16 @@
 
     @media (min-width: $breakpoint-md) {
       font-size: $font-size-md;
-      line-height: 1.7;
       margin-bottom: $spacing-md;
     }
   }
 
-  p,
-  li,
-  .overview-text,
-  .problem-text,
-  .goal-text,
-  .role-text,
-  .understanding-text,
-  .strategy-description,
-  .high-fidelity-text,
-  .conclusion-text,
-  .impact-text,
-  .learnings-text,
-  .final-text {
-    @extend %text-base;
+  // Layout sections
+  &__hero {
+    margin-bottom: $spacing-xl;
   }
 
-  // Reusable components
-  %section-spacing {
+  &__section {
     margin-bottom: $spacing-xl;
 
     @media (min-width: $breakpoint-md) {
@@ -117,75 +90,8 @@
     }
   }
 
-  %button-base {
-    display: inline-block;
-    padding: $spacing-sm $spacing-lg;
-    background-color: transparent;
-    color: $accent-color;
-    border: 1px solid currentColor;
-    border-radius: 0;
-    font-family: $font-primary;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    transition: all $transition-normal;
-    min-width: auto;
-    font-size: $font-size-xs;
-
-    @media (min-width: $breakpoint-md) {
-      font-size: $font-size-sm;
-      padding: $spacing-xs $spacing-md;
-    }
-
-    &:hover {
-      background-color: rgba($accent-color, 0.1);
-    }
-  }
-
-  %list-reset {
-    list-style: none;
-    margin-left: 0;
-    margin-bottom: $spacing-lg;
-  }
-
-  %bullet-list {
-    @extend %list-reset;
-
-    li {
-      position: relative;
-      padding-left: $spacing-lg;
-      margin-bottom: $spacing-sm;
-
-      @media (min-width: $breakpoint-md) {
-        margin-bottom: $spacing-md;
-      }
-
-      &::before {
-        content: '•';
-        position: absolute;
-        left: $spacing-xs;
-        color: $accent-color;
-        font-weight: 700;
-      }
-    }
-  }
-
-  // Layout sections
-  &__hero {
-    @extend %section-spacing;
-  }
-
-  &__section {
-    @extend %section-spacing;
-  }
-
   .hero-image {
     margin-bottom: $spacing-lg;
-
-    @media (min-width: $breakpoint-md) {
-      margin-bottom: $spacing-xl;
-    }
 
     &--full-width {
       margin-left: -#{$spacing-md};
@@ -193,55 +99,304 @@
       width: calc(100% + #{$spacing-md * 2});
 
       @media (min-width: $breakpoint-md) {
+        margin-left: -#{$spacing-lg};
+        margin-right: -#{$spacing-lg};
+        width: calc(100% + #{$spacing-lg * 2});
+      }
+
+      @media (min-width: $breakpoint-lg) {
         margin-left: -#{$spacing-xl};
         margin-right: -#{$spacing-xl};
         width: calc(100% + #{$spacing-xl * 2});
       }
+    }
+  }
 
-      @media (min-width: $breakpoint-lg) {
-        margin-left: -#{$spacing-xxl};
-        margin-right: -#{$spacing-xxl};
-        width: calc(100% + #{$spacing-xxl * 2});
+  // Meta info
+  &__meta {
+    margin: 0;
+    margin-bottom: $spacing-md;
+
+    .meta-value {
+      color: color.adjust($text-color, $lightness: 30%);
+      font-size: $font-size-sm;
+      margin: 0;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-size-md;
       }
     }
   }
 
-  // Interactive elements
-  .clickable-image {
-    cursor: pointer;
-    transition: opacity $transition-normal, transform $transition-normal;
+  // Tools
+  &__tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    margin-top: $spacing-md;
+
+    .tool-tag {
+      font-size: $font-size-xs;
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $border-radius-sm;
+      background-color: $secondary-color;
+      color: $text-color;
+      font-family: monospace;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-size-sm;
+      }
+    }
+  }
+
+  // Grids
+  &__problem-goal-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-lg;
+    }
+  }
+
+  // Competitive analysis
+  .competitive-table {
+    margin: $spacing-lg 0;
+  }
+
+  .competitive-row {
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      margin-bottom: $spacing-lg;
+
+      .competitive-cell--label {
+        margin-bottom: $spacing-sm;
+        font-weight: 600;
+      }
+
+      .competitive-cell--content {
+        margin-bottom: $spacing-md;
+      }
+    }
+
+    @media (min-width: $breakpoint-md) {
+      display: grid;
+      grid-template-columns: 150px repeat(3, 1fr);
+      gap: $spacing-sm;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  .competitive-cell {
+    padding: $spacing-sm;
+
+    &--label {
+      font-size: $font-size-xs;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: color.adjust($text-color, $lightness: 20%);
+
+      @media (min-width: $breakpoint-md) {
+        padding: $spacing-md;
+      }
+    }
+
+    &--content {
+      font-size: $font-size-xs;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-size-sm;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: $spacing-xs;
+
+          &::before {
+            content: '•';
+            margin-right: $spacing-xs;
+            color: $accent-color;
+          }
+        }
+      }
+    }
+  }
+
+  // Personas and wireframes grids
+  .personas-horizontal-grid,
+  .paper-wireframes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin: $spacing-md 0;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-lg;
+    }
+  }
+
+  // Opportunities
+  &__improvement-opportunities {
+    .opportunity-card {
+      margin-bottom: $spacing-lg;
+
+      .opportunity-title {
+        font-size: $font-size-sm;
+        font-weight: 600;
+        margin-bottom: $spacing-xs;
+
+        @media (min-width: $breakpoint-md) {
+          font-size: $font-size-md;
+        }
+      }
+
+      .opportunity-description {
+        font-size: $font-size-xs;
+        color: color.adjust($text-color, $lightness: 20%);
+
+        @media (min-width: $breakpoint-md) {
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+
+  // Buttons
+  .btn {
+    display: inline-block;
+    padding: $spacing-sm $spacing-md;
+    background: transparent;
+    color: $accent-color;
+    border: 1px solid $accent-color;
+    text-decoration: none;
+    font-size: $font-size-sm;
+    transition: all 0.2s ease;
 
     &:hover {
-      opacity: 0.85;
-      transform: scale(1.02);
+      background: rgba($accent-color, 0.1);
     }
+  }
 
-    @media (max-width: #{$breakpoint-md - 1px}) {
-      &:active {
-        transform: scale(0.98);
+  .prototype-link,
+  .prototype-links,
+  &__repository-links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
+  }
+
+  // Lists
+  .responsibilities-list,
+  .key-issues-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $spacing-lg 0;
+
+    li {
+      position: relative;
+      padding-left: $spacing-lg;
+      margin-bottom: $spacing-sm;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: $spacing-xs;
+        color: $accent-color;
+        font-weight: bold;
       }
     }
   }
 
-  // Disable hover effects for specific sections
-  .design-section {
-    .clickable-image {
-      &:hover {
-        opacity: 1;
-        transform: none;
+  .accessibility-list,
+  .next-steps-list {
+    list-style: decimal;
+    padding-left: $spacing-md;
+    margin-bottom: $spacing-lg;
+
+    li {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // Findings
+  .finding-item {
+    margin-bottom: $spacing-lg;
+
+    .finding-area {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      margin-bottom: $spacing-xs;
+    }
+
+    .user-quote {
+      font-style: italic;
+      color: color.adjust($text-color, $lightness: 20%);
+      margin: $spacing-sm 0;
+      padding-left: $spacing-md;
+      border-left: 2px solid $secondary-color;
+    }
+
+    .finding-improvement {
+      margin-top: $spacing-sm;
+
+      .improvement-label {
+        font-weight: 600;
+        color: $accent-color;
       }
     }
   }
 
-  .persona-image {
-    .clickable-image {
-      &:hover {
-        opacity: 1;
-        transform: none;
+  // Lessons
+  .lessons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin: $spacing-md 0;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-lg;
+    }
+  }
+
+  .lessons-section {
+    padding: $spacing-md;
+    background: #fafafa;
+
+    .lessons-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+        padding-left: $spacing-lg;
+        margin-bottom: $spacing-sm;
+
+        &::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: #52c41a;
+          font-weight: bold;
+        }
       }
     }
   }
 
+  // Modal
   .image-modal {
     position: fixed;
     inset: 0;
@@ -252,26 +407,15 @@
     z-index: 1000;
     padding: $spacing-md;
 
-    @media (max-width: #{$breakpoint-md - 1px}) {
-      padding: $spacing-sm;
-    }
-
     &__content {
       position: relative;
       max-width: 95%;
       max-height: 95%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
 
       img {
         max-width: 100%;
         max-height: 90vh;
         object-fit: contain;
-
-        @media (max-width: #{$breakpoint-md - 1px}) {
-          max-height: 80vh;
-        }
       }
     }
 
@@ -280,573 +424,91 @@
       top: -40px;
       right: 0;
       color: white;
-      font-size: 30px;
-      font-weight: bold;
+      font-size: 24px;
       cursor: pointer;
-      user-select: none;
       padding: $spacing-xs;
-
-      @media (max-width: #{$breakpoint-md - 1px}) {
-        top: -50px;
-        right: -10px;
-        font-size: 24px;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
 
       &:hover {
-        color: #ccc;
+        opacity: 0.8;
       }
     }
   }
 
-  // Grid systems
-  &__meta {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-sm;
-    margin-top: $spacing-md;
-    margin-bottom: $spacing-md;
+  // Clickable images
+  .clickable-image {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
 
-    @media (min-width: $breakpoint-md) {
-      flex-direction: row;
-      align-items: center;
-      gap: $spacing-xl;
-      margin-top: $spacing-lg;
+    &:hover {
+      opacity: 0.9;
     }
+  }
 
-    .meta-value {
-      color: color.adjust($text-color, $lightness: 30%);
-      font-size: $font-size-sm;
-      font-weight: 500;
+  // Journey maps
+  .journey-maps-vertical {
+    .journey-card {
+      margin-bottom: $spacing-lg;
 
-      @media (min-width: $breakpoint-md) {
+      .journey-title {
         font-size: $font-size-md;
-      }
-    }
-  }
-
-  &__tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $spacing-xs;
-    margin-top: $spacing-md;
-    margin-bottom: $spacing-lg;
-
-    .tool-tag {
-      font-size: $font-size-xs;
-      padding: $spacing-xs;
-      padding-right: $spacing-sm;
-      border-radius: $border-radius-sm;
-      background-color: $secondary-color;
-      color: color.adjust($text-color, $lightness: -10%);
-      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-      letter-spacing: -0.5px;
-      white-space: nowrap;
-
-      @media (min-width: $breakpoint-md) {
-        font-size: $font-size-sm;
-      }
-
-      $tool-colors: (
-        'figma': #ffc0a9,
-        'scss': #dda0c2,
-        'react': #a8dcec,
-        'react-native': #9ccfe3,
-        'react-native-expo': #9ccfe3,
-        'expo': #bababd,
-        'firebase': #ffe0a3,
-      );
-
-      @each $tool, $color in $tool-colors {
-        &--#{$tool} {
-          background-color: $color;
-          color: #333;
-        }
-      }
-    }
-  }
-
-  &__problem-goal-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-md;
-    margin-bottom: $spacing-lg;
-
-    @media (min-width: $breakpoint-md) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $spacing-lg;
-    }
-  }
-
-  &__responsibilities {
-    margin-top: $spacing-md;
-
-    @media (min-width: $breakpoint-md) {
-      margin-top: $spacing-lg;
-    }
-
-    .responsibilities-list {
-      @extend %bullet-list;
-    }
-  }
-
-  // Competitive analysis
-  &__competition {
-    .competitive-table {
-      @extend %section-spacing;
-    }
-
-    .competitive-row {
-      @media (max-width: #{$breakpoint-md - 1px}) {
-        display: block;
-        margin-bottom: $spacing-lg;
-
-        &--names {
-          display: none;
-        }
-
-        &:not(&--names) {
-          .competitive-cell--label {
-            padding: $spacing-sm;
-            margin-bottom: $spacing-md;
-            border-bottom: 1px solid color.adjust($text-color, $lightness: 80%);
-
-            .row-label {
-              font-size: $font-size-sm;
-              font-weight: 600;
-              color: $text-color;
-
-              @media (min-width: $breakpoint-md) {
-                font-size: $font-size-md;
-              }
-            }
-          }
-
-          .competitive-cell--name,
-          .competitive-cell--images,
-          .competitive-cell--content {
-            margin-bottom: $spacing-md;
-
-            &::before {
-              content: attr(data-competitor);
-              display: block;
-              font-size: $font-size-xs;
-              font-weight: 600;
-              color: color.adjust($text-color, $lightness: 20%);
-              margin-bottom: $spacing-sm;
-              padding-bottom: $spacing-xs;
-              border-bottom: 1px solid
-                color.adjust($text-color, $lightness: 85%);
-
-              @media (min-width: $breakpoint-md) {
-                font-size: $font-size-sm;
-              }
-            }
-          }
-        }
-      }
-
-      @media (min-width: $breakpoint-md) {
-        display: grid;
-        grid-template-columns: 140px repeat(3, 1fr);
-        gap: 0 $spacing-sm;
+        font-weight: 600;
         margin-bottom: $spacing-sm;
       }
-
-      @media (min-width: $breakpoint-lg) {
-        grid-template-columns: 180px repeat(3, 1fr);
-        gap: 0 $spacing-md;
-      }
-
-      @media (min-width: $breakpoint-xl) {
-        grid-template-columns: 200px repeat(3, 1fr);
-      }
-    }
-
-    .competitive-cell {
-      &--label {
-        display: flex;
-        align-items: flex-start;
-        padding: $spacing-sm;
-
-        @media (min-width: $breakpoint-md) {
-          padding: $spacing-md;
-        }
-
-        .row-label {
-          font-size: $font-size-xs;
-          font-weight: 600;
-          margin: 0;
-          color: color.adjust($text-color, $lightness: 20%);
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          line-height: 1.2;
-
-          @media (min-width: $breakpoint-md) {
-            font-size: $font-size-xs;
-          }
-
-          @media (min-width: $breakpoint-lg) {
-            font-size: $font-size-sm;
-          }
-        }
-      }
-
-      &--content {
-        padding: $spacing-xs;
-
-        @media (min-width: $breakpoint-md) {
-          padding: $spacing-sm;
-        }
-
-        p,
-        li {
-          font-size: $font-size-xs;
-          line-height: 1.4;
-          margin-bottom: 0;
-
-          @media (min-width: $breakpoint-md) {
-            font-size: $font-size-xs;
-            line-height: 1.6;
-          }
-
-          @media (min-width: $breakpoint-lg) {
-            font-size: $font-size-sm;
-          }
-        }
-
-        .competitor-list {
-          @extend %list-reset;
-
-          li {
-            margin-bottom: $spacing-xs;
-
-            &::before {
-              content: '•';
-              margin-right: $spacing-xs;
-              color: color.adjust($text-color, $lightness: 30%);
-            }
-          }
-
-          &.strengths li::before {
-            color: #52c41a;
-            font-weight: 600;
-          }
-
-          &.weaknesses li::before {
-            color: #ff4d4f;
-            font-weight: 600;
-          }
-        }
-      }
     }
   }
 
-  // Grids with data attributes
-  .paper-wireframes-grid,
-  .personas-horizontal-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-md;
-    @extend %section-spacing;
-    margin-top: $spacing-md;
-
-    @media (min-width: $breakpoint-md) {
-      gap: $spacing-lg;
-    }
-
-    // Dynamic grid based on count
-    @for $i from 1 through 8 {
-      &[data-count='#{$i}'] {
-        @if $i <= 2 {
-          @media (min-width: $breakpoint-md) {
-            grid-template-columns: repeat($i, 1fr);
-          }
-        } @else if $i <= 4 {
-          @media (min-width: $breakpoint-md) {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          @media (min-width: $breakpoint-lg) {
-            grid-template-columns: repeat(if($i == 3, 3, 2), 1fr);
-          }
-        } @else {
-          @media (min-width: $breakpoint-md) {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-      }
+  // Screen variations
+  .screen-variations-images {
+    img {
+      margin-bottom: $spacing-md;
     }
   }
 
-  // Opportunities grid - Sin diseño
-  &__improvement-opportunities {
-    .opportunities-grid {
-      display: block;
-      margin-top: $spacing-md;
+  // Design images
+  .design-image,
+  .design-images {
+    margin: $spacing-md 0;
 
-      .opportunity-card {
-        background: none;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        overflow: visible;
-        transition: none;
+    img {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // Mockups
+  .mockups-section {
+    .mockup-item {
+      margin-bottom: $spacing-xl;
+
+      .decisions-list {
+        list-style: none;
         padding: 0;
-        min-height: auto;
-        display: block;
-        text-align: left;
-        margin-bottom: $spacing-lg;
+        margin: $spacing-md 0;
 
-        &:hover {
-          box-shadow: none;
-          transform: none;
-        }
+        li {
+          position: relative;
+          padding-left: $spacing-md;
+          margin-bottom: $spacing-xs;
 
-        .opportunity-title {
-          font-size: $font-size-sm;
-          font-weight: 600;
-          color: $text-color;
-          line-height: 1.3;
-          margin: 0 0 $spacing-xs 0;
-
-          @media (min-width: $breakpoint-md) {
-            font-size: $font-size-sm;
-            margin-bottom: $spacing-sm;
-          }
-
-          @media (min-width: $breakpoint-lg) {
-            font-size: $font-size-md;
-          }
-        }
-
-        .opportunity-description {
-          font-size: $font-size-xs;
-          color: color.adjust($text-color, $lightness: 20%);
-          line-height: 1.4;
-          margin: 0;
-
-          @media (min-width: $breakpoint-md) {
-            font-size: $font-size-xs;
-            line-height: 1.5;
-          }
-
-          @media (min-width: $breakpoint-lg) {
-            font-size: $font-size-sm;
+          &::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: $accent-color;
           }
         }
       }
     }
   }
 
-  // Buttons and links
-  .btn {
-    @extend %button-base;
-  }
-
-  .prototype-link,
-  .prototype-links,
-  &__repository-links {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: $spacing-sm;
-    margin-top: $spacing-md;
-
-    @media (min-width: $breakpoint-md) {
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: flex-start;
-      margin-top: $spacing-lg;
-    }
-
-    .btn {
-      @extend %button-base;
-    }
-  }
-
-  // Lists
-  .responsibilities-list {
-    @extend %bullet-list;
-  }
-
-  .key-issues-list {
-    @extend %bullet-list;
-  }
-
-  .accessibility-list {
-    @extend %bullet-list;
-  }
-
-  .next-steps-list {
-    list-style-type: decimal;
-    padding-left: $spacing-md;
-    margin-bottom: $spacing-lg;
-
-    li {
+  // Usability details
+  .usability-details {
+    .detail-item {
       margin-bottom: $spacing-sm;
 
-      @media (min-width: $breakpoint-md) {
-        margin-bottom: $spacing-md;
+      .detail-label {
+        font-weight: 600;
+        margin-right: $spacing-xs;
       }
-    }
-  }
-
-  .strategy-decisions,
-  .decisions-list {
-    @extend %list-reset;
-
-    li {
-      position: relative;
-      padding-left: $spacing-md;
-      margin-bottom: $spacing-sm;
-
-      @media (min-width: $breakpoint-md) {
-        margin-bottom: $spacing-md;
-      }
-
-      &::before {
-        position: absolute;
-        left: 0;
-        color: $accent-color;
-        font-weight: 700;
-      }
-    }
-  }
-
-  .strategy-decisions li::before {
-    content: '▸';
-  }
-
-  .decisions-list li::before {
-    content: '→';
-  }
-
-  // Lessons grid
-  .lessons-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-md;
-    margin: $spacing-md;
-
-    @media (min-width: $breakpoint-md) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $spacing-lg;
-      margin: $spacing-lg;
-    }
-  }
-
-  .lessons-section {
-    padding: $spacing-md;
-    background: #fafafa;
-    border-radius: $border-radius-sm;
-
-    @media (min-width: $breakpoint-md) {
-      padding: $spacing-lg;
-    }
-
-    .lessons-title {
-      font-size: $font-size-md;
-      font-weight: 600;
-      color: $accent-color;
-      margin-bottom: $spacing-sm;
-      padding-bottom: $spacing-xs;
-      border-bottom: 2px solid color.adjust($accent-color, $lightness: 40%);
-
-      @media (min-width: $breakpoint-md) {
-        font-size: $font-size-lg;
-        margin-bottom: $spacing-md;
-        padding-bottom: $spacing-sm;
-      }
-
-      @media (min-width: $breakpoint-lg) {
-        font-size: $font-size-xl;
-      }
-    }
-
-    .lessons-list {
-      @extend %list-reset;
-
-      li {
-        position: relative;
-        padding-left: $spacing-lg;
-        margin-bottom: $spacing-sm;
-
-        @media (min-width: $breakpoint-md) {
-          margin-bottom: $spacing-md;
-        }
-
-        &::before {
-          content: '✓';
-          position: absolute;
-          left: 0;
-          color: #52c41a;
-          font-weight: 700;
-        }
-      }
-    }
-  }
-
-  // Utility classes
-  .hide-mobile {
-    @media (max-width: #{$breakpoint-md - 1px}) {
-      display: none !important;
-    }
-  }
-
-  .hide-tablet {
-    @media (min-width: $breakpoint-md) {
-      display: none !important;
-    }
-  }
-
-  .show-mobile-only {
-    display: block;
-
-    @media (min-width: $breakpoint-md) {
-      display: none !important;
-    }
-  }
-
-  .show-tablet-up {
-    display: none;
-
-    @media (min-width: $breakpoint-md) {
-      display: block;
-    }
-  }
-
-  // Focus and accessibility
-  .btn:focus,
-  .clickable-image:focus,
-  a:focus {
-    outline: 2px solid $accent-color;
-    outline-offset: 2px;
-  }
-
-  // Print styles
-  @media print {
-    .image-modal,
-    .btn,
-    .prototype-links,
-    &__repository-links {
-      display: none;
-    }
-
-    .section-subtitle,
-    .subsection-title {
-      break-after: avoid;
-    }
-
-    .mockup-item,
-    .finding-item,
-    .lessons-section {
-      break-inside: avoid;
     }
   }
 }

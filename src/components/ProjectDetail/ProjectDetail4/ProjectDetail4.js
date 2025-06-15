@@ -67,7 +67,7 @@ const ProjectDetail4 = () => {
         </header>
 
         <section className="project-detail__overview">
-          <h2 className="section-subtitle">RESUMEN DEL PROYECTO</h2>
+          <h3 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h3>
           <p className="overview-text">{project4.description}</p>
         </section>
 
@@ -102,7 +102,7 @@ const ProjectDetail4 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INVESTIGACIÓN</h2>
+          <h3 className="subsection-title-with-border">INVESTIGACIÓN</h3>
 
           <div className="project-detail__understanding">
             <p className="understanding-text">{project4.research.summary}</p>
@@ -115,13 +115,13 @@ const ProjectDetail4 = () => {
             <h3 className="subsection-title">
               INVESTIGACIÓN DE USUARIOS: PUNTOS DÉBILES
             </h3>
-            <ol className="key-issues-list">
+            <ul className="key-issues-list">
               {project4.research.keyIssues.map((issue, index) => (
                 <li key={index} className="key-issue-item">
                   {issue}
                 </li>
               ))}
-            </ol>
+            </ul>
             <h3 className="subsection-title">ANÁLISIS COMPETITIVO</h3>
             <div className="project-detail__competition">
               <div className="competitive-table">
@@ -235,7 +235,7 @@ const ProjectDetail4 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">PERSONAS</h2>
+          <h3 className="subsection-title-with-border">PERSONAS</h3>
 
           <div className="project-detail__personas">
             <div
@@ -245,9 +245,6 @@ const ProjectDetail4 = () => {
               {project4.userProfiles.map((profile, index) => (
                 <div key={index} className="persona-card">
                   <div className="persona-statement">
-                    <p className="persona-problem">
-                      {profile.problemStatement}
-                    </p>
                     <div className="persona-image">
                       <img
                         src={profile.problemStatementImage}
@@ -313,7 +310,7 @@ const ProjectDetail4 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INICIO DEL DISEÑO</h2>
+          <h3 className="subsection-title-with-border">INICIO DEL DISEÑO</h3>
 
           <div className="design-section">
             <h3 className="subsection-title">SITEMAP</h3>
@@ -496,7 +493,7 @@ const ProjectDetail4 = () => {
             ))}
           </div>
 
-          <h2 className="section-subtitle">REFINANDO EL DISEÑO</h2>
+          <h3 className="subsection-title-with-border">REFINANDO EL DISEÑO</h3>
           <div className="mockups-section">
             {project4.usabilityStudy.refiningDesign.map((mockup, index) => (
               <div key={index} className="mockup-item">
@@ -518,7 +515,9 @@ const ProjectDetail4 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">DISEÑO VISUAL Y CONSIDERACIONES</h2>
+          <h3 className="subsection-title-with-border">
+            DISEÑO VISUAL Y CONSIDERACIONES
+          </h3>
 
           <div className="screen-variations">
             <h3 className="subsection-title">TAMAÑO DE PANTALLA ORIGINAL</h3>
@@ -610,7 +609,9 @@ const ProjectDetail4 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">RESULTADOS Y REFLEXIÓN</h2>
+          <h3 className="subsection-title-with-border">
+            RESULTADOS Y REFLEXIÓN
+          </h3>
 
           <div className="results-section">
             <h3 className="subsection-title">CONCLUSIONES</h3>
@@ -628,7 +629,7 @@ const ProjectDetail4 = () => {
 
             <div className="lessons-grid">
               <div className="lessons-section">
-                <h4 className="lessons-title">Lecciones profesionales</h4>
+                <h3 className="lessons-title">Lecciones profesionales</h3>
                 <ul className="lessons-list">
                   {project4.conclusion.professionalLessons.map(
                     (lesson, index) => (
@@ -641,7 +642,7 @@ const ProjectDetail4 = () => {
               </div>
 
               <div className="lessons-section">
-                <h4 className="lessons-title">Lecciones personales</h4>
+                <h3 className="lessons-title">Lecciones personales</h3>
                 <ul className="lessons-list">
                   {project4.conclusion.personalLessons.map((lesson, index) => (
                     <li key={index} className="lesson-item">
