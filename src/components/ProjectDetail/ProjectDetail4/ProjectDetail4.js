@@ -44,6 +44,8 @@ const ProjectDetail4 = () => {
             />
           </div>
 
+          <h1 className="project-title">MediNote</h1>
+
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
               <span className="meta-value">Febrero - Abril 2025</span>
@@ -136,9 +138,7 @@ const ProjectDetail4 = () => {
                 </div>
 
                 <div className="competitive-row competitive-row--overview">
-                  <div className="competitive-cell competitive-cell--label">
-                    <h4 className="row-label">OVERVIEW</h4>
-                  </div>
+                  <div className="competitive-cell competitive-cell--label"></div>
                   {project4.competitors.map((competitor, index) => (
                     <div
                       key={index}
