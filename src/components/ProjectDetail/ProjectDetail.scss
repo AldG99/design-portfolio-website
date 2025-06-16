@@ -1,5 +1,5 @@
-@use '../../../styles/variables' as *;
-@use '../../../styles/scroll-reveal.scss' as *;
+@use '../../styles/variables' as *;
+@use '../../styles/scroll-reveal.scss' as *;
 @use 'sass:color';
 
 .project-detail {
@@ -162,18 +162,22 @@
     }
   }
 
-  // Competitive analysis
+  // Competitive analysis - DISEÑO COMPLETAMENTE ESTÁTICO - SIN EFECTOS HOVER
   .competitive-table {
     margin: $spacing-lg 0;
   }
 
   .competitive-row {
     @media (max-width: #{$breakpoint-md - 1px}) {
+      // Vista móvil: diseño simple vertical
       margin-bottom: $spacing-lg;
 
       .competitive-cell--label {
-        margin-bottom: $spacing-sm;
+        font-size: $font-size-xs;
         font-weight: 600;
+        text-transform: uppercase;
+        color: $accent-color;
+        margin-bottom: $spacing-xs;
       }
 
       .competitive-cell--content {
@@ -183,31 +187,101 @@
 
     @media (min-width: $breakpoint-md) {
       display: grid;
-      grid-template-columns: 150px repeat(3, 1fr);
+      grid-template-columns: 180px repeat(3, 1fr);
       gap: $spacing-sm;
       margin-bottom: $spacing-sm;
     }
   }
 
   .competitive-cell {
-    padding: $spacing-sm;
+    padding: $spacing-sm $spacing-md;
+
+    // Anular TODOS los efectos hover
+    &:hover {
+      background: inherit !important;
+      color: inherit !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    &--empty {
+      @media (min-width: $breakpoint-md) {
+        background: transparent !important;
+      }
+    }
+
+    &--name {
+      text-align: center;
+
+      .competitor-name {
+        font-size: $font-size-sm;
+        margin: 0;
+        color: $accent-color;
+        font-weight: 600;
+      }
+    }
+
+    &--images {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 120px;
+
+      .competitor-images {
+        width: 100%;
+        max-width: 200px;
+
+        img {
+          width: 100%;
+          border-radius: $border-radius-sm;
+          box-shadow: $shadow-sm;
+        }
+      }
+    }
 
     &--label {
-      font-size: $font-size-xs;
+      font-size: 0.8rem !important; // Ligeramente más grande
       font-weight: 600;
       text-transform: uppercase;
-      color: color.adjust($text-color, $lightness: 20%);
+      color: $accent-color;
+      display: flex;
+      align-items: flex-start; // Alineado arriba en lugar de centrado
+      justify-content: flex-start;
+      padding: $spacing-md;
 
-      @media (min-width: $breakpoint-md) {
-        padding: $spacing-md;
+      // Anular TODOS los efectos hover para los labels también
+      &:hover {
+        background: inherit !important;
+        color: $accent-color !important; // Mantener el color original
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .row-label {
+        font-size: 0.8rem !important; // También afectar al elemento hijo
+
+        // Anular efectos hover para el elemento hijo también
+        &:hover {
+          color: $accent-color !important;
+          background: inherit !important;
+          transform: none !important;
+          transition: none !important;
+        }
       }
     }
 
     &--content {
       font-size: $font-size-xs;
+      line-height: 1.5;
 
       @media (min-width: $breakpoint-md) {
         font-size: $font-size-sm;
+      }
+
+      .competitor-description {
+        margin: 0;
+        color: color.adjust($text-color, $lightness: 10%);
+        font-size: inherit; // Mismo tamaño que las listas
       }
 
       ul {
@@ -217,19 +291,161 @@
 
         li {
           margin-bottom: $spacing-xs;
+          padding-left: $spacing-sm;
+          position: relative;
+          font-size: inherit;
 
           &::before {
-            content: '•';
-            margin-right: $spacing-xs;
-            color: $accent-color;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 3px;
+            height: 3px;
+            background: $accent-color;
+            border-radius: 50%;
           }
+        }
+      }
+
+      .competitor-audience p {
+        margin: 0;
+        color: color.adjust($text-color, $lightness: 10%);
+        font-size: inherit; // Mismo tamaño que las listas
+      }
+    }
+
+    // YA NO HAY EFECTOS HOVER PARA DESKTOP - COMPLETAMENTE REMOVIDOS
+  }
+
+  // Añadir labels dinámicos para móvil
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    .competitive-cell--content {
+      &[data-competitor] {
+        &::after {
+          content: attr(data-competitor);
+          display: block;
+          font-size: $font-size-sm;
+          font-weight: 600;
+          color: $text-color;
+          margin-bottom: $spacing-sm;
+          padding-bottom: $spacing-xs;
+          border-bottom: 1px solid $secondary-color;
+        }
+      }
+    }
+
+    // Labels específicos para cada fila
+    .competitive-row--description .competitive-cell--content::before {
+      content: 'DESCRIPCIÓN';
+    }
+    .competitive-row--strengths .competitive-cell--content::before {
+      content: 'FORTALEZAS';
+    }
+    .competitive-row--weaknesses .competitive-cell--content::before {
+      content: 'DEBILIDADES';
+    }
+    .competitive-row--audience .competitive-cell--content::before {
+      content: 'AUDIENCIA OBJETIVO';
+    }
+  }
+
+  // Personas grid con patrones específicos
+  .personas-horizontal-grid {
+    display: grid;
+    gap: $spacing-md;
+    margin: $spacing-md 0;
+
+    // Patrón para móvil: siempre una columna
+    grid-template-columns: 1fr;
+
+    @media (min-width: $breakpoint-md) {
+      gap: $spacing-lg;
+
+      // 1 imagen: ocupa todo el ancho
+      &[data-count='1'] {
+        grid-template-columns: 1fr;
+
+        .persona-card {
+          grid-column: 1;
+        }
+      }
+
+      // 2 imágenes: lado a lado horizontalmente
+      &[data-count='2'] {
+        grid-template-columns: 1fr 1fr;
+
+        .persona-card:nth-child(1) {
+          grid-column: 1;
+        }
+
+        .persona-card:nth-child(2) {
+          grid-column: 2;
+        }
+      }
+
+      // 3 imágenes: primera arriba completa, segunda y tercera abajo divididas
+      &[data-count='3'] {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+
+        .persona-card:nth-child(1) {
+          grid-column: 1 / -1; // Ocupa toda la fila
+          grid-row: 1;
+        }
+
+        .persona-card:nth-child(2) {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        .persona-card:nth-child(3) {
+          grid-column: 2;
+          grid-row: 2;
+        }
+      }
+
+      // 4 imágenes: primera arriba completa, las otras tres abajo
+      &[data-count='4'] {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+
+        .persona-card:nth-child(1) {
+          grid-column: 1 / -1;
+          grid-row: 1;
+        }
+
+        .persona-card:nth-child(2) {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        .persona-card:nth-child(3) {
+          grid-column: 2;
+          grid-row: 2;
+        }
+
+        .persona-card:nth-child(4) {
+          grid-column: 3;
+          grid-row: 2;
+        }
+      }
+
+      // 5+ imágenes: primera arriba completa, resto en grilla 2x2 debajo
+      &[data-count='5'],
+      &[data-count='6'],
+      &[data-count='7'],
+      &[data-count='8'] {
+        grid-template-columns: 1fr 1fr;
+
+        .persona-card:nth-child(1) {
+          grid-column: 1 / -1;
         }
       }
     }
   }
 
-  // Personas and wireframes grids
-  .personas-horizontal-grid,
+  // Wireframes grid (mantiene el comportamiento original)
   .paper-wireframes-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -320,13 +536,27 @@
   }
 
   .accessibility-list,
-  .next-steps-list {
+  .next-steps-list,
+  .strategy-decisions {
     list-style: decimal;
     padding-left: $spacing-md;
     margin-bottom: $spacing-lg;
 
     li {
       margin-bottom: $spacing-sm;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+      line-height: 1.5;
+    }
+  }
+
+  .strategy-decisions {
+    list-style: disc;
+
+    li {
+      padding-right: $spacing-sm; // Espacio adicional del borde derecho
+      max-width: 100%;
     }
   }
 
@@ -335,7 +565,7 @@
     margin-bottom: $spacing-lg;
 
     .finding-area {
-      font-size: $font-size-sm;
+      font-size: $font-size-md;
       font-weight: 600;
       margin-bottom: $spacing-xs;
     }

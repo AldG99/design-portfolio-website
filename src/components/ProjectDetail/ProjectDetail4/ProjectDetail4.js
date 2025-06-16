@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useScrollReveal } from '../../../context/ScrollRevealContext';
 import project4 from '../../../data/projects/project4';
-import './ProjectDetail4.scss';
+import '../ProjectDetail.scss';
 
 const ProjectDetail4 = () => {
   const { revealRef } = useScrollReveal();

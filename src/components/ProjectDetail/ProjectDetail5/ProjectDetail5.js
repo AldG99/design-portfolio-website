@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useScrollReveal } from '../../../context/ScrollRevealContext';
 import project5 from '../../../data/projects/project5';
-import './ProjectDetail5.scss';
+import '../ProjectDetail.scss';
 
 const ProjectDetail5 = () => {
   const { revealRef } = useScrollReveal();
@@ -502,7 +502,9 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">DISEÑO VISUAL Y CONSIDERACIONES</h2>
+          <h3 className="subsection-title-with-border">
+            DISEÑO VISUAL Y CONSIDERACIONES
+          </h3>
 
           <h3 className="subsection-title">CONTRASTE DE COLORES</h3>
           <div className="color-palette-section">

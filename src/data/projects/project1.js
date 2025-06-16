@@ -5,9 +5,9 @@ const project1 = {
   // Propiedades faltantes sin valores
   shortDescription: '',
   description: '',
-  thumbnail: '',
-  date: 'Julio 2022',
-  dateRaw: '2022-07-30',
+  thumbnail: '/assets/images/projects/project1/thumbnail.png',
+  date: 'Junio - Septiembre 2023',
+  dateRaw: '2023-09-01',
   tools: [],
 
   repositories: {

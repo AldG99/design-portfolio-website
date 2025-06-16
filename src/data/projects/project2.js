@@ -6,8 +6,8 @@ const project2 = {
   shortDescription: '',
   description: '',
   thumbnail: '',
-  date: 'Abril 2024',
-  dateRaw: '2024-04-23',
+  date: 'Enero - Mayo 2024',
+  dateRaw: '2024-05-22',
   tools: [],
 
   repositories: {

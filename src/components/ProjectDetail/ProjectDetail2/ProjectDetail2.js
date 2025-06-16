@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useScrollReveal } from '../../../context/ScrollRevealContext';
 import project2 from '../../../data/projects/project2';
-import './ProjectDetail2.scss';
+import '../ProjectDetail.scss';
 
 const ProjectDetail2 = () => {
   const { revealRef } = useScrollReveal();
@@ -45,9 +45,11 @@ const ProjectDetail2 = () => {
             />
           </div>
 
+          <h1 className="project-title">Cell-AR</h1>
+
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
-              <span className="meta-value">Febrero 2025</span>
+              <span className="meta-value">Enero - Mayo 2024</span>
             </div>
           </div>
 
