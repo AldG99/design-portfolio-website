@@ -47,6 +47,8 @@ const ProjectDetail5 = () => {
             />
           </div>
 
+          <h1 className="project-title">SportCampus</h1>
+
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
               <span className="meta-value">Abril - Junio 2025</span>
@@ -68,7 +70,7 @@ const ProjectDetail5 = () => {
         </header>
 
         <section className="project-detail__overview">
-          <h2 className="section-subtitle">RESUMEN DEL PROYECTO</h2>
+          <h3 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h3>
           <p className="overview-text">{project5.description}</p>
         </section>
 
@@ -103,7 +105,7 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INVESTIGACIÓN</h2>
+          <h3 className="subsection-title-with-border">INVESTIGACIÓN</h3>
 
           <div className="project-detail__understanding">
             <p className="understanding-text">{project5.research.summary}</p>
@@ -238,7 +240,7 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">PERSONAS</h2>
+          <h3 className="subsection-title-with-border">PERSONAS</h3>
 
           <div className="project-detail__personas">
             <div
@@ -248,9 +250,6 @@ const ProjectDetail5 = () => {
               {project5.userProfiles.map((profile, index) => (
                 <div key={index} className="persona-card">
                   <div className="persona-statement">
-                    <p className="persona-problem">
-                      {profile.problemStatement}
-                    </p>
                     <div className="persona-image">
                       <img
                         src={profile.problemStatementImage}
@@ -297,7 +296,7 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INICIO DEL DISEÑO</h2>
+          <h3 className="subsection-title-with-border">INICIO DEL DISEÑO</h3>
 
           <div className="design-section">
             <h3 className="subsection-title">SITEMAP</h3>
@@ -480,7 +479,7 @@ const ProjectDetail5 = () => {
             ))}
           </div>
 
-          <h2 className="section-subtitle">REFINANDO EL DISEÑO</h2>
+          <h3 className="subsection-title-with-border">REFINANDO EL DISEÑO</h3>
           <div className="mockups-section">
             {project5.usabilityStudy.refiningDesign.map((mockup, index) => (
               <div key={index} className="mockup-item">
@@ -619,7 +618,9 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">RESULTADOS Y REFLEXIÓN</h2>
+          <h3 className="subsection-title-with-border">
+            RESULTADOS Y REFLEXIÓN
+          </h3>
 
           <div className="results-section">
             <h3 className="subsection-title">CONCLUSIONES</h3>
@@ -682,7 +683,10 @@ const ProjectDetail5 = () => {
 
           {project5.repositories && (
             <div className="project-detail__links project-detail__links--final">
-              <h3 className="subsection-title">REPOSITORIO DEL PROYECTO</h3>
+              <h3 className="subsection-title-with-border">
+                REPOSITORIO DEL PROYECTO
+              </h3>
+
               <div className="project-detail__repository-links">
                 {project5.repositories.mobile && (
                   <a

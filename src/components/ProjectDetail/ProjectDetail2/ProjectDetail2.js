@@ -68,7 +68,7 @@ const ProjectDetail2 = () => {
         </header>
 
         <section className="project-detail__overview">
-          <h2 className="section-subtitle">RESUMEN DEL PROYECTO</h2>
+          <h3 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h3>
           <p className="overview-text">{project2.description}</p>
         </section>
 
@@ -103,7 +103,7 @@ const ProjectDetail2 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INVESTIGACIÓN</h2>
+          <h3 className="subsection-title-with-border">INVESTIGACIÓN</h3>
 
           <div className="project-detail__understanding">
             <p className="understanding-text">{project2.research.summary}</p>
@@ -113,7 +113,9 @@ const ProjectDetail2 = () => {
                 alt="Investigación de usuario"
               />
             </div>
-            <h3 className="subsection-title">PROBLEMAS CLAVE</h3>
+            <h3 className="subsection-title">
+              INVESTIGACIÓN DE USUARIOS: PUNTOS DÉBILES
+            </h3>
             <ol className="key-issues-list">
               {project2.research.keyIssues.map((issue, index) => (
                 <li key={index} className="key-issue-item">
@@ -236,7 +238,7 @@ const ProjectDetail2 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">PERSONAS</h2>
+          <h3 className="subsection-title-with-border">PERSONAS</h3>
 
           <div className="project-detail__personas">
             <div
@@ -295,7 +297,7 @@ const ProjectDetail2 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INICIO DEL DISEÑO</h2>
+          <h3 className="subsection-title-with-border">INICIO DEL DISEÑO</h3>
 
           <div className="design-section">
             <h3 className="subsection-title">SITEMAP</h3>
@@ -314,7 +316,7 @@ const ProjectDetail2 = () => {
           </div>
 
           <div className="design-section">
-            <h3 className="subsection-title">USUARIO FLOW</h3>
+            <h3 className="subsection-title">USER FLOW</h3>
             <div className="design-image">
               <img
                 src={project2.informationArchitecture.userFlow.userFlowImage}
@@ -363,7 +365,9 @@ const ProjectDetail2 = () => {
           </div>
 
           <div className="design-section">
-            <h3 className="subsection-title">VARIACIONES DE DISPOSITIVO</h3>
+            <h3 className="subsection-title">
+              WIREFRAME EN PAPEL - VARIACIONES DE TAMAÑO DE PANTALLA
+            </h3>
             <div className="design-images">
               {project2.wireframing.digitalWireframes.deviceVariationsImage.map(
                 (image, index) => (
@@ -487,7 +491,7 @@ const ProjectDetail2 = () => {
             ))}
           </div>
 
-          <h2 className="section-subtitle">REFINANDO EL DISEÑO</h2>
+          <h3 className="subsection-title-with-border">REFINANDO EL DISEÑO</h3>
           <div className="mockups-section">
             {project2.usabilityStudy.refiningDesign.map((mockup, index) => (
               <div key={index} className="mockup-item">
@@ -509,7 +513,9 @@ const ProjectDetail2 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">DISEÑO VISUAL Y CONSIDERACIONES</h2>
+          <h3 className="subsection-title-with-border">
+            DISEÑO VISUAL Y CONSIDERACIONES
+          </h3>
 
           <h3 className="subsection-title">PALETA DE COLORES</h3>
           <div className="visual-choices">
@@ -666,7 +672,9 @@ const ProjectDetail2 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">RESULTADOS Y REFLEXIÓN</h2>
+          <h3 className="subsection-title-with-border">
+            RESULTADOS Y REFLEXIÓN
+          </h3>
 
           <div className="results-section">
             <h3 className="subsection-title">CONCLUSIONES</h3>
@@ -729,7 +737,7 @@ const ProjectDetail2 = () => {
 
           {project2.repositories && (
             <div className="project-detail__links project-detail__links--final">
-              <h3 className="subsection-title">REPOSITORIOS DEL PROYECTO</h3>
+              <h3 className="subsection-title">REPOSITORIO DEL PROYECTO</h3>
               <div className="project-detail__repository-links">
                 {project2.repositories.mobile && (
                   <a

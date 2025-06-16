@@ -45,6 +45,8 @@ const ProjectDetail3 = () => {
             />
           </div>
 
+          <h1 className="project-title">INVENTA-ANALYT</h1>
+
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
               <span className="meta-value">Diciembre 2024 - Febrero 2025</span>
@@ -66,7 +68,7 @@ const ProjectDetail3 = () => {
         </header>
 
         <section className="project-detail__overview">
-          <h2 className="section-subtitle">RESUMEN DEL PROYECTO</h2>
+          <h3 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h3>
           <p className="overview-text">{project3.description}</p>
         </section>
 
@@ -101,7 +103,7 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INVESTIGACIÓN</h2>
+          <h3 className="subsection-title-with-border">INVESTIGACIÓN</h3>
 
           <div className="project-detail__understanding">
             <p className="understanding-text">{project3.research.summary}</p>
@@ -236,7 +238,7 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">PERSONAS</h2>
+          <h3 className="subsection-title-with-border">PERSONAS</h3>
 
           <div className="project-detail__personas">
             <div
@@ -295,7 +297,7 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">INICIO DEL DISEÑO</h2>
+          <h3 className="subsection-title-with-border">INICIO DEL DISEÑO</h3>
 
           <div className="design-section">
             <h3 className="subsection-title">SITEMAP</h3>
@@ -489,7 +491,7 @@ const ProjectDetail3 = () => {
             ))}
           </div>
 
-          <h2 className="section-subtitle">REFINANDO EL DISEÑO</h2>
+          <h3 className="subsection-title-with-border">REFINANDO EL DISEÑO</h3>
           <div className="mockups-section">
             {project3.usabilityStudy.refiningDesign.map((mockup, index) => (
               <div key={index} className="mockup-item">
@@ -511,7 +513,9 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">DISEÑO VISUAL Y CONSIDERACIONES</h2>
+          <h3 className="subsection-title-with-border">
+            DISEÑO VISUAL Y CONSIDERACIONES
+          </h3>
 
           <h3 className="subsection-title">PALETA DE COLORES</h3>
           <div className="visual-choices">
@@ -668,7 +672,9 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="section-subtitle">RESULTADOS Y REFLEXIÓN</h2>
+          <h3 className="subsection-title-with-border">
+            RESULTADOS Y REFLEXIÓN
+          </h3>
 
           <div className="results-section">
             <h3 className="subsection-title">CONCLUSIONES</h3>

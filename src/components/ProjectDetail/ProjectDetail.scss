@@ -557,6 +557,23 @@
     li {
       padding-right: $spacing-sm; // Espacio adicional del borde derecho
       max-width: 100%;
+
+      // Cambiar color de los puntos a azul
+      &::marker {
+        color: $accent-color;
+      }
+
+      // Fallback para navegadores que no soportan ::marker
+      list-style-type: none;
+      position: relative;
+
+      &::before {
+        content: '•';
+        color: $accent-color;
+        font-weight: bold;
+        position: absolute;
+        left: -1em;
+      }
     }
   }
 
@@ -572,10 +589,10 @@
 
     .user-quote {
       font-style: italic;
-      color: color.adjust($text-color, $lightness: 20%);
+      color: $accent-color; // Cambio de color a azul
       margin: $spacing-sm 0;
       padding-left: $spacing-md;
-      border-left: 2px solid $secondary-color;
+      border-left: 2px solid $accent-color; // Cambio de color del borde a azul
     }
 
     .finding-improvement {
@@ -604,6 +621,11 @@
   .lessons-section {
     padding: $spacing-md;
     background: #fafafa;
+
+    .lessons-title {
+      font-size: $font-size-md; // Tamaño mediano
+      color: $accent-color; // Color azul
+    }
 
     .lessons-list {
       list-style: none;
@@ -738,6 +760,7 @@
       .detail-label {
         font-weight: 600;
         margin-right: $spacing-xs;
+        color: $accent-color; // Color azul para las etiquetas
       }
     }
   }
