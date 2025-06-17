@@ -70,7 +70,7 @@ const ProjectDetail5 = () => {
         </header>
 
         <section className="project-detail__overview">
-          <h3 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h3>
+          <h2 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h2>
           <p className="overview-text">{project5.description}</p>
         </section>
 
@@ -105,7 +105,7 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">INVESTIGACIÓN</h3>
+          <h2 className="subsection-title-with-border">INVESTIGACIÓN</h2>
 
           <div className="project-detail__understanding">
             <p className="understanding-text">{project5.research.summary}</p>
@@ -240,7 +240,7 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">PERSONAS</h3>
+          <h2 className="subsection-title-with-border">PERSONAS</h2>
 
           <div className="project-detail__personas">
             <div
@@ -296,7 +296,7 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">INICIO DEL DISEÑO</h3>
+          <h2 className="subsection-title-with-border">INICIO DEL DISEÑO</h2>
 
           <div className="design-section">
             <h3 className="subsection-title">SITEMAP</h3>
@@ -479,7 +479,7 @@ const ProjectDetail5 = () => {
             ))}
           </div>
 
-          <h3 className="subsection-title-with-border">REFINANDO EL DISEÑO</h3>
+          <h2 className="subsection-title-with-border">REFINANDO EL DISEÑO</h2>
           <div className="mockups-section">
             {project5.usabilityStudy.refiningDesign.map((mockup, index) => (
               <div key={index} className="mockup-item">
@@ -501,9 +501,9 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">
+          <h2 className="subsection-title-with-border">
             DISEÑO VISUAL Y CONSIDERACIONES
-          </h3>
+          </h2>
 
           <h3 className="subsection-title">CONTRASTE DE COLORES</h3>
           <div className="color-palette-section">
@@ -618,9 +618,9 @@ const ProjectDetail5 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">
+          <h2 className="subsection-title-with-border">
             RESULTADOS Y REFLEXIÓN
-          </h3>
+          </h2>
 
           <div className="results-section">
             <h3 className="subsection-title">CONCLUSIONES</h3>
@@ -683,9 +683,9 @@ const ProjectDetail5 = () => {
 
           {project5.repositories && (
             <div className="project-detail__links project-detail__links--final">
-              <h3 className="subsection-title-with-border">
+              <h2 className="subsection-title-with-border">
                 REPOSITORIO DEL PROYECTO
-              </h3>
+              </h2>
 
               <div className="project-detail__repository-links">
                 {project5.repositories.mobile && (

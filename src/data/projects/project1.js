@@ -8,7 +8,7 @@ const project1 = {
   thumbnail: '/assets/images/projects/project1/thumbnail.png',
   date: 'Junio - Septiembre 2023',
   dateRaw: '2023-09-01',
-  tools: [],
+  tools: ['Figma', 'Unity'],
 
   repositories: {
     mobile: {

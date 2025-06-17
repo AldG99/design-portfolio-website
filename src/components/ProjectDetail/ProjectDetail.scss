@@ -64,6 +64,22 @@
     }
   }
 
+  // H2 con el mismo estilo que subsection-title-with-border
+  h2.subsection-title-with-border {
+    font-size: $font-size-md;
+    font-weight: 400;
+    color: $text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid $secondary-color;
+    padding-bottom: $spacing-sm;
+    margin: $spacing-lg 0 $spacing-md 0;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-lg;
+    }
+  }
+
   p,
   li {
     font-size: $font-size-sm;
@@ -145,6 +161,48 @@
 
       @media (min-width: $breakpoint-md) {
         font-size: $font-size-sm;
+      }
+
+      // Colores específicos para cada herramienta
+      &--figma {
+        background-color: #ffc0a9;
+        color: #333333;
+      }
+
+      &--scss {
+        background-color: #dda0c2;
+        color: #333333;
+      }
+
+      &--react {
+        background-color: #a8dcec;
+        color: #333333;
+      }
+
+      &--react-native,
+      &--react-native-expo {
+        background-color: #9ccfe3;
+        color: #333333;
+      }
+
+      &--expo {
+        background-color: #bababd;
+        color: #333333;
+      }
+
+      &--firebase {
+        background-color: #ffe0a3;
+        color: #333333;
+      }
+
+      &--unity {
+        background-color: #d6d6d8;
+        color: #333333;
+      }
+
+      &--blender {
+        background-color: #f8c297;
+        color: #333333;
       }
     }
   }
@@ -577,6 +635,69 @@
     }
   }
 
+  // Color palette section - UPDATED
+  .color-palette {
+    .palette-list {
+      list-style: disc;
+      padding-left: $spacing-md;
+      margin-bottom: $spacing-lg;
+
+      .palette-item {
+        margin-bottom: $spacing-sm;
+        padding-right: $spacing-sm;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.5;
+
+        // Cambiar color de los puntos a violeta (accent color)
+        &::marker {
+          color: $accent-color;
+        }
+
+        // Fallback para navegadores que no soportan ::marker
+        list-style-type: none;
+        position: relative;
+
+        &::before {
+          content: '•';
+          color: $accent-color;
+          font-weight: bold;
+          position: absolute;
+          left: -1em;
+        }
+
+        .palette-percent {
+          font-weight: 600;
+          margin-right: $spacing-xs;
+        }
+
+        .palette-color {
+          display: flex;
+          align-items: center;
+
+          .color-sample {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 8px;
+            vertical-align: middle;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+
+    .palette-reasoning {
+      margin-top: $spacing-md;
+      color: color.adjust($text-color, $lightness: 10%);
+      line-height: 1.6;
+    }
+  }
+
   // Findings
   .finding-item {
     margin-bottom: $spacing-lg;
@@ -730,6 +851,17 @@
   .mockups-section {
     .mockup-item {
       margin-bottom: $spacing-xl;
+
+      .decisions-title {
+        color: $accent-color;
+        font-size: $font-size-sm; // Un nivel menos que el tamaño normal
+        font-weight: 600;
+        margin-bottom: $spacing-sm;
+
+        @media (min-width: $breakpoint-md) {
+          font-size: $font-size-md; // Un nivel menos en desktop también
+        }
+      }
 
       .decisions-list {
         list-style: none;

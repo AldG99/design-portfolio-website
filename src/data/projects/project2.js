@@ -8,7 +8,7 @@ const project2 = {
   thumbnail: '',
   date: 'Enero - Mayo 2024',
   dateRaw: '2024-05-22',
-  tools: [],
+  tools: ['Figma', 'Blender', 'Unity'],
 
   repositories: {
     mobile: {

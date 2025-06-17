@@ -68,7 +68,7 @@ const ProjectDetail3 = () => {
         </header>
 
         <section className="project-detail__overview">
-          <h3 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h3>
+          <h2 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h2>
           <p className="overview-text">{project3.description}</p>
         </section>
 
@@ -103,7 +103,7 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">INVESTIGACIÓN</h3>
+          <h2 className="subsection-title-with-border">INVESTIGACIÓN</h2>
 
           <div className="project-detail__understanding">
             <p className="understanding-text">{project3.research.summary}</p>
@@ -238,7 +238,7 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">PERSONAS</h3>
+          <h2 className="subsection-title-with-border">PERSONAS</h2>
 
           <div className="project-detail__personas">
             <div
@@ -297,7 +297,7 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">INICIO DEL DISEÑO</h3>
+          <h2 className="subsection-title-with-border">INICIO DEL DISEÑO</h2>
 
           <div className="design-section">
             <h3 className="subsection-title">SITEMAP</h3>
@@ -491,7 +491,7 @@ const ProjectDetail3 = () => {
             ))}
           </div>
 
-          <h3 className="subsection-title-with-border">REFINANDO EL DISEÑO</h3>
+          <h2 className="subsection-title-with-border">REFINANDO EL DISEÑO</h2>
           <div className="mockups-section">
             {project3.usabilityStudy.refiningDesign.map((mockup, index) => (
               <div key={index} className="mockup-item">
@@ -513,9 +513,9 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">
+          <h2 className="subsection-title-with-border">
             DISEÑO VISUAL Y CONSIDERACIONES
-          </h3>
+          </h2>
 
           <h3 className="subsection-title">PALETA DE COLORES</h3>
           <div className="visual-choices">
@@ -526,15 +526,7 @@ const ProjectDetail3 = () => {
                   <span className="palette-color">
                     <span
                       className="color-sample"
-                      style={{
-                        backgroundColor: '#F6F7F8',
-                        display: 'inline-block',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '4px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                      }}
+                      style={{ backgroundColor: '#F6F7F8' }}
                     ></span>
                     {project3.visualDesign.colorPalette['60']}
                   </span>
@@ -544,15 +536,7 @@ const ProjectDetail3 = () => {
                   <span className="palette-color">
                     <span
                       className="color-sample"
-                      style={{
-                        backgroundColor: '#2D3748',
-                        display: 'inline-block',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '4px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                      }}
+                      style={{ backgroundColor: '#2D3748' }}
                     ></span>
                     {project3.visualDesign.colorPalette['30']}
                   </span>
@@ -562,15 +546,7 @@ const ProjectDetail3 = () => {
                   <span className="palette-color">
                     <span
                       className="color-sample"
-                      style={{
-                        backgroundColor: '#6C63FF',
-                        display: 'inline-block',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '4px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                      }}
+                      style={{ backgroundColor: '#6C63FF' }}
                     ></span>
                     {project3.visualDesign.colorPalette['10']}
                   </span>
@@ -672,9 +648,9 @@ const ProjectDetail3 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h3 className="subsection-title-with-border">
+          <h2 className="subsection-title-with-border">
             RESULTADOS Y REFLEXIÓN
-          </h3>
+          </h2>
 
           <div className="results-section">
             <h3 className="subsection-title">CONCLUSIONES</h3>
@@ -737,7 +713,10 @@ const ProjectDetail3 = () => {
 
           {project3.repositories && (
             <div className="project-detail__links project-detail__links--final">
-              <h3 className="subsection-title">REPOSITORIO DEL PROYECTO</h3>
+              <h2 className="subsection-title-with-border">
+                REPOSITORIO DEL PROYECTO
+              </h2>
+
               <div className="project-detail__repository-links">
                 {project3.repositories.mobile && (
                   <a
