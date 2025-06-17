@@ -701,19 +701,6 @@ const ProjectDetail5 = () => {
                     {project5.repositories.mobile.label}
                   </a>
                 )}
-                {project5.repositories.web && (
-                  <a
-                    href={project5.repositories.web.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn--outline"
-                  >
-                    <span className="repository-icon">
-                      {project5.repositories.web.icon}
-                    </span>
-                    {project5.repositories.web.label}
-                  </a>
-                )}
               </div>
             </div>
           )}

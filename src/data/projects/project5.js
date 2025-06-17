@@ -4,7 +4,7 @@ const project5 = {
 
   // Propiedades faltantes sin valores
   shortDescription:
-    'Diseñada una aplicación móvil que digitaliza completamente la experiencia deportiva universitaria, permitiendo gestionar equipos, visualizar estadísticas detalladas y documentar eventos deportivos con galerías multimedia, adaptándose a estudiantes y entrenadores para centralizar desde inscripciones hasta seguimiento de torneos.',
+    'Diseño de aplicación móvil que digitaliza el deporte universitario, integrando gestión de equipos, estadísticas y eventos multimedia para estudiantes y entrenadores.',
   description:
     'SportCampus es una aplicación móvil universitaria que digitaliza por completo la experiencia deportiva estudiantil. Permite gestionar equipos, ofrece estadísticas detalladas y galerías multimedia para documentar eventos deportivos. Soporta varios deportes (fútbol, basquetbol, voleibol y fútbol americano) y tiene dos tipos de usuarios: estudiantes y entrenadores, con navegación adaptada a cada rol. Con su diseño responsive y funciones avanzadas, SportCampus centraliza todo, desde la inscripción hasta el seguimiento de torneos y la gestión de contenidos.',
   thumbnail: '/assets/images/projects/project5/thumbnail.png',
@@ -17,11 +17,6 @@ const project5 = {
       url: 'https://github.com/AldG99/team-sports-training-app',
       label: 'Versión móvil (React Native)',
       icon: '📱',
-    },
-    web: {
-      url: '',
-      label: '',
-      icon: '',
     },
   },
 

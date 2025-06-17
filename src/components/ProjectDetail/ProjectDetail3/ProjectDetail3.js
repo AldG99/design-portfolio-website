@@ -248,9 +248,6 @@ const ProjectDetail3 = () => {
               {project3.userProfiles.map((profile, index) => (
                 <div key={index} className="persona-card">
                   <div className="persona-statement">
-                    <p className="persona-problem">
-                      {profile.problemStatement}
-                    </p>
                     <div className="persona-image">
                       <img
                         src={profile.problemStatementImage}

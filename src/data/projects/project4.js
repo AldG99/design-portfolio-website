@@ -2,7 +2,7 @@ const project4 = {
   id: 4,
   title: 'MediNote',
   shortDescription:
-    'Aplicación móvil y web integral diseñada para doctores y enfermeras que permite registrar pacientes, crear historiales clínicos digitales, gestionar recordatorios de citas y tratamientos por prioridad, y realizar búsquedas avanzadas en expedientes, optimizando la práctica médica en clínicas pequeñas y consultorios privados.',
+    'Diseño de aplicación móvil y web que digitaliza la gestión clínica, integrando historiales digitales, recordatorios de tratamientos y búsquedas avanzadas para doctores y enfermeras.',
 
   description:
     'MediNote es una aplicación móvil de gestión médica diseñada para doctores y enfermeras. Permite registrar pacientes con datos completos, crear distintos tipos de historiales clínicos, gestionar recordatorios y alertas por prioridad y fecha, y realizar búsquedas avanzadas. Cuenta con navegación intuitiva y acceso seguro para cada profesional. Está orientada a clínicas pequeñas y medianas, consultorios privados y médicos independientes que buscan digitalizar y optimizar su práctica médica.',

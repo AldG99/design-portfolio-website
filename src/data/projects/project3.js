@@ -2,7 +2,7 @@ const project3 = {
   id: 3,
   title: 'INVENTA-ANALYT',
   shortDescription:
-    'Aplicación móvil y web diseñada para pequeños negocios que integra gestión de inventario, registro de ventas y análisis de rendimiento, permitiendo a los propietarios monitorear existencias en tiempo real, generar reportes de ventas y acceder al historial completo de operaciones comerciales.',
+    'Diseño de aplicación móvil y web que digitaliza la gestión de pequeños negocios, integrando inventario, ventas y análisis de rendimiento para propietarios comerciales.',
 
   description:
     'INVENTA-ANALYT es una aplicación móvil y web para gestión de pequeños negocios que integra control de inventario, registro de ventas, consulta de transacciones y análisis avanzados. La plataforma destaca por su interfaz intuitiva que permite a los propietarios monitorear existencias en tiempo real y acceder al historial completo de operaciones.',
