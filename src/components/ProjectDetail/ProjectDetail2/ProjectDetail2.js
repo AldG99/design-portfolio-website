@@ -24,10 +24,7 @@ const ProjectDetail2 = () => {
 
   const isUserProfile = profileText => {
     return (
-      profileText.includes('Guadalupe') ||
-      profileText.includes('dulcería') ||
-      profileText.includes('Araceli') ||
-      profileText.includes('ferretería')
+      profileText.includes('Michelle') || profileText.includes('estudiante')
     );
   };
 
@@ -49,7 +46,7 @@ const ProjectDetail2 = () => {
 
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
-              <span className="meta-value">Enero - Mayo 2024</span>
+              <span className="meta-value">Febrero - Mayo 2024</span>
             </div>
           </div>
 
@@ -248,9 +245,6 @@ const ProjectDetail2 = () => {
               {project2.userProfiles.map((profile, index) => (
                 <div key={index} className="persona-card">
                   <div className="persona-statement">
-                    <p className="persona-problem">
-                      {profile.problemStatement}
-                    </p>
                     <div className="persona-image">
                       <img
                         src={profile.problemStatementImage}
@@ -270,6 +264,20 @@ const ProjectDetail2 = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="project-detail__empathy-map">
+            <h3 className="subsection-title">EMPATHY MAP</h3>
+            <div className="empathy-map-image">
+              <img
+                src={project2.userEmpathyMap.userEmpathyMapImage}
+                alt="Mapa de empatía del usuario"
+                onClick={() =>
+                  openImageModal(project2.userEmpathyMap.userEmpathyMapImage)
+                }
+                className="clickable-image"
+              />
             </div>
           </div>
 
