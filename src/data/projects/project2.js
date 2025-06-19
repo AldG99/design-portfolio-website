@@ -143,7 +143,9 @@ const project2 = {
 
   wireframing: {
     paperWireframes: {
-      paperWireframesImage: [],
+      paperWireframesImage: [
+        '/assets/images/projects/project2/paper/paper1.png',
+      ],
       refinedWireframesImage: '',
     },
     digitalWireframes: {

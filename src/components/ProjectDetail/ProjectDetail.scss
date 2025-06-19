@@ -22,7 +22,6 @@
     user-select: none;
   }
 
-  // Typography
   .project-title {
     font-size: $font-size-xl;
     font-weight: 300;
@@ -64,7 +63,6 @@
     }
   }
 
-  // H2 con el mismo estilo que subsection-title-with-border
   h2.subsection-title-with-border {
     font-size: $font-size-md;
     font-weight: 400;
@@ -93,7 +91,6 @@
     }
   }
 
-  // Layout sections
   &__hero {
     margin-bottom: $spacing-xl;
   }
@@ -128,7 +125,6 @@
     }
   }
 
-  // Meta info
   &__meta {
     margin: 0;
     margin-bottom: $spacing-md;
@@ -144,7 +140,6 @@
     }
   }
 
-  // Tools
   &__tools {
     display: flex;
     flex-wrap: wrap;
@@ -163,7 +158,6 @@
         font-size: $font-size-sm;
       }
 
-      // Colores específicos para cada herramienta
       &--figma {
         background-color: #ffc0a9;
         color: #333333;
@@ -207,7 +201,6 @@
     }
   }
 
-  // Grids
   &__problem-goal-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -220,14 +213,12 @@
     }
   }
 
-  // Competitive analysis - DISEÑO COMPLETAMENTE ESTÁTICO - SIN EFECTOS HOVER
   .competitive-table {
     margin: $spacing-lg 0;
   }
 
   .competitive-row {
     @media (max-width: #{$breakpoint-md - 1px}) {
-      // Vista móvil: diseño simple vertical
       margin-bottom: $spacing-lg;
 
       .competitive-cell--label {
@@ -254,7 +245,6 @@
   .competitive-cell {
     padding: $spacing-sm $spacing-md;
 
-    // Anular TODOS los efectos hover
     &:hover {
       background: inherit !important;
       color: inherit !important;
@@ -298,27 +288,25 @@
     }
 
     &--label {
-      font-size: 0.8rem !important; // Ligeramente más grande
+      font-size: 0.8rem !important;
       font-weight: 600;
       text-transform: uppercase;
       color: $accent-color;
       display: flex;
-      align-items: flex-start; // Alineado arriba en lugar de centrado
+      align-items: flex-start;
       justify-content: flex-start;
       padding: $spacing-md;
 
-      // Anular TODOS los efectos hover para los labels también
       &:hover {
         background: inherit !important;
-        color: $accent-color !important; // Mantener el color original
+        color: $accent-color !important;
         transform: none !important;
         transition: none !important;
       }
 
       .row-label {
-        font-size: 0.8rem !important; // También afectar al elemento hijo
+        font-size: 0.8rem !important;
 
-        // Anular efectos hover para el elemento hijo también
         &:hover {
           color: $accent-color !important;
           background: inherit !important;
@@ -339,7 +327,7 @@
       .competitor-description {
         margin: 0;
         color: color.adjust($text-color, $lightness: 10%);
-        font-size: inherit; // Mismo tamaño que las listas
+        font-size: inherit;
       }
 
       ul {
@@ -369,14 +357,11 @@
       .competitor-audience p {
         margin: 0;
         color: color.adjust($text-color, $lightness: 10%);
-        font-size: inherit; // Mismo tamaño que las listas
+        font-size: inherit;
       }
     }
-
-    // YA NO HAY EFECTOS HOVER PARA DESKTOP - COMPLETAMENTE REMOVIDOS
   }
 
-  // Añadir labels dinámicos para móvil
   @media (max-width: #{$breakpoint-md - 1px}) {
     .competitive-cell--content {
       &[data-competitor] {
@@ -393,7 +378,6 @@
       }
     }
 
-    // Labels específicos para cada fila
     .competitive-row--description .competitive-cell--content::before {
       content: 'DESCRIPCIÓN';
     }
@@ -408,19 +392,16 @@
     }
   }
 
-  // Personas grid con patrones específicos
   .personas-horizontal-grid {
     display: grid;
     gap: $spacing-md;
     margin: $spacing-md 0;
 
-    // Patrón para móvil: siempre una columna
     grid-template-columns: 1fr;
 
     @media (min-width: $breakpoint-md) {
       gap: $spacing-lg;
 
-      // 1 imagen: ocupa todo el ancho
       &[data-count='1'] {
         grid-template-columns: 1fr;
 
@@ -429,7 +410,6 @@
         }
       }
 
-      // 2 imágenes: lado a lado horizontalmente
       &[data-count='2'] {
         grid-template-columns: 1fr 1fr;
 
@@ -442,13 +422,12 @@
         }
       }
 
-      // 3 imágenes: primera arriba completa, segunda y tercera abajo divididas
       &[data-count='3'] {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
 
         .persona-card:nth-child(1) {
-          grid-column: 1 / -1; // Ocupa toda la fila
+          grid-column: 1 / -1;
           grid-row: 1;
         }
 
@@ -463,7 +442,6 @@
         }
       }
 
-      // 4 imágenes: primera arriba completa, las otras tres abajo
       &[data-count='4'] {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto;
@@ -489,7 +467,6 @@
         }
       }
 
-      // 5+ imágenes: primera arriba completa, resto en grilla 2x2 debajo
       &[data-count='5'],
       &[data-count='6'],
       &[data-count='7'],
@@ -503,20 +480,93 @@
     }
   }
 
-  // Wireframes grid (mantiene el comportamiento original)
   .paper-wireframes-grid {
     display: grid;
-    grid-template-columns: 1fr;
     gap: $spacing-md;
     margin: $spacing-md 0;
 
+    grid-template-columns: 1fr;
+
     @media (min-width: $breakpoint-md) {
-      grid-template-columns: repeat(2, 1fr);
       gap: $spacing-lg;
+
+      &[data-count='1'] {
+        grid-template-columns: 1fr;
+
+        img:nth-child(1) {
+          grid-column: 1;
+        }
+      }
+
+      &[data-count='2'] {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+
+        img:nth-child(1) {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        img:nth-child(2) {
+          grid-column: 1;
+          grid-row: 2;
+        }
+      }
+
+      &[data-count='3'] {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+
+        img:nth-child(1) {
+          grid-column: 1 / -1;
+          grid-row: 1;
+        }
+
+        img:nth-child(2) {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        img:nth-child(3) {
+          grid-column: 2;
+          grid-row: 2;
+        }
+      }
+
+      &[data-count='4'] {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+
+        img:nth-child(1) {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        img:nth-child(2) {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        img:nth-child(3) {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        img:nth-child(4) {
+          grid-column: 2;
+          grid-row: 2;
+        }
+      }
+
+      &[data-count='5'],
+      &[data-count='6'],
+      &[data-count='7'],
+      &[data-count='8'] {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   }
 
-  // Opportunities
   &__improvement-opportunities {
     .opportunity-card {
       margin-bottom: $spacing-lg;
@@ -542,7 +592,6 @@
     }
   }
 
-  // Buttons
   .btn {
     display: inline-block;
     padding: $spacing-sm $spacing-md;
@@ -571,7 +620,6 @@
     }
   }
 
-  // Lists
   .responsibilities-list,
   .key-issues-list {
     list-style: none;
@@ -613,15 +661,13 @@
     list-style: disc;
 
     li {
-      padding-right: $spacing-sm; // Espacio adicional del borde derecho
+      padding-right: $spacing-sm;
       max-width: 100%;
 
-      // Cambiar color de los puntos a azul
       &::marker {
         color: $accent-color;
       }
 
-      // Fallback para navegadores que no soportan ::marker
       list-style-type: none;
       position: relative;
 
@@ -635,7 +681,6 @@
     }
   }
 
-  // Color palette section - UPDATED
   .color-palette {
     .palette-list {
       list-style: disc;
@@ -651,12 +696,10 @@
         hyphens: auto;
         line-height: 1.5;
 
-        // Cambiar color de los puntos a violeta (accent color)
         &::marker {
           color: $accent-color;
         }
 
-        // Fallback para navegadores que no soportan ::marker
         list-style-type: none;
         position: relative;
 
@@ -698,7 +741,6 @@
     }
   }
 
-  // Findings
   .finding-item {
     margin-bottom: $spacing-lg;
 
@@ -710,10 +752,10 @@
 
     .user-quote {
       font-style: italic;
-      color: $accent-color; // Cambio de color a azul
+      color: $accent-color;
       margin: $spacing-sm 0;
       padding-left: $spacing-md;
-      border-left: 2px solid $accent-color; // Cambio de color del borde a azul
+      border-left: 2px solid $accent-color;
     }
 
     .finding-improvement {
@@ -726,7 +768,6 @@
     }
   }
 
-  // Lessons
   .lessons-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -744,8 +785,8 @@
     background: #fafafa;
 
     .lessons-title {
-      font-size: $font-size-md; // Tamaño mediano
-      color: $accent-color; // Color azul
+      font-size: $font-size-md;
+      color: $accent-color;
     }
 
     .lessons-list {
@@ -769,7 +810,6 @@
     }
   }
 
-  // Modal
   .image-modal {
     position: fixed;
     inset: 0;
@@ -807,7 +847,6 @@
     }
   }
 
-  // Clickable images
   .clickable-image {
     cursor: pointer;
     transition: opacity 0.2s ease;
@@ -817,7 +856,6 @@
     }
   }
 
-  // Journey maps
   .journey-maps-vertical {
     .journey-card {
       margin-bottom: $spacing-lg;
@@ -830,14 +868,12 @@
     }
   }
 
-  // Screen variations
   .screen-variations-images {
     img {
       margin-bottom: $spacing-md;
     }
   }
 
-  // Design images
   .design-image,
   .design-images {
     margin: $spacing-md 0;
@@ -847,19 +883,18 @@
     }
   }
 
-  // Mockups
   .mockups-section {
     .mockup-item {
       margin-bottom: $spacing-xl;
 
       .decisions-title {
         color: $accent-color;
-        font-size: $font-size-sm; // Un nivel menos que el tamaño normal
+        font-size: $font-size-sm;
         font-weight: 600;
         margin-bottom: $spacing-sm;
 
         @media (min-width: $breakpoint-md) {
-          font-size: $font-size-md; // Un nivel menos en desktop también
+          font-size: $font-size-md;
         }
       }
 
@@ -884,7 +919,6 @@
     }
   }
 
-  // Usability details
   .usability-details {
     .detail-item {
       margin-bottom: $spacing-sm;
@@ -892,7 +926,7 @@
       .detail-label {
         font-weight: 600;
         margin-right: $spacing-xs;
-        color: $accent-color; // Color azul para las etiquetas
+        color: $accent-color;
       }
     }
   }
