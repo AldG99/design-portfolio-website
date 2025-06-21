@@ -2,7 +2,6 @@ const project1 = {
   id: 1,
   title: 'Mikky Jump',
 
-  // Propiedades faltantes sin valores
   shortDescription: '',
   description: '',
   thumbnail: '/assets/images/projects/project1/thumbnail.png',

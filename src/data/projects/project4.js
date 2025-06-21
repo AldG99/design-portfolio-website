@@ -15,12 +15,10 @@ const project4 = {
     mobile: {
       url: 'https://github.com/AldG99/primary-care-clinic-app',
       label: 'Versión móvil (React Native)',
-      icon: '📱',
     },
     web: {
       url: 'https://github.com/AldG99/primary-care-clinic',
       label: 'Versión web (React)',
-      icon: '💻',
     },
   },
 

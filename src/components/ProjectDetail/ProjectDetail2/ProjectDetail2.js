@@ -9,7 +9,7 @@ const ProjectDetail2 = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Portafolio | ${project2.title}`;
+    document.title = `Alfredo García Diseñador UX/UI & Desarrollador - ${project2.title}`;
   }, []);
 
   const openImageModal = imageUrl => {
@@ -136,9 +136,7 @@ const ProjectDetail2 = () => {
                 </div>
 
                 <div className="competitive-row competitive-row--overview">
-                  <div className="competitive-cell competitive-cell--label">
-                    <h4 className="row-label">OVERVIEW</h4>
-                  </div>
+                  <div className="competitive-cell competitive-cell--label"></div>
                   {project2.competitors.map((competitor, index) => (
                     <div
                       key={index}
@@ -362,34 +360,6 @@ const ProjectDetail2 = () => {
           </div>
 
           <div className="design-section">
-            <div className="design-image">
-              <img
-                src={
-                  project2.wireframing.paperWireframes.refinedWireframesImage
-                }
-                alt="Wireframes refinados"
-              />
-            </div>
-          </div>
-
-          <div className="design-section">
-            <h3 className="subsection-title">
-              WIREFRAME EN PAPEL - VARIACIONES DE TAMAÑO DE PANTALLA
-            </h3>
-            <div className="design-images">
-              {project2.wireframing.digitalWireframes.deviceVariationsImage.map(
-                (image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`Variación de dispositivo ${index + 1}`}
-                  />
-                )
-              )}
-            </div>
-          </div>
-
-          <div className="design-section">
             <h3 className="subsection-title">WIREFRAMES DIGITALES</h3>
             <div className="design-image">
               <img
@@ -398,21 +368,6 @@ const ProjectDetail2 = () => {
                 }
                 alt="Wireframes digitales"
               />
-            </div>
-          </div>
-
-          <div className="design-section">
-            <h3 className="subsection-title">VARIACIONES DIGITALES</h3>
-            <div className="design-images">
-              {project2.wireframing.digitalWireframes.sizeVariationsImage.map(
-                (image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`Variación digital ${index + 1}`}
-                  />
-                )
-              )}
             </div>
           </div>
         </section>
@@ -521,50 +476,7 @@ const ProjectDetail2 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="subsection-title-with-border">
-            DISEÑO VISUAL Y CONSIDERACIONES
-          </h2>
-
-          <h3 className="subsection-title">PALETA DE COLORES</h3>
-          <div className="visual-choices">
-            <div className="color-palette">
-              <ul className="palette-list">
-                <li className="palette-item">
-                  <span className="palette-percent">60%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{ backgroundColor: '#F6F7F8' }}
-                    ></span>
-                    {project2.visualDesign.colorPalette['60']}
-                  </span>
-                </li>
-                <li className="palette-item">
-                  <span className="palette-percent">30%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{ backgroundColor: '#2D3748' }}
-                    ></span>
-                    {project2.visualDesign.colorPalette['30']}
-                  </span>
-                </li>
-                <li className="palette-item">
-                  <span className="palette-percent">10%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{ backgroundColor: '#6C63FF' }}
-                    ></span>
-                    {project2.visualDesign.colorPalette['10']}
-                  </span>
-                </li>
-              </ul>
-              <p className="palette-reasoning">
-                {project2.visualDesign.colorPalette.reasoning}
-              </p>
-            </div>
-          </div>
+          <h2 className="subsection-title-with-border">DISEÑO VISUAL</h2>
 
           <div className="screen-variations">
             <h3 className="subsection-title">TAMAÑO DE PANTALLA ORIGINAL</h3>
@@ -585,24 +497,6 @@ const ProjectDetail2 = () => {
                 src={project2.visualDesign.responsiveDesign.originalScreenSize}
                 alt="Tamaño original"
               />
-            </div>
-
-            <div className="screen-variations-images">
-              <h3 className="subsection-title">
-                VARIACIONES DE TAMAÑO DE PANTALLA
-              </h3>
-              <p className="screen-description">
-                {project2.visualDesign.responsiveDesign.screenExamples}
-              </p>
-              {project2.visualDesign.responsiveDesign.screenSizeVariationsImage.map(
-                (image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`Variación de pantalla ${index + 1}`}
-                  />
-                )
-              )}
             </div>
           </div>
 
@@ -625,14 +519,6 @@ const ProjectDetail2 = () => {
               <div className="prototype-links">
                 <a
                   href={project2.visualDesign.highFidelity.viewPrototypes[0]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn--outline"
-                >
-                  Ver prototipo web
-                </a>
-                <a
-                  href={project2.visualDesign.highFidelity.viewPrototypes[1]}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn--outline"
@@ -718,43 +604,6 @@ const ProjectDetail2 = () => {
               {project2.conclusion.finalConsiderations}
             </p>
           </div>
-
-          {project2.repositories && (
-            <div className="project-detail__links project-detail__links--final">
-              <h2 className="subsection-title-with-border">
-                REPOSITORIO DEL PROYECTO
-              </h2>
-
-              <div className="project-detail__repository-links">
-                {project2.repositories.mobile && (
-                  <a
-                    href={project2.repositories.mobile.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn--outline"
-                  >
-                    <span className="repository-icon">
-                      {project2.repositories.mobile.icon}
-                    </span>
-                    {project2.repositories.mobile.label}
-                  </a>
-                )}
-                {project2.repositories.web && (
-                  <a
-                    href={project2.repositories.web.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn--outline"
-                  >
-                    <span className="repository-icon">
-                      {project2.repositories.web.icon}
-                    </span>
-                    {project2.repositories.web.label}
-                  </a>
-                )}
-              </div>
-            </div>
-          )}
         </section>
       </div>
 

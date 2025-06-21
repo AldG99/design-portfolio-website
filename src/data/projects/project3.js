@@ -15,12 +15,10 @@ const project3 = {
     mobile: {
       url: 'https://github.com/AldG99/inventory-control-app',
       label: 'Versión móvil (React Native)',
-      icon: '📱',
     },
     web: {
       url: 'https://github.com/AldG99/inventory-control-web-app',
       label: 'Versión web (React)',
-      icon: '💻',
     },
   },
 

@@ -9,7 +9,7 @@ const ProjectDetail4 = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Portafolio | ${project4.title}`;
+    document.title = `Alfredo García Diseñador UX/UI & Desarrollador - ${project4.title}`;
   }, []);
 
   const openImageModal = imageUrl => {
@@ -686,9 +686,6 @@ const ProjectDetail4 = () => {
                     rel="noopener noreferrer"
                     className="btn btn--outline"
                   >
-                    <span className="repository-icon">
-                      {project4.repositories.mobile.icon}
-                    </span>
                     {project4.repositories.mobile.label}
                   </a>
                 )}
@@ -699,9 +696,6 @@ const ProjectDetail4 = () => {
                     rel="noopener noreferrer"
                     className="btn btn--outline"
                   >
-                    <span className="repository-icon">
-                      {project4.repositories.web.icon}
-                    </span>
                     {project4.repositories.web.label}
                   </a>
                 )}

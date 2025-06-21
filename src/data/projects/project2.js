@@ -2,27 +2,14 @@ const project2 = {
   id: 2,
   title: 'Cell-AR',
 
-  // Propiedades faltantes sin valores
-  shortDescription: '',
+  shortDescription:
+    'Diseño de aplicación móvil educativa con realidad aumentada que digitaliza el aprendizaje de biología celular, integrando visualización 3D interactiva y exploración de modelos celulares.',
   description:
     'Siguiendo el marco de UCD (User-Centered Design), diseñé un prototipo de alta fidelidad para una aplicación móvil educativa que utiliza realidad aumentada para transformar el aprendizaje de biología celular a nivel media superior y superior. Cell-AR permite a estudiantes de preparatoria y universidad visualizar, explorar e interactuar con modelos 3D de células eucariotas, procariotas, vegetales y animales directamente desde sus dispositivos móviles, convirtiendo cualquier superficie en un laboratorio de biología avanzado y accesible.',
   thumbnail: '/assets/images/projects/project2/thumbnail.png',
   date: 'Febrero - Mayo 2024',
   dateRaw: '2024-05-22',
   tools: ['Figma', 'Blender', 'Unity'],
-
-  repositories: {
-    mobile: {
-      url: '',
-      label: '',
-      icon: '',
-    },
-    web: {
-      url: '',
-      label: '',
-      icon: '',
-    },
-  },
 
   problem:
     'La educación tradicional en biología brinda teoría, pero no facilita la visualización 3D de estructuras celulares, lo que dificulta la comprensión de procesos avanzados. Los estudiantes dependen de diagramas estáticos y microscopios limitados, y muchas instituciones carecen de equipos modernos para prácticas adecuadas.',
@@ -206,12 +193,6 @@ const project2 = {
   },
 
   visualDesign: {
-    colorPalette: {
-      60: '',
-      30: '',
-      10: '',
-      reasoning: '',
-    },
     responsiveDesign: {
       strategy:
         'Cell-AR es más efectiva en móviles por su accesibilidad, portabilidad y compatibilidad nativa con AR. Aprovecha los smartphones que ya poseen los estudiantes, evita equipos costosos y permite una experiencia educativa inmersiva e intuitiva, democratizando el acceso a tecnologías avanzadas sin necesidad de hardware adicional.',
@@ -237,7 +218,7 @@ const project2 = {
       considerations: [
         'Seleccioné fuentes legibles, como Roboto, con un tamaño mínimo de 16sp para asegurar una lectura cómoda y accesible en todo tipo de dispositivos.',
         'Mantuve un buen espaciado entre líneas para facilitar la lectura, evitando que el texto se vea saturado y mejorando la claridad visual del contenido.',
-        'Usé una jerarquía tipográfica clara para organizar la información, diferenciando títulos, subtítulos y texto principal mediante tamaños y pesos de fuente.',
+        'Usé una jerarquía tipográfica clara para organizar la información, diferenciando títulos, subtítulos y texto principal mediante tamaños.',
       ],
     },
   },

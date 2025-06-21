@@ -9,7 +9,7 @@ const ProjectDetail5 = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Portafolio | ${project5.title}`;
+    document.title = `Alfredo García Diseñador UX/UI & Desarrollador - ${project5.title}`;
   }, []);
 
   const openImageModal = imageUrl => {
@@ -141,9 +141,7 @@ const ProjectDetail5 = () => {
                 </div>
 
                 <div className="competitive-row competitive-row--overview">
-                  <div className="competitive-cell competitive-cell--label">
-                    <h4 className="row-label">OVERVIEW</h4>
-                  </div>
+                  <div className="competitive-cell competitive-cell--label"></div>
                   {project5.competitors.map((competitor, index) => (
                     <div
                       key={index}
@@ -695,9 +693,6 @@ const ProjectDetail5 = () => {
                     rel="noopener noreferrer"
                     className="btn btn--outline"
                   >
-                    <span className="repository-icon">
-                      {project5.repositories.mobile.icon}
-                    </span>
                     {project5.repositories.mobile.label}
                   </a>
                 )}

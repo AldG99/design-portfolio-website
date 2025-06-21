@@ -7,7 +7,8 @@ const About = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Portafolio | Acerca de mí';
+    document.title =
+      'Alfredo García Diseñador UX/UI & Desarrollador - Acerca de mí';
   }, []);
 
   return (
@@ -27,34 +28,24 @@ const About = () => {
                 ref={revealRef}
                 style={{ transitionDelay: '100ms' }}
               >
-                Soy <strong>curioso</strong> y <strong>comprometido</strong> con{' '}
-                <strong>diseño</strong> y <strong>tecnología</strong>. Me
-                interesa entender cómo piensan las personas para crear{' '}
-                <strong>experiencias digitales funcionales</strong>.
+                Soy diseñador UX/UI y desarrollador multidisciplinario que
+                combina la sensibilidad del diseño centrado en el usuario con la
+                solidez técnica del desarrollo.
               </p>
               <p
                 className="about__bio-text"
                 ref={revealRef}
                 style={{ transitionDelay: '200ms' }}
               >
-                Me considero <strong>detallista</strong> y busco mejorar cada
-                aspecto del producto, desde su <strong>estructura</strong> hasta
-                los pequeños <strong>elementos visuales</strong>.
+                Acompaño todo el proceso, desde la investigación inicial hasta
+                la implementación, incluyendo wireframes, prototipos y código.
+                Esto me permite tomar decisiones de diseño fundamentadas y crear
+                experiencias digitales que son intuitivas y funcionales.
               </p>
               <p
                 className="about__bio-text"
                 ref={revealRef}
                 style={{ transitionDelay: '300ms' }}
-              >
-                Me gusta <strong>colaborar</strong> con otros profesionales,
-                compartir ideas y construir soluciones que combinan{' '}
-                <strong>funcionalidad</strong>, <strong>estética</strong> e
-                <strong> innovación</strong>.
-              </p>
-              <p
-                className="about__bio-text"
-                ref={revealRef}
-                style={{ transitionDelay: '400ms' }}
               >
                 Estudié en la{' '}
                 <a
@@ -65,18 +56,19 @@ const About = () => {
                 >
                   Facultad de Ciencias de la Computación de la Benemérita
                   Universidad Autónoma de Puebla
-                </a>{' '}
-                y me formé en el programa{' '}
-                <strong>Google UX Design Professional</strong>, donde, durante
-                este recorrido, adquirí experiencia en la conexión entre
-                personas y tecnología, enfocándome en crear{' '}
-                <strong>experiencias significativas</strong> más allá de las
-                interfaces.
+                </a>
+                , donde completé la{' '}
+                <strong>Ingeniería en Tecnologías de la Información</strong>.
+                Posteriormente, me formé en el programa{' '}
+                <strong>Google UX Design Professional</strong>, donde adquirí
+                experiencia en la interacción entre las personas y la
+                tecnología, enfocándome en diseñar soluciones que realmente
+                respondan a las necesidades de los usuarios.
               </p>
               <p
                 className="about__bio-text"
                 ref={revealRef}
-                style={{ transitionDelay: '500ms' }}
+                style={{ transitionDelay: '400ms' }}
               >
                 Gracias por tomarse el tiempo para visitar mi sitio.
               </p>
@@ -85,7 +77,7 @@ const About = () => {
             <div
               className="about__image"
               ref={revealRef}
-              style={{ transitionDelay: '600ms' }}
+              style={{ transitionDelay: '500ms' }}
             >
               <img
                 src="/assets/images/profile/profile2.jpg"
@@ -116,11 +108,11 @@ const About = () => {
           <div
             className="about__details"
             ref={revealRef}
-            style={{ transitionDelay: '700ms' }}
+            style={{ transitionDelay: '200ms' }}
           >
             <div className="about__download">
               <a
-                href="/assets/resume/cv.pdf"
+                href="/resume/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn about__view-cv-btn"
@@ -133,14 +125,14 @@ const About = () => {
           <div
             className="divider"
             ref={revealRef}
-            style={{ transitionDelay: '800ms' }}
+            style={{ transitionDelay: '300ms' }}
           ></div>
 
           <div className="about__philosophy">
             <h3
               className="about__question"
               ref={revealRef}
-              style={{ transitionDelay: '900ms' }}
+              style={{ transitionDelay: '400ms' }}
             >
               ¿Qué significa el UX para ti? ¿Cómo se lo explicarías a personas
               que no son de la industria?
@@ -148,41 +140,39 @@ const About = () => {
             <p
               className="about__answer"
               ref={revealRef}
-              style={{ transitionDelay: '1000ms' }}
+              style={{ transitionDelay: '500ms' }}
             >
-              Para mí, el UX es básicamente crear tecnología que funcione{' '}
-              <strong>con las personas</strong>, no contra ellas. Es como cuando
-              diseñas una silla: no solo debe verse bonita, sino que debe ser{' '}
-              <strong>cómoda</strong> para sentarse,
-              <strong> resistente</strong> para no romperse y{' '}
-              <strong>adaptarse</strong> al espacio donde irá. Con las apps y
-              sitios web es igual - se trata de entender cómo piensa la gente
-              real para hacer cosas que de verdad les sirvan y se sientan
-              naturales al usarlas.
+              Para mí, UX es el arte y la ciencia de crear experiencias
+              digitales que realmente funcionen para las personas. Va mucho más
+              allá de hacer que algo se vea bonito: se trata de entender cómo
+              piensan, sienten y se comportan los usuarios cuando interactúan
+              con un producto o servicio. UX significa pensar en cada momento de
+              esa interacción: desde el primer contacto hasta completar una
+              tarea, e incluso después. Se trata de resolver problemas reales de
+              manera intuitiva, eliminando fricciones innecesarias.
             </p>
             <p
               className="about__answer"
               ref={revealRef}
-              style={{ transitionDelay: '1100ms' }}
+              style={{ transitionDelay: '600ms' }}
             >
-              Si me preguntara mi abuela a qué me dedico, le diría: "
+              Si me preguntaran a qué me dedico, les diría:
               <strong>
-                ¿Te has frustrado alguna vez con una app que no entiendes? Mi
-                trabajo es evitar que eso pase
+                "¿Te has frustrado alguna vez con una app que no entiendes? Mi
+                trabajo es evitar que eso pase"
               </strong>
-              ". El buen diseño UX es casi <strong>invisible</strong> - cuando
-              algo está bien diseñado, simplemente funciona y ni siquiera
-              piensas en ello. Como cuando usas una puerta y sabes
-              instintivamente si debes empujar o jalar. Eso es lo que busco:
-              crear experiencias digitales tan <strong>naturales</strong> que
-              parezca que no hay diseño de por medio, solo personas haciendo lo
-              que necesitan hacer, sin obstáculos ni confusiones.
+              . El buen diseño UX es casi invisible: cuando algo está bien
+              diseñado, simplemente funciona y ni siquiera piensas en ello. Es
+              como cuando usas una puerta y sabes instintivamente si debes
+              empujar o jalar. Eso es lo que busco: crear experiencias digitales
+              tan naturales que parezca que no hay diseño de por medio, solo
+              personas haciendo lo que necesitan hacer, sin obstáculos ni
+              confusiones
             </p>
-
             <div
               className="about__quote"
               ref={revealRef}
-              style={{ transitionDelay: '1200ms' }}
+              style={{ transitionDelay: '700ms' }}
             >
               <blockquote>
                 "One of the stated goals for the Macintosh project was that the

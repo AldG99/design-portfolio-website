@@ -9,7 +9,7 @@ const ProjectDetail1 = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Portafolio | ${project1.title}`;
+    document.title = `Alfredo García Diseñador UX/UI & Desarrollador - ${project1.title}`;
   }, []);
 
   const openImageModal = imageUrl => {

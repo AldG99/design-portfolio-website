@@ -4,7 +4,7 @@
 
 .about {
   padding: $spacing-xxl 0;
-  margin-top: 80px;
+  margin-top: 60px;
 
   &__header {
     margin-bottom: $spacing-lg;
@@ -42,7 +42,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-lg;
-    margin-bottom: $spacing-xl;
+    margin-bottom: $spacing-xs;
     @include md {
       grid-template-columns: 3fr 2fr;
       align-items: start;
@@ -84,7 +84,7 @@
     }
 
     img {
-      width: 85%;
+      width: 100%;
       height: auto;
       object-fit: cover;
       display: block;

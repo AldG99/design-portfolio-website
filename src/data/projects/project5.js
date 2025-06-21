@@ -2,7 +2,6 @@ const project5 = {
   id: 5,
   title: 'SportCampus',
 
-  // Propiedades faltantes sin valores
   shortDescription:
     'Diseño de aplicación móvil que digitaliza el deporte universitario, integrando gestión de equipos, estadísticas y eventos multimedia para estudiantes y entrenadores.',
   description:
@@ -16,7 +15,6 @@ const project5 = {
     mobile: {
       url: 'https://github.com/AldG99/team-sports-training-app',
       label: 'Versión móvil (React Native)',
-      icon: '📱',
     },
   },
 

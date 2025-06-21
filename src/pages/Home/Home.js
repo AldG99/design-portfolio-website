@@ -6,7 +6,7 @@ import './Home.scss';
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Portafolio | Inicio';
+    document.title = 'Alfredo García Diseñador UX/UI & Desarrollador';
   }, []);
 
   return (

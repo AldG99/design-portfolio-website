@@ -9,7 +9,7 @@ const ProjectDetail3 = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Portafolio | ${project3.title}`;
+    document.title = `Alfredo García Diseñador UX/UI & Desarrollador - ${project3.title}`;
   }, []);
 
   const openImageModal = imageUrl => {
@@ -139,9 +139,7 @@ const ProjectDetail3 = () => {
                 </div>
 
                 <div className="competitive-row competitive-row--overview">
-                  <div className="competitive-cell competitive-cell--label">
-                    <h4 className="row-label">OVERVIEW</h4>
-                  </div>
+                  <div className="competitive-cell competitive-cell--label"></div>
                   {project3.competitors.map((competitor, index) => (
                     <div
                       key={index}
@@ -722,9 +720,6 @@ const ProjectDetail3 = () => {
                     rel="noopener noreferrer"
                     className="btn btn--outline"
                   >
-                    <span className="repository-icon">
-                      {project3.repositories.mobile.icon}
-                    </span>
                     {project3.repositories.mobile.label}
                   </a>
                 )}
@@ -735,9 +730,6 @@ const ProjectDetail3 = () => {
                     rel="noopener noreferrer"
                     className="btn btn--outline"
                   >
-                    <span className="repository-icon">
-                      {project3.repositories.web.icon}
-                    </span>
                     {project3.repositories.web.label}
                   </a>
                 )}

@@ -24,3 +24,7 @@ yarn-error.log*
 
 # assets
 **/public/assets
+
+# resume
+**/public/resume
+

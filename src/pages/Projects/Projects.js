@@ -11,7 +11,7 @@ const Projects = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Portafolio | Trabajo';
+    document.title = 'Alfredo García Diseñador UX/UI & Desarrollador - Trabajo';
     const allProjects = getAllProjects();
     const processedProjects = allProjects.map(project => ({
       ...project,
