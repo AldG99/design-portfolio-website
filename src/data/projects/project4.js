@@ -192,7 +192,7 @@ const project4 = {
     parameters: {
       type: 'Estudio de usabilidad sin moderación',
       location: 'Remoto',
-      participants: '12 practicantes de medicina',
+      participants: '6 practicantes de medicina',
       time: '20-30 minutos por participante',
     },
     keyFindings: [
@@ -200,7 +200,7 @@ const project4 = {
         area: 'Navegación General',
         finding: 'La búsqueda desde la pantalla de inicio es efectiva',
         quotes: [
-          'P08: "Me gusta que el botón de + esté siempre visible. No tengo que buscar dónde agregar algo nuevo."',
+          'P02: "Me gusta que el botón de + esté siempre visible. No tengo que buscar dónde agregar algo nuevo."',
           'P04: "Los iconos son claros. Inmediatamente sé dónde están mis pacientes y dónde puedo buscar."',
         ],
       },
@@ -209,8 +209,8 @@ const project4 = {
         finding:
           'Una parte significativa de los casos se perdió durante el paso de selección de pacientes.',
         quotes: [
-          'P09: "Las alertas están bien, pero ¿puedo crear mis propios tipos, como tareas?',
-          'P10: "Me gusta poder revisar todo antes de guardar. Los datos médicos son muy importantes."',
+          'P01: "Las alertas están bien, pero ¿puedo crear mis propios tipos, como tareas?',
+          'P06: "Me gusta poder revisar todo antes de guardar. Los datos médicos son muy importantes."',
         ],
       },
     ],

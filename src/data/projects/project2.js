@@ -149,7 +149,7 @@ const project2 = {
       refinedWireframesImage: '',
     },
     digitalWireframes: {
-      digitalWireframesImage: '',
+      digitalWireframesImage: '/assets/images/projects/project2/wireframes.png',
       sizeVariationsImage: [],
       deviceVariationsImage: [],
     },
@@ -157,31 +157,50 @@ const project2 = {
 
   prototyping: {
     lowFidelity: {
-      description: '',
-      prototypeImage: '',
-      prototypeUrl: '',
+      description:
+        'Crear un prototipo de baja fidelidad permite validar rápidamente los conceptos educativos fundamentales e iterar sobre la experiencia de usuario sin invertir tiempo en elementos visuales complejos. Solo después de confirmar que la estructura y los flujos funcionan correctamente, tiene sentido crear el prototipo de alta fidelidad con modelos 3D detallados.',
+      prototypeImage: '/assets/images/projects/project2/prototype.png',
+      prototypeUrl:
+        'https://www.figma.com/proto/jB0EVKQ5uoIbvAaQy1PAx3/Cell-App?page-id=0%3A1&node-id=115-690&p=f&viewport=-1435%2C-240%2C0.19&t=ZqeIroaqav6sLgn4-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=115%3A690',
     },
   },
 
   usabilityStudy: {
     parameters: {
-      type: '',
-      location: '',
-      participants: '',
-      time: '',
+      type: 'Estudio de usabilidad sin moderación',
+      location: 'Remoto',
+      participants: '6 Estudiantes universitarios (19-22 años)',
+      time: '20-25 minutos por participante',
     },
     keyFindings: [
       {
-        area: '',
-        finding: '',
-        quotes: [],
+        area: 'Interfaz y Navegación General',
+        finding:
+          'La interfaz es limpia e intuitiva, pero algunos elementos necesitan mayor claridad visual',
+        quotes: [
+          'P01: "La pantalla principal está muy bien organizada, encuentro todo fácilmente. Los iconos son claros y el menú principal no está saturado."',
+          'P03: "La barra de navegación inferior está muy bien, pero me gustaría que incluyera los nombres de las secciones."',
+        ],
+      },
+      {
+        area: 'Navegación entre Tipos Celulares',
+        finding:
+          'La transición entre células eucariotas y procariotas es valorada, pero falta comparación directa',
+        quotes: [
+          'P05: "La información sobre cada organelo está bien organizada, pero cuando cambio de célula prokariota a eukariota pierdo el contexto de lo que estaba viendo antes."',
+        ],
       },
     ],
     refiningDesign: [
       {
-        mockups: '',
-        mockupsImage: '',
-        designDecisions: [],
+        mockups:
+          'Se identificaron oportunidades clave para mejorar la experiencia del usuario. Los usuarios valoraron la interfaz limpia, pero expresaron necesidad de mayor contextualización de la información celular y mejor organización de los componentes educativos. La pérdida de contexto al cambiar entre tipos celulares y la falta de información persistente sobre organelos fueron los puntos más críticos a resolver.',
+        mockupsImage: '/assets/images/projects/project2/mockups/mockups1.png',
+        designDecisions: [
+          'Implementar un panel fijo que mantenga visible la información del organelo seleccionado.',
+          'Implementar etiquetas flotantes con información instantánea de cada componente celular sin interrumpir la exploración.',
+          'Agregar títulos a los iconos de navegación para que los usuarios comprendan inmediatamente la función de cada sección.',
+        ],
       },
     ],
   },
@@ -194,30 +213,57 @@ const project2 = {
       reasoning: '',
     },
     responsiveDesign: {
-      strategy: '',
-      keyDecisions: [],
+      strategy:
+        'Cell-AR es más efectiva en móviles por su accesibilidad, portabilidad y compatibilidad nativa con AR. Aprovecha los smartphones que ya poseen los estudiantes, evita equipos costosos y permite una experiencia educativa inmersiva e intuitiva, democratizando el acceso a tecnologías avanzadas sin necesidad de hardware adicional.',
+      keyDecisions: [
+        'Los estudiantes pueden acceder en cualquier momento, usando solo su smartphone, sin requerir equipos especiales.',
+        'Cada estudiante puede explorar los modelos celulares a su ritmo, repitiendo visualizaciones y adaptando la experiencia a su estilo de aprendizaje.',
+        'La pantalla táctil permite manipular estructuras celulares con gestos familiares, facilitando la comprensión de conceptos complejos como organelos y procesos celulares.',
+      ],
       screenExamples: '',
       screenSizeVariationsImage: [],
-      originalScreenSize: '',
+      originalScreenSize: '/assets/images/projects/project2/screen.png',
     },
     highFidelity: {
-      description: [],
-      highFidelityImage: '',
-      viewPrototypes: [],
+      description: [
+        'El prototipo de alta fidelidad de Cell-AR se creó para validar la experiencia visual completa, permitiendo evaluar la claridad de etiquetas, usabilidad de controles, legibilidad y coherencia visual. Además, sirve como herramienta clave para comunicar el potencial de la aplicación a desarrolladores y educadores antes del desarrollo final.',
+      ],
+      highFidelityImage: '/assets/images/projects/project2/high_fidelity.png',
+      viewPrototypes: [
+        'https://www.figma.com/proto/jB0EVKQ5uoIbvAaQy1PAx3/Cell-App?page-id=115%3A2&node-id=115-9&p=f&viewport=491%2C415%2C0.2&t=zaOIqY0vvWiuLmAz-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=115%3A9',
+      ],
     },
     accessibility: {
-      considerations: [],
+      considerations: [
+        'Seleccioné fuentes legibles, como Roboto, con un tamaño mínimo de 16sp para asegurar una lectura cómoda y accesible en todo tipo de dispositivos.',
+        'Mantuve un buen espaciado entre líneas para facilitar la lectura, evitando que el texto se vea saturado y mejorando la claridad visual del contenido.',
+        'Usé una jerarquía tipográfica clara para organizar la información, diferenciando títulos, subtítulos y texto principal mediante tamaños y pesos de fuente.',
+      ],
     },
   },
 
   conclusion: {
-    summary: '',
-    impact: '',
-    learnings: '',
-    professionalLessons: [],
-    personalLessons: [],
-    nextSteps: [],
-    finalConsiderations: '',
+    summary:
+      'Cell-AR demostró ser una solución efectiva para transformar el aprendizaje de biología celular con realidad aumentada. El prototipo de alta fidelidad validó la viabilidad de ofrecer experiencias inmersivas y accesibles desde smartphones. El diseño centrado en el usuario permitió abordar necesidades clave como la comprensión de escalas y relaciones espaciales entre organelos, manteniendo una experiencia intuitiva.',
+    impact:
+      'Cell-AR su potencial enseñanza de la biología celular, mejorando la comprensión de los estudiantes mediante visualización en realidad aumentada. Integrarse eficazmente en los planes de estudio y abrir nuevas posibilidades para la enseñanza de contenidos científicos complejos mediante tecnologías inmersivas.',
+    learnings:
+      'En el desarrollo de Cell-AR comprendí que una aplicación educativa en realidad aumentada depende de un diseño sencillo, accesible y centrado en el usuario, que priorice la usabilidad y el feedback claro por encima de efectos visuales complejos. Además, es posible ofrecer una experiencia de calidad en dispositivos de gama media si se realiza una planificación estratégica desde el inicio, lo que garantiza un acceso más amplio y equitativo a la tecnología educativa.',
+    professionalLessons: [
+      'Las iteraciones basadas en feedback suelen superar las suposiciones iniciales del diseñador porque se ajustan a las necesidades de los usuarios. Este proceso ayuda a corregir errores y mejorar la experiencia, haciendo que el producto sea más efectivo y útil.',
+      'Involucrar a educadores desde etapas tempranas mejora notablemente el diseño final, ya que aportan conocimientos prácticos y necesidades que guían el desarrollo hacia una solución más útil y efectiva.',
+    ],
+    personalLessons: [
+      'Aprendí habilidades básicas de modelado 3D con Blender, aplicándolas al diseño UX para crear prototipos más visuales y mejorar la experiencia del usuario en entornos tridimensionales.',
+      'Entendí la importancia de estar siempre actualizado en tecnologías emergentes para poder aplicar las mejores herramientas y técnicas en mis proyectos.',
+    ],
+    nextSteps: [
+      'Implementar sistema de contenido personalizado basado en nivel educativo específico.',
+      'Crear módulos adicionales que aborden otros temas de biología, como genética, evolución y ecosistemas, para ampliar el alcance educativo de Cell-AR.',
+      'Investigar la efectividad de Cell-AR en comparación con otros métodos de enseñanza inmersiva ayudará a entender mejor sus ventajas, así como a confirmar su impacto en el aprendizaje.',
+    ],
+    finalConsiderations:
+      'Cell-AR es más que un proyecto de diseño; es una muestra de cómo la tecnología puede ampliar el acceso a una educación de calidad. Me enseñó que un diseño centrado en el usuario puede crear soluciones innovadoras que integran realidad aumentada, accesibilidad y pedagogía efectiva, sin sacrificar usabilidad. El feedback positivo confirma la necesidad de este tipo de herramientas, que combinan ciencia, buen diseño y accesibilidad. Este proyecto fortaleció mi capacidad para enfrentar desafíos complejos mediante investigación, colaboración y compromiso con el impacto real en los usuarios.',
   },
 };
 

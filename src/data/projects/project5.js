@@ -193,7 +193,7 @@ const project5 = {
     parameters: {
       type: 'Estudio de usabilidad sin moderación',
       location: 'Remoto',
-      participants: '2 Entrenadores (25-45 años) y 8 Estudiantes (18-25 años)',
+      participants: '2 Entrenadores (25-45 años) y 4 Estudiantes (18-25 años)',
       time: '15-20 minutos por participante',
     },
     keyFindings: [
@@ -220,7 +220,7 @@ const project5 = {
           'La visualización es muy valorada por todos los tipos de usuario, pero falta información específica',
         quotes: [
           'P01: "Me gusta poder ver cuándo juega mi equipo y contra quién. La información está muy organizada."',
-          'P06: "Puedo ver los detalles del torneo, pero ¿cómo voy a saber cuánto va a durar el torneo completo? Necesito planificar los entrenamientos y no veo las fechas de inicio y fin claramente."',
+          'P04: "Puedo ver los detalles del torneo, pero ¿cómo voy a saber cuánto va a durar el torneo completo? Necesito planificar los entrenamientos y no veo las fechas de inicio y fin claramente."',
         ],
       },
     ],
