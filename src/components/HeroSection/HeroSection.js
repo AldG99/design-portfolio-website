@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faLinkedin,
-  faGithub,
-  faXTwitter,
-} from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useScrollReveal } from '../../context/ScrollRevealContext';
 import './HeroSection.scss';
 
 const HeroSection = () => {
   const { revealRef } = useScrollReveal();
 
+  /*
   const getToolClass = tool => {
     const toolLower = tool.toLowerCase();
     if (toolLower.includes('figma')) return 'hero-section__tool--figma';
@@ -35,6 +33,7 @@ const HeroSection = () => {
     'Unity',
     'Blender',
   ];
+*/
 
   return (
     <section className="hero-section">
@@ -47,6 +46,7 @@ const HeroSection = () => {
                 Diseñador UX/UI & Desarrollador
               </h2>
             </div>
+            {/*
             <p className="hero-section__tools">
               {tools.map((tool, index) => (
                 <span
@@ -59,6 +59,7 @@ const HeroSection = () => {
                 </span>
               ))}
             </p>
+            */}
             <p className="hero-section__bio">
               Mi objetivo es crear interfaces que sean fáciles de usar y
               visualmente atractivas, explorando constantemente nuevas técnicas
@@ -95,13 +96,11 @@ const HeroSection = () => {
                 <FontAwesomeIcon icon={faGithub} />
               </a>
               <a
-                href="https://x.com/AdGame99"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:a.garciaglz17@gmail.com"
                 className="hero-section__social-link"
-                aria-label="X (Twitter)"
+                aria-label="Correo electrónico"
               >
-                <FontAwesomeIcon icon={faXTwitter} />
+                <FontAwesomeIcon icon={faEnvelope} />
               </a>
             </div>
           </div>

@@ -1,10 +1,10 @@
-import project1 from './projects/project1';
+// import project1 from './projects/project1';
 import project2 from './projects/project2';
 import project3 from './projects/project3';
 import project4 from './projects/project4';
 import project5 from './projects/project5';
 
-const projects = [project5, project4, project3, project2, project1];
+const projects = [project5, project4, project3, project2];
 
 export const getAllProjects = () => projects;
 
@@ -34,7 +34,7 @@ export const getProjectBySlug = slug => {
 };
 
 export const getProjectSlug = title => {
-  if (title === 'Mikky Jump') return 'mikky-jump';
+  // if (title === 'Mikky Jump') return 'mikky-jump';
   if (title === 'Cell-AR') return 'cell-ar';
   if (title === 'INVENTA-ANALYT') return 'inventa-analyt';
   if (title === 'MediNote') return 'medi-note';

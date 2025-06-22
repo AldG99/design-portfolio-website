@@ -23,12 +23,7 @@ const ProjectDetail1 = () => {
   };
 
   const isUserProfile = profileText => {
-    return (
-      profileText.includes('Guadalupe') ||
-      profileText.includes('dulcería') ||
-      profileText.includes('Araceli') ||
-      profileText.includes('ferretería')
-    );
+    return profileText.includes('Kristina') || profileText.includes('game');
   };
 
   return (
@@ -139,9 +134,7 @@ const ProjectDetail1 = () => {
                 </div>
 
                 <div className="competitive-row competitive-row--overview">
-                  <div className="competitive-cell competitive-cell--label">
-                    <h4 className="row-label">OVERVIEW</h4>
-                  </div>
+                  <div className="competitive-cell competitive-cell--label"></div>
                   {project1.competitors.map((competitor, index) => (
                     <div
                       key={index}
@@ -248,9 +241,6 @@ const ProjectDetail1 = () => {
               {project1.userProfiles.map((profile, index) => (
                 <div key={index} className="persona-card">
                   <div className="persona-statement">
-                    <p className="persona-problem">
-                      {profile.problemStatement}
-                    </p>
                     <div className="persona-image">
                       <img
                         src={profile.problemStatementImage}
@@ -270,6 +260,20 @@ const ProjectDetail1 = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="project-detail__empathy-map">
+            <h3 className="subsection-title">EMPATHY MAP</h3>
+            <div className="empathy-map-image">
+              <img
+                src={project1.userEmpathyMap.userEmpathyMapImage}
+                alt="Mapa de empatía del usuario"
+                onClick={() =>
+                  openImageModal(project1.userEmpathyMap.userEmpathyMapImage)
+                }
+                className="clickable-image"
+              />
             </div>
           </div>
 
@@ -354,34 +358,6 @@ const ProjectDetail1 = () => {
           </div>
 
           <div className="design-section">
-            <div className="design-image">
-              <img
-                src={
-                  project1.wireframing.paperWireframes.refinedWireframesImage
-                }
-                alt="Wireframes refinados"
-              />
-            </div>
-          </div>
-
-          <div className="design-section">
-            <h3 className="subsection-title">
-              WIREFRAME EN PAPEL - VARIACIONES DE TAMAÑO DE PANTALLA
-            </h3>
-            <div className="design-images">
-              {project1.wireframing.digitalWireframes.deviceVariationsImage.map(
-                (image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`Variación de dispositivo ${index + 1}`}
-                  />
-                )
-              )}
-            </div>
-          </div>
-
-          <div className="design-section">
             <h3 className="subsection-title">WIREFRAMES DIGITALES</h3>
             <div className="design-image">
               <img
@@ -390,21 +366,6 @@ const ProjectDetail1 = () => {
                 }
                 alt="Wireframes digitales"
               />
-            </div>
-          </div>
-
-          <div className="design-section">
-            <h3 className="subsection-title">VARIACIONES DIGITALES</h3>
-            <div className="design-images">
-              {project1.wireframing.digitalWireframes.sizeVariationsImage.map(
-                (image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`Variación digital ${index + 1}`}
-                  />
-                )
-              )}
             </div>
           </div>
         </section>
@@ -513,50 +474,7 @@ const ProjectDetail1 = () => {
         </section>
 
         <section className="project-detail__section">
-          <h2 className="subsection-title-with-border">
-            DISEÑO VISUAL Y CONSIDERACIONES
-          </h2>
-
-          <h3 className="subsection-title">PALETA DE COLORES</h3>
-          <div className="visual-choices">
-            <div className="color-palette">
-              <ul className="palette-list">
-                <li className="palette-item">
-                  <span className="palette-percent">60%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{ backgroundColor: '#F6F7F8' }}
-                    ></span>
-                    {project1.visualDesign.colorPalette['60']}
-                  </span>
-                </li>
-                <li className="palette-item">
-                  <span className="palette-percent">30%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{ backgroundColor: '#2D3748' }}
-                    ></span>
-                    {project1.visualDesign.colorPalette['30']}
-                  </span>
-                </li>
-                <li className="palette-item">
-                  <span className="palette-percent">10%:</span>
-                  <span className="palette-color">
-                    <span
-                      className="color-sample"
-                      style={{ backgroundColor: '#6C63FF' }}
-                    ></span>
-                    {project1.visualDesign.colorPalette['10']}
-                  </span>
-                </li>
-              </ul>
-              <p className="palette-reasoning">
-                {project1.visualDesign.colorPalette.reasoning}
-              </p>
-            </div>
-          </div>
+          <h2 className="subsection-title-with-border">DISEÑO VISUAL</h2>
 
           <div className="screen-variations">
             <h3 className="subsection-title">TAMAÑO DE PANTALLA ORIGINAL</h3>
@@ -577,24 +495,6 @@ const ProjectDetail1 = () => {
                 src={project1.visualDesign.responsiveDesign.originalScreenSize}
                 alt="Tamaño original"
               />
-            </div>
-
-            <div className="screen-variations-images">
-              <h3 className="subsection-title">
-                VARIACIONES DE TAMAÑO DE PANTALLA
-              </h3>
-              <p className="screen-description">
-                {project1.visualDesign.responsiveDesign.screenExamples}
-              </p>
-              {project1.visualDesign.responsiveDesign.screenSizeVariationsImage.map(
-                (image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`Variación de pantalla ${index + 1}`}
-                  />
-                )
-              )}
             </div>
           </div>
 
@@ -617,14 +517,6 @@ const ProjectDetail1 = () => {
               <div className="prototype-links">
                 <a
                   href={project1.visualDesign.highFidelity.viewPrototypes[0]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn--outline"
-                >
-                  Ver prototipo web
-                </a>
-                <a
-                  href={project1.visualDesign.highFidelity.viewPrototypes[1]}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn--outline"
@@ -710,43 +602,6 @@ const ProjectDetail1 = () => {
               {project1.conclusion.finalConsiderations}
             </p>
           </div>
-
-          {project1.repositories && (
-            <div className="project-detail__links project-detail__links--final">
-              <h2 className="subsection-title-with-border">
-                REPOSITORIO DEL PROYECTO
-              </h2>
-
-              <div className="project-detail__repository-links">
-                {project1.repositories.mobile && (
-                  <a
-                    href={project1.repositories.mobile.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn--outline"
-                  >
-                    <span className="repository-icon">
-                      {project1.repositories.mobile.icon}
-                    </span>
-                    {project1.repositories.mobile.label}
-                  </a>
-                )}
-                {project1.repositories.web && (
-                  <a
-                    href={project1.repositories.web.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn--outline"
-                  >
-                    <span className="repository-icon">
-                      {project1.repositories.web.icon}
-                    </span>
-                    {project1.repositories.web.label}
-                  </a>
-                )}
-              </div>
-            </div>
-          )}
         </section>
       </div>
 

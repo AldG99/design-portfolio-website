@@ -76,9 +76,9 @@ const Header = () => {
               </li>
               <li className="header__menu-item">
                 <Link
-                  to="/about"
-                  className={`header__menu-link ${isActive('/about')}`}
-                  onClick={() => handleNavClick('/about')}
+                  to="/acerca-de-mí"
+                  className={`header__menu-link ${isActive('/acerca-de-mí')}`}
+                  onClick={() => handleNavClick('/acerca-de-mí')}
                 >
                   <span className="header__menu-text">Acerca de mí</span>
                 </Link>

@@ -11,6 +11,41 @@ const About = () => {
       'Alfredo García Diseñador UX/UI & Desarrollador - Acerca de mí';
   }, []);
 
+  const openResume = e => {
+    e.preventDefault();
+
+    const newWindow = window.open('', '_blank');
+
+    if (newWindow) {
+      newWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Alfredo García Diseñador UX/UI & Desarrollador - CV</title>
+          <link rel="icon" type="image/png" href="/my-icon.png">
+          <style>
+            body {
+              margin: 0;
+              padding: 0;
+              height: 100vh;
+              overflow: hidden;
+            }
+            iframe {
+              width: 100%;
+              height: 100%;
+              border: none;
+            }
+          </style>
+        </head>
+        <body>
+          <iframe src="/resume/cv.pdf" type="application/pdf"></iframe>
+        </body>
+        </html>
+      `);
+      newWindow.document.close();
+    }
+  };
+
   return (
     <main className="about">
       <div className="container">
@@ -111,14 +146,9 @@ const About = () => {
             style={{ transitionDelay: '200ms' }}
           >
             <div className="about__download">
-              <a
-                href="/resume/cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn about__view-cv-btn"
-              >
+              <button onClick={openResume} className="btn about__view-cv-btn">
                 Ver CV completo
-              </a>
+              </button>
             </div>
           </div>
 

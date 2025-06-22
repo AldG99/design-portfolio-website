@@ -1,14 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faLinkedin,
-  faGithub,
-  faXTwitter,
-} from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './Footer.scss';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="container">
@@ -33,13 +31,11 @@ const Footer = () => {
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
-              href="https://x.com/AdGame99"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:a.garciaglz17@gmail.com"
               className="footer__social-link"
-              aria-label="X (formerly Twitter)"
+              aria-label="Correo electrónico"
             >
-              <FontAwesomeIcon icon={faXTwitter} />
+              <FontAwesomeIcon icon={faEnvelope} />
             </a>
           </div>
           <div className="footer__copyright">
