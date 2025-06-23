@@ -36,7 +36,7 @@ const project3 = {
 
   research: {
     summary:
-      'Realicé la investigación mediante una encuesta a cuatro propietarios de pequeños negocios para conocer mejor sus intereses y necesidades. Descubrí que los comerciantes priorizaron la rapidez en el registro de ventas por encima de las funciones de inventario. También surgió una necesidad inesperada: contar con predicciones sencillas sobre el reabastecimiento, sin requerir conocimientos estadísticos. Estos hallazgos reorientaron el desarrollo hacia una interfaz ágil para ventas y un sistema de análisis automatizado. La mayoría de las preguntas fueron cuantitativas, pero incluí algunas abiertas, ya que este fue nuestro principal punto de contacto con los usuarios.',
+      'Hice una investigación con una encuesta a cuatro propietarios de pequeños negocios para entender mejor sus intereses y necesidades. Descubrí que los comerciantes priorizaban la rapidez en el registro de ventas por encima de las funciones de inventario. También encontré una necesidad inesperada: querían predicciones sencillas sobre cuándo reabastecer productos, pero sin necesidad de entender estadísticas complejas. Estos hallazgos me llevaron a reorientar el desarrollo hacia una interfaz ágil para ventas y un sistema de análisis automatizado. La mayoría de las preguntas fueron cuantitativas, pero incluí algunas abiertas ya que este fue mi principal punto de contacto con los usuarios.',
     researchImage: '/assets/images/projects/project3/research.png',
     keyIssues: [
       'Los comerciantes tuvieron dificultad para gestionar ventas e inventario durante horas pico, lo que llevó a implementar una interfaz de venta rápida con búsqueda instantánea y sincronización automática con el inventario.',

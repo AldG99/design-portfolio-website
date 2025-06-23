@@ -186,7 +186,7 @@ const About = () => {
               ref={revealRef}
               style={{ transitionDelay: '600ms' }}
             >
-              Si me preguntaran a qué me dedico, les diría:
+              Si me preguntaran a qué me dedico, les diría:{' '}
               <strong>
                 "¿Te has frustrado alguna vez con una app que no entiendes? Mi
                 trabajo es evitar que eso pase"
@@ -209,6 +209,20 @@ const About = () => {
                 computer should be friendly and appeal to non-technical users."
                 <cite>— Susan Kare</cite>
               </blockquote>
+            </div>
+
+            <div
+              className="about__macintosh-image"
+              ref={revealRef}
+              style={{ transitionDelay: '700ms' }}
+            >
+              <img
+                src="/assets/images/macintosh/macintosh.png"
+                alt="Apple Macintosh"
+                draggable="false"
+                className="no-save"
+                onContextMenu={e => e.preventDefault()}
+              />
             </div>
           </div>
         </div>

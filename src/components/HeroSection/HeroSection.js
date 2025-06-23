@@ -68,7 +68,7 @@ const HeroSection = () => {
             <p className="hero-section__bio">
               Me motiva resolver problemas y diseñar soluciones que dejen un
               impacto en la vida de las personas.{' '}
-              <Link to="/about" className="hero-section__about-link">
+              <Link to="/acerca-de-mí" className="hero-section__about-link">
                 Acerca de mí 📖 👉
               </Link>
             </p>
@@ -110,7 +110,7 @@ const HeroSection = () => {
             style={{ transitionDelay: '500ms' }}
           >
             <img
-              src="/assets/images/profile/profile1.jpg"
+              src="/assets/images/profile/profile1.png"
               alt="Foto de perfil"
               draggable="false"
               className="no-save"

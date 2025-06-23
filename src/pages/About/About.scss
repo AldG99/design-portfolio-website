@@ -61,6 +61,7 @@
     line-height: 1.8;
     margin-bottom: $spacing-md;
     color: $text-color;
+
     .title-bio-wrapper & {
       margin-top: 0;
     }
@@ -71,6 +72,7 @@
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
+
     &:hover {
       color: darken($accent-color, 10%);
     }
@@ -128,6 +130,7 @@
     color: $accent-color;
     text-decoration: none;
     transition: color 0.3s ease;
+
     &:hover {
       color: darken($accent-color, 10%);
     }
@@ -153,6 +156,36 @@
     }
   }
 
+  &__macintosh-image {
+    text-align: center;
+    margin: $spacing-xl 0;
+
+    img {
+      max-width: 100px;
+      height: auto;
+      display: inline-block;
+      filter: grayscale(20%);
+      transition: filter 0.3s ease;
+
+      @include md {
+        max-width: 150px;
+      }
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+
+      &.no-save {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    }
+  }
+
   &__details {
     display: grid;
     grid-template-columns: 1fr;
@@ -171,7 +204,6 @@
     justify-content: center;
     width: auto;
     border-radius: 0;
-
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

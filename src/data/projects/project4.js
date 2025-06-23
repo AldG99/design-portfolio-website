@@ -2,7 +2,7 @@ const project4 = {
   id: 4,
   title: 'MediNote',
   shortDescription:
-    'Diseño de aplicación móvil y web que digitaliza la gestión clínica, integrando historiales digitales, recordatorios de tratamientos y búsquedas avanzadas para doctores y enfermeras.',
+    'Crear una aplicación móvil y web que digitaliza la gestión clínica, integrando historiales digitales, recordatorios de tratamientos y búsquedas avanzadas para doctores y enfermeras.',
 
   description:
     'MediNote es una aplicación móvil de gestión médica diseñada para doctores y enfermeras. Permite registrar pacientes con datos completos, crear distintos tipos de historiales clínicos, gestionar recordatorios y alertas por prioridad y fecha, y realizar búsquedas avanzadas. Cuenta con navegación intuitiva y acceso seguro para cada profesional. Está orientada a clínicas pequeñas y medianas, consultorios privados y médicos independientes que buscan digitalizar y optimizar su práctica médica.',
@@ -36,7 +36,7 @@ const project4 = {
 
   research: {
     summary:
-      'La investigación utilizó metodología mixta con profesionales médicos de clínicas pequeñas y consultorios privados, identificando que el 30-40% del tiempo se invierte en búsqueda manual de expedientes físicos y el 60% reporta olvidos frecuentes de citas, con problemas principales de búsqueda ineficiente, falta de recordatorios sistematizados y riesgo de pérdida de información. Tras evaluar tres conceptos de diseño, se seleccionó un enfoque que equilibra funcionalidad y simplicidad, resultando en una arquitectura de seis módulos (Inicio, Pacientes, Registros, Búsqueda, Alertas, Perfil) con principios centrados en eficiencia clínica, acceso rápido y confiabilidad, validada mediante wireframes y feedback de 5 profesionales médicos con flujos críticos priorizados para consulta rápida, registro de pacientes y gestión diaria.',
+      'Realicé una investigación mixta con profesionales médicos de clínicas pequeñas y consultorios privados, descubriendo que dedican entre 30-40% de su tiempo a buscar expedientes físicos manualmente y el 60% olvida citas frecuentemente, con problemas principales de búsqueda ineficiente, falta de recordatorios y riesgo de pérdida de información. Después de evaluar tres conceptos de diseño, elegí un enfoque que balancea funcionalidad y simplicidad, creando una arquitectura de seis módulos (Inicio, Pacientes, Registros, Búsqueda, Alertas, Perfil) con principios enfocados en eficiencia clínica, acceso rápido y confiabilidad. Validé el diseño con wireframes y feedback de 5 profesionales médicos, priorizando los flujos críticos de consulta rápida, registro de pacientes y gestión diaria.',
     researchImage: '/assets/images/projects/project4/research.png',
     keyIssues: [
       'Pérdida significativa de tiempo en búsqueda manual de información que podría dedicarse a atención médica',

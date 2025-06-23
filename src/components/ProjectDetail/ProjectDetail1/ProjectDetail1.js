@@ -1,3 +1,4 @@
+/*
 import React, { useEffect, useState } from 'react';
 import { useScrollReveal } from '../../../context/ScrollRevealContext';
 import project1 from '../../../data/projects/project1';
@@ -620,3 +621,4 @@ const ProjectDetail1 = () => {
 };
 
 export default ProjectDetail1;
+*/

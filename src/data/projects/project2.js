@@ -5,7 +5,7 @@ const project2 = {
   shortDescription:
     'Diseño de aplicación móvil educativa con realidad aumentada que digitaliza el aprendizaje de biología celular, integrando visualización 3D interactiva y exploración de modelos celulares.',
   description:
-    'Siguiendo el marco de UCD (User-Centered Design), diseñé un prototipo de alta fidelidad para una aplicación móvil educativa que utiliza realidad aumentada para transformar el aprendizaje de biología celular a nivel media superior y superior. Cell-AR permite a estudiantes de preparatoria y universidad visualizar, explorar e interactuar con modelos 3D de células eucariotas, procariotas, vegetales y animales directamente desde sus dispositivos móviles, convirtiendo cualquier superficie en un laboratorio de biología avanzado y accesible.',
+    'Diseñé un prototipo de alta fidelidad para una aplicación móvil educativa que utiliza realidad aumentada para transformar el aprendizaje de biología celular a nivel superior. Cell-AR permite a estudiantes universitarios visualizar, explorar e interactuar con modelos 3D de células eucariotas, procariotas, vegetales y animales directamente desde sus dispositivos móviles, convirtiendo cualquier superficie en un laboratorio de biología avanzado y accesible.',
   thumbnail: '/assets/images/projects/project2/thumbnail.png',
   date: 'Febrero - Mayo 2024',
   dateRaw: '2024-05-22',
@@ -13,7 +13,7 @@ const project2 = {
 
   problem:
     'La educación tradicional en biología brinda teoría, pero no facilita la visualización 3D de estructuras celulares, lo que dificulta la comprensión de procesos avanzados. Los estudiantes dependen de diagramas estáticos y microscopios limitados, y muchas instituciones carecen de equipos modernos para prácticas adecuadas.',
-  goal: 'Diseñé un MVP de una aplicación educativa de realidad aumentada llamada Cell-AR, que convierte smartphones en herramientas para explorar células y organelos con detalle molecular. Esta app ofrece a estudiantes de preparatoria y universidad una experiencia inmersiva que mejora significativamente su comprensión y retención de procesos celulares complejos, preparándolos mejor para carreras en ciencias de la vida, medicina y biotecnología.',
+  goal: 'Diseñé una aplicación educativa de realidad aumentada llamada Cell-AR, que convierte smartphones en herramientas para explorar células y organelos con detalle molecular. Esta app ofrece a estudiantes una experiencia inmersiva que mejora significativamente su comprensión y retención de procesos celulares complejos, preparándolos mejor para carreras en ciencias de la vida, medicina y biotecnología.',
   role: 'Participé en todo el proceso de diseño centrado en el usuario, desde la conceptualización hasta el prototipo final. Realicé investigación con estudiantes y profesores, guié la ideación y el prototipado iterativo aplicando design thinking, y validé la experiencia con pruebas de usabilidad.',
   responsibilities: [
     'Diseño de tareas específicas que evalúan comprensión de interfaz AR, efectividad de herramientas de aprendizaje y satisfacción general del usuario.',
