@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getFeaturedProjects, getProjectSlug } from '../../data/projectsIndex';
+import { getFeaturedProjects } from '../../data/projectsList';
 import { useScrollReveal } from '../../context/ScrollRevealContext';
 import './FeaturedProjects.scss';
 
 const FeaturedProjects = () => {
   const { revealRef } = useScrollReveal();
-
   const featuredProjects = getFeaturedProjects(4);
 
   return (
@@ -25,7 +24,7 @@ const FeaturedProjects = () => {
             >
               <div className="featured-projects__content">
                 <Link
-                  to={`/${getProjectSlug(project.title)}`}
+                  to={`/${project.slug}`}
                   className="featured-projects__image-link"
                 >
                   <div className="featured-projects__image">
@@ -47,23 +46,16 @@ const FeaturedProjects = () => {
                     {project.shortDescription}
                   </p>
                   <div className="featured-projects__tools">
-                    {Array.isArray(project.tools) &&
-                    project.tools.length > 0 ? (
-                      project.tools.map((tool, index) => (
-                        <span
-                          key={index}
-                          className={`featured-projects__tool featured-projects__tool--${tool
-                            .toLowerCase()
-                            .replace(/\s+/g, '-')}`}
-                        >
-                          {tool}
-                        </span>
-                      ))
-                    ) : (
-                      <span className="featured-projects__tool">
-                        Sin tecnologías especificadas
+                    {project.tools.map((tool, index) => (
+                      <span
+                        key={index}
+                        className={`featured-projects__tool featured-projects__tool--${tool
+                          .toLowerCase()
+                          .replace(/\s+/g, '-')}`}
+                      >
+                        {tool}
                       </span>
-                    )}
+                    ))}
                   </div>
                 </div>
                 <div className="featured-projects__divider"></div>
