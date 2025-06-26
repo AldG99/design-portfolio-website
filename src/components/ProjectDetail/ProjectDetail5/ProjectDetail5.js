@@ -42,7 +42,7 @@ const ProjectDetail5 = () => {
               <span className="meta-value">Abril - Junio 2025</span>
             </div>
           </div>
-
+          {/*
           <div className="project-detail__tools">
             <span className="tool-tag tool-tag--figma">Figma</span>
             <span className="tool-tag tool-tag--react-native-expo">
@@ -50,6 +50,7 @@ const ProjectDetail5 = () => {
             </span>
             <span className="tool-tag tool-tag--firebase">Firebase</span>
           </div>
+          */}
         </header>
 
         <section className="project-detail__overview">

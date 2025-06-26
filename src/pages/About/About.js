@@ -95,9 +95,16 @@ const About = () => {
                 , donde completé la{' '}
                 <strong>Ingeniería en Tecnologías de la Información</strong>.
                 Posteriormente, me formé en el programa{' '}
-                <strong>Google UX Design Professional</strong>, donde adquirí
-                experiencia en la interacción entre las personas y la
-                tecnología, enfocándome en diseñar soluciones que realmente
+                <a
+                  href="https://www.credly.com/badges/c15aa494-4574-41d9-b97d-a862a9ccbeb6/public_url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about__link"
+                >
+                  <strong>Google UX Design Professional</strong>
+                </a>
+                , donde adquirí experiencia en la interacción entre las personas
+                y la tecnología, enfocándome en diseñar soluciones que realmente
                 respondan a las necesidades de los usuarios.
               </p>
               <p

@@ -23,15 +23,14 @@
   }
 
   .project-title {
-    font-size: $font-size-xl;
-    font-weight: 300;
+    font-size: $font-size-xxxl;
+    font-weight: 700;
+    font-family: $font-primary;
     color: $text-color;
     margin: 0;
-    margin-bottom: $spacing-xs;
 
     @media (min-width: $breakpoint-md) {
-      font-size: $font-size-xxl;
-      margin-bottom: $spacing-sm;
+      font-size: $font-size-xxxl;
     }
   }
 
@@ -568,25 +567,30 @@
   }
 
   &__improvement-opportunities {
+    .opportunities-grid {
+      display: block;
+      margin: $spacing-md 0;
+    }
+
     .opportunity-card {
       margin-bottom: $spacing-lg;
 
-      .opportunity-title {
-        font-size: $font-size-sm;
+      .finding-area {
+        font-size: $font-size-md;
         font-weight: 600;
         margin-bottom: $spacing-xs;
+        color: $accent-color;
+      }
+
+      .finding-description {
+        font-size: $font-size-sm;
+        line-height: 1.6;
+        color: $text-color;
+        margin-bottom: $spacing-sm;
 
         @media (min-width: $breakpoint-md) {
           font-size: $font-size-md;
-        }
-      }
-
-      .opportunity-description {
-        font-size: $font-size-xs;
-        color: color.adjust($text-color, $lightness: 20%);
-
-        @media (min-width: $breakpoint-md) {
-          font-size: $font-size-sm;
+          margin-bottom: $spacing-md;
         }
       }
     }

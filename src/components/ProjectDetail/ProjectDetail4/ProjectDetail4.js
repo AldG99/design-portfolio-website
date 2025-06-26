@@ -42,7 +42,7 @@ const ProjectDetail4 = () => {
               <span className="meta-value">Febrero - Abril 2025</span>
             </div>
           </div>
-
+          {/*
           <div className="project-detail__tools">
             <span className="tool-tag tool-tag--figma">Figma</span>
             <span className="tool-tag tool-tag--scss">SCSS</span>
@@ -52,6 +52,7 @@ const ProjectDetail4 = () => {
             </span>
             <span className="tool-tag tool-tag--firebase">Firebase</span>
           </div>
+          */}
         </header>
 
         <section className="project-detail__overview">
@@ -145,19 +146,14 @@ const ProjectDetail4 = () => {
           <div className="project-detail__understanding">
             <p className="understanding-text">
               Realicé una <strong>investigación mixta</strong> con profesionales
-              médicos de clínicas pequeñas y consultorios privados, descubriendo
-              que dedican entre <strong>30-40% de su tiempo</strong> a buscar
-              expedientes físicos manualmente y el 60% olvida citas
-              frecuentemente, con problemas principales de búsqueda ineficiente,
-              falta de recordatorios y riesgo de pérdida de información. Después
-              de evaluar tres conceptos de diseño, elegí un enfoque que balancea{' '}
+              médicos de clínicas pequeñas y consultorios privados, con
+              problemas principales de búsqueda ineficiente, falta de
+              recordatorios y riesgo de pérdida de información. Después de
+              evaluar tres conceptos de diseño, elegí un enfoque que balancea{' '}
               <strong>funcionalidad y simplicidad</strong>, creando una
               arquitectura de seis módulos (Inicio, Pacientes, Registros,
               Búsqueda, Alertas, Perfil) con principios enfocados en eficiencia
-              clínica, acceso rápido y confiabilidad. Validé el diseño con
-              wireframes y feedback de <strong>5 profesionales médicos</strong>,
-              priorizando los flujos críticos de consulta rápida, registro de
-              pacientes y gestión diaria.
+              clínica, acceso rápido y confiabilidad.
             </p>
             <div className="understanding-image">
               <img
@@ -505,26 +501,26 @@ const ProjectDetail4 = () => {
             <div className="project-detail__improvement-opportunities">
               <div className="opportunities-grid">
                 <div className="opportunity-card">
-                  <h4 className="opportunity-title">Acceso inmediato</h4>
-                  <p className="opportunity-description">
+                  <h4 className="finding-area">Acceso inmediato</h4>
+                  <p className="finding-description">
                     Eliminar búsqueda de expedientes físicos
                   </p>
                 </div>
                 <div className="opportunity-card">
-                  <h4 className="opportunity-title">Información clara</h4>
-                  <p className="opportunity-description">
+                  <h4 className="finding-area">Información clara</h4>
+                  <p className="finding-description">
                     Historial digital organizado cronológicamente
                   </p>
                 </div>
                 <div className="opportunity-card">
-                  <h4 className="opportunity-title">Recordatorios</h4>
-                  <p className="opportunity-description">
+                  <h4 className="finding-area">Recordatorios</h4>
+                  <p className="finding-description">
                     Sistema de alertas para seguimientos
                   </p>
                 </div>
                 <div className="opportunity-card">
-                  <h4 className="opportunity-title">Reportes automáticos</h4>
-                  <p className="opportunity-description">
+                  <h4 className="finding-area">Reportes automáticos</h4>
+                  <p className="finding-description">
                     Generación de documentos médicos
                   </p>
                 </div>

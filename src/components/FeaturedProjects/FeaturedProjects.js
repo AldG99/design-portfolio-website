@@ -45,6 +45,7 @@ const FeaturedProjects = () => {
                   <p className="featured-projects__description">
                     {project.shortDescription}
                   </p>
+                  {/*
                   <div className="featured-projects__tools">
                     {project.tools.map((tool, index) => (
                       <span
@@ -57,6 +58,7 @@ const FeaturedProjects = () => {
                       </span>
                     ))}
                   </div>
+                  */}
                 </div>
                 <div className="featured-projects__divider"></div>
               </div>

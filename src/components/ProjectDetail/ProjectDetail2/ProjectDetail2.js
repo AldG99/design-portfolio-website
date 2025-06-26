@@ -42,12 +42,13 @@ const ProjectDetail2 = () => {
               <span className="meta-value">Febrero - Mayo 2024</span>
             </div>
           </div>
-
+          {/*
           <div className="project-detail__tools">
             <span className="tool-tag tool-tag--figma">Figma</span>
             <span className="tool-tag tool-tag--blender">Blender</span>
             <span className="tool-tag tool-tag--unity">Unity</span>
           </div>
+          */}
         </header>
 
         <section className="project-detail__overview">
@@ -616,7 +617,8 @@ const ProjectDetail2 = () => {
               <div className="detail-item">
                 <span className="detail-label">Participantes:</span>
                 <span className="detail-value">
-                  6 Estudiantes universitarios (19-22 años)
+                  1 Docente (46 años) y 5 Estudiantes universitarios (19-22
+                  años)
                 </span>
               </div>
               <div className="detail-item">

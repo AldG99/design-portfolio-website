@@ -46,6 +46,7 @@ const Projects = () => {
                 <p className="project-item__description">
                   {project.shortDescription}
                 </p>
+                {/*
                 <div className="project-item__tools">
                   {project.tools.map((tool, index) => (
                     <span
@@ -58,6 +59,7 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                */}
                 <Link to={`/${project.slug}`} className="project-item__button">
                   Ver proyecto
                 </Link>
