@@ -1,4 +1,10 @@
 /* Este archivo es para resets CSS básicos y globals */
+/* Importar fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Definir variable de fuente */
+$font-primary: 'Quicksand', sans-serif;
+
 *,
 *::before,
 *::after {
