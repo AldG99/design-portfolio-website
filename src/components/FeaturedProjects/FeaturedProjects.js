@@ -20,7 +20,6 @@ const FeaturedProjects = () => {
               key={project.id}
               className="featured-projects__item"
               ref={revealRef}
-              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="featured-projects__content">
                 <Link
@@ -45,7 +44,6 @@ const FeaturedProjects = () => {
                   <p className="featured-projects__description">
                     {project.shortDescription}
                   </p>
-                  {/*
                   <div className="featured-projects__tools">
                     {project.tools.map((tool, index) => (
                       <span
@@ -58,7 +56,6 @@ const FeaturedProjects = () => {
                       </span>
                     ))}
                   </div>
-                  */}
                 </div>
                 <div className="featured-projects__divider"></div>
               </div>
