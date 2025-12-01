@@ -12,7 +12,7 @@ const Projects = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Alfredo García Diseñador UX/UI & Desarrollador - Trabajo';
+    document.title = 'Trabajo — Alfredo García';
   }, []);
 
   return (
@@ -20,12 +20,7 @@ const Projects = () => {
       <div className="container">
         <div className="projects-page__list">
           {projects.map((project, index) => (
-            <div
-              className="project-item"
-              key={project.id}
-              ref={revealRef}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
+            <div className="project-item" key={project.id} ref={revealRef}>
               <Link
                 to={`/${project.slug}`}
                 className="project-item__thumbnail-link"
@@ -46,7 +41,6 @@ const Projects = () => {
                 <p className="project-item__description">
                   {project.shortDescription}
                 </p>
-                {/*
                 <div className="project-item__tools">
                   {project.tools.map((tool, index) => (
                     <span
@@ -59,7 +53,6 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                */}
                 <Link to={`/${project.slug}`} className="project-item__button">
                   Ver proyecto
                 </Link>
