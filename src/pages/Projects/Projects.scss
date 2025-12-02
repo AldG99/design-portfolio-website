@@ -73,7 +73,7 @@
 
   &__title {
     font-size: $font-size-xl;
-    font-weight: 700;
+    font-weight: 600;
     color: $text-color;
     margin-bottom: $spacing-sm;
   }
@@ -141,6 +141,11 @@
       background-color: #f8c297;
       color: #333333;
     }
+
+    &--csharp {
+      background-color: #c5a3d9;
+      color: #333333;
+    }
   }
 
   &__button {
@@ -165,7 +170,6 @@
 
     &:hover {
       background-color: rgba($accent-color, 0.1);
-      transform: translateY(-2px);
     }
   }
 }
