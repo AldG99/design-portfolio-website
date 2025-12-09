@@ -1,26 +1,55 @@
+/* 
+ * Importa las variables globales del proyecto
+ * Contiene colores, tamaños de fuente, espaciados, etc.
+ */
 @import '../../styles/variables';
+
+/* 
+  * Importa los mixins reutilizables
+  * Contiene funciones CSS que se pueden usar en múltiples lugares
+  */
 @import '../../styles/mixins';
 
+/* 
+  * Estilos para la página principal (Home)
+  * Aplica un margen superior para compensar el header fijo
+  */
 .home {
-  margin-top: 100px;
+  margin-top: 100px; // Espacio superior más amplio para la página principal
 }
 
+/* 
+  * Estilos para la página "Acerca de"
+  * Padding vertical usando variable del sistema de diseño
+  */
 .about {
-  padding: $spacing-xxl 0;
-  margin-top: 60px;
+  padding: $spacing-xxl 0; // Padding vertical extra grande (top y bottom)
+  margin-top: 60px; // Margen superior para separar del header
 }
 
+/* 
+  * Estilos para la página de listado de proyectos
+  * Mantiene consistencia con otras páginas internas
+  */
 .projects-page {
-  padding: $spacing-xxl 0;
-  margin-top: 60px;
+  padding: $spacing-xxl 0; // Padding vertical consistente con otras páginas
+  margin-top: 60px; // Margen superior estándar para páginas internas
 }
 
+/* 
+  * Estilos para la página de detalle de proyecto individual
+  * Margen superior reducido para mejor transición visual
+  */
 .project-detail {
-  padding: $spacing-xxl 0;
-  margin-top: 30px;
+  padding: $spacing-xxl 0; // Padding vertical para contenido del proyecto
+  margin-top: 30px; // Margen superior menor para detalle de proyecto
 }
 
+/* 
+  * Estilos para la sección hero
+  * Componente destacado que aparece en la parte superior
+  */
 .hero-section {
-  padding: $spacing-xxl 0;
-  margin-top: 60px;
+  padding: $spacing-xxl 0; // Padding vertical generoso para impacto visual
+  margin-top: 60px; // Margen superior para separar del header
 }
