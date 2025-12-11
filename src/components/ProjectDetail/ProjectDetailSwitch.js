@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { getProjectBySlug } from '../../data/projectsList';
+import ProjectDetail1 from './ProjectDetail1/ProjectDetail1';
 import ProjectDetail2 from './ProjectDetail2/ProjectDetail2';
 import ProjectDetail3 from './ProjectDetail3/ProjectDetail3';
 import ProjectDetail4 from './ProjectDetail4/ProjectDetail4';
@@ -15,6 +16,8 @@ const ProjectDetailSwitch = () => {
   }
 
   switch (projectSlug) {
+    case 'mikky-jump':
+      return <ProjectDetail1 />;
     case 'cell-ar':
       return <ProjectDetail2 />;
     case 'inventa-analyt':
