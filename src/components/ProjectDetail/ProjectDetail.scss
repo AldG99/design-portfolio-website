@@ -24,7 +24,7 @@
 
   .project-title {
     font-size: $font-size-xxxl;
-    font-weight: 700;
+    font-weight: 600;
     font-family: $font-primary;
     color: $text-color;
     margin: 0;
@@ -36,7 +36,7 @@
 
   .subsection-title {
     font-size: $font-size-md;
-    font-weight: 400;
+    font-weight: 600;
     color: $text-color;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -49,7 +49,7 @@
 
   .subsection-title-with-border {
     font-size: $font-size-md;
-    font-weight: 400;
+    font-weight: 600;
     color: $text-color;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -64,7 +64,7 @@
 
   h2.subsection-title-with-border {
     font-size: $font-size-md;
-    font-weight: 400;
+    font-weight: 600;
     color: $text-color;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -103,6 +103,8 @@
   }
 
   .hero-image {
+    position: relative;
+    margin-top: $spacing-xs;
     margin-bottom: $spacing-lg;
 
     &--full-width {
@@ -121,6 +123,100 @@
         margin-right: -#{$spacing-xl};
         width: calc(100% + #{$spacing-xl * 2});
       }
+    }
+
+    .scroll-down-btn {
+      position: absolute;
+      bottom: $spacing-lg;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $primary-color;
+      backdrop-filter: blur(8px);
+      border: 1px solid $accent-color;
+      padding: $spacing-sm $spacing-md;
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: $font-primary;
+      font-size: $font-size-xs;
+      color: $accent-color;
+      opacity: 0;
+      animation: fadeInBounce 2s ease-out 1s forwards;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-size-sm;
+        padding: $spacing-sm $spacing-lg;
+        bottom: $spacing-xl;
+      }
+
+      &:hover {
+        background: $accent-color;
+        color: $primary-color;
+        transform: translateX(-50%) translateY(-4px);
+
+        .scroll-down-arrow {
+          transform: translateY(2px);
+        }
+      }
+
+      &:active {
+        transform: translateX(-50%) translateY(-2px);
+      }
+
+      .scroll-down-text {
+        font-weight: 500;
+        white-space: nowrap;
+        user-select: none;
+
+        @media (max-width: #{$breakpoint-sm - 1px}) {
+          display: none;
+        }
+      }
+
+      .scroll-down-arrow {
+        width: 18px;
+        height: 18px;
+        transition: transform 0.3s ease;
+        animation: bounceArrow 2s ease-in-out infinite;
+
+        @media (min-width: $breakpoint-md) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  @keyframes fadeInBounce {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  @keyframes bounceArrow {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-3px);
+    }
+    60% {
+      transform: translateY(-2px);
     }
   }
 
@@ -195,6 +291,11 @@
 
       &--blender {
         background-color: #f8c297;
+        color: #333333;
+      }
+
+      &--csharp {
+        background-color: #c5a3d9;
         color: #333333;
       }
     }
@@ -305,6 +406,7 @@
 
       .row-label {
         font-size: 0.8rem !important;
+        font-weight: 600;
 
         &:hover {
           color: $accent-color !important;
@@ -596,6 +698,198 @@
     }
   }
 
+  &__hierarchy-opportunities {
+    .opportunities-grid {
+      display: block;
+      margin: $spacing-md 0;
+    }
+
+    .opportunity-card {
+      margin-bottom: $spacing-lg;
+
+      .finding-area {
+        font-size: $font-size-md;
+        font-weight: 600;
+        margin-bottom: $spacing-xs;
+        color: $accent-color;
+      }
+
+      .finding-description {
+        font-size: $font-size-sm;
+        line-height: 1.6;
+        color: $text-color;
+        margin-bottom: $spacing-sm;
+
+        @media (min-width: $breakpoint-md) {
+          font-size: $font-size-md;
+          margin-bottom: $spacing-md;
+        }
+      }
+    }
+
+    .hierarchy-explanation {
+      font-size: $font-size-sm;
+      line-height: 1.6;
+      color: $text-color;
+      margin-top: $spacing-md;
+      font-style: italic;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-size-md;
+      }
+    }
+  }
+
+  .gameplay-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    margin: $spacing-md 0;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+      justify-content: center;
+      gap: $spacing-lg;
+      max-width: 600px;
+      margin: $spacing-lg auto;
+    }
+
+    .demo-section {
+      flex: 1;
+      max-width: 100%;
+
+      @media (min-width: $breakpoint-md) {
+        max-width: 250px;
+      }
+
+      .demo-description {
+        font-size: $font-size-sm;
+        line-height: 1.6;
+        color: $text-color;
+        margin-bottom: $spacing-md;
+
+        @media (min-width: $breakpoint-md) {
+          font-size: $font-size-md;
+          margin-bottom: $spacing-lg;
+        }
+      }
+
+      .demo-image {
+        margin: 0;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: $border-radius-md;
+          box-shadow: $shadow-sm;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          pointer-events: none;
+          -webkit-touch-callout: none;
+          -webkit-user-drag: none;
+          -khtml-user-drag: none;
+          -moz-user-drag: none;
+          -o-user-drag: none;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: $shadow-md;
+          }
+
+          &.clickable-image {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .demo-caption {
+        font-size: $font-size-sm;
+        color: color.adjust($text-color, $lightness: 40%);
+        text-align: center;
+        margin: $spacing-sm 0 0 0;
+        font-weight: 500;
+        font-style: italic;
+
+        @media (min-width: $breakpoint-md) {
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+
+  .design-techniques {
+    .technique-item {
+      .technique-gifs-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
+        margin-top: $spacing-md;
+
+        @media (min-width: $breakpoint-md) {
+          grid-template-columns: 1fr 1fr;
+          gap: $spacing-lg;
+        }
+
+        .gif-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+
+          img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+            user-select: none;
+
+            @media (min-width: $breakpoint-md) {
+              max-height: 600px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .iconography-principles {
+    margin-top: $spacing-md;
+
+    .principles-title {
+      color: $accent-color;
+      font-size: $font-size-sm;
+      font-weight: 600;
+      margin-bottom: $spacing-sm;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-size-md;
+      }
+    }
+
+    .principles-list {
+      list-style: none;
+      padding: 0;
+      margin: $spacing-md 0;
+
+      li {
+        position: relative;
+        padding-left: $spacing-md;
+        margin-bottom: $spacing-xs;
+
+        &::before {
+          content: '→';
+          position: absolute;
+          left: 0;
+          color: $accent-color;
+        }
+      }
+    }
+  }
+
   .btn {
     display: inline-block;
     padding: $spacing-sm $spacing-md;
@@ -791,6 +1085,7 @@
 
     .lessons-title {
       font-size: $font-size-md;
+      font-weight: 600;
       color: $accent-color;
     }
 
@@ -834,20 +1129,6 @@
         max-width: 100%;
         max-height: 90vh;
         object-fit: contain;
-      }
-    }
-
-    &__close {
-      position: absolute;
-      top: -40px;
-      right: 0;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-      padding: $spacing-xs;
-
-      &:hover {
-        opacity: 0.8;
       }
     }
   }
