@@ -4,11 +4,11 @@ const projectsList = [
     title: 'SportCampus',
     slug: 'sport-campus',
     shortDescription:
-      'Diseño de aplicación móvil que digitaliza el deporte universitario, integrando gestión de equipos, estadísticas y eventos multimedia para estudiantes y entrenadores.',
+      'Diseño y desarrollo del front-end de una app móvil que digitaliza el deporte universitario, integrando gestión de equipos, estadísticas y eventos multimedia para estudiantes y entrenadores.',
     thumbnail: '/assets/images/projects/project5/thumbnail.png',
-    date: 'Abril - Junio 2025',
-    dateRaw: '2025-06-01',
-    tools: ['Figma', 'React Native Expo', 'Firebase'],
+    date: 'Mayo - Julio 2025',
+    dateRaw: '2025-07-08',
+    tools: ['Figma', 'React Native Expo'],
     featured: true,
   },
   {
@@ -18,8 +18,8 @@ const projectsList = [
     shortDescription:
       'Crear una aplicación móvil y web que digitaliza la gestión clínica, integrando historiales digitales, recordatorios de tratamientos y búsquedas avanzadas para doctores y enfermeras.',
     thumbnail: '/assets/images/projects/project4/thumbnail.png',
-    date: 'Febrero - Abril 2025',
-    dateRaw: '2025-04-01',
+    date: 'Febrero - Mayo 2025',
+    dateRaw: '2025-05-01',
     tools: ['Figma', 'SCSS', 'React', 'React Native Expo', 'Firebase'],
     featured: true,
   },
@@ -28,7 +28,7 @@ const projectsList = [
     title: 'INVENTA-ANALYT',
     slug: 'inventa-analyt',
     shortDescription:
-      'Diseño de aplicación móvil y web que digitaliza la gestión de pequeños negocios, integrando inventario, ventas y análisis de rendimiento para propietarios comerciales.',
+      'Diseño y desarrollo de aplicación móvil y web para digitalizar la gestión de pequeños negocios, integrando control de inventario, registro de ventas y análisis de rendimiento para propietarios comerciales.',
     thumbnail: '/assets/images/projects/project3/thumbnail.png',
     date: 'Diciembre 2024 - Febrero 2025',
     dateRaw: '2025-02-01',
@@ -40,11 +40,23 @@ const projectsList = [
     title: 'Cell-AR',
     slug: 'cell-ar',
     shortDescription:
-      'Diseño de aplicación móvil educativa con realidad aumentada que digitaliza el aprendizaje de biología celular, integrando visualización 3D interactiva y exploración de modelos celulares.',
+      'Diseño y desarrollo de una aplicación móvil educativa con realidad aumentada, que digitaliza el aprendizaje de biología celular mediante visualización 3D interactiva y exploración de modelos celulares.',
     thumbnail: '/assets/images/projects/project2/thumbnail.png',
-    date: 'Febrero - Mayo 2024',
+    date: 'Enero - Mayo 2024',
     dateRaw: '2024-05-01',
     tools: ['Figma', 'Blender', 'Unity'],
+    featured: true,
+  },
+  {
+    id: 1,
+    title: 'Mikky Jump',
+    slug: 'mikky-jump',
+    shortDescription:
+      'Desarrollo de un juego de plataforma 2D, con saltos precisos y obstáculos, optimizando la interfaz para garantizar una navegación clara, fluida y accesible.',
+    thumbnail: '/assets/images/projects/project1/thumbnail.png',
+    date: 'Septiembre - Diciembre 2023',
+    dateRaw: '2023-12-01',
+    tools: ['Figma', 'Unity'],
     featured: true,
   },
 ];
