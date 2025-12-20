@@ -8,12 +8,31 @@ const ProjectDetail2 = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Alfredo García Diseñador UX/UI & Desarrollador - Cell-AR`;
+    document.title = `Cell-AR — Alfredo García`;
   }, []);
 
   const openImageModal = imageUrl => {
     setSelectedImage(imageUrl);
     document.body.style.overflow = 'hidden';
+  };
+
+  const scrollToTitle = () => {
+    const titleElement = document.querySelector('.project-title');
+    const headerElement =
+      document.querySelector('header') ||
+      document.querySelector('.header') ||
+      document.querySelector('nav');
+
+    if (titleElement) {
+      const titlePosition = titleElement.offsetTop;
+      const headerHeight = headerElement ? headerElement.offsetHeight : 80;
+      const offset = 24;
+
+      window.scrollTo({
+        top: titlePosition - headerHeight - offset,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const closeImageModal = () => {
@@ -33,28 +52,46 @@ const ProjectDetail2 = () => {
               className="no-save"
               onContextMenu={e => e.preventDefault()}
             />
+            <button
+              className="scroll-down-btn"
+              onClick={scrollToTitle}
+              aria-label="Deslizar hacia abajo para ver contenido"
+            >
+              <span className="scroll-down-text">Deslizar hacia abajo</span>
+              <svg
+                className="scroll-down-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M7 10L12 15L17 10"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
 
           <h1 className="project-title">Cell-AR</h1>
 
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
-              <span className="meta-value">Febrero - Mayo 2024</span>
+              <span className="meta-value">Enero - Mayo 2024</span>
             </div>
           </div>
-          {/*
           <div className="project-detail__tools">
             <span className="tool-tag tool-tag--figma">Figma</span>
             <span className="tool-tag tool-tag--blender">Blender</span>
             <span className="tool-tag tool-tag--unity">Unity</span>
           </div>
-          */}
         </header>
 
         <section className="project-detail__overview">
           <h2 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h2>
           <p className="overview-text">
-            Diseñé un prototipo de alta fidelidad para una aplicación móvil
+            Diseño un prototipo de alta fidelidad para una aplicación móvil
             educativa que utiliza realidad aumentada para transformar el
             aprendizaje de biología celular a nivel superior. Cell-AR permite a
             estudiantes universitarios visualizar, explorar e interactuar con
@@ -81,13 +118,12 @@ const ProjectDetail2 = () => {
             <div className="project-detail__goal">
               <h3 className="subsection-title">OBJETIVO</h3>
               <p className="goal-text">
-                Diseñé una aplicación educativa de realidad aumentada llamada
-                Cell-AR, que convierte smartphones en herramientas para explorar
-                células y organelos con detalle molecular. Esta app ofrece a
-                estudiantes una experiencia inmersiva que mejora
-                significativamente su comprensión y retención de procesos
-                celulares complejos, preparándolos mejor para carreras en
-                ciencias de la vida, medicina y biotecnología.
+                Diseñé Cell-AR, una aplicación educativa de realidad aumentada
+                que convierte smartphones en herramientas para explorar células
+                y organelos a nivel molecular. La app ofrece una experiencia
+                inmersiva que mejora la comprensión y retención de procesos
+                celulares, beneficiando a estudiantes en ciencias de la vida,
+                medicina y biotecnología.
               </p>
             </div>
           </div>
@@ -95,11 +131,15 @@ const ProjectDetail2 = () => {
           <div className="project-detail__role">
             <h3 className="subsection-title">MI ROL</h3>
             <p className="role-text">
-              Participé en todo el proceso de diseño centrado en el usuario,
-              desde la conceptualización hasta el prototipo final. Realicé
-              investigación con estudiantes y profesores, guié la ideación y el
-              prototipado iterativo aplicando design thinking, y validé la
-              experiencia con pruebas de usabilidad.
+              Participo en todo el proceso de diseño centrado en el usuario,
+              desde la conceptualización hasta el prototipo final, para una
+              aplicación de realidad aumentada de células biológicas. Realizo
+              investigación con estudiantes y profesores, guío la ideación y el
+              prototipado iterativo aplicando design thinking, y valido la
+              experiencia con pruebas de usabilidad. La aplicación se programa
+              en C# con Unity, incluyendo la creación de modelos 3D interactivos
+              y la detección de imágenes para la carga de las células,
+              permitiendo una exploración educativa y visualmente atractiva.
             </p>
           </div>
 
@@ -120,11 +160,6 @@ const ProjectDetail2 = () => {
                 procariotas, vegetales y animales utilizando Blender para crear
                 assets optimizados para experiencias AR móviles.
               </li>
-              <li className="responsibility-item">
-                Optimización de geometría y texturas para mantener alta calidad
-                visual mientras se asegura rendimiento fluido en dispositivos
-                móviles de gama media.
-              </li>
             </ul>
           </div>
         </section>
@@ -134,14 +169,17 @@ const ProjectDetail2 = () => {
 
           <div className="project-detail__understanding">
             <p className="understanding-text">
-              Se realizó una <strong>investigación cuantitativa</strong>{' '}
-              mediante encuestas dirigidas a estudiantes y profesores para
-              comprender las necesidades en el aprendizaje de biología celular.
-              El objetivo fue identificar dificultades en la comprensión de{' '}
-              <strong>estructuras celulares</strong>, evaluar la efectividad de
-              los métodos tradicionales, medir la apertura hacia el uso de{' '}
-              <strong>realidad aumentada en educación</strong> y validar el
-              interés en una solución AR accesible y de alta calidad.
+              Se realizó{' '}
+              <strong style={{ fontWeight: 600 }}>
+                investigación cuantitativa
+              </strong>{' '}
+              con estudiantes y profesores para identificar dificultades en{' '}
+              <strong style={{ fontWeight: 600 }}>estructuras celulares</strong>
+              , evaluar métodos tradicionales y medir apertura hacia{' '}
+              <strong style={{ fontWeight: 600 }}>
+                realidad aumentada en educación
+              </strong>
+              .
             </p>
             <div className="understanding-image">
               <img
@@ -155,21 +193,25 @@ const ProjectDetail2 = () => {
             </h3>
             <ol className="key-issues-list">
               <li className="key-issue-item">
-                Dificultad significativa para visualizar{' '}
-                <strong>estructuras celulares en tres dimensiones</strong>, lo
-                que impide la comprensión espacial de organelos y sus relaciones
-                internas.
+                Dificultad para visualizar{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  estructuras celulares en tres dimensiones
+                </strong>
+                , impidiendo comprensión espacial de organelos.
               </li>
               <li className="key-issue-item">
-                La carencia de herramientas efectivas para comprender{' '}
-                <strong>escalas y proporciones microscópicas</strong>, generando
-                confusión sobre los tamaños relativos de células y organelos.
+                Carencia de herramientas para comprender{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  escalas y proporciones microscópicas
+                </strong>
+                , generando confusión sobre tamaños relativos.
               </li>
               <li className="key-issue-item">
-                Dificultad para retener y organizar información sobre{' '}
-                <strong>funciones específicas de organelos</strong>,
-                evidenciando un enfoque memorístico sin comprensión conceptual
-                profunda.
+                Dificultad para retener información sobre{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  funciones específicas de organelos
+                </strong>
+                , evidenciando enfoque memorístico sin comprensión profunda.
               </li>
             </ol>
 
@@ -237,13 +279,9 @@ const ProjectDetail2 = () => {
                     data-competitor="Complete HeartX"
                   >
                     <p className="competitor-description">
-                      Aplicación de realidad aumentada desarrollada por Stanford
-                      Medicine que permite a usuarios explorar un corazón humano
-                      completo en 3D. Utiliza modelos anatómicos detallados para
-                      enseñar estructura cardíaca, función y patologías comunes.
-                      Los usuarios pueden manipular el modelo, activar
-                      animaciones de bombeo y explorar diferentes capas del
-                      órgano.
+                      App de realidad aumentada de Stanford Medicine que permite
+                      explorar un corazón humano en 3D con animaciones y modelos
+                      anatómicos detallados.
                     </p>
                   </div>
                   <div
@@ -251,13 +289,9 @@ const ProjectDetail2 = () => {
                     data-competitor="Bacteria 3D AR"
                   >
                     <p className="competitor-description">
-                      Aplicación de realidad aumentada especializada en
-                      microbiología que permite visualizar diferentes tipos de
-                      bacterias y microorganismos en 3D. Los usuarios pueden
-                      explorar estructuras procariotas, observar procesos como
-                      división celular bacteriana y comparar morfologías de
-                      diferentes especies microbianas mediante modelos AR
-                      interactivos colocados en superficies reales.
+                      App de realidad aumentada especializada en microbiología
+                      que visualiza bacterias y microorganismos en 3D con
+                      procesos celulares interactivos.
                     </p>
                   </div>
                   <div
@@ -265,14 +299,9 @@ const ProjectDetail2 = () => {
                     data-competitor="Cell & Cell Structure 3D"
                   >
                     <p className="competitor-description">
-                      Aplicación educativa 3D enfocada específicamente en la
-                      visualización de células y organelos celulares. Permite
-                      explorar modelos detallados de células eucariotas y
-                      procariotas, con funciones de zoom para examinar
-                      estructuras subcelulares como núcleo, mitocondrias,
-                      ribosomas y retículo endoplásmico. Incluye información
-                      textual sobre función de cada organelo y comparaciones
-                      entre tipos celulares.
+                      App educativa 3D enfocada en células y organelos con
+                      modelos detallados de estructuras eucariotas y
+                      procariotas.
                     </p>
                   </div>
                 </div>
@@ -287,20 +316,11 @@ const ProjectDetail2 = () => {
                   >
                     <ul className="competitor-list strengths">
                       <li>
-                        Modelos 3D extremadamente detallados y científicamente
-                        precisos validados por Stanford Medicine
+                        Modelos 3D precisos validados por Stanford Medicine
                       </li>
-                      <li>
-                        Animaciones fluidas que muestran función cardíaca en
-                        tiempo real
-                      </li>
-                      <li>
-                        Interface intuitiva con gestos AR naturales para
-                        rotación y zoom
-                      </li>
-                      <li>
-                        Contenido respaldado por institución médica prestigiosa
-                      </li>
+                      <li>Animaciones fluidas de función cardíaca</li>
+                      <li>Interface AR intuitiva con gestos naturales</li>
+                      <li>Respaldo de institución médica prestigiosa</li>
                     </ul>
                   </div>
                   <div
@@ -308,18 +328,9 @@ const ProjectDetail2 = () => {
                     data-competitor="Bacteria 3D AR"
                   >
                     <ul className="competitor-list strengths">
-                      <li>
-                        Modelos AR específicos de células procariotas con
-                        precisión microbiológica
-                      </li>
-                      <li>
-                        Visualización de procesos únicos como conjugación
-                        bacteriana y esporulación
-                      </li>
-                      <li>
-                        Información contextualizada sobre patogenicidad y
-                        aplicaciones biotecnológicas
-                      </li>
+                      <li>Modelos AR específicos de células procariotas</li>
+                      <li>Visualización de procesos bacterianos únicos</li>
+                      <li>Información sobre patogenicidad y biotecnología</li>
                     </ul>
                   </div>
                   <div
@@ -327,22 +338,10 @@ const ProjectDetail2 = () => {
                     data-competitor="Cell & Cell Structure 3D"
                   >
                     <ul className="competitor-list strengths">
-                      <li>
-                        Enfoque específico en biología celular con modelos
-                        dedicados de organelos
-                      </li>
-                      <li>
-                        Comparación directa entre células eucariotas y
-                        procariotas en una misma plataforma
-                      </li>
-                      <li>
-                        Información científica básica integrada sobre función de
-                        cada estructura celular
-                      </li>
-                      <li>
-                        Interface simplificada diseñada para estudiantes de
-                        nivel medio y superior
-                      </li>
+                      <li>Enfoque específico en biología celular</li>
+                      <li>Comparación directa eucariotas vs procariotas</li>
+                      <li>Información científica integrada</li>
+                      <li>Interface simplificada para estudiantes</li>
                     </ul>
                   </div>
                 </div>
@@ -356,13 +355,8 @@ const ProjectDetail2 = () => {
                     data-competitor="Complete HeartX"
                   >
                     <ul className="competitor-list weaknesses">
-                      <li>
-                        Enfoque limitado únicamente al sistema cardiovascular
-                      </li>
-                      <li>
-                        Falta de funciones de evaluación o seguimiento de
-                        progreso
-                      </li>
+                      <li>Limitado únicamente al sistema cardiovascular</li>
+                      <li>Sin funciones de evaluación o progreso</li>
                     </ul>
                   </div>
                   <div
@@ -370,17 +364,10 @@ const ProjectDetail2 = () => {
                     data-competitor="Bacteria 3D AR"
                   >
                     <ul className="competitor-list weaknesses">
+                      <li>Solo microorganismos procariotas</li>
+                      <li>Interface técnica requiere conocimiento previo</li>
                       <li>
-                        Limitado exclusivamente a microorganismos procariotas
-                        sin células eucariotas
-                      </li>
-                      <li>
-                        Interface técnica que requiere conocimiento previo de
-                        microbiología
-                      </li>
-                      <li>
-                        Contenido científico avanzado que puede resultar
-                        abrumador para estudiantes introductorios
+                        Contenido avanzado para estudiantes introductorios
                       </li>
                     </ul>
                   </div>
@@ -389,14 +376,8 @@ const ProjectDetail2 = () => {
                     data-competitor="Cell & Cell Structure 3D"
                   >
                     <ul className="competitor-list weaknesses">
-                      <li>
-                        Modelos 3D estáticos sin capacidades de realidad
-                        aumentada
-                      </li>
-                      <li>
-                        Gráficos de calidad básica que no aprovechan tecnología
-                        móvil moderna
-                      </li>
+                      <li>Modelos 3D estáticos sin realidad aumentada</li>
+                      <li>Gráficos de calidad básica</li>
                     </ul>
                   </div>
                 </div>
@@ -412,9 +393,7 @@ const ProjectDetail2 = () => {
                     <div className="competitor-audience">
                       <p>
                         Estudiantes de medicina, enfermería y profesionales de
-                        la salud (18-35 años). Principalmente usuarios de
-                        instituciones con presupuesto para apps educativas
-                        premium.
+                        la salud (18-35 años) con presupuesto para apps premium.
                       </p>
                     </div>
                   </div>
@@ -424,10 +403,9 @@ const ProjectDetail2 = () => {
                   >
                     <div className="competitor-audience">
                       <p>
-                        Estudiantes universitarios de microbiología,
-                        biotecnología y ciencias biomédicas (20-26 años).
-                        Investigadores y profesionales especializados en
-                        microbiología clínica e industrial.
+                        Estudiantes universitarios de microbiología y
+                        biotecnología (20-26 años) e investigadores
+                        especializados.
                       </p>
                     </div>
                   </div>
@@ -437,10 +415,8 @@ const ProjectDetail2 = () => {
                   >
                     <div className="competitor-audience">
                       <p>
-                        Estudiantes de biología de nivel medio superior y
-                        primeros años universitarios (15-20 años). Educadores
-                        buscando herramientas visuales básicas para complementar
-                        enseñanza tradicional.
+                        Estudiantes de biología de nivel medio y primeros años
+                        universitarios (15-20 años) y educadores.
                       </p>
                     </div>
                   </div>
@@ -572,11 +548,10 @@ const ProjectDetail2 = () => {
             <h3 className="subsection-title">PROTOTIPO DE BAJA FIDELIDAD</h3>
             <p className="design-text">
               Crear un prototipo de baja fidelidad permite validar rápidamente
-              los conceptos educativos fundamentales e iterar sobre la
-              experiencia de usuario sin invertir tiempo en elementos visuales
-              complejos. Solo después de confirmar que la estructura y los
-              flujos funcionan correctamente, tiene sentido crear el prototipo
-              de alta fidelidad con modelos 3D detallados.
+              conceptos educativos y la experiencia de usuario sin invertir en
+              elementos visuales complejos. Solo después de confirmar la
+              estructura y flujos se desarrolla el prototipo de alta fidelidad
+              con modelos 3D detallados.
             </p>
             <div className="design-image">
               <img
@@ -612,7 +587,9 @@ const ProjectDetail2 = () => {
               </div>
               <div className="detail-item">
                 <span className="detail-label">Ubicación:</span>
-                <span className="detail-value">Remoto</span>
+                <span className="detail-value">
+                  Facultad de Ciencias Biológicas
+                </span>
               </div>
               <div className="detail-item">
                 <span className="detail-label">Participantes:</span>
@@ -641,14 +618,14 @@ const ProjectDetail2 = () => {
               </p>
               <div className="finding-quotes">
                 <blockquote className="user-quote">
-                  <strong>P01:</strong> "La pantalla principal está muy bien
-                  organizada, encuentro todo fácilmente. Los iconos son claros y
-                  el menú principal no está saturado."
+                  <strong style={{ fontWeight: 600 }}>P01:</strong> "La pantalla
+                  principal está muy bien organizada, encuentro todo fácilmente.
+                  Los iconos son claros y el menú principal no está saturado."
                 </blockquote>
                 <blockquote className="user-quote">
-                  <strong>P03:</strong> "La barra de navegación inferior está
-                  muy bien, pero me gustaría que incluyera los nombres de las
-                  secciones."
+                  <strong style={{ fontWeight: 600 }}>P03:</strong> "La barra de
+                  navegación inferior está muy bien, pero me gustaría que
+                  incluyera los nombres de las secciones."
                 </blockquote>
               </div>
             </div>
@@ -662,9 +639,10 @@ const ProjectDetail2 = () => {
               </p>
               <div className="finding-quotes">
                 <blockquote className="user-quote">
-                  <strong>P05:</strong> "La información sobre cada organelo está
-                  bien organizada, pero cuando cambio de célula prokariota a
-                  eukariota pierdo el contexto de lo que estaba viendo antes."
+                  <strong style={{ fontWeight: 600 }}>P05:</strong> "La
+                  información sobre cada organelo está bien organizada, pero
+                  cuando cambio de célula prokariota a eukariota pierdo el
+                  contexto de lo que estaba viendo antes."
                 </blockquote>
               </div>
             </div>
@@ -674,14 +652,19 @@ const ProjectDetail2 = () => {
           <div className="mockups-section">
             <div className="mockup-item">
               <p className="mockup-description">
-                Se identificaron <strong>oportunidades clave</strong> para
-                mejorar la experiencia del usuario. Los usuarios valoraron la
-                interfaz limpia, pero expresaron necesidad de mayor{' '}
-                <strong>contextualización de la información celular</strong> y
-                mejor organización de los componentes educativos. La pérdida de
-                contexto al cambiar entre tipos celulares y la falta de{' '}
-                <strong>información persistente sobre organelos</strong> fueron
-                los puntos más críticos a resolver.
+                Se identificaron{' '}
+                <strong style={{ fontWeight: 600 }}>oportunidades clave</strong>{' '}
+                para mejorar la experiencia. Los usuarios valoraron la interfaz
+                limpia pero necesitaban mayor{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  contextualización de información celular
+                </strong>{' '}
+                y mejor organización educativa. Los puntos críticos fueron
+                pérdida de contexto al cambiar tipos celulares y falta de{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  información persistente sobre organelos
+                </strong>
+                .
               </p>
               <div className="mockup-image">
                 <img
@@ -693,16 +676,23 @@ const ProjectDetail2 = () => {
                 <h4 className="decisions-title">DECISIONES DE DISEÑO:</h4>
                 <ul className="decisions-list">
                   <li>
-                    Implementar un <strong>panel fijo</strong> que mantenga
-                    visible la información del organelo seleccionado.
+                    Implementar un{' '}
+                    <strong style={{ fontWeight: 600 }}>panel fijo</strong> que
+                    mantenga visible la información del organelo seleccionado.
                   </li>
                   <li>
-                    Implementar <strong>etiquetas flotantes</strong> con
-                    información instantánea de cada componente celular sin
+                    Implementar{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      etiquetas flotantes
+                    </strong>{' '}
+                    con información instantánea de cada componente celular sin
                     interrumpir la exploración.
                   </li>
                   <li>
-                    Agregar <strong>títulos a los iconos de navegación</strong>{' '}
+                    Agregar{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      títulos a los iconos de navegación
+                    </strong>{' '}
                     para que los usuarios comprendan inmediatamente la función
                     de cada sección.
                   </li>
@@ -718,12 +708,11 @@ const ProjectDetail2 = () => {
           <div className="screen-variations">
             <h3 className="subsection-title">TAMAÑO DE PANTALLA ORIGINAL</h3>
             <p className="strategy-description">
-              Cell-AR es más efectiva en móviles por su accesibilidad,
-              portabilidad y compatibilidad nativa con AR. Aprovecha los
-              smartphones que ya poseen los estudiantes, evita equipos costosos
-              y permite una experiencia educativa inmersiva e intuitiva,
-              democratizando el acceso a tecnologías avanzadas sin necesidad de
-              hardware adicional.
+              Cell-AR es más efectiva en móviles debido a su accesibilidad,
+              portabilidad y compatibilidad nativa con AR. Usa smartphones que
+              ya tienen los estudiantes, evita costos de equipos y ofrece una
+              experiencia educativa inmersiva, democratizando el acceso a
+              tecnología avanzada sin hardware extra.
             </p>
             <ul className="strategy-decisions">
               <li className="strategy-item">
@@ -753,12 +742,11 @@ const ProjectDetail2 = () => {
             <h3 className="subsection-title">PROTOTIPO DE ALTA FIDELIDAD</h3>
             <div className="high-fidelity-section">
               <p className="high-fidelity-text">
-                El prototipo de alta fidelidad de Cell-AR se creó para validar
-                la experiencia visual completa, permitiendo evaluar la claridad
-                de etiquetas, usabilidad de controles, legibilidad y coherencia
-                visual. Además, sirve como herramienta clave para comunicar el
-                potencial de la aplicación a desarrolladores y educadores antes
-                del desarrollo final.
+                El prototipo de alta fidelidad de Cell-AR valida la experiencia
+                visual completa, evaluando claridad de etiquetas, usabilidad,
+                legibilidad y coherencia visual. También es clave para comunicar
+                el potencial de la app a desarrolladores y educadores antes del
+                desarrollo final.
               </p>
               <div className="high-fidelity-image">
                 <img
@@ -776,6 +764,73 @@ const ProjectDetail2 = () => {
                   Ver prototipo móvil
                 </a>
               </div>
+            </div>
+          </div>
+
+          <div className="iconography-section">
+            <h3 className="subsection-title">ICONOGRAFÍA</h3>
+            <p className="iconography-description">
+              El sistema de iconos de Cell-AR combina{' '}
+              <strong style={{ fontWeight: 600 }}>
+                símbolos universales con iconografía educativa especializada
+              </strong>
+              . Se diseñaron iconos personalizados que reflejan la esencia de la
+              aplicación: un{' '}
+              <strong style={{ fontWeight: 600 }}>
+                microscopio para la sección "Explorar"
+              </strong>
+              , simbolizando la exploración de células en 3D, y{' '}
+              <strong style={{ fontWeight: 600 }}>
+                libros para la sección "Aprender"
+              </strong>
+              , representando el estudio y conocimiento científico. Para
+              mantener la{' '}
+              <strong style={{ fontWeight: 600 }}>coherencia visual</strong>, se
+              utilizaron iconos estándar reconocibles: una casa para "Inicio" y
+              un usuario para "Perfil", facilitando la navegación intuitiva.
+            </p>
+
+            <div className="iconography-grid">
+              <div className="icon-showcase">
+                <img
+                  src="/assets/images/projects/project2/iconography.png"
+                  alt="Sistema de iconografía de Cell-AR"
+                  draggable="false"
+                  className="no-save"
+                  onContextMenu={e => e.preventDefault()}
+                />
+              </div>
+            </div>
+
+            <div className="iconography-principles">
+              <h4 className="principles-title">PRINCIPIOS DE DISEÑO:</h4>
+              <ul className="principles-list">
+                <li>
+                  <strong style={{ fontWeight: 600 }}>
+                    Precisión científica:
+                  </strong>{' '}
+                  Los iconos representan fielmente las formas y estructuras de
+                  organelos , facilitando el reconocimiento y aprendizaje.
+                </li>
+                <li>
+                  <strong style={{ fontWeight: 600 }}>Claridad en AR:</strong>{' '}
+                  Diseñados para ser legibles tanto en pantalla como en
+                  etiquetas flotantes sobre modelos 3D en realidad aumentada.
+                </li>
+                <li>
+                  <strong style={{ fontWeight: 600 }}>
+                    Diferenciación celular:
+                  </strong>{' '}
+                  Sistema visual que distingue claramente entre células
+                  eucariotas, procariotas, animales y vegetales.
+                </li>
+                <li>
+                  <strong style={{ fontWeight: 600 }}>Escalabilidad:</strong>{' '}
+                  Funcionan perfectamente en diferentes tamaños, desde
+                  miniaturas en menús hasta iconos grandes en pantallas de
+                  información detallada.
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -807,84 +862,98 @@ const ProjectDetail2 = () => {
           <div className="results-section">
             <h3 className="subsection-title">CONCLUSIONES</h3>
             <p className="conclusion-text">
-              Cell-AR demostró ser una <strong>solución efectiva</strong> para
-              transformar el aprendizaje de biología celular con realidad
+              Cell-AR demostró ser una{' '}
+              <strong style={{ fontWeight: 600 }}>solución efectiva</strong>{' '}
+              para transformar el aprendizaje de biología celular con realidad
               aumentada. El prototipo de alta fidelidad validó la viabilidad de
-              ofrecer <strong>experiencias inmersivas y accesibles</strong>{' '}
+              ofrecer{' '}
+              <strong style={{ fontWeight: 600 }}>
+                experiencias inmersivas y accesibles
+              </strong>{' '}
               desde smartphones. El diseño centrado en el usuario permitió
               abordar necesidades clave como la comprensión de{' '}
-              <strong>escalas y relaciones espaciales</strong> entre organelos,
-              manteniendo una experiencia intuitiva.
+              <strong style={{ fontWeight: 600 }}>
+                escalas y relaciones espaciales
+              </strong>{' '}
+              entre organelos, manteniendo una experiencia intuitiva.
             </p>
           </div>
 
           <div className="results-section">
             <h3 className="subsection-title">IMPACTO</h3>
             <p className="impact-text">
-              Cell-AR demostró su potencial para revolucionar la{' '}
-              <strong>enseñanza de la biología celular</strong>, mejorando la
-              comprensión de los estudiantes mediante{' '}
-              <strong>visualización en realidad aumentada</strong>. Puede
-              integrarse eficazmente en los planes de estudio y abrir nuevas
-              posibilidades para la enseñanza de contenidos científicos
-              complejos mediante <strong>tecnologías inmersivas</strong>.
+              Cell-AR demostró potencial para revolucionar la{' '}
+              <strong style={{ fontWeight: 600 }}>
+                enseñanza de biología celular{' '}
+              </strong>
+              mediante{' '}
+              <strong style={{ fontWeight: 600 }}>
+                visualización en realidad aumentada
+              </strong>
+              . Puede integrarse en planes de estudio y abrir posibilidades para
+              enseñanza científica compleja con{' '}
+              <strong style={{ fontWeight: 600 }}>
+                tecnologías inmersivas
+              </strong>
+              .
             </p>
           </div>
-
           <div className="results-section">
             <h3 className="subsection-title">LO QUE APRENDÍ</h3>
             <p className="learnings-text">
-              En el desarrollo de Cell-AR comprendí que una aplicación educativa
-              en realidad aumentada depende de un{' '}
-              <strong>
-                diseño sencillo, accesible y centrado en el usuario
+              Comprendí que las apps educativas AR dependen de{' '}
+              <strong style={{ fontWeight: 600 }}>
+                diseño sencillo y centrado en el usuario
               </strong>
-              , que priorice la usabilidad y el feedback claro por encima de
-              efectos visuales complejos. Además, es posible ofrecer una{' '}
-              <strong>
+              , priorizando usabilidad sobre efectos visuales complejos. Es
+              posible ofrecer{' '}
+              <strong style={{ fontWeight: 600 }}>
                 experiencia de calidad en dispositivos de gama media
               </strong>{' '}
-              si se realiza una planificación estratégica desde el inicio, lo
-              que garantiza un <strong>acceso más amplio y equitativo</strong> a
-              la tecnología educativa.
+              con planificación estratégica, garantizando{' '}
+              <strong style={{ fontWeight: 600 }}>
+                acceso más amplio y equitativo
+              </strong>
+              .
             </p>
-
             <div className="lessons-grid">
               <div className="lessons-section">
                 <h4 className="lessons-title">Lecciones profesionales</h4>
                 <ul className="lessons-list">
                   <li className="lesson-item">
-                    Las <strong>iteraciones basadas en feedback</strong> suelen
-                    superar las suposiciones iniciales del diseñador porque se
-                    ajustan a las necesidades de los usuarios. Este proceso
-                    ayuda a{' '}
-                    <strong>corregir errores y mejorar la experiencia</strong>,
-                    haciendo que el producto sea más efectivo y útil.
+                    Las{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      iteraciones basadas en feedback
+                    </strong>{' '}
+                    superan las suposiciones iniciales y mejoran la experiencia
+                    del usuario.
                   </li>
                   <li className="lesson-item">
-                    <strong>Involucrar a educadores</strong> desde etapas
-                    tempranas mejora notablemente el diseño final, ya que
-                    aportan conocimientos prácticos y necesidades que guían el
-                    desarrollo hacia una{' '}
-                    <strong>solución más útil y efectiva</strong>.
+                    <strong style={{ fontWeight: 600 }}>
+                      Involucrar a educadores
+                    </strong>{' '}
+                    desde etapas tempranas mejora el diseño con conocimientos
+                    prácticos.
                   </li>
                 </ul>
               </div>
-
               <div className="lessons-section">
                 <h4 className="lessons-title">Lecciones personales</h4>
                 <ul className="lessons-list">
                   <li className="lesson-item">
-                    Aprendí <strong>habilidades básicas de modelado 3D</strong>{' '}
-                    con Blender, aplicándolas al diseño UX para crear prototipos
-                    más visuales y mejorar la experiencia del usuario en{' '}
-                    <strong>entornos tridimensionales</strong>.
+                    Aprendí{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      modelado 3D con Blender
+                    </strong>{' '}
+                    para crear prototipos más visuales en entornos
+                    tridimensionales.
                   </li>
                   <li className="lesson-item">
-                    Entendí la importancia de estar siempre{' '}
-                    <strong>actualizado en tecnologías emergentes</strong> para
-                    poder aplicar las mejores herramientas y técnicas en mis
-                    proyectos.
+                    Entendí la importancia de estar{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      actualizado en tecnologías emergentes
+                    </strong>
+                    .
                   </li>
                 </ul>
               </div>
@@ -895,19 +964,29 @@ const ProjectDetail2 = () => {
             <h3 className="subsection-title">PRÓXIMOS PASOS</h3>
             <ol className="next-steps-list">
               <li className="next-step-item">
-                Implementar <strong>sistema de contenido personalizado</strong>{' '}
+                Implementar{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  sistema de contenido personalizado
+                </strong>{' '}
                 basado en nivel educativo específico.
               </li>
               <li className="next-step-item">
-                Crear <strong>módulos adicionales</strong> que aborden otros
-                temas de biología, como genética, evolución y ecosistemas, para
-                ampliar el alcance educativo de Cell-AR.
+                Crear{' '}
+                <strong style={{ fontWeight: 600 }}>módulos adicionales</strong>{' '}
+                que aborden otros temas de biología, como genética, evolución y
+                ecosistemas, para ampliar el alcance educativo de Cell-AR.
               </li>
               <li className="next-step-item">
-                Investigar la <strong>efectividad de Cell-AR</strong> en
-                comparación con otros métodos de enseñanza inmersiva ayudará a
-                entender mejor sus ventajas, así como a confirmar su{' '}
-                <strong>impacto en el aprendizaje</strong>.
+                Investigar la{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  efectividad de Cell-AR
+                </strong>{' '}
+                en comparación con otros métodos de enseñanza inmersiva ayudará
+                a entender mejor sus ventajas, así como a confirmar su{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  impacto en el aprendizaje
+                </strong>
+                .
               </li>
             </ol>
           </div>
@@ -917,18 +996,24 @@ const ProjectDetail2 = () => {
             <p className="final-text">
               Cell-AR es más que un proyecto de diseño; es una muestra de cómo
               la tecnología puede{' '}
-              <strong>ampliar el acceso a una educación de calidad</strong>. Me
-              enseñó que un diseño centrado en el usuario puede crear soluciones
-              innovadoras que integran{' '}
-              <strong>
+              <strong style={{ fontWeight: 600 }}>
+                ampliar el acceso a una educación de calidad
+              </strong>
+              . Me enseñó que un diseño centrado en el usuario puede crear
+              soluciones innovadoras que integran{' '}
+              <strong style={{ fontWeight: 600 }}>
                 realidad aumentada, accesibilidad y pedagogía efectiva
               </strong>
               , sin sacrificar usabilidad. El feedback positivo confirma la
               necesidad de este tipo de herramientas, que combinan ciencia, buen
               diseño y accesibilidad. Este proyecto fortaleció mi capacidad para
-              enfrentar <strong>desafíos complejos</strong> mediante
-              investigación, colaboración y compromiso con el{' '}
-              <strong>impacto real en los usuarios</strong>.
+              enfrentar{' '}
+              <strong style={{ fontWeight: 600 }}>desafíos complejos</strong>{' '}
+              mediante investigación, colaboración y compromiso con el{' '}
+              <strong style={{ fontWeight: 600 }}>
+                impacto real en los usuarios
+              </strong>
+              .
             </p>
           </div>
         </section>
@@ -937,9 +1022,6 @@ const ProjectDetail2 = () => {
       {selectedImage && (
         <div className="image-modal" onClick={closeImageModal}>
           <div className="image-modal__content">
-            <span className="image-modal__close" onClick={closeImageModal}>
-              &times;
-            </span>
             <img src={selectedImage} alt="Imagen ampliada" />
           </div>
         </div>
