@@ -8,12 +8,31 @@ const ProjectDetail3 = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Alfredo García Diseñador UX/UI & Desarrollador - INVENTA-ANALYT`;
+    document.title = `INVENTA-ANALYT — Alfredo García`;
   }, []);
 
   const openImageModal = imageUrl => {
     setSelectedImage(imageUrl);
     document.body.style.overflow = 'hidden';
+  };
+
+  const scrollToTitle = () => {
+    const titleElement = document.querySelector('.project-title');
+    const headerElement =
+      document.querySelector('header') ||
+      document.querySelector('.header') ||
+      document.querySelector('nav');
+
+    if (titleElement) {
+      const titlePosition = titleElement.offsetTop;
+      const headerHeight = headerElement ? headerElement.offsetHeight : 80;
+      const offset = 24;
+
+      window.scrollTo({
+        top: titlePosition - headerHeight - offset,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const closeImageModal = () => {
@@ -33,6 +52,26 @@ const ProjectDetail3 = () => {
               className="no-save"
               onContextMenu={e => e.preventDefault()}
             />
+            <button
+              className="scroll-down-btn"
+              onClick={scrollToTitle}
+              aria-label="Deslizar hacia abajo para ver contenido"
+            >
+              <span className="scroll-down-text">Deslizar hacia abajo</span>
+              <svg
+                className="scroll-down-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M7 10L12 15L17 10"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
 
           <h1 className="project-title">INVENTA-ANALYT</h1>
@@ -42,7 +81,6 @@ const ProjectDetail3 = () => {
               <span className="meta-value">Diciembre 2024 - Febrero 2025</span>
             </div>
           </div>
-          {/*
           <div className="project-detail__tools">
             <span className="tool-tag tool-tag--figma">Figma</span>
             <span className="tool-tag tool-tag--scss">SCSS</span>
@@ -52,16 +90,15 @@ const ProjectDetail3 = () => {
             </span>
             <span className="tool-tag tool-tag--firebase">Firebase</span>
           </div>
-          */}
         </header>
 
         <section className="project-detail__overview">
           <h2 className="subsection-title-with-border">RESUMEN DEL PROYECTO</h2>
           <p className="overview-text">
-            INVENTA-ANALYT es una aplicación móvil y web para gestión de
+            INVENTA-ANALYT es una aplicación móvil y web para la gestión de
             pequeños negocios que integra control de inventario, registro de
             ventas, consulta de transacciones y análisis avanzados. La
-            plataforma destaca por su interfaz intuitiva que permite a los
+            plataforma se destaca por su interfaz intuitiva, que permite a los
             propietarios monitorear existencias en tiempo real y acceder al
             historial completo de operaciones.
           </p>
@@ -94,11 +131,13 @@ const ProjectDetail3 = () => {
           <div className="project-detail__role">
             <h3 className="subsection-title">MI ROL</h3>
             <p className="role-text">
-              Diseñar e implementar la interfaz de usuario de la aplicación
-              móvil INVENTA-ANALYT, enfocándose en crear una experiencia
-              intuitiva y atractiva mediante programación en React Native, con
-              especial atención a la usabilidad de los elementos visuales,
-              navegación fluida entre módulos y diseño responsive que maximiza
+              Diseño e implemento la interfaz de usuario de la aplicación móvil
+              INVENTA-ANALYT, enfocándome en crear una experiencia intuitiva y
+              atractiva mediante programación en React Native. Mi trabajo
+              incluye garantizar la usabilidad de los elementos visuales, la
+              navegación fluida entre módulos y un diseño responsive, así como
+              el desarrollo de funcionalidades clave como agregar productos,
+              registrar usuarios y gestionar la creación de ventas, optimizando
               la experiencia del usuario en diferentes dispositivos.
             </p>
           </div>
@@ -110,23 +149,12 @@ const ProjectDetail3 = () => {
                 Diseñar la arquitectura de información y sistema de navegación
               </li>
               <li className="responsibility-item">
-                Crear prototipos de baja y alta fidelidad, realizar estudios de
-                usabilidad con usuarios finales para identificar áreas de mejora
-                en la interfaz, implementar ajustes basados en feedback directo
-                y validar las soluciones propuestas mediante pruebas A/B.
+                Desarrollar el sistema de diseño y componentes reutilizables
               </li>
               <li className="responsibility-item">
                 Construir un sistema responsivo adaptable a diferentes
                 dispositivos, asegurar una experiencia fluida y consistente en
                 smartphones y computadoras.
-              </li>
-              <li className="responsibility-item">
-                Desarrollar el sistema de diseño y componentes reutilizables
-              </li>
-              <li className="responsibility-item">
-                Desarrollar visualizaciones estadísticas para el módulo de
-                reportes, transformar datos complejos en representaciones
-                gráficas intuitivas.
               </li>
             </ul>
           </div>
@@ -137,18 +165,21 @@ const ProjectDetail3 = () => {
 
           <div className="project-detail__understanding">
             <p className="understanding-text">
-              Hice una investigación con una encuesta a cuatro propietarios de
-              pequeños negocios para entender mejor sus intereses y necesidades.
-              Descubrí que los comerciantes priorizaban la{' '}
-              <strong>rapidez en el registro de ventas</strong> por encima de
-              las funciones de inventario. También encontré una necesidad
-              inesperada: querían <strong>predicciones sencillas</strong> sobre
-              cuándo reabastecer productos, pero sin necesidad de entender
-              estadísticas complejas. Estos hallazgos me llevaron a reorientar
-              el desarrollo hacia una <strong>interfaz ágil para ventas</strong>{' '}
-              y un sistema de análisis automatizado. La mayoría de las preguntas
-              fueron cuantitativas, pero incluí algunas abiertas ya que este fue
-              mi principal punto de contacto con los usuarios.
+              Investigué con cuatro propietarios de pequeños negocios para
+              entender sus necesidades. Los comerciantes priorizaban{' '}
+              <strong style={{ fontWeight: 600 }}>
+                rapidez en el registro de ventas
+              </strong>{' '}
+              y querían{' '}
+              <strong style={{ fontWeight: 600 }}>
+                predicciones sencillas
+              </strong>{' '}
+              de reabastecimiento sin estadísticas complejas. Esto me llevó a
+              desarrollar una{' '}
+              <strong style={{ fontWeight: 600 }}>
+                interfaz ágil para ventas
+              </strong>{' '}
+              y sistema de análisis automatizado.
             </p>
             <div className="understanding-image">
               <img
@@ -162,22 +193,28 @@ const ProjectDetail3 = () => {
             </h3>
             <ol className="key-issues-list">
               <li className="key-issue-item">
-                Los comerciantes tuvieron dificultad para gestionar ventas e
-                inventario durante horas pico, lo que llevó a implementar una
-                interfaz de venta rápida con búsqueda instantánea y{' '}
-                <strong>sincronización automática</strong> con el inventario.
+                Dificultad para gestionar ventas e inventario en horas pico
+                llevó a implementar interfaz de venta rápida con{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  sincronización automática
+                </strong>
+                .
               </li>
               <li className="key-issue-item">
-                Los usuarios no pudieron interpretar{' '}
-                <strong>datos de ventas</strong> sin conocimientos analíticos,
-                por lo que se desarrolló un sistema de recomendaciones
-                automáticas para reabastecimiento y predicción de tendencias con{' '}
-                <strong>visualizaciones simples</strong>.
+                Los usuarios no interpretaban{' '}
+                <strong style={{ fontWeight: 600 }}>datos de ventas</strong>, se
+                desarrolló sistema de recomendaciones automáticas con{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  visualizaciones simples
+                </strong>
+                .
               </li>
               <li className="key-issue-item">
-                La frustración con la <strong>configuración inicial</strong> de
-                aplicaciones existentes inspiró el enfoque de "configuración
-                mínima" con plantillas predefinidas.
+                La frustración con{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  configuración inicial
+                </strong>{' '}
+                inspiró el enfoque de "configuración mínima" con plantillas.
               </li>
             </ol>
 
@@ -243,11 +280,8 @@ const ProjectDetail3 = () => {
                     data-competitor="StockTracker Lite"
                   >
                     <p className="competitor-description">
-                      StockTracker Lite es una aplicación básica para gestión de
-                      inventario orientada a tiendas minoristas y pequeños
-                      almacenes. Ofrece funcionalidades como registro de
-                      productos, control de existencias y generación de reportes
-                      simples.
+                      App básica para gestión de inventario en tiendas
+                      minoristas con registro de productos y reportes simples.
                     </p>
                   </div>
                   <div
@@ -255,10 +289,8 @@ const ProjectDetail3 = () => {
                     data-competitor="QuickStock POS"
                   >
                     <p className="competitor-description">
-                      QuickStock POS es una aplicación de punto de venta con
-                      funcionalidades de gestión de inventario integradas. Se
-                      enfoca principalmente en el proceso de venta más que en el
-                      análisis o gestión profunda del inventario.
+                      Sistema de punto de venta con gestión de inventario
+                      integrada, enfocado en el proceso de venta.
                     </p>
                   </div>
                   <div
@@ -266,10 +298,8 @@ const ProjectDetail3 = () => {
                     data-competitor="InvenTrack Basic"
                   >
                     <p className="competitor-description">
-                      InvenTrack Basic es una aplicación de gestión de
-                      inventario centrada en la trazabilidad de productos y
-                      materiales. Ofrece funcionalidades para registrar
-                      movimientos de inventario y generar alertas de stock bajo.
+                      App de gestión de inventario centrada en trazabilidad de
+                      productos y alertas de stock bajo.
                     </p>
                   </div>
                 </div>
@@ -284,14 +314,8 @@ const ProjectDetail3 = () => {
                   >
                     <ul className="competitor-list strengths">
                       <li>Interfaz sencilla y fácil de aprender</li>
-                      <li>
-                        Bajo costo de entrada (versión gratuita con funciones
-                        básicas)
-                      </li>
-                      <li>
-                        Proceso de configuración rápido, ideal para negocios muy
-                        pequeños
-                      </li>
+                      <li>Bajo costo (versión gratuita disponible)</li>
+                      <li>Configuración rápida para negocios pequeños</li>
                     </ul>
                   </div>
                   <div
@@ -309,7 +333,7 @@ const ProjectDetail3 = () => {
                     data-competitor="InvenTrack Basic"
                   >
                     <ul className="competitor-list strengths">
-                      <li>Seguimiento detallado de movimientos de producto</li>
+                      <li>Seguimiento detallado de movimientos</li>
                       <li>Alertas de stock configurables</li>
                       <li>Categorización flexible de productos</li>
                     </ul>
@@ -325,12 +349,9 @@ const ProjectDetail3 = () => {
                     data-competitor="StockTracker Lite"
                   >
                     <ul className="competitor-list weaknesses">
-                      <li>Sin capacidades de análisis predictivo o avanzado</li>
-                      <li>No ofrece visualizaciones gráficas de datos</li>
-                      <li>
-                        Funcionalidad de ventas limitada (sin punto de venta
-                        integrado)
-                      </li>
+                      <li>Sin análisis predictivo o avanzado</li>
+                      <li>No ofrece visualizaciones gráficas</li>
+                      <li>Sin punto de venta integrado</li>
                     </ul>
                   </div>
                   <div
@@ -338,13 +359,8 @@ const ProjectDetail3 = () => {
                     data-competitor="QuickStock POS"
                   >
                     <ul className="competitor-list weaknesses">
-                      <li>
-                        Sin predicciones ni recomendaciones de reabastecimiento
-                      </li>
-                      <li>
-                        Interfaz menos intuitiva, con curva de aprendizaje más
-                        pronunciada
-                      </li>
+                      <li>Sin predicciones de reabastecimiento</li>
+                      <li>Interfaz menos intuitiva</li>
                     </ul>
                   </div>
                   <div
@@ -352,13 +368,9 @@ const ProjectDetail3 = () => {
                     data-competitor="InvenTrack Basic"
                   >
                     <ul className="competitor-list weaknesses">
-                      <li>
-                        Carece de funcionalidades de punto de venta integradas
-                      </li>
-                      <li>Menor soporte para visualización gráfica de datos</li>
-                      <li>
-                        Proceso de configuración inicial más complejo y tedioso
-                      </li>
+                      <li>Sin punto de venta integrado</li>
+                      <li>Visualización gráfica limitada</li>
+                      <li>Configuración inicial compleja</li>
                     </ul>
                   </div>
                 </div>
@@ -373,10 +385,8 @@ const ProjectDetail3 = () => {
                   >
                     <div className="competitor-audience">
                       <p>
-                        Microempresas y emprendedores individuales con
-                        presupuesto limitado que necesitan una solución básica
-                        para control de inventario sin requerimientos analíticos
-                        complejos.
+                        Microempresas y emprendedores con presupuesto limitado
+                        que necesitan control básico de inventario.
                       </p>
                     </div>
                   </div>
@@ -386,9 +396,8 @@ const ProjectDetail3 = () => {
                   >
                     <div className="competitor-audience">
                       <p>
-                        Pequeños comercios minoristas y tiendas que priorizan la
-                        velocidad de procesamiento de ventas sobre la gestión de
-                        inventario y análisis de datos.
+                        Pequeños comercios minoristas que priorizan velocidad de
+                        ventas sobre gestión de inventario.
                       </p>
                     </div>
                   </div>
@@ -398,10 +407,8 @@ const ProjectDetail3 = () => {
                   >
                     <div className="competitor-audience">
                       <p>
-                        Pequeños almacenes, talleres y negocios con enfoque en
-                        manufactura o distribución que necesitan principalmente
-                        controlar existencias y movimientos de materiales sin
-                        requerir análisis avanzados.
+                        Pequeños almacenes y talleres que necesitan controlar
+                        existencias y movimientos de materiales.
                       </p>
                     </div>
                   </div>
@@ -588,9 +595,7 @@ const ProjectDetail3 = () => {
               Los prototipos se simplificaron tras la retroalimentación: reducir
               pasos en el flujo de ventas, limpiar el dashboard, optimizar la
               gestión de inventario, enfocar los análisis en insights
-              accionables y reorganizar la configuración. Esto resultó en una
-              experiencia más intuitiva, priorizando la rapidez en tareas
-              frecuentes y la complejidad solo para funciones avanzadas.
+              accionables y reorganizar la configuración.
             </p>
             <div className="design-image">
               <img
@@ -653,7 +658,8 @@ const ProjectDetail3 = () => {
               <div className="finding-quotes">
                 <blockquote className="user-quote">
                   "La pantalla de ventas es clara, pero me perdí buscando
-                  productos por categoría" - <strong>Participante 2</strong>
+                  productos por categoría" -{' '}
+                  <strong style={{ fontWeight: 600 }}>Participante 2</strong>
                 </blockquote>
               </div>
             </div>
@@ -669,7 +675,7 @@ const ProjectDetail3 = () => {
                 <blockquote className="user-quote">
                   "Entiendo que hay información valiosa aquí, pero no sé
                   exactamente qué debo hacer con ella" -{' '}
-                  <strong>Participante 1</strong>
+                  <strong style={{ fontWeight: 600 }}>Participante 1</strong>
                 </blockquote>
               </div>
             </div>
@@ -684,7 +690,8 @@ const ProjectDetail3 = () => {
               <div className="finding-quotes">
                 <blockquote className="user-quote">
                   "Si tuviera que cargar todos mis productos así, me tomaría una
-                  semana" - <strong>Participante 1</strong>
+                  semana" -{' '}
+                  <strong style={{ fontWeight: 600 }}>Participante 1</strong>
                 </blockquote>
               </div>
             </div>
@@ -696,11 +703,16 @@ const ProjectDetail3 = () => {
             <div className="mockup-item">
               <p className="mockup-description">
                 Se agregó en la parte inferior de la descripción del producto
-                una <strong>sección de categoría</strong>, donde el usuario
-                podrá crear una nueva categoría para el producto o seleccionar
-                una ya existente, facilitando así una{' '}
-                <strong>mejor organización y clasificación</strong> de los
-                productos.
+                una{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  sección de categoría
+                </strong>
+                , donde el usuario podrá crear una nueva categoría para el
+                producto o seleccionar una ya existente, facilitando así una{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  mejor organización y clasificación
+                </strong>{' '}
+                de los productos.
               </p>
               <div className="mockup-image">
                 <img
@@ -712,8 +724,12 @@ const ProjectDetail3 = () => {
                 <h4 className="decisions-title">DECISIONES DE DISEÑO:</h4>
                 <ul className="decisions-list">
                   <li>
-                    Implementar un <strong>campo de autocompletado</strong> con
-                    las categorías existentes para reducir errores de digitación
+                    Implementar un{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      campo de autocompletado
+                    </strong>{' '}
+                    con las categorías existentes para reducir errores de
+                    digitación
                   </li>
                 </ul>
               </div>
@@ -725,8 +741,10 @@ const ProjectDetail3 = () => {
                 En el registro de ventas actualmente solo se muestra un resumen
                 de ventas e inventario. El diseño podría mejorar su estructura e
                 incluir recomendaciones más directas, como visualizar{' '}
-                <strong>patrones del negocio</strong> y alertar sobre productos
-                que están por agotarse.
+                <strong style={{ fontWeight: 600 }}>
+                  patrones del negocio
+                </strong>{' '}
+                y alertar sobre productos que están por agotarse.
               </p>
               <div className="mockup-image">
                 <img
@@ -739,13 +757,18 @@ const ProjectDetail3 = () => {
                 <ul className="decisions-list">
                   <li>
                     Transformar visualizaciones complejas en{' '}
-                    <strong>tarjetas de "¿Sabías que?"</strong> con lenguaje
-                    cotidiano
+                    <strong style={{ fontWeight: 600 }}>
+                      tarjetas de "¿Sabías que?"
+                    </strong>{' '}
+                    con lenguaje cotidiano
                   </li>
                   <li>
-                    Implementar <strong>acciones directas</strong> desde las
-                    alertas para reducir la fricción (ej: "Reabastecer ahora"
-                    desde una alerta de stock bajo)
+                    Implementar{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      acciones directas
+                    </strong>{' '}
+                    desde las alertas para reducir la fricción (ej: "Reabastecer
+                    ahora" desde una alerta de stock bajo)
                   </li>
                 </ul>
               </div>
@@ -833,13 +856,12 @@ const ProjectDetail3 = () => {
                 VARIACIONES DE TAMAÑO DE PANTALLA
               </h3>
               <p className="screen-description">
-                Durante el desarrollo se priorizó un diseño responsivo adaptable
-                a distintos tamaños de pantalla. Se usaron unidades
-                proporcionales para asegurar una experiencia fluida en todos los
-                dispositivos. Se optimizaron elementos clave como navegación,
-                visualización de productos y entrada de datos según el tamaño
-                del dispositivo. Esta adaptabilidad fue clave, ya que el 65% de
-                los usuarios alternaban entre dispositivos según la tarea.
+                En el desarrollo se priorizó un diseño responsivo adaptable a
+                distintos tamaños de pantalla, usando unidades proporcionales
+                para una experiencia fluida. Se optimizaron navegación,
+                visualización y entrada de datos según el dispositivo, clave
+                para usuarios que alternan entre varios dispositivos en sus
+                tareas.
               </p>
               <img
                 src="/assets/images/projects/project3/size_variation.png"
@@ -856,10 +878,6 @@ const ProjectDetail3 = () => {
                 y retroalimentación de los usuarios. Utiliza el color violeta
                 por su profesionalismo y accesibilidad. Se diferencia de la
                 mayoría de aplicaciones empresariales que usan azul o verde.
-              </p>
-              <p className="high-fidelity-text">
-                Resonó positivamente en las pruebas de usuario, donde los
-                participantes lo asociaron con "herramienta moderna".
               </p>
               <div className="high-fidelity-image">
                 <img
@@ -912,44 +930,44 @@ const ProjectDetail3 = () => {
           <div className="results-section">
             <h3 className="subsection-title">CONCLUSIONES</h3>
             <p className="conclusion-text">
-              Los usuarios objetivo compartieron que la app resultó ser{' '}
-              <strong>muy fácil de usar</strong>, destacando especialmente su
-              diseño intuitivo que facilitaba la navegación y las interacciones.
-              Gracias a su <strong>estructura clara y simple</strong>, pudieron
-              gestionar, agregar y vender productos sin complicaciones. La
-              organización de las funciones y la accesibilidad de las opciones
-              clave les permitió realizar estas tareas de manera{' '}
-              <strong>rápida y eficiente</strong>, incluso sin experiencia
-              previa con la aplicación. Esto no solo mejoró su productividad,
-              sino que también redujo la <strong>curva de aprendizaje</strong>,
-              haciendo que se sintieran cómodos y seguros al utilizarla desde el
-              primer momento.
+              Los usuarios consideraron la app{' '}
+              <strong style={{ fontWeight: 600 }}>muy fácil de usar</strong>,
+              destacando su diseño intuitivo. Su{' '}
+              <strong style={{ fontWeight: 600 }}>
+                estructura clara y simple
+              </strong>{' '}
+              les permitió gestionar, agregar y vender productos de manera{' '}
+              <strong style={{ fontWeight: 600 }}>rápida y eficiente</strong>{' '}
+              sin experiencia previa, reduciendo la{' '}
+              <strong style={{ fontWeight: 600 }}>curva de aprendizaje</strong>.
             </p>
           </div>
-
           <div className="results-section">
             <h3 className="subsection-title">IMPACTO</h3>
             <p className="impact-text">
-              La reorganización de los elementos y la mejora en la navegación
-              permitieron que los usuarios gestionaran, añadieran productos y
-              realizaran ventas de manera{' '}
-              <strong>más rápida y eficiente</strong>. Además, las predicciones
-              de reabastecimiento fueron presentadas de forma más clara y
-              accesible, lo que ayudó a minimizar las situaciones de{' '}
-              <strong>desabastecimiento</strong>.
+              La reorganización de elementos y mejora en navegación permitió
+              gestionar productos y realizar ventas{' '}
+              <strong style={{ fontWeight: 600 }}>
+                más rápida y eficientemente
+              </strong>
+              . Las predicciones de reabastecimiento más claras minimizaron
+              situaciones de{' '}
+              <strong style={{ fontWeight: 600 }}>desabastecimiento</strong>.
             </p>
           </div>
-
           <div className="results-section">
             <h3 className="subsection-title">LO QUE APRENDÍ</h3>
             <p className="learnings-text">
-              Aprendí que incluso los{' '}
-              <strong>cambios más pequeños en el diseño</strong> pueden mejorar
-              significativamente la fluidez del proceso y la experiencia general
-              del usuario. Esta observación me llevó a comprender la importancia
-              de <strong>priorizar las necesidades reales</strong>
-              de los usuarios al desarrollar funcionalidades y soluciones que
-              optimicen sus tareas diarias.
+              Los{' '}
+              <strong style={{ fontWeight: 600 }}>
+                cambios pequeños en el diseño
+              </strong>{' '}
+              pueden mejorar significativamente la experiencia del usuario. Esto
+              me enseñó a{' '}
+              <strong style={{ fontWeight: 600 }}>
+                priorizar las necesidades reales
+              </strong>{' '}
+              al desarrollar funcionalidades.
             </p>
 
             <div className="lessons-grid">
@@ -957,37 +975,45 @@ const ProjectDetail3 = () => {
                 <h4 className="lessons-title">Lecciones profesionales</h4>
                 <ul className="lessons-list">
                   <li className="lesson-item">
-                    Entender la importancia de diseñar con{' '}
-                    <strong>accesibilidad en mente</strong> para asegurar que
-                    todos los usuarios puedan interactuar con la aplicación de
-                    manera efectiva
+                    Diseñar con{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      accesibilidad en mente
+                    </strong>{' '}
+                    para que todos los usuarios puedan interactuar
+                    efectivamente.
                   </li>
                   <li className="lesson-item">
-                    Valorar la <strong>retroalimentación constante</strong> de
-                    los usuarios, ya que las pruebas de usabilidad revelan áreas
-                    clave de mejora que no siempre son evidentes al principio
-                    del proceso de diseño
+                    La{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      retroalimentación constante
+                    </strong>{' '}
+                    revela áreas de mejora no evidentes al inicio.
                   </li>
                   <li className="lesson-item">
-                    Reconocer la necesidad de{' '}
-                    <strong>iterar rápidamente</strong> en el diseño, testear
-                    con usuarios reales y ajustar sobre la marcha para mejorar
-                    la experiencia
+                    Es necesario{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      iterar rápidamente
+                    </strong>
+                    , testear con usuarios reales y ajustar sobre la marcha.
                   </li>
                 </ul>
               </div>
-
               <div className="lessons-section">
                 <h4 className="lessons-title">Lecciones personales</h4>
                 <ul className="lessons-list">
                   <li className="lesson-item">
-                    Desarrollar una mayor apreciación por la importancia del{' '}
-                    <strong>diseño responsivo</strong> en entornos de trabajo
-                    diversos
+                    Desarrollé mayor apreciación por el{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      diseño responsivo
+                    </strong>{' '}
+                    en entornos de trabajo diversos.
                   </li>
                   <li className="lesson-item">
-                    Ahora valoro más el <strong>feedback negativo</strong> que
-                    el positivo, pues me da oportunidades concretas de mejora
+                    Ahora valoro más el{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      feedback negativo
+                    </strong>
+                    , pues ofrece oportunidades concretas de mejora.
                   </li>
                 </ul>
               </div>
@@ -998,18 +1024,27 @@ const ProjectDetail3 = () => {
             <h3 className="subsection-title">PRÓXIMOS PASOS</h3>
             <ol className="next-steps-list">
               <li className="next-step-item">
-                Optimizar el proceso en <strong>dispositivos móviles</strong>,
-                reducir el número de toques necesarios y mejorar el tamaño de
+                Optimizar el proceso en{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  dispositivos móviles
+                </strong>
+                , reducir el número de toques necesarios y mejorar el tamaño de
                 los elementos interactivos.
               </li>
               <li className="next-step-item">
-                Mejorar la <strong>visualización de datos</strong> en el panel
-                de análisis, implementando gráficos más sencillos con etiquetas
-                claras y mensajes explicativos.
+                Mejorar la{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  visualización de datos
+                </strong>{' '}
+                en el panel de análisis, implementando gráficos más sencillos
+                con etiquetas claras y mensajes explicativos.
               </li>
               <li className="next-step-item">
-                Desarrollar un <strong>sistema de notificaciones</strong> más
-                claro y personalizado, que permita a los usuarios recibir
+                Desarrollar un{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  sistema de notificaciones
+                </strong>{' '}
+                más claro y personalizado, que permita a los usuarios recibir
                 alertas relevantes sin sentirse abrumados.
               </li>
             </ol>
@@ -1020,14 +1055,22 @@ const ProjectDetail3 = () => {
             <p className="final-text">
               INVENTA-ANALYT ha representado una solución integral, mucho más
               que un simple sistema de gestión de inventarios. Su enfoque en la{' '}
-              <strong>rapidez para tareas frecuentes</strong>, la visualización
-              simplificada de datos complejos y la automatización inteligente
-              demuestra que un diseño centrado en el usuario puede generar un{' '}
-              <strong>impacto tangible en negocios reales</strong>. Manteniendo
-              siempre la simplicidad como principio fundamental, INVENTA-ANALYT
-              no es solo un producto tecnológico, sino una{' '}
-              <strong>herramienta de transformación</strong> para negocios que
-              buscan prosperar en un entorno cada vez más competitivo.
+              <strong style={{ fontWeight: 600 }}>
+                rapidez para tareas frecuentes
+              </strong>
+              , la visualización simplificada de datos complejos y la
+              automatización inteligente demuestra que un diseño centrado en el
+              usuario puede generar un{' '}
+              <strong style={{ fontWeight: 600 }}>
+                impacto tangible en negocios reales
+              </strong>
+              . Manteniendo siempre la simplicidad como principio fundamental,
+              INVENTA-ANALYT no es solo un producto tecnológico, sino una{' '}
+              <strong style={{ fontWeight: 600 }}>
+                herramienta de transformación
+              </strong>{' '}
+              para negocios que buscan prosperar en un entorno cada vez más
+              competitivo.
             </p>
           </div>
 
@@ -1035,6 +1078,21 @@ const ProjectDetail3 = () => {
             <h2 className="subsection-title-with-border">
               REPOSITORIO DEL PROYECTO
             </h2>
+
+            <div className="development-section">
+              <h3 className="subsection-title">DESARROLLO</h3>
+              <p className="summary-text">
+                El proyecto se desarrolló inicialmente en React con JavaScript
+                para crear la versión web, y una vez completado, se adaptó a
+                React Native para dispositivos móviles, ajustando los
+                componentes y la interfaz para una experiencia óptima en
+                pantallas más pequeñas. Para la gestión de datos, se utilizó
+                Firebase, integrando funcionalidades clave como control de
+                inventario y registro de ventas, lo que permitió que la
+                aplicación de gestión de negocios operara de manera eficiente y
+                confiable tanto en web como en móvil.
+              </p>
+            </div>
 
             <div className="project-detail__repository-links">
               <a
@@ -1061,9 +1119,6 @@ const ProjectDetail3 = () => {
       {selectedImage && (
         <div className="image-modal" onClick={closeImageModal}>
           <div className="image-modal__content">
-            <span className="image-modal__close" onClick={closeImageModal}>
-              &times;
-            </span>
             <img src={selectedImage} alt="Imagen ampliada" />
           </div>
         </div>
