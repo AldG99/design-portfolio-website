@@ -8,12 +8,31 @@ const ProjectDetail4 = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Alfredo García Diseñador UX/UI & Desarrollador - MediNote`;
+    document.title = `MediNote — Alfredo García`;
   }, []);
 
   const openImageModal = imageUrl => {
     setSelectedImage(imageUrl);
     document.body.style.overflow = 'hidden';
+  };
+
+  const scrollToTitle = () => {
+    const titleElement = document.querySelector('.project-title');
+    const headerElement =
+      document.querySelector('header') ||
+      document.querySelector('.header') ||
+      document.querySelector('nav');
+
+    if (titleElement) {
+      const titlePosition = titleElement.offsetTop;
+      const headerHeight = headerElement ? headerElement.offsetHeight : 80;
+      const offset = 24;
+
+      window.scrollTo({
+        top: titlePosition - headerHeight - offset,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const closeImageModal = () => {
@@ -33,16 +52,35 @@ const ProjectDetail4 = () => {
               className="no-save"
               onContextMenu={e => e.preventDefault()}
             />
+            <button
+              className="scroll-down-btn"
+              onClick={scrollToTitle}
+              aria-label="Deslizar hacia abajo para ver contenido"
+            >
+              <span className="scroll-down-text">Deslizar hacia abajo</span>
+              <svg
+                className="scroll-down-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M7 10L12 15L17 10"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
 
           <h1 className="project-title">MediNote</h1>
 
           <div className="project-detail__meta">
             <div className="project-detail__meta-item">
-              <span className="meta-value">Febrero - Abril 2025</span>
+              <span className="meta-value">Febrero - Mayo 2025</span>
             </div>
           </div>
-          {/*
           <div className="project-detail__tools">
             <span className="tool-tag tool-tag--figma">Figma</span>
             <span className="tool-tag tool-tag--scss">SCSS</span>
@@ -52,7 +90,6 @@ const ProjectDetail4 = () => {
             </span>
             <span className="tool-tag tool-tag--firebase">Firebase</span>
           </div>
-          */}
         </header>
 
         <section className="project-detail__overview">
@@ -75,26 +112,22 @@ const ProjectDetail4 = () => {
               <h3 className="subsection-title">PROBLEMA</h3>
               <p className="problem-text">
                 En clínicas pequeñas y consultorios privados, la falta de
-                herramientas digitales adecuadas dificulta la gestión eficiente
-                de la información médica. Esto genera pérdida de datos, demoras
-                en el acceso a historiales, ausencia de recordatorios
-                automatizados y sobrecarga administrativa. Como resultado, se
-                afecta la calidad de atención y se reduce la productividad del
-                personal médico.
+                herramientas digitales dificulta la gestión de la información
+                médica, provocando pérdida de datos, demoras en el acceso a
+                historiales, falta de recordatorios automatizados y sobrecarga
+                administrativa, lo que afecta la calidad de atención y la
+                productividad del personal.
               </p>
             </div>
 
             <div className="project-detail__goal">
               <h3 className="subsection-title">OBJETIVO</h3>
               <p className="goal-text">
-                Desarrollar una solución digital integral que permita a los
-                profesionales de la salud gestionar de manera organizada y
-                eficiente la información de sus pacientes, incluyendo
-                historiales clínicos, registros médicos y recordatorios. Esta
-                herramienta busca optimizar los procesos administrativos y
-                clínicos, mejorar la atención al paciente y aumentar la
-                productividad del personal, eliminando prácticas desactualizadas
-                y poco efectivas.
+                Desarrollar una solución digital integral para que los
+                profesionales de la salud gestionen de forma eficiente
+                historiales clínicos, registros y recordatorios, optimizando
+                procesos administrativos y clínicos, mejorando la atención al
+                paciente y aumentando la productividad del personal.
               </p>
             </div>
           </div>
@@ -103,13 +136,15 @@ const ProjectDetail4 = () => {
             <h3 className="subsection-title">MI ROL</h3>
             <p className="role-text">
               Responsable del diseño e implementación completa de MediNote desde
-              la conceptualización hasta el despliegue. Mi función se centra en
-              el desarrollo frontend móvil, el diseño de la experiencia de
-              usuario, la implementación de sistemas de seguridad y la
-              optimización del rendimiento, con el objetivo de crear una
-              solución digital integral que transforme la gestión médica
-              tradicional en un ecosistema moderno, eficiente y escalable,
-              adaptado a las necesidades de los profesionales de la salud.
+              la conceptualización hasta el despliegue. Mi función se centra
+              primero en el diseño de la experiencia de usuario y prototipos en
+              Figma, para luego enfocarme en el desarrollo del front-end para
+              móvil y web, implementando funcionalidades para la búsqueda de
+              pacientes y gestión de sus registros médicos, con el objetivo de
+              crear una solución digital integral que transforme la gestión
+              médica tradicional en un ecosistema moderno, eficiente y
+              escalable, adaptado a las necesidades de los profesionales de la
+              salud.
             </p>
           </div>
 
@@ -129,10 +164,6 @@ const ProjectDetail4 = () => {
                 validar conceptos de diseño
               </li>
               <li className="responsibility-item">
-                Diseñar interfaces intuitivas adaptadas al flujo de trabajo
-                médico con búsqueda y filtrado eficientes.
-              </li>
-              <li className="responsibility-item">
                 Realizar pruebas con usuarios reales para validar diseños y
                 optimizar la experiencia basada en feedback médico
               </li>
@@ -145,15 +176,16 @@ const ProjectDetail4 = () => {
 
           <div className="project-detail__understanding">
             <p className="understanding-text">
-              Realicé una <strong>investigación mixta</strong> con profesionales
-              médicos de clínicas pequeñas y consultorios privados, con
-              problemas principales de búsqueda ineficiente, falta de
-              recordatorios y riesgo de pérdida de información. Después de
-              evaluar tres conceptos de diseño, elegí un enfoque que balancea{' '}
-              <strong>funcionalidad y simplicidad</strong>, creando una
-              arquitectura de seis módulos (Inicio, Pacientes, Registros,
-              Búsqueda, Alertas, Perfil) con principios enfocados en eficiencia
-              clínica, acceso rápido y confiabilidad.
+              Realicé{' '}
+              <strong style={{ fontWeight: 600 }}>investigación mixta</strong>{' '}
+              con profesionales médicos identificando problemas de búsqueda
+              ineficiente, falta de recordatorios y riesgo de pérdida de
+              información. Elegí un enfoque que balancea{' '}
+              <strong style={{ fontWeight: 600 }}>
+                funcionalidad y simplicidad
+              </strong>
+              , creando seis módulos con principios de eficiencia clínica,
+              acceso rápido y confiabilidad.
             </p>
             <div className="understanding-image">
               <img
@@ -167,22 +199,31 @@ const ProjectDetail4 = () => {
             </h3>
             <ul className="key-issues-list">
               <li className="key-issue-item">
-                <strong>Pérdida significativa de tiempo</strong> en búsqueda
-                manual de información que podría dedicarse a atención médica
+                <strong style={{ fontWeight: 600 }}>
+                  Pérdida significativa de tiempo
+                </strong>{' '}
+                en búsqueda manual de información que podría dedicarse a
+                atención médica
               </li>
               <li className="key-issue-item">
                 Información dispersa en{' '}
-                <strong>múltiples formatos físicos</strong> sin conexión ni
-                organización centralizada
+                <strong style={{ fontWeight: 600 }}>
+                  múltiples formatos físicos
+                </strong>{' '}
+                sin conexión ni organización centralizada
               </li>
               <li className="key-issue-item">
-                <strong>Ausencia de sistema de recordatorios</strong> que
-                garantice continuidad en tratamientos y citas
+                <strong style={{ fontWeight: 600 }}>
+                  Ausencia de sistema de recordatorios
+                </strong>{' '}
+                que garantice continuidad en tratamientos y citas
               </li>
               <li className="key-issue-item">
                 Imposibilidad de consultar información{' '}
-                <strong>fuera del consultorio</strong> para emergencias o
-                referencias
+                <strong style={{ fontWeight: 600 }}>
+                  fuera del consultorio
+                </strong>{' '}
+                para emergencias o referencias
               </li>
             </ul>
 
@@ -248,9 +289,8 @@ const ProjectDetail4 = () => {
                     data-competitor="Doctoralia"
                   >
                     <p className="competitor-description">
-                      Doctoralia es una plataforma digital disponible como app
-                      móvil y sitio web que conecta a pacientes con
-                      profesionales de la salud.
+                      Plataforma digital que conecta pacientes con profesionales
+                      de la salud para agendar citas médicas.
                     </p>
                   </div>
                   <div
@@ -258,10 +298,8 @@ const ProjectDetail4 = () => {
                     data-competitor="MedicApp"
                   >
                     <p className="competitor-description">
-                      MedicApp es una aplicación web y móvil diseñada
-                      específicamente para fisioterapeutas, que permite
-                      digitalizar la gestión clínica y mejorar el seguimiento
-                      terapéutico de los pacientes.
+                      App diseñada para fisioterapeutas que digitaliza la
+                      gestión clínica y mejora el seguimiento terapéutico.
                     </p>
                   </div>
                   <div
@@ -269,10 +307,8 @@ const ProjectDetail4 = () => {
                     data-competitor="ClinicPoint"
                   >
                     <p className="competitor-description">
-                      ClinicPoint es una plataforma digital que permite a los
-                      usuarios acceder a servicios de salud privados sin
-                      necesidad de seguro médico, mediante un modelo de pago por
-                      uso.
+                      Plataforma que permite acceder a servicios de salud
+                      privados sin seguro médico, mediante pago por uso.
                     </p>
                   </div>
                 </div>
@@ -286,15 +322,9 @@ const ProjectDetail4 = () => {
                     data-competitor="Doctoralia"
                   >
                     <ul className="competitor-list strengths">
-                      <li>
-                        Permite buscar por especialidad, ubicación, nombre o
-                        servicios médicos
-                      </li>
-                      <li>
-                        Buen rendimiento en dispositivos móviles, manteniendo
-                        consistencia visual y navegación intuitiva
-                      </li>
-                      <li>Permite agendar citas directamente desde la app</li>
+                      <li>Búsqueda por especialidad, ubicación y servicios</li>
+                      <li>Buen rendimiento móvil y navegación intuitiva</li>
+                      <li>Agendamiento directo desde la app</li>
                     </ul>
                   </div>
                   <div
@@ -302,19 +332,9 @@ const ProjectDetail4 = () => {
                     data-competitor="MedicApp"
                   >
                     <ul className="competitor-list strengths">
-                      <li>
-                        Facilita el monitoreo de la evolución del paciente entre
-                        sesiones sin necesidad de visitas presenciales
-                      </li>
-                      <li>
-                        Disponible como aplicación móvil y también en versión
-                        web, lo que facilita el trabajo desde distintos
-                        dispositivos.
-                      </li>
-                      <li>
-                        Automatización de tareas como agendamiento y creación de
-                        fichas
-                      </li>
+                      <li>Monitoreo de evolución del paciente remoto</li>
+                      <li>Disponible en móvil y web</li>
+                      <li>Automatización de tareas administrativas</li>
                     </ul>
                   </div>
                   <div
@@ -322,19 +342,9 @@ const ProjectDetail4 = () => {
                     data-competitor="ClinicPoint"
                   >
                     <ul className="competitor-list strengths">
-                      <li>
-                        Navegación jerárquica intuitiva, permitiendo filtrar
-                        servicios por especialidad y ubicación con facilidad
-                      </li>
-                      <li>
-                        Adaptabilidad móvil eficiente, manteniendo coherencia
-                        visual y funcional en distintos dispositivos
-                      </li>
-                      <li>
-                        Uso correcto del espacio visual, con una interfaz limpia
-                        que facilita la lectura y reduce la sobrecarga
-                        cognitiva.
-                      </li>
+                      <li>Navegación jerárquica intuitiva</li>
+                      <li>Adaptabilidad móvil eficiente</li>
+                      <li>Interfaz limpia y funcional</li>
                     </ul>
                   </div>
                 </div>
@@ -348,21 +358,10 @@ const ProjectDetail4 = () => {
                     data-competitor="Doctoralia"
                   >
                     <ul className="competitor-list weaknesses">
-                      <li>
-                        Visibilidad limitada sobre el estado de la cita o
-                        funciones complementarias como recordatorios integrados.
-                      </li>
-                      <li>
-                        Sistema de alertas básico sin inteligencia contextual
-                      </li>
-                      <li>
-                        No ofrece un sistema unificado de historias clínicas
-                        para seguimiento a largo plazo
-                      </li>
-                      <li>
-                        No se integra con historiales médicos ni con otros
-                        sistemas clínicos profundos
-                      </li>
+                      <li>Visibilidad limitada del estado de citas</li>
+                      <li>Sistema de alertas básico</li>
+                      <li>Sin historias clínicas unificadas</li>
+                      <li>Falta integración con sistemas clínicos</li>
                     </ul>
                   </div>
                   <div
@@ -370,17 +369,9 @@ const ProjectDetail4 = () => {
                     data-competitor="MedicApp"
                   >
                     <ul className="competitor-list weaknesses">
-                      <li>Funcionalidades limitadas en reportes y análisis</li>
-                      <li>
-                        Navegación básica, que en algunos casos puede resultar
-                        demasiado simplificada para usuarios que buscan más
-                        información o control.
-                      </li>
-                      <li>
-                        Algunos fisioterapeutas pueden encontrar la plataforma
-                        compleja si no están familiarizados con herramientas
-                        digitales
-                      </li>
+                      <li>Reportes y análisis limitados</li>
+                      <li>Navegación demasiado simplificada</li>
+                      <li>Complejidad para usuarios no digitales</li>
                     </ul>
                   </div>
                   <div
@@ -388,14 +379,8 @@ const ProjectDetail4 = () => {
                     data-competitor="ClinicPoint"
                   >
                     <ul className="competitor-list weaknesses">
-                      <li>
-                        El seguimiento post-reserva no es completamente visible,
-                        lo que podría afectar la continuidad de la experiencia.
-                      </li>
-                      <li>
-                        Algunos bloques de contenido dependen mucho del texto, y
-                        podrían mejorarse con recursos visuales complementarios.
-                      </li>
+                      <li>Seguimiento post-reserva no visible</li>
+                      <li>Dependencia excesiva del texto</li>
                       <li>Complejidad excesiva para usuarios básicos</li>
                     </ul>
                   </div>
@@ -411,10 +396,8 @@ const ProjectDetail4 = () => {
                   >
                     <div className="competitor-audience">
                       <p>
-                        Usuarios que necesitan encontrar y agendar citas médicas
-                        de forma rápida y sin complicaciones, principalmente en
-                        entornos urbanos. La plataforma es especialmente útil
-                        para personas con conocimientos digitales funcionales.
+                        Usuarios urbanos con conocimientos digitales que buscan
+                        agendar citas médicas rápidamente.
                       </p>
                     </div>
                   </div>
@@ -424,10 +407,8 @@ const ProjectDetail4 = () => {
                   >
                     <div className="competitor-audience">
                       <p>
-                        Usuarios que valoran la inmediatez y simplicidad para
-                        acceder a consultas médicas, principalmente personas con
-                        necesidades urgentes o que prefieren soluciones
-                        digitales rápidas.
+                        Usuarios que valoran inmediatez y simplicidad,
+                        especialmente con necesidades médicas urgentes.
                       </p>
                     </div>
                   </div>
@@ -437,10 +418,8 @@ const ProjectDetail4 = () => {
                   >
                     <div className="competitor-audience">
                       <p>
-                        Usuarios que buscan resolver necesidades médicas
-                        puntuales sin complicaciones administrativas,
-                        especialmente aquellos sin seguro médico o con
-                        coberturas parciales.
+                        Usuarios sin seguro médico o con coberturas parciales
+                        que buscan resolver necesidades médicas puntuales.
                       </p>
                     </div>
                   </div>
@@ -623,13 +602,11 @@ const ProjectDetail4 = () => {
           <div className="design-section">
             <h3 className="subsection-title">PROTOTIPO DE BAJA FIDELIDAD</h3>
             <p className="design-text">
-              El prototipo de baja fidelidad de MediNote se desarrolló mediante
-              wireframes esquemáticos que establecieron la arquitectura de
-              información y flujos de navegación fundamentales de la aplicación.
-              Este prototipo inicial consistió en bocetos simples en papel y
-              diagramas de flujo que definieron la estructura de las cinco
-              pantallas principales: inicio, gestión de pacientes, registros
-              médicos, alertas y perfil de usuario.
+              El prototipo de baja fidelidad de MediNote se creó con wireframes
+              esquemáticos, usando bocetos en papel y diagramas de flujo para
+              definir la arquitectura y navegación de cinco pantallas
+              principales: inicio, gestión de pacientes, registros médicos,
+              alertas y perfil de usuario.
             </p>
             <div className="design-image">
               <img
@@ -690,12 +667,14 @@ const ProjectDetail4 = () => {
               </p>
               <div className="finding-quotes">
                 <blockquote className="user-quote">
-                  <strong>P02:</strong> "Me gusta que el botón de + esté siempre
-                  visible. No tengo que buscar dónde agregar algo nuevo."
+                  <strong style={{ fontWeight: 600 }}>P02:</strong> "Me gusta
+                  que el botón de + esté siempre visible. No tengo que buscar
+                  dónde agregar algo nuevo."
                 </blockquote>
                 <blockquote className="user-quote">
-                  <strong>P04:</strong> "Los iconos son claros. Inmediatamente
-                  sé dónde están mis pacientes y dónde puedo buscar."
+                  <strong style={{ fontWeight: 600 }}>P04:</strong> "Los iconos
+                  son claros. Inmediatamente sé dónde están mis pacientes y
+                  dónde puedo buscar."
                 </blockquote>
               </div>
             </div>
@@ -709,12 +688,13 @@ const ProjectDetail4 = () => {
               </p>
               <div className="finding-quotes">
                 <blockquote className="user-quote">
-                  <strong>P01:</strong> "Las alertas están bien, pero ¿puedo
-                  crear mis propios tipos, como tareas?
+                  <strong style={{ fontWeight: 600 }}>P01:</strong> "Las alertas
+                  están bien, pero ¿puedo crear mis propios tipos, como tareas?
                 </blockquote>
                 <blockquote className="user-quote">
-                  <strong>P06:</strong> "Me gusta poder revisar todo antes de
-                  guardar. Los datos médicos son muy importantes."
+                  <strong style={{ fontWeight: 600 }}>P06:</strong> "Me gusta
+                  poder revisar todo antes de guardar. Los datos médicos son muy
+                  importantes."
                 </blockquote>
               </div>
             </div>
@@ -727,11 +707,15 @@ const ProjectDetail4 = () => {
               <p className="mockup-description">
                 Se implementó una mejora significativa en la lista de registros
                 médicos mediante la{' '}
-                <strong>ampliación del tamaño de la foto de perfil</strong> de
-                los pacientes. Esta actualización incrementó las dimensiones de
-                la imagen desde 20x20 píxeles a 36x36 píxeles, logrando una{' '}
-                <strong>mejor visibilidad y consistencia visual</strong> dentro
-                de la interfaz.
+                <strong style={{ fontWeight: 600 }}>
+                  ampliación del tamaño de la foto de perfil
+                </strong>{' '}
+                de los pacientes. Esta actualización incrementó las dimensiones
+                de la imagen desde 20x20 píxeles a 36x36 píxeles, logrando una{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  mejor visibilidad y consistencia visual
+                </strong>{' '}
+                dentro de la interfaz.
               </p>
               <div className="mockup-image">
                 <img
@@ -743,14 +727,17 @@ const ProjectDetail4 = () => {
                 <h4 className="decisions-title">DECISIONES DE DISEÑO:</h4>
                 <ul className="decisions-list">
                   <li>
-                    Se eligió el tamaño de <strong>36x36 píxeles</strong> para
-                    mantener paridad con el icono de registros existente,
+                    Se eligió el tamaño de{' '}
+                    <strong style={{ fontWeight: 600 }}>36x36 píxeles</strong>{' '}
+                    para mantener paridad con el icono de registros existente,
                     creando una jerarquía visual coherente
                   </li>
                   <li>
                     El incremento del tamaño permite{' '}
-                    <strong>distinguir mejor los rasgos faciales</strong> y
-                    características distintivas de cada paciente
+                    <strong style={{ fontWeight: 600 }}>
+                      distinguir mejor los rasgos faciales
+                    </strong>{' '}
+                    y características distintivas de cada paciente
                   </li>
                 </ul>
               </div>
@@ -759,15 +746,14 @@ const ProjectDetail4 = () => {
             {/* Mockup 2 */}
             <div className="mockup-item">
               <p className="mockup-description">
-                Se implementó una nueva funcionalidad en el sistema de
-                recordatorios mediante la incorporación del tipo{' '}
-                <strong>"Tareas"</strong>, diseñado específicamente para
-                permitir que los médicos gestionen sus{' '}
-                <strong>recordatorios de tareas personales médicas</strong> de
-                manera independiente y organizada. Esta adición crea una clara
-                separación entre los recordatorios relacionados directamente con
-                pacientes y aquellos de{' '}
-                <strong>carácter profesional-personal del médico</strong>.
+                Se implementó el tipo{' '}
+                <strong style={{ fontWeight: 600 }}>"Tareas"</strong> en
+                recordatorios para que médicos gestionen sus{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  tareas personales médicas
+                </strong>{' '}
+                de manera independiente, separando recordatorios de pacientes de
+                los profesional-personales.
               </p>
               <div className="mockup-image">
                 <img
@@ -780,23 +766,30 @@ const ProjectDetail4 = () => {
                 <ul className="decisions-list">
                   <li>
                     Se decidió crear una{' '}
-                    <strong>categoría completamente independiente</strong> para
-                    evitar confusión entre tareas del médico y recordatorios de
-                    pacientes
+                    <strong style={{ fontWeight: 600 }}>
+                      categoría completamente independiente
+                    </strong>{' '}
+                    para evitar confusión entre tareas del médico y
+                    recordatorios de pacientes
                   </li>
                   <li>
-                    Se eligió el término <strong>"Tareas"</strong> por su
+                    Se eligió el término{' '}
+                    <strong style={{ fontWeight: 600 }}>"Tareas"</strong> por su
                     simplicidad y comprensión inmediata en el contexto médico
                   </li>
                   <li>
                     Incorporación del nuevo tipo dentro de la{' '}
-                    <strong>estructura existente</strong> sin romper la lógica
-                    establecida
+                    <strong style={{ fontWeight: 600 }}>
+                      estructura existente
+                    </strong>{' '}
+                    sin romper la lógica establecida
                   </li>
                   <li>
                     Mayor capacidad de{' '}
-                    <strong>personalizar la experiencia</strong> según las
-                    necesidades específicas del profesional médico
+                    <strong style={{ fontWeight: 600 }}>
+                      personalizar la experiencia
+                    </strong>{' '}
+                    según las necesidades específicas del profesional médico
                   </li>
                 </ul>
               </div>
@@ -805,13 +798,13 @@ const ProjectDetail4 = () => {
             {/* Mockup 3 */}
             <div className="mockup-item">
               <p className="mockup-description">
-                Se implementó una mejora en el sistema de comunicación con
-                pacientes mediante la incorporación del{' '}
-                <strong>correo electrónico</strong> como campo adicional en la
-                información de contacto. Esta funcionalidad establece el email
-                como una <strong>segunda opción de contacto</strong> cuando la
-                comunicación telefónica directa no sea posible o efectiva,
-                garantizando múltiples canales de comunicación.
+                Se incorporó{' '}
+                <strong style={{ fontWeight: 600 }}>correo electrónico</strong>{' '}
+                en la información de contacto como{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  segunda opción de contacto
+                </strong>{' '}
+                cuando la comunicación telefónica no sea posible.
               </p>
               <div className="mockup-image">
                 <img
@@ -824,9 +817,11 @@ const ProjectDetail4 = () => {
                 <ul className="decisions-list">
                   <li>
                     Se estableció el{' '}
-                    <strong>teléfono como canal primario</strong> y el email
-                    como secundario, respetando la inmediatez y personalización
-                    de la comunicación telefónica
+                    <strong style={{ fontWeight: 600 }}>
+                      teléfono como canal primario
+                    </strong>{' '}
+                    y el email como secundario, respetando la inmediatez y
+                    personalización de la comunicación telefónica
                   </li>
                 </ul>
               </div>
@@ -842,12 +837,11 @@ const ProjectDetail4 = () => {
           <div className="screen-variations">
             <h3 className="subsection-title">TAMAÑO DE PANTALLA ORIGINAL</h3>
             <p className="strategy-description">
-              La implementación de la estrategia "móvil-first" responde a un
-              cambio fundamental en los patrones de uso de tecnología en el
-              sector salud. Los profesionales médicos requieren acceso inmediato
-              y flexible a la información de pacientes, independientemente de su
-              ubicación física, ya sea en consultorios, hospitales, o durante
-              visitas domiciliarias.
+              La estrategia móvil-first en el sector salud responde al cambio en
+              el uso tecnológico, permitiendo a los profesionales acceder de
+              forma inmediata y flexible a la información de pacientes, sin
+              importar si están en consultorios, hospitales o visitas
+              domiciliarias.
             </p>
             <ul className="strategy-decisions">
               <li className="strategy-item">
@@ -875,12 +869,10 @@ const ProjectDetail4 = () => {
                 VARIACIONES DE TAMAÑO DE PANTALLA
               </h3>
               <p className="screen-description">
-                Se desarrolló variaciones de tamaño de pantalla que permite la
-                adaptación dinámica de la interfaz médica entre dispositivos
-                móviles y web. Esta funcionalidad garantiza una experiencia de
-                usuario óptima en ambas plataformas, manteniendo la
-                funcionalidad completa y la legibilidad tanto en smartphones
-                como en navegadores de escritorio.
+                Se crearon variaciones de tamaño de pantalla para que la
+                interfaz médica se adapte dinámicamente a dispositivos móviles y
+                web, asegurando una experiencia óptima con funcionalidad
+                completa y buena legibilidad en smartphones y escritorios.
               </p>
               <img
                 src="/assets/images/projects/project4/size_variation.png"
@@ -950,90 +942,82 @@ const ProjectDetail4 = () => {
           <div className="results-section">
             <h3 className="subsection-title">CONCLUSIONES</h3>
             <p className="conclusion-text">
-              El desarrollo de MediNote demostró la{' '}
-              <strong>viabilidad de crear una solución móvil integral</strong>{' '}
-              para la gestión de registros médicos que satisface las necesidades
-              reales de profesionales de la salud en consultorios y clínicas
-              pequeñas. La aplicación logró consolidar exitosamente{' '}
-              <strong>múltiples flujos de trabajo médico</strong> en una
-              interfaz unificada e intuitiva, desde la gestión de pacientes
-              hasta el seguimiento de tratamientos. Los prototipos validaron que
-              la{' '}
-              <strong>digitalización de procesos médicos tradicionales</strong>{' '}
-              puede mejorar tanto la eficiencia operativa como la calidad del
-              cuidado al paciente.
+              MediNote demostró la{' '}
+              <strong style={{ fontWeight: 600 }}>
+                viabilidad de una solución móvil integral
+              </strong>{' '}
+              para gestión de registros médicos en consultorios y clínicas
+              pequeñas. La app consolidó{' '}
+              <strong style={{ fontWeight: 600 }}>
+                múltiples flujos de trabajo médico
+              </strong>{' '}
+              en una interfaz unificada, validando que la digitalización mejora
+              eficiencia operativa y calidad del cuidado.
             </p>
           </div>
-
           <div className="results-section">
             <h3 className="subsection-title">IMPACTO</h3>
             <p className="impact-text">
-              La implementación del{' '}
-              <strong>
+              El{' '}
+              <strong style={{ fontWeight: 600 }}>
                 sistema de design tokens y componentes reutilizables
               </strong>{' '}
-              estableció un nuevo estándar de consistencia visual en
-              aplicaciones médicas móviles. El uso estratégico de color,
-              tipografía y espaciado creó una <strong>identidad visual</strong>{' '}
-              que transmite confianza y profesionalismo, elementos cruciales en
-              el <strong>sector salud</strong>.
+              estableció consistencia visual en aplicaciones médicas móviles,
+              creando una identidad que transmite confianza y profesionalismo en
+              el <strong style={{ fontWeight: 600 }}>sector salud</strong>.
             </p>
           </div>
-
           <div className="results-section">
             <h3 className="subsection-title">LO QUE APRENDÍ</h3>
             <p className="learnings-text">
-              Diseñar para profesionales médicos exige un{' '}
-              <strong>
-                conocimiento profundo de los flujos de trabajo clínicos
+              Diseñar para profesionales médicos exige{' '}
+              <strong style={{ fontWeight: 600 }}>
+                conocimiento de flujos de trabajo clínicos
               </strong>
-              , la terminología especializada y los contextos particulares en
-              los que se utiliza la tecnología en entornos de salud. Esto
-              implica comprender cómo se toman decisiones bajo presión, cómo se
-              prioriza la <strong>información crítica</strong> y cómo
-              interactúan diferentes roles dentro del equipo médico. Una
-              interfaz efectiva no solo debe ser funcional, sino también{' '}
-              <strong>reducir la carga cognitiva</strong>, minimizar errores y
-              adaptarse a situaciones variables, desde consultorios hasta
-              unidades de emergencia.
+              , terminología especializada y contextos de uso en entornos de
+              salud. Una interfaz efectiva debe{' '}
+              <strong style={{ fontWeight: 600 }}>
+                reducir la carga cognitiva
+              </strong>
+              , minimizar errores y adaptarse desde consultorios hasta
+              emergencias.
             </p>
-
             <div className="lessons-grid">
               <div className="lessons-section">
                 <h4 className="lessons-title">Lecciones profesionales</h4>
                 <ul className="lessons-list">
                   <li className="lesson-item">
-                    La importancia de los{' '}
-                    <strong>estados de error y feedback</strong> se magnificó en
-                    este contexto, donde una confusión en la interfaz puede
-                    tener <strong>consecuencias graves</strong>.
+                    Los{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      estados de error y feedback
+                    </strong>{' '}
+                    son críticos en contexto médico, donde confusiones pueden
+                    tener consecuencias graves.
                   </li>
                   <li className="lesson-item">
-                    Interfaces que funcionan{' '}
-                    <strong>bajo presión en entornos médicos</strong>,
-                    especialmente en situaciones de emergencia, donde los
-                    profesionales no pueden detenerse a pensar en cómo usar una
-                    aplicación; esta debe ser completamente{' '}
-                    <strong>intuitiva</strong>.
+                    Interfaces completamente{' '}
+                    <strong style={{ fontWeight: 600 }}>intuitivas</strong> son
+                    esenciales bajo presión en entornos médicos y emergencias.
                   </li>
                 </ul>
               </div>
-
               <div className="lessons-section">
                 <h4 className="lessons-title">Lecciones personales</h4>
                 <ul className="lessons-list">
                   <li className="lesson-item">
-                    La experiencia me hizo más consciente de la importancia de
-                    la <strong>accesibilidad universal</strong> en el diseño,
-                    considerando las diversas capacidades y contextos de uso de
-                    los profesionales médicos.
+                    La experiencia me hizo consciente de la{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      accesibilidad universal
+                    </strong>{' '}
+                    considerando diversas capacidades de profesionales médicos.
                   </li>
                   <li className="lesson-item">
-                    Los{' '}
-                    <strong>requisitos médicos cambian constantemente</strong>{' '}
-                    debido a regulaciones y emergencias como COVID-19, por lo
-                    que aprendí a diseñar <strong>sistemas flexibles</strong> y
-                    a manejar la incertidumbre como parte normal del trabajo.
+                    Los requisitos médicos cambian constantemente, aprendí a
+                    diseñar{' '}
+                    <strong style={{ fontWeight: 600 }}>
+                      sistemas flexibles
+                    </strong>{' '}
+                    y manejar la incertidumbre.
                   </li>
                 </ul>
               </div>
@@ -1044,16 +1028,24 @@ const ProjectDetail4 = () => {
             <h3 className="subsection-title">PRÓXIMOS PASOS</h3>
             <ol className="next-steps-list">
               <li className="next-step-item">
-                Expandir el <strong>sistema de design tokens</strong> para
-                incluir variaciones de alta densidad informacional, desarrollar
-                componentes especializados para diferentes especialidades
-                médicas, y crear temas personalizables que se adapten a
-                preferencias individuales sin comprometer la{' '}
-                <strong>consistencia del sistema</strong>.
+                Expandir el{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  sistema de design tokens
+                </strong>{' '}
+                para incluir variaciones de alta densidad informacional,
+                desarrollar componentes especializados para diferentes
+                especialidades médicas, y crear temas personalizables que se
+                adapten a preferencias individuales sin comprometer la{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  consistencia del sistema
+                </strong>
+                .
               </li>
               <li className="next-step-item">
                 Desarrollar el{' '}
-                <strong>módulo de facturación y gestión administrativa</strong>{' '}
+                <strong style={{ fontWeight: 600 }}>
+                  módulo de facturación y gestión administrativa
+                </strong>{' '}
                 que permita registrar pagos, emitir facturas y optimizar
                 procesos financieros.
               </li>
@@ -1064,17 +1056,26 @@ const ProjectDetail4 = () => {
             <h3 className="subsection-title">CONSIDERACIONES FINALES</h3>
             <p className="final-text">
               El diseño de MediNote validó que la{' '}
-              <strong>excelencia en experiencia de usuario</strong> en el sector
-              salud no es un lujo, sino una <strong>necesidad crítica</strong>{' '}
-              que impacta directamente la calidad del cuidado médico. Este
-              proyecto demostró que cuando el diseño logra volverse transparente
-              para el usuario médico, permite que toda su atención se concentre
-              en el paciente, lo cual es el{' '}
-              <strong>objetivo último de cualquier herramienta clínica</strong>.
-              La experiencia subrayó la responsabilidad ética del diseñador
+              <strong style={{ fontWeight: 600 }}>
+                excelencia en experiencia de usuario
+              </strong>{' '}
+              en el sector salud no es un lujo, sino una{' '}
+              <strong style={{ fontWeight: 600 }}>necesidad crítica</strong> que
+              impacta directamente la calidad del cuidado médico. Este proyecto
+              demostró que cuando el diseño logra volverse transparente para el
+              usuario médico, permite que toda su atención se concentre en el
+              paciente, lo cual es el{' '}
+              <strong style={{ fontWeight: 600 }}>
+                objetivo último de cualquier herramienta clínica
+              </strong>
+              . La experiencia subrayó la responsabilidad ética del diseñador
               UX/UI en contextos donde las decisiones de interfaz tienen
               implicaciones que van más allá de la satisfacción del usuario,
-              extendiéndose al <strong>bienestar de los pacientes</strong>.
+              extendiéndose al{' '}
+              <strong style={{ fontWeight: 600 }}>
+                bienestar de los pacientes
+              </strong>
+              .
             </p>
           </div>
 
@@ -1082,6 +1083,22 @@ const ProjectDetail4 = () => {
             <h2 className="subsection-title-with-border">
               REPOSITORIO DEL PROYECTO
             </h2>
+
+            <div className="development-section">
+              <h3 className="subsection-title">DESARROLLO</h3>
+              <p className="summary-text">
+                Participé en el proceso de migración de la aplicación, pasando
+                de React Native con Expo a React con SCSS. Durante esta
+                transición, trabajé en adaptar los componentes, ajustar los
+                estilos y optimizar la estructura para mejorar el rendimiento y
+                la experiencia en la versión web. También, configuré e integré
+                Firebase, incluyendo Firestore para la gestión de datos en
+                tiempo real, Authentication para el control de usuarios y
+                Storage para el manejo de archivos clínicos, lo que permitió una
+                gestión más eficiente y escalable de la información y facilitó
+                el trabajo del equipo de desarrollo.
+              </p>
+            </div>
 
             <div className="project-detail__repository-links">
               <a
@@ -1108,9 +1125,6 @@ const ProjectDetail4 = () => {
       {selectedImage && (
         <div className="image-modal" onClick={closeImageModal}>
           <div className="image-modal__content">
-            <span className="image-modal__close" onClick={closeImageModal}>
-              &times;
-            </span>
             <img src={selectedImage} alt="Imagen ampliada" />
           </div>
         </div>
