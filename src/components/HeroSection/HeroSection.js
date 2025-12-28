@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faLinkedin,
+  faGithub,
+  faBehance,
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useScrollReveal } from '../../context/ScrollRevealContext';
 import './HeroSection.scss';
@@ -43,7 +47,7 @@ const HeroSection = () => {
             <div className="hero-name-title-wrapper">
               <h1 className="hero-section__name">Alfredo García</h1>
               <h2 className="hero-section__profession">
-                Diseñador UX/UI & Desarrollador
+                Desarrollador & Diseñador UX/UI
               </h2>
             </div>
             {/*
@@ -53,7 +57,6 @@ const HeroSection = () => {
                   key={index}
                   className={`hero-section__tool ${getToolClass(tool)}`}
                   ref={revealRef}
-                  style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   {tool}
                 </span>
@@ -61,22 +64,22 @@ const HeroSection = () => {
             </p>
             */}
             <p className="hero-section__bio">
-              Mi objetivo es crear interfaces que sean fáciles de usar y
-              visualmente atractivas, explorando constantemente nuevas técnicas
-              y herramientas que me permitan innovar en cada proyecto.
+              Desarrollo con React y React Native, creando interfaces intuitivas
+              que combinan experiencia de usuario y soluciones digitales
+              innovadoras, con enfoque en investigación de usuarios.
             </p>
             <p className="hero-section__bio">
               Me motiva resolver problemas y diseñar soluciones que dejen un
               impacto en la vida de las personas.{' '}
-              <Link to="/acerca-de-mí" className="hero-section__about-link">
+              <Link
+                to="/acerca-de-mí"
+                className="hero-section__about-link"
+                style={{ fontWeight: 600 }}
+              >
                 Acerca de mí 📖 👉
               </Link>
             </p>
-            <div
-              className="hero-section__social"
-              ref={revealRef}
-              style={{ transitionDelay: '400ms' }}
-            >
+            <div className="hero-section__social" ref={revealRef}>
               <a
                 href="https://www.linkedin.com/in/ad-g099/"
                 target="_blank"
@@ -85,6 +88,15 @@ const HeroSection = () => {
                 aria-label="LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+              <a
+                href="https://www.behance.net/alfredogarcia99"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-section__social-link"
+                aria-label="Behance"
+              >
+                <FontAwesomeIcon icon={faBehance} />
               </a>
               <a
                 href="https://github.com/AldG99"
@@ -104,13 +116,9 @@ const HeroSection = () => {
               </a>
             </div>
           </div>
-          <div
-            className="hero-section__image"
-            ref={revealRef}
-            style={{ transitionDelay: '500ms' }}
-          >
+          <div className="hero-section__image" ref={revealRef}>
             <img
-              src="/assets/images/profile/profile1.png"
+              src="/assets/images/profile/profile1.jpg"
               alt="Foto de perfil"
               draggable="false"
               className="no-save"
@@ -118,11 +126,7 @@ const HeroSection = () => {
             />
           </div>
         </div>
-        <div
-          className="hero-section__divider"
-          ref={revealRef}
-          style={{ transitionDelay: '600ms' }}
-        ></div>
+        <div className="hero-section__divider" ref={revealRef}></div>
       </div>
     </section>
   );
